@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Shekhar C. Mande",
+    "designation": "Distinguished Professor",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "Dr. Neeraj Kumar",
+    "designation": "Affiliated Professor Assistant Professor, Liberal Arts, IIT Hyderabad",
+    "image": "",
+    "area": [
+      "Sensorimotor Learning",
+      "Motor Memory",
+      "Non-invasive Brain Stimulation",
+      "Stroke Rehabilitation"
+    ],
+    "address" : "Room: C-112/F, Academic Block C, Indian Institute of Technology Hyderabad, Kandi-502284, Sangareddy, Telangana, India"
+  }
+]
