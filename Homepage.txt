@@ -1,0 +1,155 @@
+1. Homepage
+
+Department name & logo
+
+Tagline or mission statement
+
+Welcome message from Head of Department
+
+Quick links (admissions, faculty, contact)
+
+News highlights or upcoming events
+
+Banner image or carousel
+
+🔹 2. About the Department
+
+Overview of the department
+
+Vision & mission
+
+History / Establishment year
+
+Message from Head/Chair
+
+Organizational structure
+
+Affiliation / Accreditation details
+
+🔹 3. Academic Programs
+
+Undergraduate Programs
+
+Program name
+
+Duration
+
+Curriculum
+
+Admission requirements
+
+Postgraduate Programs
+
+MSc, M.Tech, PhD details
+
+Research focus areas
+
+Faculty guides
+
+Short-Term Courses / Certifications
+
+🔹 4. Faculty & Staff
+
+Directory with photos, designations, qualifications
+
+Research interests
+
+Contact info (email, phone, office)
+
+Publications (optional link to Google Scholar/ORCID)
+
+🔹 5. Research
+
+Research groups/labs
+
+Ongoing projects
+
+Funded projects & grants
+
+Collaborations (industry/institute)
+
+Research highlights
+
+Publications (sortable/searchable list)
+
+🔹 6. Students
+
+Student achievements
+
+Alumni spotlights
+
+Internship and placement support
+
+Student clubs/societies
+
+Scholarships / Fellowships
+
+🔹 7. Infrastructure
+
+Labs (wet labs, computer labs, core facilities)
+
+Equipment available
+
+Bioinformatics or sequencing facilities
+
+Library resources
+
+Seminar rooms/classrooms
+
+🔹 8. Events & News
+
+Seminars / Workshops
+
+Conferences
+
+Guest lectures
+
+Newsletters
+
+Photo gallery
+
+🔹 9. Admissions
+
+Eligibility criteria
+
+How to apply
+
+Key dates and deadlines
+
+Prospectus / Brochures
+
+Contact for admissions
+
+🔹 10. Downloads / Resources
+
+Course syllabi
+
+Forms (registration, thesis, leave, etc.)
+
+Guidelines (project, internship, thesis)
+
+Timetables
+
+🔹 11. Contact Us
+
+Department office address
+
+Email & phone number
+
+Google map embed
+
+Office hours
+
+🧩 Optional Features
+
+Faculty login / internal portal
+
+Newsletter signup
+
+Alumni registration
+
+Placement statistics
+
+Feedback form
+
+Multilingual support

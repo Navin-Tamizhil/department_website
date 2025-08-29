@@ -1,0 +1,252 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Althuri Avanthi",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "a.avanthi@bt.iith.ac.in",
+    "phone": "",
+    "area": ["Biofuels", "Biochemicals, and Biomaterials",
+"Bioprocess technology, Fermentation, and Downstream processing",
+"Nanobiotechnology and Hydrothermal Liquefaction",
+"Waste valorisation and Circular economy"],
+"labWebsite" : "https://sites.google.com/bt.iith.ac.in/integratedbioprocesstechnology/home"
+  },
+  
+  {
+   "id": 2,
+    "name": "Dr. Anamika Bhargava",
+    "designation": "Professor and Head Of the Department",
+    "image": "https://csl.biotech.iith.ac.in/",
+    "email": "abhargava@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 8453",
+    "area": ["Voltage-gated calcium channels in health and disease",
+"Ion channels in cancer",
+"Cell signalling through ion channels",
+"Investigation of disease and toxicity mechanisms using zebrafish model",
+"Development of zebrafish models of xenotransplantation"],
+"labWebsite" : "https://csl.biotech.iith.ac.in/"
+  },
+  
+  {
+      "id": 3,
+    "name": "Dr. Rajakumara Eerappa",
+    "designation": "Professor",
+    "image": "",
+    "email": "eraj@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 7002",
+    "area": ["Epigenetics, DNA repair and allosteric regulation of receptors and enzymes",
+"Characterization of cancer drug targets, Inhibitor/lead compound design",
+"Thermodynamics of phase separation of biological macromolecules and hydrogel design",
+"X-ray crystallography and Structural Biology"],
+"labWebsite" : "https://rajakumarae.wixsite.com/rajlab-bt--iith"
+  },
+
+
+   {
+      "id": 4,
+    "name": "Dr. Savita Devi",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "savitadevi@bt.iith.ac.in",
+    "phone": "",
+    "area": ["Molecular Mechanisms of innate immunity and inflammation regulation in health and diseases",
+"Human Inflammasomes",
+"Nucleic acid sensors",
+"Innate immune sensors and Cancer"],
+"labWebsite" : "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/"
+  },
+  
+  {
+   "id": 5,
+    "name": "Dr. Himanshu Joshii",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "hjoshi@bt.iith.ac.in",
+    "phone": "",
+    "area": ["DNA Nanotechnology",
+"Lipid-DNA, DNA-protein, and DNA-DNA interaction",
+"Nanopores",
+"Nanoparticles and biological materials",
+"Artificial water channels"],
+"labWebsite" : "https://sites.google.com/view/molecular-simulation-lab"
+  },
+
+{
+   "id": 6,
+    "name": "Dr. Rahul Kumar",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "rahulk@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 7002",
+    "area": ["Radiogenomics based biomarkers for glioblastoma prognosis and diagnosis",
+"Developing AI/ML based methods to design novel anticancer compounds",
+"Developing multi-omics biological databases",
+"Developing AI/ML based algorithms to identify novel molecular subtypes",
+"Exploring non-coding elements for disease pathology"],
+"labWebsite" : "https://people.iith.ac.in/rahulk/"
+  },
+{
+   "id": 7,
+    "name": "Dr. Indranil Malik",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "indranil@bt.iith.ac.in",
+    "phone": "",
+    "area": ["Repeat Expansion Disorders",
+"Role of RNA binding proteins in neurological diseases",
+"Developing Drosophila models of human neurodegenerative diseases",
+"RNA structure and translational regulation"],
+"labWebsite" : "https://sites.google.com/bt.iith.ac.in/malik-lab/home"
+  },
+  
+  {
+   "id": 8,
+    "name": "Dr. Gunjan Mehta",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "gunjanmehta@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6159",
+    "area": ["Chromosome Dynamics and Cell Division",
+"Gene Regulation",
+"Aneuploidy, Genetic Disorders, Cancers",
+"Single-Molecule Imaging and Tracking"],
+"labWebsite" : "https://www.mehtalab-iith.com/"
+  },
+
+    {
+   "id": 9,
+    "name": "Dr. Gunjan Mehta",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "gunjanmehta@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6159",
+    "area": ["Chromosome Dynamics and Cell Division",
+"Gene Regulation",
+"Aneuploidy, Genetic Disorders, Cancers",
+"Single-Molecule Imaging and Tracking"],
+"labWebsite" : "https://www.mehtalab-iith.com/"
+  },
+
+      {
+   "id": 10,
+    "name": "Dr. Ashish Misra",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "ashishmisra@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6196",
+    "area": ["Pre-clinical validation of tissue-based prognostic and predictive biomarkers in therapy resistant Indian prostate cancer patients",
+"Identification and pre-clinical validation of therapeutically targetable oncogenic drivers of castration-resistant prostate cancer",
+"Constructing the Genomic and Transcriptomic landscape of Indian pediatric B-cell Acute Lymphoblastic Leukemia patients to identify novel prognostic and therapeutic targets.",
+"Understanding the role of Long non-coding RNAs and alternative splicing in cancer progression"],
+"labWebsite" : "https://cgrblab.bt.iith.ac.in/"
+  },
+
+        {
+   "id": 11,
+    "name": "Dr. Basant Kumar Patel",
+    "designation": "Professor",
+    "image": "",
+    "email": "basantkpatel@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6196",
+    "area": ["Protein misfolding- mechanisms and prevention",
+"Yeast prions genetics and cell biology"],
+"labWebsite" : "https://pmrl.biotech.iith.ac.in/"
+  },
+  
+        {
+   "id": 12,
+    "name": "Dr. N.K. Raghavendra",
+    "designation": "Associate Professor",
+    "image": "",
+    "email": "raghunk@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 7056",
+    "area": ["Human – virus: protein-protein and DNAprotein interaction"],
+"labWebsite" : "https://sites.google.com/iith.ac.in/pial/home"
+  },
+  
+        {
+   "id": 13,
+    "name": "Dr. Thenmalarchelvi Rathinavelan",
+    "designation": "Professor",
+    "image": "",
+    "email": "tr@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 7067",
+    "area": ["Molecular mechanism behind microsatellite repeat expansion disorders",
+"Antimicrobial resistance in Gramnegative bacteria",
+"Microbial genomics",
+"Amyloidogenic characteristic of an intrinsically disordered Saccharomyces cerevisiae protein",
+"Development of algorithms, databases and web tools",
+"Utilization of SERBP1 as an anticancer drug target",
+"Identification of ligand molecules to target microsatellite repeat expansions",
+"Biomolecular structure and interaction prediction using machine learning algorithms"],
+"labWebsite" : "https://people.iith.ac.in/tr/Home.html"
+  },
+          {
+   "id": 14,
+    "name": "Dr. Sandipan Ray",
+    "designation": "Assistant Professorr",
+    "image": "",
+    "email": " sandipan.ray@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6157",
+    "area": ["Circadian rhythms and sleep Neuropharmacology",
+"Aging",
+"Systems biology",
+"Mental health"],
+"labWebsite" : "https://www.circadianlab-iith.com/"
+  },
+          {
+   "id": 15,
+    "name": "Dr. Anindya Roy",
+    "designation": "Professorr",
+    "image": "",
+    "email": "anindya@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6083",
+    "area": ["Molecular characterization of DNA alkylation damage repair enzymes",
+"Role of DNA alkylation in cancer, autoimmune and inflammatory diseases"],
+"labWebsite" : "https://sites.google.com/iith.ac.in/arlab"
+  },
+ 
+          {
+   "id": 16,
+    "name": "Dr. G. Narahari Sastry, FNA, FNASc, FASc, FRSC",
+    "designation": "Professor",
+    "image": "",
+    "email": "gnsastry@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6083",
+    "area": ["computational modelling and artificial intelligence from basic to translational research"],
+"labWebsite" : "https://sites.google.com/iith.ac.in/arlab"
+  },
+            {
+   "id": 17,
+    "name": "Dr. Gaurav Sharma",
+    "designation": "Assistant Professor",
+    "image": "",
+    "email": "gnsastry@bt.iith.ac.in",
+    "phone": "+91 (40) 2301 6083",
+    "area": ["Microbial genomics and evolution",
+"Plant-microbe interactions",
+"Genomic, Metagenomic, and Transcriptomics",
+"Computational biology to function",
+"Next-generation sequencing data analysis",
+"Database and webserver development"],
+"labWebsite" : "https://sites.google.com/view/sharmaglab/"
+  },
+
+    {
+   "id": 18,
+    "name": "Dr. Abhishek Subramanian",
+    "designation": "Assistant Professor",
+    "image": "/faculty/abhishek_subramanian.jpeg",
+    "email": "abhisheks@bt.iith.ac.in",
+    "phone": "",
+    "area": ["Computational Systems & Network Biology",
+"Omics data analysis & bioinformatics",
+"Metabolism & gene regulation",
+"Mathematical, statistical modelling",
+"machine learning",
+"Parasitology and immunology"],
+"labWebsite" : "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home"
+  }
+
+]
