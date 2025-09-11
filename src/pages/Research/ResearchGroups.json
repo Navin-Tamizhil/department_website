@@ -1,0 +1,140 @@
+[
+  {
+    "id": "group1",
+    "name": "Structural Biology, Biophysics and Nanobiotechnology",
+    "professors": [
+      { "name": "Dr. Rajakumara Eerappa", "website": "https://rajakumarae.wixsite.com/rajlab-bt--iith" },
+      { "name": "Dr. Basant Kumar Patel", "website": "https://pmrl.biotech.iith.ac.in" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Thenmalarchelvi Rathinavelan", "website": "https://people.iith.ac.in/tr/Home.html" },
+      { "name": "Dr. Himanshu Joshii", "website": "https://sites.google.com/view/molecular-simulation-lab" },
+      { "name": "Dr. Anamika Bhargava", "website": "https://csl.biotech.iith.ac.in/" },
+      { "name": "Dr. Indranil Malik", "website": "https://sites.google.com/bt.iith.ac.in/malik-lab/home" }
+    ],
+    "description": [
+      "Structural studies of epigenetic marks reader proteins.",
+      "Electrophysiological measurements through voltage-gated calcium channels.",
+      "Harnessing the high-performance computing (HPC) to decipher the nanoscale structure and dynamics of self-assembled synthetic nanobiosystems.",
+      "Developing computational models to illustrate the physics of living cells and the interaction of nanomaterials with the biological matter",
+      "RRM1-2 domain structure of the TDP-43 protein showing predicted Zinc binding amino acids in pink.",
+      "AFM image of amyloid-like aggregates of E540V familial mutant bearing Fibrinogen A alpha chain fragment protein."
+    ],
+    "images": []
+  },
+  {
+    "id": "group2",
+    "name": "Cancer Biology and Diagnosis",
+    "professors": [
+        { "name": "Dr. Anamika Bhargava", "website": "https://csl.biotech.iith.ac.in/" },
+        { "name": "Dr. Anindya Roy", "website": "https://sites.google.com/iith.ac.in/arlab" },
+        { "name": "Dr. Ashish Misra", "website": "https://cgrblab.bt.iith.ac.in/" },
+        { "name": "Dr. Rahul Kumar", "website": "https://people.iith.ac.in/rahulk/" },
+        { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+        { "name": "Dr. Sandipan Ray", "website": "https://www.circadianlab-iith.com/" },
+        { "name": "Dr. Rajakumara Eerappa", "website": "https://rajakumarae.wixsite.com/rajlab-bt--iith" }
+
+    ],
+    "description": [
+      "A reliable, rapid, cost-effective method for detection of TBI biomarker UCHL1.",
+      "Characterization of regulation of cancer drug targetsPARP1 and PARP2.",
+      "Ion-channel dysfunction in breast cancer",
+      "Development of zebrafish xenotransplantation models for the analysis of breast cancer subtype.",
+      "Identified details of the enzymes engaged in removing the alkyl groups from the modified DNA bases in cancer cells.",
+      "Chromatin remodelers play essential roles during meiosis.",
+      "Dosing time dependency of anticancer drugs"
+    ],
+    "images": []
+  },
+  {
+    "id": "group3",
+    "name": "Biology of Diseases and Disorders",
+    "professors": [
+      { "name": "Dr. Basant Kumar Patel", "website": "https://pmrl.biotech.iith.ac.in" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Abhishek Subramanian", "website": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home" },
+      { "name": "Dr. Thenmalarchelvi Rathinavelan", "website": "https://people.iith.ac.in/tr/Home.html" },
+      { "name": "Dr. N.K. Raghavendra", "website": "https://sites.google.com/iith.ac.in/pial/home" },
+      { "name": "Dr. Anamika Bhargava", "website": "https://csl.biotech.iith.ac.in/" },
+      { "name": "Dr. Sandipan Ray", "website": "https://www.circadianlab-iith.com/" },
+        { "name": "Dr. Ashish Misra", "website": "https://cgrblab.bt.iith.ac.in/" },
+       { "name": "Dr. Rajakumara Eerappa", "website": "https://rajakumarae.wixsite.com/rajlab-bt--iith" },
+       { "name": "Dr. Savita Devi", "website": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/" }
+    ],
+    "description": [
+      "Designing and evaluation of small molecule phosphodiesterase inhibitors to modulate sperm competence for IVF.",
+      "Mechanisms of diseases/toxicity caused by chemicals and pollutants.",
+      "Use of zebrafish model for toxicity and biocompatibility studies.",
+      "Computational reconstructions of parasites & host immune cell metabolism for deciphering infectioninduced metabolic changes.",
+      "In vitro liquid-Liquid phase separation of Alexa fluor-labelled A315T familial mutation bearing fragment of TDP-43 protein implicated in ALS disease. Underpinning the mechanistic basis of disease pathology.",
+      "Circadian regulation and irregularities in cardiovascular disease patients."
+    ],
+    "images": []
+  },
+  {
+    "id": "group4",
+    "name": "Big Data Biology: Omics to Function",
+    "professors": [
+         { "name": "Dr. Rahul Kumar", "website": "https://people.iith.ac.in/rahulk/" },
+      { "name": "Dr. Gaurav Sharma", "website": "https://sites.google.com/view/sharmaglab/" },
+      { "name": "Dr. Abhishek Subramanian", "website": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home" },
+   { "name": "Dr. Sandipan Ray", "website": "https://www.circadianlab-iith.com/" },
+      { "name": "Dr. Thenmalarchelvi Rathinavelan", "website": "https://people.iith.ac.in/tr/Home.html" },
+     { "name": "Dr. Ashish Misra", "website": "https://cgrblab.bt.iith.ac.in/" }
+    ],
+    "description": [
+      "Omics data analysis, integration and machine learning.",
+      "Gene regulatory network inference.",
+      "Developing Al/ML based tools to identify diagnostics and prognostic biomarkers of various cancer types using large volume of omics data.",
+      "High-throughout pan kingdom bacterial genome analysis to understand their physiology, function and evolution.",
+      "High-throughput genome and metadata analysis of SARS-CoV-2 sequences.",
+      "Circadian regulations of kinome and signaling.",
+      "Developmentof zinc finger motif prediction tool and in silico diagnostic tools for Gramnegative bacterial serovar prediction.",
+      "Genomic and transcriptomic profiling of Indian cancer patients for personalized medicine."
+    ],
+    "images": []
+  },
+  {
+    "id": "group5",
+    "name": "Bioprocess Technology and Microbiology",
+    "professors": [
+      { "name": "Dr. Althuri Avanthi", "website": "https://sites.google.com/bt.iith.ac.in/integratedbioprocesstechnology/home" },
+       { "name": "Dr. Gaurav Sharma", "website": "https://sites.google.com/view/sharmaglab/" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Anindya Roy", "website": "https://sites.google.com/iith.ac.in/arlab" },
+    { "name": "Dr. Savita Devi", "website": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/" }
+    ],
+    "description": [
+      "Structural studies of epigenetic marks reader proteins.",
+      "Electrophysiological measurements through voltage-gated calcium channels.",
+      "Harnessing the high-performance computing (HPC) to decipher the nanoscale structure and dynamics of self-assembled synthetic nanobiosystems.",
+      "Developing computational models to illustrate the physics of living cells and the interaction of nanomaterials with the biological matter",
+      "RRM1-2 domain structure of the TDP-43 protein showing predicted Zinc binding amino acids in pink.",
+      "AFM image of amyloid-like aggregates of E540V familial mutant bearing Fibrinogen A alpha chain fragment protein."
+    ],
+    "images": []
+  },
+  {
+    "id": "group6",
+    "name": "Structural Biology, Biophysics and Nanobiotechnology",
+    "professors": [
+      { "name": "Dr. Rajakumara Eerappa", "website": "https://rajakumarae.wixsite.com/rajlab-bt--iith" },
+      { "name": "Dr. Basant Kumar Patel", "website": "https://pmrl.biotech.iith.ac.in" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Thenmalarchelvi Rathinavelan", "website": "https://people.iith.ac.in/tr/Home.html" },
+      { "name": "Dr. Himanshu Joshii", "website": "https://sites.google.com/view/molecular-simulation-lab" },
+      { "name": "Dr. Anamika Bhargava", "website": "https://csl.biotech.iith.ac.in/" },
+      { "name": "Dr. Indranil Malik", "website": "https://sites.google.com/bt.iith.ac.in/malik-lab/home" }
+    ],
+    "description": [
+      "Structural studies of epigenetic marks reader proteins.",
+      "Electrophysiological measurements through voltage-gated calcium channels.",
+      "Harnessing the high-performance computing (HPC) to decipher the nanoscale structure and dynamics of self-assembled synthetic nanobiosystems.",
+      "Developing computational models to illustrate the physics of living cells and the interaction of nanomaterials with the biological matter",
+      "RRM1-2 domain structure of the TDP-43 protein showing predicted Zinc binding amino acids in pink.",
+      "AFM image of amyloid-like aggregates of E540V familial mutant bearing Fibrinogen A alpha chain fragment protein."
+    ],
+    "images": []
+  }
+]
+

@@ -8,7 +8,7 @@ export default function MessageFromHead() {
         {/* Left - Image */}
         <div className="flex-shrink-0">
           <img
-            src="/images/head.jpg"
+            src="/faculty/anamika_bhargava.jpg"
             alt="Head of Department"
             className="w-64 h-64 object-cover rounded-lg shadow-md"
           />
@@ -39,8 +39,7 @@ wet-lab or computational biology research skills.
 
       <p className="text-gray-700 leading-relaxed mb-4">
         We are noted for our 17 excellent faculty members with varied expertise, trained in
-India and abroad. This brochure provides an overview of our department. I also
-invite you to learn more about the department faculty, research facilities, latest
+India and abroad. I also invite you to learn more about the department faculty, research facilities, latest
 announcements and developments at https://biotech.iith.ac.in.
       </p>
 

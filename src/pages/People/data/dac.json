@@ -4,18 +4,18 @@
     "id": 1,
     "name": "Prof. Dulal Panda",
     "designation": "Director, NIPER Mohali",
-    "image": ""
+    "image": "/DAC/dulal_panda.png"
   },
   {
     "id": 2,
     "name": "Dr. Krishna Ella",
     "designation": "Chairman and MD, Bharat Biotech",
-    "image": ""
+    "image": "/DAC/krishna_ella.png"
   },
   {
     "id": 3,
     "name": "Prof. Seeram Ramakrishna",
     "designation": "Director, Center for Nanofibers and Nanotechnology, Dept. of Mechanical Engineering, NUS Singapore",
-    "image": ""
+    "image": "/DAC/s_ramakrishna.png"
   }
 ]

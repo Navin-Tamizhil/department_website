@@ -1,11 +1,11 @@
 const DACCard = ({ person }) => (
   <div className="bg-white rounded-xl shadow-md p-4 w-64 hover:shadow-lg transition">
     {/* Image */}
-    {person.image && (
+       {person.image && (
       <img
         src={person.image}
         alt={person.name}
-        className="w-32 h-32 mx-auto rounded-full object-cover"
+        className="w-32 h-32 mx-auto rounded-lg object-cover"
       />
     )}
 

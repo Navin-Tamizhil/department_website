@@ -1,8 +1,8 @@
-import Newsletter from "../Newsletter";
 import Image from "./images/home_background.jpg";
 import { Link } from "react-router-dom";
-import VisionMissionValues from "./Vision_mission_values";
+import Vision_mission_values from "./Vission_mission_values_hover";
 import MessageHOD from "./Message_HOD";
+
 const Home = () => {
   return (
     <>
@@ -24,15 +24,16 @@ const Home = () => {
 
           </section>
 <section className="w-full px-8 py-16 bg-gray-50 space-y-10">
-  {/* HOD Message full row */}
+
   <div className="w-full p-6">
     <MessageHOD />
   </div>
 
-  {/* Vision / Mission / Values in one row */}
+
   <div className="w-full">
     <Vision_mission_values />
   </div>
+
 </section>
 
     </>

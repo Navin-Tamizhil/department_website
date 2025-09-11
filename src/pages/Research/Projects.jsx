@@ -1,30 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import * as XLSX from "xlsx";
 
 export default function Projects() {
-  const projects = {
-    ongoing: [
-      { title: "", start: 2023 },
-      { title: "", start: 2022 },
-      { title: "", start: 2024 },
-    ],
-    completed: {
-      2023: [
-        "",
-        "",
-      ],
-      2022: [
-        
-      ],
-      2021: [
-        
-      ],
-    },
-  };
-
+  const [projects, setProjects] = useState({ ongoing: [], completed: {} });
   const [activeTab, setActiveTab] = useState("ongoing");
-  const [selectedYear, setSelectedYear] = useState(
-    Object.keys(projects.completed)[0]
-  );
+  const [selectedYear, setSelectedYear] = useState(null);
+
+  useEffect(() => {
+    async function loadData() {
+      // Load Ongoing Projects
+      const ongoingRes = await fetch("/research_excel/ongoing_projects.xlsx");
+      const ongoingBuffer = await ongoingRes.arrayBuffer();
+      const ongoingWB = XLSX.read(ongoingBuffer, { type: "array" });
+      const ongoingSheet = ongoingWB.Sheets[ongoingWB.SheetNames[0]];
+      let ongoingData = XLSX.utils.sheet_to_json(ongoingSheet);
+
+      // Sort ongoing by year (latest first)
+      ongoingData = ongoingData.sort((a, b) => b["Year"] - a["Year"]);
+
+      // Load Completed Projects
+      const completedRes = await fetch("/research_excel/completed_projects.xlsx");
+      const completedBuffer = await completedRes.arrayBuffer();
+      const completedWB = XLSX.read(completedBuffer, { type: "array" });
+      const completedSheet = completedWB.Sheets[completedWB.SheetNames[0]];
+      const completedData = XLSX.utils.sheet_to_json(completedSheet);
+
+      // Organize completed by year
+      const completedByYear = {};
+      completedData.forEach((proj) => {
+        const year = proj["Year"];
+        if (!completedByYear[year]) completedByYear[year] = [];
+        completedByYear[year].push(proj);
+      });
+
+      setProjects({ ongoing: ongoingData, completed: completedByYear });
+      setSelectedYear(Object.keys(completedByYear).sort((a, b) => b - a)[0]);
+    }
+
+    loadData();
+  }, []);
 
   return (
     <div className="p-6">
@@ -56,22 +70,28 @@ export default function Projects() {
 
       {/* Ongoing Projects */}
       {activeTab === "ongoing" && (
-        <ul className="list-disc ml-6 space-y-2">
+        <ul className="list-disc ml-6 space-y-3">
           {projects.ongoing.map((proj, idx) => (
-            <li key={idx}>
-              {proj.title} <span className="text-gray-500">(Started {proj.start})</span>
+            <li key={idx} className="leading-relaxed">
+              <span className="font-semibold text-indigo-700">{proj["PI"]}</span>
+              {proj["Co-PI"] ? ` & ${proj["Co-PI"]}` : ""}:{" "}
+              <span className="italic">{proj["Project Title"]}</span>
+              <br />
+              <span className="text-gray-700">{proj["Funding Agency"]}</span> |{" "}
+              <span className="text-gray-500">{proj["Month/Year"]}</span> |{" "}
+              <span className="text-green-700 font-medium">₹{proj["Amount"]}</span>
             </li>
           ))}
         </ul>
       )}
 
-      {/* Completed Projects by Year */}
-      {activeTab === "completed" && (
+      {/* Completed Projects */}
+      {activeTab === "completed" && selectedYear && (
         <div>
           {/* Year Tabs */}
           <div className="flex flex-wrap gap-2 mb-4">
             {Object.keys(projects.completed)
-              .sort((a, b) => b - a) // latest year first
+              .sort((a, b) => b - a)
               .map((year) => (
                 <button
                   key={year}
@@ -88,9 +108,18 @@ export default function Projects() {
           </div>
 
           {/* Projects List */}
-          <ul className="list-disc ml-6 space-y-2">
+          <ul className="list-disc ml-6 space-y-3">
             {projects.completed[selectedYear].map((proj, idx) => (
-              <li key={idx}>{proj}</li>
+              <li key={idx} className="leading-relaxed">
+                <span className="font-semibold text-indigo-700">{proj["Investigator"]}</span>:{" "}
+                <span className="italic">{proj["Project Title"]}</span>
+                <br />
+                <span className="text-gray-700">{proj["Funding Agency"]}</span> |{" "}
+                <span className="text-gray-500">{proj["Month/Year"]}</span> |{" "}
+                <span className="text-green-700 font-medium">
+                  ₹{proj["Amount (Lakhs)"]} Lakhs
+                </span>
+              </li>
             ))}
           </ul>
         </div>

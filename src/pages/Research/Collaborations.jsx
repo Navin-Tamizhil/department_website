@@ -36,7 +36,7 @@ export default function Collaborations() {
         ))}
       </div>
 
-      {/* Collaboration List */}
+
       <ul className="list-disc ml-6 space-y-2">
         {collaborations[activeTab].map((collab, idx) => (
           <li key={idx}>{collab}</li>

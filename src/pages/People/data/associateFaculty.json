@@ -3,13 +3,13 @@
     "id": 1,
     "name": "Dr. Shekhar C. Mande",
     "designation": "Distinguished Professor",
-    "image": ""
+    "image": "/associate_faculty/shekhar_c_mande.jpg"
   },
   {
     "id": 2,
     "name": "Dr. Neeraj Kumar",
     "designation": "Affiliated Professor Assistant Professor, Liberal Arts, IIT Hyderabad",
-    "image": "",
+    "image": "/associate_faculty/neeraj_kumar.jpeg",
     "area": [
       "Sensorimotor Learning",
       "Motor Memory",

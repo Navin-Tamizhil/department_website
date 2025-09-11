@@ -5,7 +5,7 @@ const FacultyCard = ({ person }) => (
       <img
         src={person.image}
         alt={person.name}
-        className="w-32 h-32 mx-auto rounded-full object-cover"
+        className="w-32 h-32 mx-auto rounded-lg object-cover"
       />
     )}
 
