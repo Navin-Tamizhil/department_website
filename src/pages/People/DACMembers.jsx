@@ -3,9 +3,12 @@ import DACCard from "./DACCard.jsx";
 
 const DACMembers = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">DAC Members</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="p-6 bg-gradient-to-br from-indigo-50 via-white to-purple-50 min-h-screen">
+      <h1 className="text-4xl font-extrabold mb-10 text-center text-indigo-800 tracking-wide">
+        Department Advisory Committee
+      </h1>
+
+      <div className="flex flex-wrap justify-center gap-10">
         {dacdata.map((person) => (
           <DACCard key={person.id} person={person} />
         ))}
@@ -15,3 +18,5 @@ const DACMembers = () => {
 };
 
 export default DACMembers;
+
+

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as XLSX from "xlsx";
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 export default function Projects() {
   const [projects, setProjects] = useState({ ongoing: [], completed: {} });
@@ -40,15 +41,35 @@ export default function Projects() {
     loadData();
   }, []);
 
+  // Prepare Pie Chart data for ongoing projects (using "Category" column for example)
+  const pieData = Object.values(
+    projects.ongoing.reduce((acc, proj) => {
+      const category = proj["Category"] || "Others";
+      acc[category] = (acc[category] || 0) + 1;
+      return acc;
+    }, {})
+  ).map((count, idx, arr) => ({
+    name: Object.keys(
+      projects.ongoing.reduce((acc, proj) => {
+        const category = proj["Category"] || "Others";
+        acc[category] = (acc[category] || 0) + 1;
+        return acc;
+      }, {})
+    )[idx],
+    value: count,
+  }));
+
+  const COLORS = ["#6366F1", "#22C55E", "#F59E0B", "#EF4444", "#3B82F6", "#9333EA"];
+
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">Projects</h1>
+      <h1 className="text-3xl font-bold mb-6 text-indigo-700">Projects</h1>
 
       {/* Tabs */}
       <div className="flex gap-4 mb-6">
         <button
           onClick={() => setActiveTab("ongoing")}
-          className={`px-4 py-2 rounded ${
+          className={`px-4 py-2 rounded-lg shadow-md ${
             activeTab === "ongoing"
               ? "bg-indigo-600 text-white"
               : "bg-gray-200 hover:bg-gray-300"
@@ -58,7 +79,7 @@ export default function Projects() {
         </button>
         <button
           onClick={() => setActiveTab("completed")}
-          className={`px-4 py-2 rounded ${
+          className={`px-4 py-2 rounded-lg shadow-md ${
             activeTab === "completed"
               ? "bg-indigo-600 text-white"
               : "bg-gray-200 hover:bg-gray-300"
@@ -70,33 +91,74 @@ export default function Projects() {
 
       {/* Ongoing Projects */}
       {activeTab === "ongoing" && (
-        <ul className="list-disc ml-6 space-y-3">
-          {projects.ongoing.map((proj, idx) => (
-            <li key={idx} className="leading-relaxed">
-              <span className="font-semibold text-indigo-700">{proj["PI"]}</span>
-              {proj["Co-PI"] ? ` & ${proj["Co-PI"]}` : ""}:{" "}
-              <span className="italic">{proj["Project Title"]}</span>
-              <br />
-              <span className="text-gray-700">{proj["Funding Agency"]}</span> |{" "}
-              <span className="text-gray-500">{proj["Month/Year"]}</span> |{" "}
-              <span className="text-green-700 font-medium">₹{proj["Amount"]}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="space-y-6">
+          {/* Pie Chart */}
+          {pieData.length > 0 && (
+            <div className="w-full h-80 mb-6">
+              <ResponsiveContainer>
+                <PieChart>
+                  <Pie
+                    data={pieData}
+                    dataKey="value"
+                    nameKey="name"
+                    outerRadius={120}
+                    fill="#8884d8"
+                    label
+                  >
+                    {pieData.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                  <Legend />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+
+          {/* Cards */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {projects.ongoing.map((proj, idx) => (
+              <div
+                key={idx}
+                className="p-4 border border-gray-200 rounded-xl shadow hover:shadow-lg transition"
+              >
+                <h3 className="text-lg font-semibold text-indigo-700">
+                  {proj["Project Title"]}
+                </h3>
+                <p className="text-gray-600 mt-1">
+                  <span className="font-medium">{proj["PI"]}</span>
+                  {proj["Co-PI"] ? ` & ${proj["Co-PI"]}` : ""}
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  {proj["Funding Agency"]} | {proj["Month/Year"]}
+                </p>
+                {proj["Category"] && (
+                  <span className="inline-block mt-3 px-2 py-1 text-xs rounded bg-indigo-100 text-indigo-700">
+                    {proj["Category"]}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       )}
 
       {/* Completed Projects */}
       {activeTab === "completed" && selectedYear && (
         <div>
           {/* Year Tabs */}
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-6">
             {Object.keys(projects.completed)
               .sort((a, b) => b - a)
               .map((year) => (
                 <button
                   key={year}
                   onClick={() => setSelectedYear(year)}
-                  className={`px-3 py-1 rounded ${
+                  className={`px-3 py-1 rounded-lg shadow ${
                     selectedYear === year
                       ? "bg-green-600 text-white"
                       : "bg-gray-200 hover:bg-gray-300"
@@ -107,21 +169,25 @@ export default function Projects() {
               ))}
           </div>
 
-          {/* Projects List */}
-          <ul className="list-disc ml-6 space-y-3">
+          {/* Cards */}
+          <div className="grid md:grid-cols-2 gap-6">
             {projects.completed[selectedYear].map((proj, idx) => (
-              <li key={idx} className="leading-relaxed">
-                <span className="font-semibold text-indigo-700">{proj["Investigator"]}</span>:{" "}
-                <span className="italic">{proj["Project Title"]}</span>
-                <br />
-                <span className="text-gray-700">{proj["Funding Agency"]}</span> |{" "}
-                <span className="text-gray-500">{proj["Month/Year"]}</span> |{" "}
-                <span className="text-green-700 font-medium">
-                  ₹{proj["Amount (Lakhs)"]} Lakhs
-                </span>
-              </li>
+              <div
+                key={idx}
+                className="p-4 border border-gray-200 rounded-xl shadow hover:shadow-lg transition"
+              >
+                <h3 className="text-lg font-semibold text-indigo-700">
+                  {proj["Project Title"]}
+                </h3>
+                <p className="text-gray-600 mt-1">
+                  <span className="font-medium">{proj["Investigator"]}</span>
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  {proj["Funding Agency"]} | {proj["Month/Year"]}
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       )}
     </div>

@@ -10,7 +10,7 @@ import ResearchAreas from "./pages/Research/ResearchAreas1.jsx";
 import Projects from "./pages/Research/Projects.jsx";
 import Collabration from "./pages/Research/Collaborations.jsx";
 import PeopleLayout from "./pages/People/PeopleLayout";
-import Faculty from "./pages/People/Faculty";
+import Faculty from "./pages/People/Faculty1";
 import DACMembers from "./pages/People/DACMembers";
 import Staff from "./pages/People/Staff";
 import Students from "./pages/People/Students";

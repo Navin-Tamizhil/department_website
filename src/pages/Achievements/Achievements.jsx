@@ -5,9 +5,10 @@ import Patents from "./Patents";
 
 export default function Achievements() {
   const tabs = [
-    { key: "awards", label: "Awards" },
+    
     { key: "publications", label: "Publications" },
     { key: "patents", label: "Patents" },
+    { key: "awards", label: "Awards" },
   ];
 
   const [activeTab, setActiveTab] = useState("awards");
@@ -32,9 +33,10 @@ export default function Achievements() {
       </div>
 
       {/* Render Selected Tab */}
-      {activeTab === "awards" && <Awards />}
+      
       {activeTab === "publications" && <Publications />}
       {activeTab === "patents" && <Patents />}
+      {activeTab === "awards" && <Awards />}
     </section>
   );
 }

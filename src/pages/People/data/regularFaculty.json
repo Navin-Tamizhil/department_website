@@ -44,24 +44,27 @@
 
 
    {
-      "id": 4,
-    "name": "Dr. Savita Devi",
-    "designation": "Assistant Professor",
-    "image": "/faculty/savita_devi.jpg",
-    "email": "savitadevi@bt.iith.ac.in",
-    "phone": "",
-    "area": ["Molecular Mechanisms of innate immunity and inflammation regulation in health and diseases",
-"Human Inflammasomes",
-"Nucleic acid sensors",
-"Innate immune sensors and Cancer"],
-"labWebsite" : "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/"
-  },
+  "id": 4,
+  "name": "Dr. Savita Devi",
+  "designation": "Assistant Professor",
+  "image": "/faculty/savita_devi.jpg",
+  "email": "savitadevi@bt.iith.ac.in",
+  "phone": "",
+  "area": [
+    "Molecular Mechanisms of innate immunity and inflammation regulation in health and diseases",
+    "Human Inflammasomes",
+    "Nucleic acid sensors",
+    "Innate immune sensors and Cancer"
+  ],
+  "labWebsite": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing"
+},
+
   
   {
    "id": 5,
-    "name": "Dr. Himanshu Joshii",
+    "name": "Dr. Himanshu Joshi",
     "designation": "Assistant Professor",
-    "image": "/faculty/himanshu_joshii.jpg",
+    "image": "/faculty/himanshu_joshi.jpg",
     "email": "hjoshi@bt.iith.ac.in",
     "phone": "",
     "area": ["DNA Nanotechnology",
@@ -142,15 +145,16 @@
   },
   
         {
-   "id": 11,
-    "name": "Dr. N.K. Raghavendra",
-    "designation": "Associate Professor",
-    "image": "/faculty/nk_raghavendra.jpg",
-    "email": "raghunk@bt.iith.ac.in",
-    "phone": "+91 (40) 2301 7056",
-    "area": ["Human – virus: protein-protein and DNAprotein interaction"],
-"labWebsite" : "https://sites.google.com/iith.ac.in/pial/home"
-  },
+  "id": 11,
+  "name": "Dr. Raghavendra N.K.",
+  "designation": "Associate Professor",
+  "image": "/faculty/nk_raghavendra.jpg",
+  "email": "raghunk@bt.iith.ac.in",
+  "phone": "+91 (40) 2301 7056",
+  "area": ["Human–virus: protein-protein and DNA-protein interaction"],
+  "labWebsite": "https://sites.google.com/iith.ac.in/pial/home"
+}
+,
   
         {
    "id": 12,
@@ -170,70 +174,77 @@
 "labWebsite" : "https://people.iith.ac.in/tr/Home.html"
   },
           {
-   "id": 13,
-    "name": "Dr. Sandipan Ray",
-    "designation": "Assistant Professorr",
-    "image": "/faculty/sandipan_ray.jpg",
-    "email": " sandipan.ray@bt.iith.ac.in",
-    "phone": "+91 (40) 2301 6157",
-    "area": ["Circadian rhythms and sleep Neuropharmacology",
-"Aging",
-"Systems biology",
-"Mental health"],
-"labWebsite" : "https://www.circadianlab-iith.com/"
-  },
+  "id": 13,
+  "name": "Dr. Sandipan Ray",
+  "designation": "Assistant Professor",
+  "image": "/faculty/sandipan_ray.jpg",
+  "email": "sandipan.ray@bt.iith.ac.in",
+  "phone": "+91 (40) 2301 6157",
+  "area": ["Circadian rhythms and sleep Neuropharmacology", "Aging", "Systems biology", "Mental health"],
+  "labWebsite": "https://www.circadianlab-iith.com/"
+},
           {
-   "id": 14,
-    "name": "Dr. Anindya Roy",
-    "designation": "Professorr",
-    "image": "/faculty/anindya_roy.jpg",
-    "email": "anindya@bt.iith.ac.in",
-    "phone": "+91 (40) 2301 6083",
-    "area": ["Molecular characterization of DNA alkylation damage repair enzymes",
-"Role of DNA alkylation in cancer, autoimmune and inflammatory diseases"],
-"labWebsite" : "https://sites.google.com/iith.ac.in/arlab"
-  },
+  "id": 14,
+  "name": "Dr. Anindya Roy",
+  "designation": "Professor",
+  "image": "/faculty/anindya_roy.jpg",
+  "email": "anindya@bt.iith.ac.in",
+  "phone": "+91 (40) 2301 6083",
+  "area": [
+    "Molecular characterization of DNA alkylation damage repair enzymes",
+    "Role of DNA alkylation in cancer, autoimmune and inflammatory diseases"
+  ],
+  "labWebsite": "https://sites.google.com/iith.ac.in/arlab"
+}
+,
  
           {
-   "id": 15,
-    "name": "Dr. G. Narahari Sastry, FNA, FNASc, FASc, FRSC",
-    "designation": "Professor",
-    "image": "/faculty/g_narahari_sastry.jpg",
-    "email": "gnsastry@bt.iith.ac.in",
-    "phone": "+91 (40) 2301 6083",
-    "area": ["computational modelling and artificial intelligence from basic to translational research"],
-"labWebsite" : "https://sites.google.com/iith.ac.in/arlab"
-  },
+  "id": 15,
+  "name": "Dr. Narahari Sastry G., FNA, FNASc, FASc, FRSC",
+  "designation": "Professor",
+  "image": "/faculty/g_narahari_sastry.jpg",
+  "email": "gnsastry@bt.iith.ac.in",
+  "phone": "+91 (40) 2301 6083",
+  "area": ["Computational modelling and artificial intelligence from basic to translational research"],
+  "labWebsite": "https://sites.google.com/iith.ac.in/arlab"
+}
+,
             {
-   "id": 16,
-    "name": "Dr. Gaurav Sharma",
-    "designation": "Assistant Professor",
-    "image": "/faculty/gaurav_sharma.jpg",
-    "email": "gnsastry@bt.iith.ac.in",
-    "phone": "+91 (40) 2301 6083",
-    "area": ["Microbial genomics and evolution",
-"Plant-microbe interactions",
-"Genomic, Metagenomic, and Transcriptomics",
-"Computational biology to function",
-"Next-generation sequencing data analysis",
-"Database and webserver development"],
-"labWebsite" : "https://sites.google.com/view/sharmaglab/"
-  },
+  "id": 16,
+  "name": "Dr. Gaurav Sharma",
+  "designation": "Assistant Professor",
+  "image": "/faculty/gaurav_sharma.jpg",
+  "email": "REPLACE_WITH_CORRECT_EMAIL",
+  "phone": "+91 (40) 2301 6083",
+  "area": [
+    "Microbial genomics and evolution",
+    "Plant-microbe interactions",
+    "Genomic, Metagenomic, and Transcriptomics",
+    "Computational biology to function",
+    "Next-generation sequencing data analysis",
+    "Database and webserver development"
+  ],
+  "labWebsite": "https://sites.google.com/view/sharmaglab/"
+}
+,
 
     {
-   "id": 17,
-    "name": "Dr. Abhishek Subramanian",
-    "designation": "Assistant Professor",
-    "image": "/faculty/abhishek_subramanian.jpeg",
-    "email": "abhisheks@bt.iith.ac.in",
-    "phone": "",
-    "area": ["Computational Systems & Network Biology",
-"Omics data analysis & bioinformatics",
-"Metabolism & gene regulation",
-"Mathematical, statistical modelling",
-"machine learning",
-"Parasitology and immunology"],
-"labWebsite" : "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home"
-  }
+  "id": 17,
+  "name": "Dr. Abhishek Subramanian",
+  "designation": "Assistant Professor",
+  "image": "/faculty/abhishek_subramanian.jpeg",
+  "email": "abhisheks@bt.iith.ac.in",
+  "phone": "",
+  "area": [
+    "Computational Systems & Network Biology",
+    "Omics data analysis & bioinformatics",
+    "Metabolism & gene regulation",
+    "Mathematical, statistical modelling",
+    "Machine Learning",
+    "Parasitology and immunology"
+  ],
+  "labWebsite": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home"
+}
+
 
 ]

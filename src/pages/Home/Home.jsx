@@ -17,7 +17,7 @@ const Home = () => {
                   Welcome to Department of Biotechnology, 
           </h1>
            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                  IIT hyderabad
+                  IIT Hyderabad
           </h1>
           
         </div>
