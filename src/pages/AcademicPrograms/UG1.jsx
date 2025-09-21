@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ugloadSyllabus } from "./UGsyllabusData";
+import UGCourseDescription from "./UG_CourseDescription";
 import { ChevronDown, ChevronRight, BookOpen } from "lucide-react";
 
 export default function UG() {
@@ -87,7 +88,7 @@ export default function UG() {
         </a>
 
         <a
-          href="/pdf/ug_course_description.pdf"
+          href="/UGCourseDescription"
           target="_blank"
           rel="noopener noreferrer"
           className="px-5 py-2.5 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition"

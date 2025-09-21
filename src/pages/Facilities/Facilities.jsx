@@ -43,7 +43,7 @@ export default function Facilities() {
                   />
                 ) : (
                   <div className="h-40 w-full flex items-center justify-center bg-gray-100 text-gray-400 text-sm rounded">
-                    No Image Available
+                    Image...
                   </div>
                 )}
 

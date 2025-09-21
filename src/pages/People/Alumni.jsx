@@ -3,8 +3,8 @@ import * as XLSX from "xlsx";
 
 export default function Alumni() {
   const tabs = [
-    { key: "btech", label: "B.Tech." },
-    { key: "mtech", label: "M.Tech." },
+    { key: "btech", label: "B.Tech.", duration: 4 },
+    { key: "mtech", label: "M.Tech.", duration: 2 },
     { key: "phd", label: "Ph.D." },
   ];
 
@@ -48,9 +48,13 @@ export default function Alumni() {
       }
     }
 
-    // Sort years ascending
-    newData.btech.sort((a, b) => a.year - b.year);
-    newData.mtech.sort((a, b) => a.year - b.year);
+    // Sort descending by start year
+    newData.btech.sort((a, b) => b.year - a.year);
+    newData.mtech.sort((a, b) => b.year - a.year);
+
+    if (newData.btech.length > 0) {
+      setSelectedYear(newData.btech[0].year);
+    }
 
     setData(newData);
   };
@@ -59,7 +63,14 @@ export default function Alumni() {
     if (tab === "btech" || tab === "mtech") {
       return data[tab].map((batch) => batch.year);
     }
-    return []; // No year buttons for Ph.D.
+    return [];
+  };
+
+  const getYearRange = (tabKey, startYear) => {
+    const tab = tabs.find((t) => t.key === tabKey);
+    if (!tab || !tab.duration) return startYear;
+    const endYear = startYear + tab.duration;
+    return `${startYear} - ${endYear}`;
   };
 
   const getRows = (tab, year) => {
@@ -75,6 +86,9 @@ export default function Alumni() {
 
   return (
     <section className="container mx-auto px-6 py-16">
+      {/* Page Header */}
+      <h1 className="text-4xl font-extrabold mb-12 text-indigo-700">Alumni</h1>
+
       {/* Tabs */}
       <div className="flex gap-6 mb-10 border-b border-gray-200">
         {tabs.map((tab) => (
@@ -83,6 +97,12 @@ export default function Alumni() {
             onClick={() => {
               setActiveTab(tab.key);
               setSelectedYear(null);
+              // Reset selected year to latest batch on tab switch
+              if (tab.key === "btech" && data.btech.length > 0) {
+                setSelectedYear(data.btech[0].year);
+              } else if (tab.key === "mtech" && data.mtech.length > 0) {
+                setSelectedYear(data.mtech[0].year);
+              }
             }}
             className={`px-4 py-2 font-medium border-b-2 transition ${
               activeTab === tab.key
@@ -108,7 +128,7 @@ export default function Alumni() {
                   : "bg-gray-50 hover:bg-gray-100 border-gray-300"
               }`}
             >
-              {year}
+              {getYearRange(activeTab, year)}
             </button>
           ))}
         </div>
@@ -119,7 +139,7 @@ export default function Alumni() {
         <div>
           <h3 className="text-xl font-bold mb-6">
             {tabs.find((t) => t.key === activeTab)?.label}{" "}
-            {activeTab !== "phd" ? `– ${selectedYear}` : ""}
+            {activeTab !== "phd" ? `– ${getYearRange(activeTab, selectedYear)}` : ""}
           </h3>
           {getRows(activeTab, selectedYear).length > 0 ? (
             <div className="overflow-x-auto rounded-lg shadow">
@@ -140,10 +160,7 @@ export default function Alumni() {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {getRows(activeTab, selectedYear).map((row, idx) => (
-                    <tr
-                      key={idx}
-                      className="hover:bg-indigo-50 transition"
-                    >
+                    <tr key={idx} className="hover:bg-indigo-50 transition">
                       {Object.entries(row).map(([key, val], i) => (
                         <td
                           key={i}

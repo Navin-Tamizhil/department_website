@@ -1,32 +1,41 @@
 import { useState } from "react";
-
-import UG from "./UG1";
-import PG from "./PG1";
-import PhD from "./PhD";
+import UGPrograms from "./UG2";   // Create these components accordingly
+import PGPrograms from "./PG1";
+import PhDPrograms from "./PhD";
 
 export default function Programs() {
-  const [activeTab, setActiveTab]  = useState("ug");
- return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Academic Programs</h1>
-      <div className="flex gap-4 mb-6">
-      <button onClick={() => setActiveTab("ug")} className={`px-4 py-2 rounded-lg ${ activeTab=== "ug"
-      ? "bg-indigo-600 text-white" : "bg-gray-200 hover:bg-gray-300"}`} >
-          Undergraduate (UG)
-      </button>
-      <button onClick={() => setActiveTab("pg")} className={`px-4 py-2 rounded-lg ${ activeTab === "pg"
-        ?  "bg-green-600 text-white" : "bg-gray-200 hover:bg-gray-300" }`}>
-            Postgraduate (PG)
-      </button>
-      <button onClick={() => setActiveTab("phd")} className={`px-4 py-2 rounded-lg ${activeTab === "phd" 
-        ? "bg-purple-600 text-white" : "bg-gray-200 hover:bg-gray-300" }`}> Ph.D. </button>
-    </div>
-      
-      <div className="mt-6">
-        {activeTab === "ug" && <UG />}
-        {activeTab === "pg" && <PG />}
-        {activeTab === "phd" && <PhD />}
+  const tabs = [
+    { key: "ug", label: "Undergraduate" },
+    { key: "pg", label: "Postgraduate" },
+    { key: "phd", label: "Ph.D." },
+  ];
+
+  const [activeTab, setActiveTab] = useState("ug");
+
+  return (
+    <section className="container mx-auto px-6 py-16">
+      {/* Tabs Navigation */}
+      <div className="flex gap-6 mb-10 border-b border-gray-200">
+        {tabs.map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            className={`px-4 py-2 font-medium border-b-2 transition ${
+              activeTab === tab.key
+                ? "border-indigo-600 text-indigo-600"
+                : "border-transparent text-gray-600 hover:text-indigo-500"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
-    </div>
+
+      {/* Render Selected Tab */}
+      {activeTab === "ug" && <UGPrograms />}
+      {activeTab === "pg" && <PGPrograms />}
+      {activeTab === "phd" && <PhDPrograms />}
+    </section>
   );
 }
+

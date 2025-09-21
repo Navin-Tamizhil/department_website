@@ -13,7 +13,7 @@ export default function Awards() {
 
     for (const type of ["faculty", "students"]) {
       try {
-        const res = await fetch(`/awards_${type}.xlsx`);
+        const res = await fetch(`/awards_excel/${type}_awards.xlsx`);
         if (res.ok) {
           const buf = await res.arrayBuffer();
           const wb = XLSX.read(buf, { type: "array" });
@@ -22,46 +22,44 @@ export default function Awards() {
           loadedAwards[type] = rows;
         }
       } catch (err) {
-        console.error("Error loading awards:", err);
+        console.error(`Error loading ${type} awards:`, err);
       }
     }
 
     setAwards(loadedAwards);
   };
 
-  return (
-    <div>
-      <h3 className="text-2xl font-bold mb-6">Faculty Awards 🏆</h3>
-      {awards.faculty.length > 0 ? (
-        <ul className="space-y-3 mb-10">
-          {awards.faculty.map((award, i) => (
-            <li
-              key={i}
-              className="p-4 bg-indigo-50 rounded-lg shadow hover:shadow-md transition"
-            >
-              <span className="font-semibold">{award.Name}</span> — {award.Award}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className="text-gray-500 mb-10">Faculty awards.....</p>
-      )}
+  const AwardCard = ({ award, borderColor }) => (
+    <div
+      className={`p-5 bg-white rounded-xl shadow hover:shadow-lg transition border-l-4 ${borderColor}`}
+    >
+      <p className="font-semibold text-gray-800 text-lg">{award.Name}</p>
+      <p className="text-gray-600">{award["Award title"]}</p>
+      <p className="text-sm text-gray-500">
+        {award.Agency} — {award["Month/Year"]}
+      </p>
+    </div>
+  );
 
-      <h3 className="text-2xl font-bold mb-6">Student Awards 🎓</h3>
-      {awards.students.length > 0 ? (
-        <ul className="space-y-3">
-          {awards.students.map((award, i) => (
-            <li
-              key={i}
-              className="p-4 bg-green-50 rounded-lg shadow hover:shadow-md transition"
-            >
-              <span className="font-semibold">{award.Name}</span> — {award.Award}
-            </li>
+  const renderAwardsSection = (title, awardsList, borderColor) => (
+    <>
+      <h3 className="text-2xl font-bold mb-6">{title}</h3>
+      {awardsList.length > 0 ? (
+        <div className="space-y-4 mb-10">
+          {awardsList.map((award, i) => (
+            <AwardCard key={i} award={award} borderColor={borderColor} />
           ))}
-        </ul>
+        </div>
       ) : (
-        <p className="text-gray-500">Student awards....</p>
+        <p className="text-gray-500 mb-10">No awards available.</p>
       )}
+    </>
+  );
+
+  return (
+    <div className="space-y-12">
+      {renderAwardsSection("Faculty Awards / Honours 🏆", awards.faculty, "border-indigo-500")}
+      {renderAwardsSection("Student Awards / Honours🎓", awards.students, "border-green-500")}
     </div>
   );
 }

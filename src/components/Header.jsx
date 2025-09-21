@@ -57,6 +57,7 @@ const Header = () => {
           <Link to="/facilities" className="hover:text-red-300"> Facilities </Link>
           <Link to="/achievements" className="hover:text-red-300">Achievements</Link>
           <Link to="/announcements" className="hover:text-red-300"> Announcements</Link>
+          <Link to="/events" className="hover:text-red-300">Events</Link>
           <Link to="/contact" className="hover:text-red-300"> Contact Us</Link>
         </nav>
 
@@ -81,6 +82,7 @@ const Header = () => {
           <Link to="/facilities" className="block hover:text-red-300" onClick={() => setMobileOpen(false)}>Facilities</Link>
           <Link to="/achievements" className="block hover:text-red-300" onClick={() => setMobileOpen(false)}>Achievements</Link>
           <Link to="/announcements" className="block hover:text-red-300" onClick={() => setMobileOpen(false)}>Announcements</Link>
+          <Link to="/events" className="block hover:text-red-300" onClick={() => setMobileOpen(false)}>Events</Link>
           <Link to="/contact" className="block hover:text-red-300" onClick={() => setMobileOpen(false)}>Contact Us</Link>
         </div>
       )}

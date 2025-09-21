@@ -1,0 +1,149 @@
+{
+  "core_courses": [
+    {
+      "course_code": "BT6390",
+      "course_name": "Advanced Cell Biology",
+      "credit": "3",
+      "semester": "1",
+      "instructor": "",
+      "pre_requisite": "",
+      "objective": "The course is designed to help learners develop a broad understanding of the fundamental and advanced concepts of cell biology from a human-centred perspective. A major emphasis of the course will be on the recent advances in cell biology and its importance to human health and disease.",
+      "contents": "Introduction to cell biology, Biogenesis and functions of plasma membrane, Cytoskeletal elements, Cell Division: Mitosis and Meiosis, Mitochondrial biogenesis and function, Protein import, Biosynthesis of ER and Golgi, Trans-Golgi Network, Vesicular trafficking, Lysosome biogenesis and pathophysiology, Nucleus- structure and biogenesis of nuclear envelope, Nuclear import and export, Cell cycle and Cell death, Regulation of signalling pathways, Physiological methods to characterize and understand cellular processes.",
+      "textbooks": [
+        "1. Molecular Biology of Cell, Bruce Alberts (2014) 6th edition. Garland Science",
+        "2. Cell Biology, Pollard TD, Earnshaw WC, Schwartz JL. (2016) 3rd Edition Elsevier Publishing Co."
+      ],
+      "references": []
+    },
+    {
+      "course_code": "BT5013",
+      "course_name": "Biochemistry",
+      "credit": "3",
+      "semester": "1",
+      "instructor": "",
+      "pre_requisite": "",
+      "objective": "This course aims to provide fundamental concepts of biochemistry, starting from simple building blocks to complex metabolism.",
+      "contents": "Basic principles: Biomolecules, Stereoisomers and life, thermodynamics of biochemical reactions; Structural biochemistry: Protein Structure, Protein Folding, Learning Pymol, Enzyme Catalysis, Enzyme Kinetics, Lipid structure and membrane assembly, Carbohydrate structure; Bioenergetics: Glycolysis, Glycolysis of red blood cells and liver, Bacterial Energetics, The citric acid cycle, Electron transport, ATP synthesis, Regulation of blood sugar; Tissue-specific metabolism: Liver metabolism, Muscle metabolism, Brain Metabolism; Synthesis and degradation of Biomolecules: Nucleic acid metabolism, Carbohydrate metabolism, Fatty acid metabolism, Protein metabolism. Buffer preparation, pH meter calibration and pH adjustment. Estimation of proteins lowry/bradford. Estimation of DNA, RNA, protein by spectrophotometer",
+      "textbooks": [
+        "1. Lehninger Principles of Biochemistry (WH Freeman, 7th Edition, 2017) by David L. Nelson and Michael M. Cox",
+        "2. Voet′s Principles of Biochemistry (John Wiley & Sons, 5th Edition, 2018) by Donald Voet, Judith G. Voet, Charlotte W. Pratt"
+      ],
+      "references": []
+    },
+    {
+      "course_code": "BT6183",
+      "course_name": "Molecular Biotechnology",
+      "credit": "2",
+      "semester": "2",
+      "instructor": "",
+      "pre_requisite": "BT5013: Biochemistry",
+      "objective": "The objective of this course is to provide fundamental concepts of the advances in the biotechnology field including methodologies, applications and the ethical issues involved.",
+      "contents": "Introduction to biomolecular organization. Recombinant DNA technology methodologies and applications: Plasmid DNA isolation, Plasmid transformation, Restriction digestion & DNA gel electrophoresis, and Polymerase chain reaction (PCR). Genetic methodologies in application of bacterial and yeast cells in biotechnology. Genetically modified plants and their applications in the production of medically important biomolecules. Biotechnology-based diagnostic and therapeutic strategies for human diseases. Ethical issues in the usage of genetically modified plant and animal systems.",
+      "textbooks": [
+        "1. Molecular Biotechnology by Bernard R. Glick, and Jack J. Pasternak, 5th Edition, 2017.",
+        "2. Guide to Yeast Genetics and Molecular Biology. Christine Guthrie, Gerald R. Fink. Academic Press, 2002."
+      ],
+      "references": []
+    },
+    {
+      "course_code": "BT6023",
+      "course_name": "Immunology",
+      "credit": "3",
+      "semester": "2",
+      "instructor": "",
+      "pre_requisite": "BT6390: Advanced cell biology",
+      "objective": "The learning outcome of this course is an overview of vertebrate immune system and detailed knowledge of the essential components of the immune system",
+      "contents": "Overview of Immunology; Innate and adaptive immunity; Antigen and antibody: Structure and function; Antigen-antibody interactions as tools for research; Generation of antibody diversity: Immunoglobulin genes; Presentation of antigen by major histocompatibility complex molecules, cytokines; complement; Effector mechanisms; T-cell development; B-cell development; AIDS and the immune system; Vaccines. Special topics on advances in immunology. Rocket Immunoelectrophoresis Sandwich ELISA Ouchterlony Double Diffusion for Antigen-Antibody patterns or Western blot.",
+      "textbooks": [
+        "1. Goldsby, Kindt, and Osborne. Kuby Immunology 6th ed. Freeman, 2007.",
+        "2. Roitt's Essential Immunology. 12th Edition.Peter J. Delves,Seamus J. Martin, Dennis R. Burton,Ivan M. Roitt"
+      ],
+      "references": [
+        "3. David Male, Jonathan Brostoff, David Roth, Ivan Roitt, Immunology; Mosby Publisher, 7th ed. 2006"
+      ]
+    },
+    {
+      "course_code": "BT6040",
+      "course_name": "Bioindustry lecture",
+      "credit": "1",
+      "semester": "2",
+      "instructor": "Dr. Gunjan Mehta",
+      "pre_requisite": "",
+      "objective": "The objective of this course is to partially bridge the gap between academia and industry. The course is taught by the leaders of the Research and Development of Biotech industry. In this course students learn latest trends in industrial biotech research directly from the scientists.",
+      "contents": "Industry lectures from biotech R&D leaders covering latest trends in industrial biotechnology research.",
+      "textbooks": [],
+      "references": []
+    }
+  ],
+  "departmental_electives_sem1": [
+    {
+      "course_code": "BT6113",
+      "course_name": "Structural Bioinformatics",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Prof. T Rathinavelan",
+      "pre_requisite": "",
+      "objective": "The overall aim of this course is to provide an outline of the biomacromolecular structures that are the major therapeutic targets and various algorithms used for biomolecular structure prediction",
+      "contents": "Biomolecular Structure & Dynamics: Stereochemistry: configurational & conformational isomers - Internal parameters - Forces stabilizing biomolecular structures - Biomolecular structure visualization tools - Structure & dynamics of nucleic acids: architecture of nucleic acids – analyses of nucleic acids secondary structures - DNA origami - Modeling nucleic acids for biological applications using 3D-NuS - Sequence alignment: Pair-wise alignment method, Dynamic programming: Needleman-Wunsch method; Smith Waterman method - Multiple sequence alignment method - Scoring matrices: PAM and BLOSUM - Heuristic method: BLAST. Construction of phylogenetic tree - Introduction to protein structure prediction: homology modeling and threading.",
+      "textbooks": [
+        "1. Martin Egli, Wolfram Saenger, Principles of Nucleic Acid Structure, Springer, 1983",
+        "2. David L. Nelson, Michael M. Cox, Lehninger Principles of Biochemistry, W. H. Freeman, 5th edition, 2008",
+        "3. David W Mount, Bioinformatics sequence and genome analysis, CBS publishers & Distributors, Second edition, 2004"
+      ],
+      "references": [
+        "G.E. Schulz and R.H. Schirmer, Principles of protein structure, Springer, 1979"
+      ]
+    },
+    {
+      "course_code": "BT6143",
+      "course_name": "Gene Technology",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Dr NK Raghavendra",
+      "pre_requisite": "",
+      "objective": "Gene technology course is designed to provide details of methods used in molecular biotechnology as well as insights into trends and techniques used in genomics. The course involves class room teaching of the principles and techniques, hands-on learning of the same in laboratory and presentation of selected articles from literature by students.",
+      "contents": "Genetic manipulation: isolation, cloning, sequencing, annotation and mutagenesis of genes. Expression systems: plasmids and their features for heterologous expression of protein and RNA; in vitro and cellular expression systems. Genetic libraries: Genomic library, cDNA Library: generation and analysis. DNA sequencing: Principles of conventional, automated and high throughput sequencing. Microarrays and gene expression profiling. DNA microarray: design, fabrication, analysis. Genetically modified organisms: Generation, analysis and usage of transgenic organisms.",
+      "textbooks": [
+        "1. From genes to genomes: concepts and applications of DNA technology / Jeremy W. Dale, Malcolm von Schantz, and Nick Plant. 3rd Edition. Published by Chichester, West Sussex: John Wiley & Sons. 2011.",
+        "2. Molecular biotechnology: principles and applications of recombinant DNA, 4th edition. / Bernard R. Glick and Jack J. Pasternak, Cheryl L. Patten. Published by Washington, DC: ASM Press, 2010"
+      ],
+      "references": [
+        "1. Principles of Gene manipulation and Genomics, 7th edition/S. B. Primrose, Richard M. Twyman. Published by Blackwell, 2006.",
+        "2. Molecular Cloning, a laboratory Manual, 3rd edition/ Joseph Sambrook and David W. Russell. Published by Cold Spring Harbor, N.Y.: Cold Spring Harbor Laboratory Press, 2001."
+      ]
+    }
+  ],
+  "departmental_electives_sem2": [
+    {
+      "course_code": "BT6150",
+      "course_name": "Molecular Basis of Cancer",
+      "credit": "2",
+      "semester": "2",
+      "instructor": "Prof. Anindya Roy",
+      "pre_requisite": "",
+      "objective": "This course is designed to give molecular level understanding of cancer to post-graduate students.",
+      "contents": "Etiology of cancer, oncogenes, Signaling pathways in cancer, Tumor suppressor genes, Cell cycle control and cancer, DNA Damage, and Cell Cycle Checkpoints, Immune system and cancer, Multistep process of carcinogenesis.",
+      "textbooks": [
+        "1. The Biology of Cancer (3rd edition). Robert Weinberg; Garland Science; 2017",
+        "2. Molecular Biology of Cancer: Mechanisms, Targets, and Therapeutics (3rd edition); Lauren Pecorino, Oxford University Press; 2016"
+      ],
+      "references": []
+    },
+    {
+      "course_code": "BT6670",
+      "course_name": "Stem cell Biology and Regenerative Medicine",
+      "credit": "2",
+      "semester": "2",
+      "instructor": "Dr. Ashish Misra",
+      "pre_requisite": "",
+      "objective": "The course aims at providing students a solid foundation in stem cell biology and human diseases connected to stem cell biology. The course will also cover the stem cell therapies that are currently being used in clinics and discuss the future treatments that lie on the horizon. Due to the ongoing advances in the field, students will be expected to read and present seminal research literature on stem cell biology.",
+      "contents": "The course will include basics of stem cell biology, induced pluripotent stem (iPS) cells, biochemistry of pluripotency, stem cell epigenetics, embryonic and adult stem cells, tumor stem cells, cloning and stem cell reprogramming, stem cell research methodologies and clinical applications of stem cell research. The course will also cover ethical and legal issues raised by embryonic stem cell work.",
+      "textbooks": [
+        "1. Lanza R et al. Essentials of Stem Cell Biology. Elsevier Inc.",
+        "2. Marshak DN et al. Stem Cell Biology. Cold Spring Harbor Laboratory Press",
+        "3. Rex Turner. Stem Cells: Biology and Diseases"
+      ],
+      "references": []
+    }
+  ]
+}

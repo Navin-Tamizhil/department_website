@@ -1,0 +1,82 @@
+[
+  {
+    "id": "group1",
+    "name": "Structural Biology, Biophysics and Nanobiotechnology",
+    "professors": [
+      { "name": "Dr. Rajakumara Eerappa", "website": "https://rajakumarae.wixsite.com/rajlab-bt--iith" },
+      { "name": "Dr. Basant Kumar Patel", "website": "https://pmrl.biotech.iith.ac.in" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Thenmalarchelvi Rathinavelan", "website": "https://people.iith.ac.in/tr/Home.html" },
+      { "name": "Dr. Himanshu Joshii", "website": "https://sites.google.com/view/molecular-simulation-lab" },
+      { "name": "Dr. Anamika Bhargava", "website": "https://csl.biotech.iith.ac.in/" },
+      { "name": "Dr. Indranil Malik", "website": "https://sites.google.com/bt.iith.ac.in/malik-lab/home" }
+    ],
+
+    "images": "/research_areas/structural_biology.jpeg"
+  },
+  {
+    "id": "group2",
+    "name": "Cancer Biology and Diagnosis",
+    "professors": [
+        { "name": "Dr. Anamika Bhargava", "website": "https://csl.biotech.iith.ac.in/" },
+        { "name": "Dr. Anindya Roy", "website": "https://sites.google.com/iith.ac.in/arlab" },
+        { "name": "Dr. Ashish Misra", "website": "https://cgrblab.bt.iith.ac.in/" },
+        { "name": "Dr. Rahul Kumar", "website": "https://people.iith.ac.in/rahulk/" },
+        { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+        { "name": "Dr. Sandipan Ray", "website": "https://www.circadianlab-iith.com/" },
+        { "name": "Dr. Rajakumara Eerappa", "website": "https://rajakumarae.wixsite.com/rajlab-bt--iith" }
+
+    ],
+
+    "images": "/research_areas/cancer_biology.jpeg "
+  },
+  {
+    "id": "group3",
+    "name": "Biology of Diseases and Disorders",
+    "professors": [
+      { "name": "Dr. Basant Kumar Patel", "website": "https://pmrl.biotech.iith.ac.in" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Abhishek Subramanian", "website": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home" },
+      { "name": "Dr. Thenmalarchelvi Rathinavelan", "website": "https://people.iith.ac.in/tr/Home.html" },
+      { "name": "Dr. N.K. Raghavendra", "website": "https://sites.google.com/iith.ac.in/pial/home" },
+      { "name": "Dr. Anamika Bhargava", "website": "https://csl.biotech.iith.ac.in/" },
+      { "name": "Dr. Sandipan Ray", "website": "https://www.circadianlab-iith.com/" },
+        { "name": "Dr. Ashish Misra", "website": "https://cgrblab.bt.iith.ac.in/" },
+       { "name": "Dr. Rajakumara Eerappa", "website": "https://rajakumarae.wixsite.com/rajlab-bt--iith" },
+       { "name": "Dr. Savita Devi", "website": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/" }
+    ],
+
+    "images": "/research_areas/biology_disease.jpeg"
+  },
+  {
+    "id": "group4",
+    "name": "Big Data Biology: Omics to Function",
+    "professors": [
+         { "name": "Dr. Rahul Kumar", "website": "https://people.iith.ac.in/rahulk/" },
+      { "name": "Dr. Gaurav Sharma", "website": "https://sites.google.com/view/sharmaglab/" },
+      { "name": "Dr. Abhishek Subramanian", "website": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home" },
+   { "name": "Dr. Sandipan Ray", "website": "https://www.circadianlab-iith.com/" },
+      { "name": "Dr. Thenmalarchelvi Rathinavelan", "website": "https://people.iith.ac.in/tr/Home.html" },
+     { "name": "Dr. Ashish Misra", "website": "https://cgrblab.bt.iith.ac.in/" }
+    ],
+
+    "images": "/research_areas/bigdata.jpeg"
+  },
+  {
+    "id": "group5",
+    "name": "Bioprocess Technology and Microbiology",
+    "professors": [
+      { "name": "Dr. Althuri Avanthi", "website": "https://sites.google.com/bt.iith.ac.in/integratedbioprocesstechnology/home" },
+       { "name": "Dr. Gaurav Sharma", "website": "https://sites.google.com/view/sharmaglab/" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Gunjan Mehta", "website": "https://www.mehtalab-iith.com/" },
+      { "name": "Dr. Anindya Roy", "website": "https://sites.google.com/iith.ac.in/arlab" },
+    { "name": "Dr. Savita Devi", "website": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/" }
+    ],
+
+    "images": "/research_areas/bioprocess.jpeg"
+  }
+
+
+]
+

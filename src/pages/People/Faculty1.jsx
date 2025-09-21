@@ -6,9 +6,44 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 const FacultySection = ({ title, data, sort = false }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const processedData = sort
-    ? [...data].sort((a, b) => a.name.localeCompare(b.name))
-    : data;
+
+const designationOrder = {
+  Professor: 1,
+  "Associate Professor": 2,
+  "Assistant Professor": 3,
+};
+
+const processedData = sort
+  ? [...data].sort((a, b) => {
+      // normalize designation
+      const normalize = (designation) => {
+        if (!designation) return "";
+        const d = designation.toLowerCase();
+
+        if (d.includes("professor") && !d.includes("associate") && !d.includes("assistant")) {
+          // Covers both "Professor" and "Professor and Head of the Department"
+          return "Professor";
+        }
+        if (d.includes("associate professor")) return "Associate Professor";
+        if (d.includes("assistant professor")) return "Assistant Professor";
+        return designation;
+      };
+
+      const normA = normalize(a.designation);
+      const normB = normalize(b.designation);
+
+      const rankA =
+        designationOrder[normA] || Object.keys(designationOrder).length + 1;
+      const rankB =
+        designationOrder[normB] || Object.keys(designationOrder).length + 1;
+
+      if (rankA !== rankB) {
+        return rankA - rankB; // sort by priority
+      }
+      return a.name.localeCompare(b.name); // then alphabetically
+    })
+  : data;
+
 
   const toggle = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);

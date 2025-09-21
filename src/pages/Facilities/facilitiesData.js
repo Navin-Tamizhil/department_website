@@ -5,7 +5,7 @@ const facilities = [
     model: "MCS Patch server",
     description: "Measurement of ion channel currents",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Room temperature whole-cell recordings of ion channel currents from heterologous or native mammalian cell lines",
       "Location": "BT 222"
     },
@@ -19,7 +19,7 @@ const facilities = [
     model: "662750",
     description: "To sort the cells and analyze apoptosis, cell cycle",
     specs: {
-      "Operational Status": "Needs repair of the main circuit board (MCB)",
+      /* "Operational Status": "Needs repair of the main circuit board (MCB)", */
       "Sample Requirements": "Any kind of suspension cells can be analyzed and sorted",
       "Location": "BT 119"
     },
@@ -33,7 +33,7 @@ const facilities = [
     model: "MerMade-192E",
     description: "To Synthesize ssDNA",
     specs: {
-      "Operational Status": "Needs setting up of accessories",
+      /* "Operational Status": "Needs setting up of accessories", */
       "Sample Requirements": "User-specific",
       "Location": "BT 012"
     },
@@ -47,7 +47,7 @@ const facilities = [
     model: "J-1500",
     description: "To investigate optical activity of biomolecules",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Any chemical/bio-molecules in solution state; High salt concentration should be avoided",
       "Location": "BT 219"
     },
@@ -61,7 +61,7 @@ const facilities = [
     model: "NT115",
     description: "For measuring biomolecular interactions",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Fluorescently labeled Biomolecules in solution state",
       "Location": "BT 119"
     },
@@ -75,7 +75,7 @@ const facilities = [
     model: "N/A",
     description: "Kinetics of macromolecular and ligands binding studies",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Analyze and quantify interactions between a set of molecules, Binding Kinetics, Room temperature. User need to buy consumables, Biosensors and labelling kit, etc.",
       "Location": "BT 119"
     },
@@ -89,7 +89,7 @@ const facilities = [
     model: "N/A",
     description: "Robot for macromolecules crystallization setup",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Liquid dispensing system for macromolecules crystallization. User need to buy consumables, nanolitre tips and 96 well plates etc.",
       "Location": "BT 119"
     },
@@ -103,7 +103,7 @@ const facilities = [
     model: "AKTA pure 25 M2",
     description: "Protein purification",
     specs: {
-      "Operational Status": "Partially operational; expected to be fully functional in a month's time",
+      /* "Operational Status": "Partially operational; expected to be fully functional in a month's time", */
       "Sample Requirements": "Protein sample (solution)",
       "Location": "JICA Lab; BT"
     },
@@ -117,7 +117,7 @@ const facilities = [
     model: "CBM 20a",
     description: "Separation of molecules",
     specs: {
-      "Operational Status": "Requires a bath sonicator for sample preparation",
+      /* "Operational Status": "Requires a bath sonicator for sample preparation", */
       "Sample Requirements": "Any organic compound for analytical separation",
       "Location": "BT 119"
     },
@@ -131,7 +131,7 @@ const facilities = [
     model: "N/A",
     description: "Binding studies",
     specs: {
-      "Operational Status": "Operational, but need to repair the wash module and replace the injecting syringe",
+      /* "Operational Status": "Operational, but need to repair the wash module and replace the injecting syringe", */
       "Sample Requirements": "Binding affinity and Thermodynamics of binding, 10°C to 25°C",
       "Location": "BT 119"
     },
@@ -145,7 +145,7 @@ const facilities = [
     model: "Optima Max-XP",
     description: "Separation",
     specs: {
-      "Operational Status": "Operational. Small rotor non functional. Service required.",
+      /* "Operational Status": "Operational. Small rotor non functional. Service required.", */
       "Sample Requirements": "Non corrosive, non-infectious samples in solution",
       "Location": "BT 220"
     },
@@ -159,7 +159,7 @@ const facilities = [
     model: "AktaPurifier 100",
     description: "Protein separation",
     specs: {
-      "Operational Status": "Operational",
+     /*  "Operational Status": "Operational", */
       "Sample Requirements": "Soluble protein sample for separation",
       "Location": "BT 219"
     },
@@ -173,7 +173,7 @@ const facilities = [
     model: "Spectra Max M5e",
     description: "Microplate reader for absorbance and fluorescence",
     specs: {
-      "Operational Status": "Down. Unstable laser. Sample holder shaker defective.",
+     /*  "Operational Status": "Down. Unstable laser. Sample holder shaker defective.", */
       "Sample Requirements": "Non corrosive, non-infectious samples only",
       "Location": "BT 220"
     },
@@ -187,7 +187,7 @@ const facilities = [
     model: "Akta Purifier 100",
     description: "Protein separation",
     specs: {
-      "Operational Status": "Operational",
+    /*   "Operational Status": "Operational", */
       "Sample Requirements": "User-specific",
       "Location": "BT 012"
     },
@@ -201,7 +201,7 @@ const facilities = [
     model: "Biological ABR7-3",
     description: "Protein Separation",
     specs: {
-      "Operational Status": "Operational but liquid pumping is suboptimal",
+     /*  "Operational Status": "Operational but liquid pumping is suboptimal", */
       "Sample Requirements": "Protein purification",
       "Location": "BT 224"
     },
@@ -215,7 +215,7 @@ const facilities = [
     model: "Avanti",
     description: "Separation",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Any type of biological sample",
       "Location": "BT 117"
     },
@@ -229,7 +229,7 @@ const facilities = [
     model: "N/A",
     description: "Quantify fluorescent markers in cell",
     specs: {
-      "Operational Status": "N/A",
+      /* "Operational Status": "N/A", */
       "Sample Requirements": "N/A",
       "Location": "BT 012"
     },
@@ -243,7 +243,7 @@ const facilities = [
     model: "Sorvall LYNX 400",
     description: "Separation",
     specs: {
-      "Operational Status": "Operational",
+     /*  "Operational Status": "Operational", */
       "Sample Requirements": "cell separations, 4°C to 20°C",
       "Location": "BT 224"
     },
@@ -257,7 +257,7 @@ const facilities = [
     model: "DM2500",
     description: "Bright field and fluorophore microscopy",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Basic microscope for Non-infectious cells and Non-corrosive samples only",
       "Location": "BT 219"
     },
@@ -271,7 +271,7 @@ const facilities = [
     model: "N/A",
     description: "Measures gene copy number",
     specs: {
-      "Operational Status": "Needs 3 KVA UPS",
+      /* "Operational Status": "Needs 3 KVA UPS", */
       "Sample Requirements": "For infectious samples in BSL-II",
       "Location": "BT 013"
     },
@@ -285,7 +285,7 @@ const facilities = [
     model: "Enspire",
     description: "Measures fluorescent tag interaction",
     specs: {
-      "Operational Status": "Operational",
+     /*  "Operational Status": "Operational", */
       "Sample Requirements": "User-specific",
       "Location": "BT 012"
     },
@@ -299,7 +299,7 @@ const facilities = [
     model: "Evosfl Auto",
     description: "Cell imaging",
     specs: {
-      "Operational Status": "Operational",
+     /*  "Operational Status": "Operational", */
       "Sample Requirements": "Fluorescently labelled animal cells",
       "Location": "BT 221"
     },
@@ -313,7 +313,7 @@ const facilities = [
     model: "Primergy RX300S7",
     description: "Computational Work",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Data Storage space (External) and Required software",
       "Location": "Academic Block, A 006"
     },
@@ -327,7 +327,7 @@ const facilities = [
     model: "Millipore Ultra Pure",
     description: "To get high quality water",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Ultrapure water",
       "Location": "BT 117"
     },
@@ -341,7 +341,7 @@ const facilities = [
     model: "Gbox-XRS",
     description: "Gel imaging of Proteins & Nucleic acids",
     specs: {
-      "Operational Status": "Operational",
+     /*  "Operational Status": "Operational", */
       "Sample Requirements": "DNA visualization Agarose gel",
       "Location": "BT 221"
     },
@@ -355,7 +355,7 @@ const facilities = [
     model: "Universal Hood II",
     description: "Chemiluminescence, fluorescence, and colorimetric imaging",
     specs: {
-      "Operational Status": "Operational",
+    /*   "Operational Status": "Operational", */
       "Sample Requirements": "User-Specific",
       "Location": "BT 012"
     },
@@ -369,7 +369,7 @@ const facilities = [
     model: "N/A",
     description: "Separation",
     specs: {
-      "Operational Status": "N/A",
+   /*    "Operational Status": "N/A", */
       "Sample Requirements": "N/A",
       "Location": "BT 117"
     },
@@ -383,7 +383,7 @@ const facilities = [
     model: "N/A",
     description: "Imaging of electrophoresis gels & blots",
     specs: {
-      "Operational Status": "Not operational",
+      /* "Operational Status": "Not operational", */
       "Sample Requirements": "User-Specific",
       "Location": "BT 117"
     },
@@ -397,7 +397,7 @@ const facilities = [
     model: "Sorvall WX Ultraseries",
     description: "Separation",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "User-specific",
       "Location": "BT 319"
     },
@@ -411,7 +411,7 @@ const facilities = [
     model: "Synergy H1 Microplate reader",
     description: "Microplate reader for absorbance and fluorescence",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Any sample with fluorescence/absorbance",
       "Location": "BT 221"
     },
@@ -425,7 +425,7 @@ const facilities = [
     model: "AKTA pure 25 M2",
     description: "Nucleic Acid Separation",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Nucleic Acid purification and separation",
       "Location": "BT007"
     },
@@ -439,7 +439,7 @@ const facilities = [
     model: "DMi8 S",
     description: "Live Cell Imaging and TIRF module for Single-Molecule Imaging",
     specs: {
-      "Operational Status": "Operational",
+      /* "Operational Status": "Operational", */
       "Sample Requirements": "Biological specimens",
       "Location": "BT119"
     },

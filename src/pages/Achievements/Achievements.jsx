@@ -1,17 +1,16 @@
 import { useState } from "react";
-import Awards from "./Awards";
 import Publications from "./Publications";
 import Patents from "./Patents";
-
+import Awards from "./Awards";
 export default function Achievements() {
   const tabs = [
     
     { key: "publications", label: "Publications" },
     { key: "patents", label: "Patents" },
-    { key: "awards", label: "Awards" },
+    { key: "awards", label: "Awards/Honors" },
   ];
 
-  const [activeTab, setActiveTab] = useState("awards");
+  const [activeTab, setActiveTab] = useState("publications");
 
   return (
     <section className="container mx-auto px-6 py-16">

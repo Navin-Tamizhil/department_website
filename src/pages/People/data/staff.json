@@ -4,42 +4,42 @@
     "id": 1,
     "name": "Nawale Ashwini",
     "designation": "Senior Technician",
-    "mail":"nawle.ashwini@bt.iith.ac.in",
+    "email":"nawle.ashwini@bt.iith.ac.in",
     "image": "/staff/nawale_ashwini.jpg"
   },
   {
     "id": 2,
     "name": "Pulala Raghuveer Yadav",
     "designation": "Senior Technical Officer",
-    "mail":"pr.yadav@bt.iith.ac.in",
+    "email":"pr.yadav@bt.iith.ac.in",
     "image": "/staff/raghuveer_yadav.jpg"
   },
   {
     "id": 3,
     "name": "M Jayavardhana Reddy",
     "designation": "Technician",
-    "mail":"jv.reddy@bt.iith.ac.in",
+    "email":"jv.reddy@bt.iith.ac.in",
     "image": "/staff/jayavardhana_reddy.jpg"
   },
     {
     "id": 4,
     "name": "Venkatakrishna prasad SM",
     "designation": "Technician",
-    "mail":"venkatakrishna.prasad@bt.iith.ac.in",
+    "email":"venkatakrishna.prasad@bt.iith.ac.in",
     "image": "/staff/venkatakrishna_prasad.jpg"
   },
     {
     "id": 5,
     "name": "Velmurugan K",
     "designation": "Senior Assistant",
-    "mail":"velmurugan.k@admin.iith.ac.in",
+    "email":"velmurugan.k@admin.iith.ac.in",
     "image": "/staff/velmurugan.jpg"
   },
     {
     "id": 6,
     "name": "Naveenprasath T",
     "designation": "Junior Technician",
-    "mail":"naveenprasath.t@bt.iith.ac.in",
+    "email":"naveenprasath.t@bt.iith.ac.in",
     "image": "/staff/naveenprasath.jpg"
   }
 ]

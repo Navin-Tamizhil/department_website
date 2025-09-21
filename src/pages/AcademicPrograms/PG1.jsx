@@ -14,7 +14,7 @@ export default function PG() {
     setOpenYear(openYear === year ? null : year);
   };
 
-  // Group semesters into years
+  // Group semesters into years (4 semesters → 2 years)
   const yearWise = {
     "First Year": syllabus.filter(
       (sem) => sem.semester === "Semester 1" || sem.semester === "Semester 2"
@@ -26,18 +26,17 @@ export default function PG() {
 
   return (
     <section className="container mx-auto px-6 py-16">
-      {/* Heading */}
+      {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg rounded-2xl p-8 border border-indigo-100 mb-10">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
           M.Tech (Medical Biotechnology)
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          <strong>Course Objectives:</strong> This program nurtures a
-          fundamental understanding of biological processes and their medical
-          applications, provides hands-on training with cutting-edge
-          technologies, and develops strong skills in scientific writing,
-          presentation, and communication. Graduates will be prepared to excel
-          in academia and industry.
+          <strong>Course Objectives:</strong> This program nurtures a fundamental
+          understanding of biological processes and their medical applications,
+          provides hands-on training with cutting-edge technologies, and develops
+          strong skills in scientific writing, presentation, and communication.
+          Graduates will be prepared to excel in academia and industry.
         </p>
 
         <ul className="list-disc pl-6 text-gray-700 space-y-2">
@@ -46,12 +45,12 @@ export default function PG() {
           </li>
           <li>
             <strong>Eligibility (GATE route):</strong> B.Tech/B.E./M.Sc. in life
-            sciences/M.Pharm with valid GATE score (BT/XL). IIT B.Tech with CGPA
-            ≥ 8 may apply without GATE.
+            sciences/M.Pharm with valid GATE score (BT/XL). IIT B.Tech with CGPA ≥ 8
+            may apply without GATE.
           </li>
           <li>
-            <strong>Eligibility (Self-sponsored):</strong> B.Tech/B.E./M.Sc. in
-            life sciences/M.Pharm with CGPA ≥ 7 (GATE not required).
+            <strong>Eligibility (Self-sponsored):</strong> B.Tech/B.E./M.Sc. in life
+            sciences/M.Pharm with CGPA ≥ 7 (GATE not required).
           </li>
           <li>
             <strong>Admission Procedure:</strong> GATE through COAP, or online
@@ -63,6 +62,39 @@ export default function PG() {
             research communication and presentations.
           </li>
         </ul>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="flex flex-wrap gap-4 mb-10">
+        <button
+          onClick={() =>
+            document.getElementById("syllabus-section").scrollIntoView({
+              behavior: "smooth",
+            })
+          }
+          className="px-5 py-2.5 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+        >
+          📘 View Syllabus
+        </button>
+
+        {/* Replace below links if applicable or remove */}
+        <a
+          href="/pdf/pg_timetable.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2.5 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition"
+        >
+          📅 Time Table
+        </a>
+
+        <a
+          href="/pdf/pg_course_description.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2.5 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition"
+        >
+          📄 Course Description
+        </a>
       </div>
 
       {/* Year-wise syllabus */}

@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import Projects from "./Projects.jsx";
+import Projects from "./Projects1.jsx";
 import Collaborations from "./Collaborations.jsx";
-import ResearchAreas from "./ResearchAreas.jsx";
+import ResearchAreas from "./ResearchAreas3.jsx";
 
 
 
