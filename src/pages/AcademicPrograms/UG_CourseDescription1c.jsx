@@ -29,6 +29,10 @@ export default function CourseDescription({ close }) {
     }
   });
 
+  // Support both "Course Objective" and "Course Objectives"
+  const courseObjective =
+    selectedCourse?.["Course Objective"] || selectedCourse?.["Course Objectives"];
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="relative w-full max-w-7xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
@@ -143,11 +147,11 @@ export default function CourseDescription({ close }) {
                 </div>
 
                 <div className="space-y-6">
-                  {selectedCourse["Course Objective"] && (
+                  {courseObjective && (
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3">Course Objective</h4>
                       <p className="text-gray-700 leading-relaxed">
-                        {selectedCourse["Course Objective"]}
+                        {courseObjective}
                       </p>
                     </div>
                   )}

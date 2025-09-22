@@ -24,7 +24,7 @@ export default function Footer() {
           </button>
 
           <a
-            href="https://www.facebook.com/iithyderabad/"
+            href="https://www.facebook.com/biotechiith/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center md:justify-start gap-2 hover:text-indigo-400 transition"
@@ -33,7 +33,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="/dept-brochure.pdf"
+            href="/footer/Dept_brouchere.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center md:justify-start gap-2 hover:text-indigo-400 transition"
@@ -49,6 +49,9 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm">
               <li>
                 <a href="https://iith.ac.in/gian/" target="_blank" className="hover:text-indigo-400 transition">GIAN</a>
+              </li>
+               <li>
+                <a href="https://aims.iith.ac.in/aims/" target="_blank" className="hover:text-indigo-400 transition">AIMS</a>
               </li>
               <li>
                 <a href="https://library.iith.ac.in/" target="_blank" className="hover:text-indigo-400 transition">Library</a>
@@ -66,11 +69,15 @@ export default function Footer() {
                 <a href="https://www.iith.ac.in/bus_schedule/" className="hover:text-indigo-400 transition">Bus Schedule</a>
               </li>
               <li>
+                <a href="https://sunshine.iith.ac.in/" className="hover:text-indigo-400 transition">Sunshine</a>
+              </li>
+              <li>
                 <a href="https://hospital.iith.ac.in/" target="_blank" className="hover:text-indigo-400 transition">Medical Facilities</a>
               </li>
               <li>
                 <a href="https://iith.ac.in/about/aboutiith/#reach" className="hover:text-indigo-400 transition">Getting Here</a>
               </li>
+              
             </ul>
           </div>
 

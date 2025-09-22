@@ -75,6 +75,7 @@
       "references": []
     }
   ],
+  
   "departmental_electives_sem1": [
     {
       "course_code": "BT6113",
@@ -83,12 +84,12 @@
       "semester": "1",
       "instructor": "Prof. T Rathinavelan",
       "pre_requisite": "",
-      "objective": "The overall aim of this course is to provide an outline of the biomacromolecular structures that are the major therapeutic targets and various algorithms used for biomolecular structure prediction",
-      "contents": "Biomolecular Structure & Dynamics: Stereochemistry: configurational & conformational isomers - Internal parameters - Forces stabilizing biomolecular structures - Biomolecular structure visualization tools - Structure & dynamics of nucleic acids: architecture of nucleic acids – analyses of nucleic acids secondary structures - DNA origami - Modeling nucleic acids for biological applications using 3D-NuS - Sequence alignment: Pair-wise alignment method, Dynamic programming: Needleman-Wunsch method; Smith Waterman method - Multiple sequence alignment method - Scoring matrices: PAM and BLOSUM - Heuristic method: BLAST. Construction of phylogenetic tree - Introduction to protein structure prediction: homology modeling and threading.",
+      "objective": "Outline of biomacromolecular structures and algorithms for biomolecular structure prediction.",
+      "contents": "Biomolecular Structure & Dynamics, stereochemistry, nucleic acid structures, sequence alignment, phylogenetics, protein structure prediction.",
       "textbooks": [
-        "1. Martin Egli, Wolfram Saenger, Principles of Nucleic Acid Structure, Springer, 1983",
-        "2. David L. Nelson, Michael M. Cox, Lehninger Principles of Biochemistry, W. H. Freeman, 5th edition, 2008",
-        "3. David W Mount, Bioinformatics sequence and genome analysis, CBS publishers & Distributors, Second edition, 2004"
+        "Martin Egli, Wolfram Saenger, Principles of Nucleic Acid Structure, Springer, 1983",
+        "David L. Nelson, Michael M. Cox, Lehninger Principles of Biochemistry, W. H. Freeman, 5th edition, 2008",
+        "David W Mount, Bioinformatics sequence and genome analysis, CBS publishers & Distributors, 2nd edition, 2004"
       ],
       "references": [
         "G.E. Schulz and R.H. Schirmer, Principles of protein structure, Springer, 1979"
@@ -101,49 +102,473 @@
       "semester": "1",
       "instructor": "Dr NK Raghavendra",
       "pre_requisite": "",
-      "objective": "Gene technology course is designed to provide details of methods used in molecular biotechnology as well as insights into trends and techniques used in genomics. The course involves class room teaching of the principles and techniques, hands-on learning of the same in laboratory and presentation of selected articles from literature by students.",
-      "contents": "Genetic manipulation: isolation, cloning, sequencing, annotation and mutagenesis of genes. Expression systems: plasmids and their features for heterologous expression of protein and RNA; in vitro and cellular expression systems. Genetic libraries: Genomic library, cDNA Library: generation and analysis. DNA sequencing: Principles of conventional, automated and high throughput sequencing. Microarrays and gene expression profiling. DNA microarray: design, fabrication, analysis. Genetically modified organisms: Generation, analysis and usage of transgenic organisms.",
+      "objective": "Detailed methods in molecular biotechnology and genomics techniques.",
+      "contents": "Genetic manipulation, cloning, sequencing, expression systems, genetic libraries, DNA microarrays, GMO generation and analysis.",
       "textbooks": [
-        "1. From genes to genomes: concepts and applications of DNA technology / Jeremy W. Dale, Malcolm von Schantz, and Nick Plant. 3rd Edition. Published by Chichester, West Sussex: John Wiley & Sons. 2011.",
-        "2. Molecular biotechnology: principles and applications of recombinant DNA, 4th edition. / Bernard R. Glick and Jack J. Pasternak, Cheryl L. Patten. Published by Washington, DC: ASM Press, 2010"
+        "From Genes to Genomes, Jeremy W. Dale et al., 3rd Edition, Wiley, 2011",
+        "Molecular Biotechnology, Bernard R. Glick et al., 4th Edition, ASM Press, 2010"
       ],
       "references": [
-        "1. Principles of Gene manipulation and Genomics, 7th edition/S. B. Primrose, Richard M. Twyman. Published by Blackwell, 2006.",
-        "2. Molecular Cloning, a laboratory Manual, 3rd edition/ Joseph Sambrook and David W. Russell. Published by Cold Spring Harbor, N.Y.: Cold Spring Harbor Laboratory Press, 2001."
+        "Principles of Gene Manipulation and Genomics, S.B. Primrose & R.M. Twyman, Blackwell, 2006",
+        "Molecular Cloning, Joseph Sambrook & David W. Russell, Cold Spring Harbor Laboratory Press, 2001"
       ]
-    }
+    },
+    {
+      "course_code": "BT6060",
+      "course_name": "Protein Misfolding in Neurodegenerative Diseases",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Prof. Basant K Patel",
+      "pre_requisite": "",
+      "objective": "Insights into molecular mechanisms of protein misfolding linked to neurodegeneration.",
+      "contents": "Protein folding/misfolding, amyloidogenicity, Alzheimer's, Parkinson's, Huntington's, prion diseases, chaperones, therapeutics.",
+      "textbooks": [
+        "Prion Biology and Diseases, Stanley B. Prusiner, 2nd Ed., Cold Spring Harbor, 2004",
+        "Protein Misfolding Diseases, Marina Ramirez Alvarado et al., Wiley, 2010"
+      ],
+      "references": [
+        "Huang Y. & Mucke L. (2012), Cell",
+        "Khurana & Lindquist (2010), Nat Rev Neurosci",
+        "Rossi et al. (2016), Brain Pathology",
+        "Selkoe & Hardy (2016), EMBO Mol Med"
+      ]
+    },
+    {
+      "course_code": "BT6123",
+      "course_name": "Cell Technology",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Prof. Anindya Roy",
+      "pre_requisite": "",
+      "objective": "Overview of eukaryotic cells, organelles, and current research techniques.",
+      "contents": "Cell structure, microscopy, membrane transport, signaling, cytoskeleton, mammalian cell culture, transfection techniques.",
+      "textbooks": [
+        "Molecular Cell Biology, Lodish et al., 6th Ed., W.H. Freeman, 2008",
+        "Current Protocols in Cell Biology, John Wiley & Sons, 2012"
+      ],
+      "references": [
+        "Molecular Biology of The Cell, Alberts et al., 5th Ed., Garland Science, 2010"
+      ]
+    },
+    {
+      "course_code": "BT7280",
+      "course_name": "Pharmacology and Physiology of Receptors",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Dr Anamika Bhargava",
+      "pre_requisite": "",
+      "objective": "Detailed knowledge of membrane receptors and their biomedical applications.",
+      "contents": "Receptor classification, pharmacodynamics, ion channels, assay technologies, cardiovascular pharmacology.",
+      "textbooks": [
+        "Voltage Gated Ion Channels as Drug Targets, Triggle et al., Wiley, 2006",
+        "Principles of Pharmacology, Golan et al., Lippincott Williams & Wilkins, 2011"
+      ],
+      "references": [
+        "Signal Transduction by Cantley et al., Cold Spring Harbor, 2014",
+        "Receptors by Lauffenburger & Linderman, Oxford Univ Press, 1993"
+      ]
+    },
+    {
+      "course_code": "BT6050",
+      "course_name": "Circadian Clocks: Mechanisms and Functions",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Dr. Sandipan Ray",
+      "pre_requisite": "",
+      "objective": "Understanding circadian clocks and their physiological and clinical significance.",
+      "contents": "Biological oscillators, circadian clocks, molecular mechanisms, physiological functions, circadian disorders, chrononutrition.",
+      "textbooks": [
+        "Circadian Rhythms, Sassone-Corsi et al., Cold Spring Harbor, 2018",
+        "Circadian Rhythms and Biological Clocks, Amita Sehgal, Academic Press, 2015"
+      ],
+      "references": [
+        "Circadian Clocks, Gumz, Springer, 2016",
+        "Circadian Medicine, Colwell, Wiley, 2015"
+      ]
+    },
+    {
+      "course_code": "BT6303",
+      "course_name": "Proteomics: Techniques and Applications",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Dr. Sandipan Ray",
+      "pre_requisite": "",
+      "objective": "Comprehensive understanding of proteomics techniques and applications.",
+      "contents": "Proteomics basics, protein separation, mass spectrometry, quantitative proteomics, applications in disease and biomarker discovery.",
+      "textbooks": [
+        "Proteomics: From Protein Sequence to Function, Pennington & Dunn, Viva Books",
+        "Introduction to Proteomics, Mishra & Blobel, Wiley",
+        "Introducing Proteomics, Lovric, Wiley-Blackwell"
+      ],
+      "references": [
+        "Proteomics in Practice, Westermeier & Naven, Wiley",
+        "Proteomics Methods and Protocols, Reinders & Sickmann, Springer",
+        "Mass Spectrometry Data Analysis, Matthiesen, Humana"
+      ]
+    },
+    
+    {
+      "course_code": "BT6330",
+      "course_name": "RNA Biology and Therapeutics",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Dr Anamika Bhargava",
+      "pre_requisite": "",
+      "objective": "Understanding RNA biology, gene regulation, and RNA-based therapeutics.",
+      "contents": "RNA types and structure, processing, RNA interference, RNA therapeutics, CRISPR-Cas RNA targeting, RNA in diseases.",
+      "textbooks": [
+        "RNA: Life's Indispensable Molecule, Paula Fitzgerald, Cold Spring Harbor, 2019",
+        "RNA Biology, Robert J. Schneider, Wiley, 2017"
+      ],
+      "references": [
+        "Molecular Biology of RNA, Elliot & Ladomery, Oxford, 2011",
+        "RNA Therapeutics, Michael R. Green, Cold Spring Harbor, 2017"
+      ]
+    },
+    { "course_code":  "BT5060",
+    "course_name": "Genome Organization and Gene Regulation",
+    "credit": 2,
+    "semester": 2,
+    "instructor": "Dr. Gunjan Mehta",
+    "objective": "How the eukaryotic genome is organized in the cell nucleus during interphase and packaged into chromosomes during mitosis, and how its packaging affects gene regulation? This course familiarizes students with this research area, its significance in human diseases, and advanced technologies to study 3D genome organization.",
+    "course_contents": [
+      "Eukaryotic genome organization in cell nucleus and chromosomes during cell division",
+      "Spatial genome organization and dynamics",
+      "Chromosome territories, nuclear architecture and gene regulation",
+      "Chromosome dynamics during mitosis and meiosis",
+      "Mitotic bookmarking/epigenetic transcription memory",
+      "Chromatin remodeling and transcription",
+      "3D genome organization (TADs) and transcription regulation",
+      "The 4D Nucleome project",
+      "Role of phase separation and loop extrusion in 3D genome organization",
+      "Human diseases associated with defects in genome organization",
+      "Role of 3D genome organization in development and differentiation",
+      "Techniques to study chromosome dynamics and gene regulation (3C, immunofluorescence, chromatin spread, FISH, ChIP, live cell imaging, FRAP, RT-qPCR, smFISH, live transcript analysis, single-molecule imaging)"
+    ],
+    "text_books": [
+      "Nuclear Organization and Function by Terri Grodzicker, David Spector, and David Stewart; Cold Spring Harbor Laboratory Press; ISBN: 1936113082",
+      "The Nucleus by Tom Mistelli and David Spector; Cold Spring Harbor Laboratory Press; ISBN: 0879698942",
+      "Genome Organization and Function in the cell nucleus by Karsten Rippe; Wiley-VCH Verlag GmbH; ISBN: 9783527639991"
+    ],
+    "research_articles": [
+      "Dekker, J., Belmont, A., Guttman, M. et al. The 4D nucleome project. Nature 549, 219–226 (2017)",
+      "Zheng, H., Xie, W. The role of 3D genome organization in development and cell differentiation. Nat Rev Mol Cell Biol 20, 535–550 (2019)",
+      "Rowley, M. J., & Corces, V. G. Organizational principles of 3D genome architecture. Nature reviews. Genetics, 19(12), 789–800 (2018)"
+    ]
+  },
+  {"course_code":"BT6240",
+    "course_name": "Structural Biology",
+    "credit": 2,
+    "semester": 1,
+    "instructor": "Prof. Rajakumara Eerappa",
+    "objective": "Emphasis on techniques used to determine and analyze macromolecular organization and interactions. Uses case studies to understand biological processes from structure information.",
+    "course_contents": [
+      "Quantification and characterization of interactions involving proteins and ligands",
+      "Characterization of macromolecular assembly using biophysical techniques",
+      "Principles of protein and nucleic acid structures",
+      "Covalent, non-covalent, and van der Waals interactions in structure and folding",
+      "Use of Ramachandran plots and other tools for structure validation",
+      "Graphic tools to visualize and analyze atomic structures",
+      "Bioinformatics tools for analyzing motifs and folds",
+      "Protein and nucleic acid folding problems",
+      "Case studies to understand biological phenomena with structures"
+    ],
+    "text_books": [
+      "Protein-Ligand Interactions: hydrodynamics and calorimetry (A Practical Approach) by S. E. Harding and B. Z. Chowdhry; Oxford University Press; 2001",
+      "Introduction to Protein Structure by C. Branden and J. Tooze; 2nd edition; Garland Science; 1999",
+      "Biophysical Chemistry: Part II: Techniques for the Study of Biological Structure and Function by Charles R. Cantor and Paul R. Schimmel"
+    ],
+    "reference_books": [
+      "Biophysics: An Introduction by R. Glaser; Springer; 2010, 2012",
+      "Textbook of Structural Biology by A. Liljas et al.; World Scientific Publishing; 2009"
+    ]
+  },
+ {"course_code":"BT6070",
+     "course_name": "Molecular mechanisms of aging and age-related disorders",
+    "credit": 2,
+    "semester": 1,
+    "instructor": "Dr. Indranil Malik",
+    "objective": "Provide basic understanding of molecular mechanisms underlying aging and how cellular processes change during aging and age-related diseases. Covers therapeutic approaches to delay or reverse aging.",
+    "course_contents": [
+      "Review of cellular processes such as transcription, translation, posttranslational modifications, signaling pathways",
+      "Mechanisms of aging and regeneration",
+      "Model systems to study aging",
+      "Changes in cellular processes with aging",
+      "Genetic basis of aging and age-related disorders (obesity, diabetes, neuromuscular disease, cardiovascular disease, cancers)",
+      "Therapeutic approaches to delay or reverse aging"
+    ],
+    "text_books": [
+      "Molecular Biology of Cell by Bruce Alberts; 6th edition; Garland Science; 2014",
+      "Biology of Aging by R.B. McDonald; 2nd edition; Taylor & Francis; 2019"
+    ],
+    "reference_material": [
+      "Hallmarks of aging: An expanding universe by Carlos López-Otín et al.; Cell; 2023; doi:10.1016/j.cell.2022.11.001"
+    ]
+  }
   ],
   "departmental_electives_sem2": [
     {
-      "course_code": "BT6150",
-      "course_name": "Molecular Basis of Cancer",
+      "course_code": "BT6133",
+      "course_name": "Protein Technology",
       "credit": "2",
       "semester": "2",
-      "instructor": "Prof. Anindya Roy",
-      "pre_requisite": "",
-      "objective": "This course is designed to give molecular level understanding of cancer to post-graduate students.",
-      "contents": "Etiology of cancer, oncogenes, Signaling pathways in cancer, Tumor suppressor genes, Cell cycle control and cancer, DNA Damage, and Cell Cycle Checkpoints, Immune system and cancer, Multistep process of carcinogenesis.",
+      "instructor": "Prof. Basant K Patel",
+      "objective": "The course aims at providing required knowledge of advances in protein research for industrial and medical applications to post graduate students.",
+      "contents": "Overview of Protein structure and function. Recombinant protein expression systems: E.coli, Pichia, Insect-cells, cell-free protein expression systems. Protein purification techniques: Ion-exchange chromatography; Gel-filtration; Affinity chromatography; FPLC; HPLC. Small and large scale purification; Protein characterization: Two-dimensional Gel electrophoresis; Mass spectrometry; Proteomics; Fluorescence Spectrometry; Circular Dichroism, Isothermal Titration Calorimetry. Protein folding-misfolding; Inclusion bodies; Mutant design and site-directed mutagenesis; Therapeutic proteins.",
       "textbooks": [
-        "1. The Biology of Cancer (3rd edition). Robert Weinberg; Garland Science; 2017",
-        "2. Molecular Biology of Cancer: Mechanisms, Targets, and Therapeutics (3rd edition); Lauren Pecorino, Oxford University Press; 2016"
+        "Introduction to Protein Structure; Carl Branden & John Tooze, 2nd edition, Garland Publishing, 1999",
+        "Molecular Biotechnology, Bernard R. Glick, Jack J. Pasternak, 4th Edn, 2010",
+        "The Protein Protocol Handbook; John M Walker, Humana Press, 2009"
       ],
-      "references": []
+      "references": [
+        "Introducing Proteomics; Josip Lovric, Wiley Press, 2011",
+        "Therapeutic Proteins: Methods and Protocols (Methods in Molecular Biology), C. Mark Smales, David C. James, Humana Press, 2005",
+        "Exploring Proteins; Nick Price & Jacqueline Narin, Oxford University Press, 2009"
+      ]
     },
     {
-      "course_code": "BT6670",
-      "course_name": "Stem cell Biology and Regenerative Medicine",
+      "course_code": "BT6290",
+      "course_name": "Molecular Machines: DNA interacting proteins",
       "credit": "2",
       "semester": "2",
-      "instructor": "Dr. Ashish Misra",
-      "pre_requisite": "",
-      "objective": "The course aims at providing students a solid foundation in stem cell biology and human diseases connected to stem cell biology. The course will also cover the stem cell therapies that are currently being used in clinics and discuss the future treatments that lie on the horizon. Due to the ongoing advances in the field, students will be expected to read and present seminal research literature on stem cell biology.",
-      "contents": "The course will include basics of stem cell biology, induced pluripotent stem (iPS) cells, biochemistry of pluripotency, stem cell epigenetics, embryonic and adult stem cells, tumor stem cells, cloning and stem cell reprogramming, stem cell research methodologies and clinical applications of stem cell research. The course will also cover ethical and legal issues raised by embryonic stem cell work.",
+      "instructor": "Dr. NK Raghavendra",
+      "objective": "The course provides detailed view of nature engineering a multicomponent system. Students will understand the processes carried out by the molecular machines, structural details of components, coordination of functions, and characterization techniques.",
+      "contents": "Introduction: DNA-protein interactions; DNA polymerase as a multifunctional molecular machine; Endonuclease mechanisms; DNA repair; Recombination (homologous and non-homologous); Transposition (jumping genes); Topoisomerase; Telomerase; Epigenetic modifications.",
+      "references": [
+        "Lewin's Genes X, Jocelyn E. Krebs, Elliott S. Goldstein, Stephen T. Kilpatrick, Oxford University Press, 2011",
+        "Molecular Biology of the Cell, 5th Edition, Bruce Alberts et al., Garland Science, 2008"
+      ]
+    },
+    {
+      "course_code": "BT7053",
+      "course_name": "Biomolecular NMR",
+      "credit": "2",
+      "semester": "2",
+      "instructor": "Prof. T Rathinavelan",
+      "objective": "To provide fundamental concepts in NMR and applications in understanding biomolecular structure and dynamics.",
+      "contents": "Properties of electromagnetic radiation; Magnetic properties of nuclei; Nucleus in a magnetic field; Spin populations; NMR phenomenon; Classical vector model; Chemical shift; J coupling; FID; One-pulse experiment; Relaxation; Inversion-recovery; Spin-echo; Chemical exchange; Instrumentation; NOE; 2D and 3D NMR experiments; Sequential assignment strategies.",
       "textbooks": [
-        "1. Lanza R et al. Essentials of Stem Cell Biology. Elsevier Inc.",
-        "2. Marshak DN et al. Stem Cell Biology. Cold Spring Harbor Laboratory Press",
-        "3. Rex Turner. Stem Cells: Biology and Diseases"
+        "Understanding NMR Spectroscopy, James Keeler, Wiley, 2011",
+        "Fundamentals of Protein NMR Spectroscopy, Gordon S. Rule, T. Kevin Hitchens, Springer, 2006",
+        "Biomolecular NMR Spectroscopy, Jeremy N. S. Evans, Oxford, 1995"
       ],
-      "references": []
-    }
-  ]
+      "references": [
+        "NMR of Proteins and Nucleic Acids, Kurt Wüthrich, Wiley-Interscience, 1986",
+        "Modern NMR Spectroscopy: A Guide for Chemists, 2nd edition, Jeremy K. M. Sanders, Brian K. Hunter, Oxford University Press, 1993 (reprinted 2009)"
+      ]
+    },
+    {
+      "course_code": "BT6180",
+      "course_name": "Macromolecular Crystallography",
+      "credit": "1",
+      "semester": "2",
+      "instructor": "Prof. Rajakumara Eerappa",
+      "objective": "This course is designed to give insights on macromolecules crystallization and resolving their structure by X-ray crystallography.",
+      "contents": "Macromolecules crystallization: rational approaches and methods; Protein-protein and protein-nucleic acid crystallization; Crystal symmetry and systems; X-ray diffraction; Structure factors; Phase problem; Electron density equation; Phasing methods; Model building and refinement; Ramachandran plots and structure validation; Graphics tools for visualization; Case studies.",
+      "textbooks": [
+        "Protein Crystallography, T. L. Blundell, L. N. Johnson, Academic Press, 1976",
+        "Outline of Crystallography for Biologists, D. Blow, Oxford University Press, 2002"
+      ],
+      "references": [
+        "Biomolecular Crystallography: Principles, Practice, and Application to Structural Biology, B. Rupp, Garland Science, 2009"
+      ]
+    },
+    {
+      "course_code": "BT5050",
+      "course_name": "Medical Microbiology and Infectious Diseases",
+      "credit": "2",
+      "semester": "2",
+      "instructor": "Dr. Sandipan Ray",
+      "objective": "To provide detailed understanding of the nature, distribution, and activities of microbes and their impact on health, especially as agents of clinical infectious diseases.",
+      "contents": "Introduction to Medical Microbiology; Microscopy of microorganisms; Morphology and nature; Classification and identification; Bacterial growth and metabolism; Sterilization and disinfection; Antimicrobial agents; Human microbiome; Pathogenicity; Adaptive immunity; Host-microbe interactions; Diseases caused by bacteria, viruses, prions, fungi, protists; Diseases of skin, eyes, nervous, cardiovascular, respiratory, gastrointestinal, urinary, reproductive systems; COVID-19; Infection control and epidemiology; Systems level approaches to study infections.",
+      "references": [
+        "Jacquelyn G. Black and Laura J. Black, Microbiology Principles and Explorations, Wiley, 10th Edition, 2018",
+        "Joanne Willey, Kathleen Sandman and Dorothy Wood, Prescott's Microbiology, McGraw Hill, 11th Edition, 2020",
+        "Patrick R. Murray, Ken S. Rosenthal, Michael A. Pfaller, Medical Microbiology, Elsevier, 9th edition, 2020",
+        "David Greenwood et al., Medical Microbiology, Churchill Livingstone, 18th Edition, 2012",
+        "William F. Wright, Essentials of Clinical Infectious Diseases, Springer, 2nd edition, 2018",
+        "Michael R. Barer and Will L. Irving, Medical Microbiology: A Guide to Microbial Infections, Elsevier, 19th edition, 2018"
+      ]
+    },
+    {
+      "course_code": "BT6083",
+      "course_name": "Programming for biomacromolecular data analysis",
+      "credit": "2",
+      "semester": "2",
+      "instructor": "Prof. T Rathinavelan",
+      "objective": "This course is designed to provide knowledge about the interdisciplinary approach to address biological problems.",
+      "contents": "Linux commands: ls, vim, emacs, grep, sed, awk etc.; shell scripting: if condition, while loop etc. and their application in editing, organizing and transferring Protein Databank (PDB) files towards modeling and analyses of biomacromolecular structures. Python scripting for genomic/proteomic sequence analysis.",
+      "textbooks": [
+        "Computational Biology: Unix/Linux, Data Processing and Programming by Röbbe Wünschiers, 2004, Springer",
+        "A Practical Guide to Linux, Commands, Editors and Shell Programming by Mark G Sobell, 2014, Pearson",
+        "Learning Python (5th Edition) by Mark Lutz, O'Reilly Media, Inc."
+      ],
+      "reference_books": [
+        "Beginning Linux Programming by Neil Matthew, Stones Richard, 2004, Wiley Dreamtech India Pvt. Ltd."
+      ]
+    },
+    {
+      "course_code": "BT6223",
+      "course_name": "Pharmaceutical biotechnology",
+      "credit": "2",
+      "semester": "2",
+      "instructor": "Prof. Rajakumara Eerappa",
+      "objective": "Deals with the principles of biotechnology applied to the development of drugs.",
+      "contents": "Introduction and history of biologics and biopharmaceuticals; Macromolecular structure relevance to biologics/biosimilars; Stereoisomers and drugs; Biotechnology in rational biodrug design; Role of Biotechnology in vaccine design: Virus-like particles and protein nanocages; Synthesis and downstream processing of bioformulations; Determining product shelf life, stability, toxicity, immunogenicity and product analysis; Pharmacogenetics and chemical genetics in drug discovery; Effect of protein post-translational modifications on protein formulations and production methods.",
+      "textbooks": [
+        "Pharmaceutical Biotechnology: Concepts and Applications, Gary Walsh, Wiley, 2007",
+        "Biopharmaceuticals Biochemistry and Biotechnology, 2nd Edition, Gary Walsh, Wiley, 2003"
+      ]
+    },
+    {
+      "course_code": "BT6063",
+      "course_name": "Animal models in medical research",
+      "credit": "1",
+      "semester": "2",
+      "instructor": "Dr. Anamika Bhargava",
+      "objective": "Knowledge about use of animal models in medical research. Includes a hands-on module.",
+      "contents": "Various animals as models and their advantages/disadvantages; Animal research in medicine: modeling heart damage, autoimmune diseases, tuberculosis, Parkinson’s; Upcoming vertebrate animal model: zebrafish; Practical session using zebrafish.",
+      "textbooks": [
+        "Animal Models in Cardiovascular Research, David Gross, Springer, 2009",
+        "The Laboratory Zebrafish, Claudia Harper and Christian Lawrence, CRC Press, 2010"
+      ],
+      "reference_literature": [
+        "Animal Models of Human Cardiovascular Disease, Heart Failure and Hypertrophy, Gerd Hasenfuss, Cardiovasc Res, 1998",
+        "Classic and New Animal Models of Parkinson's Disease, Javier Blesa et al., Journal of Biomedicine and Biotechnology, 2012",
+        "Animal Models in Autoimmune Diseases: Lessons Learned from Mouse Models for Sjögren’s Syndrome, Byung Ha Lee et al., Clin Rev Allergy Immunol, 2012",
+        "Various recent articles"
+      ]
+    },
+    {
+      "course_code": "BT4020",
+      "course_name": "Essential Fatty acids-Biochemistry, physiology and Clinical significance",
+      "credit": "1",
+      "semester": "2",
+      "instructor": "Prof. UN Das",
+      "objective": "To make students aware about the role of bioactive lipids in energy homeostasis, cell proliferation, metabolism, inflammatory homeostasis, and process regulation, focusing on Essential Fatty Acids (EFAs).",
+      "contents": "EFAs and their metabolism; Metabolites formed from EFAs and their role in inflammation; Cytokines and eicosanoids relationship; EFAs and free radicals and nitric oxide; EFAs and eicosanoids in chronic inflammation and cancer; Immune checkpoint inhibitors and EFAs; Tumoricidal action of EFAs; EFAs and autoimmune diseases; EFAs and health and disease.",
+      "references": [
+        "Das UN. Clinical laboratory tools to diagnose inflammation. Adv Clin Chemistry 2006; 41:189-229.",
+        "Poorani R, Bhatt AN, Dwarakanath BS, Das UN. COX-2, aspirin and metabolism of arachidonic, eicosapentaenoic and docosahexaenoic acids and their physiological and clinical significance. Eur J Pharmacol.",
+        "Das UN. Current and emerging strategies for the treatment and management of systemic lupus erythematosus based on molecular signatures of acute and chronic inflammation. J Inflammation Res 2010; 3:143–170.",
+        "Das UN. Lipoxins, resolvins, protectins, maresins and nitrolipids: Connecting lipids, inflammation, and cardiovascular disease risk. Current Cardiovascular Risk Reports 2010; 4:24–31.",
+        "Das UN. Lipoxins, resolvins, protectins, maresins and nitrolipids and their clinical implications with specific reference to cancer: Part I. Clin Lipidol 2013; 8:437–463.",
+        "Das UN. Arachidonic acid and lipoxin A4 as possible endogenous anti-diabetic molecules. Prostaglandins Leukot Essent Fatty Acids. 2013 Mar;88(3):201-10.",
+        "Das UN. Bioactive lipids in intervertebral disc degeneration and therapeutic implications. BioSci Rep, in press.",
+        "Das UN. Bioactive Lipids in Shoulder Tendon Tears. Am J Pathol, in press.",
+        "Das UN. Saturated Fatty Acids, MUFAs and PUFAs regulate ferroptosis. Cell Chem Biol 2019; 26:309-311."
+      ]
+    },
+    {
+      "course_code": "BT6053",
+      "course_name": "Advanced Microscopy and Image Processing",
+      "credit": "2",
+      "semester": "1",
+      "instructor": "Dr. Gunjan Mehta",
+      "pre_requisite": "",
+      "objective": "Fluorescence microscopy principles and advanced imaging techniques, plus image processing.",
+      "contents": "Fluorescence microscopy, super-resolution, live cell imaging, single-molecule imaging, image analysis with Fiji/ImageJ, AI in imaging.",
+      "references": [
+        "Microscope Image Processing, Wu et al., Academic Press",
+        "Fundamentals of Light Microscopy, Murphy & Davidson, Wiley",
+        "Introduction to Optical Microscopy, Mertz, Cambridge",
+        "Fluorescence Microscopy, Kubitscheck, Wiley"
+      ]
+    },
+    {
+  "course_code": "BT5020",
+    "course_name": "Sequencing Technologies and Precision Medicine",
+    "credit": 1,
+    "semester": 2,
+    "instructor": "Dr. Rahul Kumar",
+    "objective": "Impart knowledge on sequencing technologies and its application in precision medicine.",
+    "course_contents": [
+      "DNA sequencing technologies (first and next generation)",
+      "Short and long read DNA sequencing",
+      "Rise of precision medicine",
+      "Application of sequencing technologies in precision medicine",
+      "Precision oncology",
+      "Impact of precision medicine on human health",
+      "Application of precision medicine in rare disease",
+      "Future of precision medicine",
+      "Role of bioinformatics in precision medicine",
+      "Digital medicine and its relation to precision medicine",
+      "Industrial opportunities in precision medicine"
+    ],
+    "text_books": [
+      "Clinical precision medicine; Editor Judy Crabtree; ISBN: 9780128198346; 1st Edition 2019",
+      "Precision Medicine: A Guide to Genomics in Clinical Practice by Bryce Mendelsohn; ISBN 9781259644139; 1st Edition; 2017",
+      "Genomic and Precision Medicine by Geoffrey Ginsburg ISBN: 9780128006849; 3rd Edition; 2016"
+    ]
+  },
+  {
+    "course_code":"BT6010",
+    "course_name": "Critical analysis and presentation of biological literatures",
+    "credit": 2,
+    "semester": 2,
+    "instructors": ["Dr. Indranil Malik", "Dr. Gaurav Sharma"],
+    "objective": "Enhance critical thinking and communication skills focusing on design, organisation, and oral presentation of scientific literatures.",
+    "course_contents": [
+      "Survey published journal articles",
+      "Critically analyze and interpret results of biological experiments",
+      "Present data effectively and visually",
+      "Communicate science to expert and layman audiences",
+      "Explain difficult experimental procedures and complex results",
+      "Suggest better experimental approaches",
+      "Principles governing design and delivery of seminars on biotechnology and bioinformatics",
+      "Identify deficiencies in presentation design and organisation",
+      "Foster culture of constructive criticism and feedback"
+    ],
+    "text_books_references": [
+      "How to give a great scientific talk (2018) by Nic Fleming; Nature; doi:10.1038/d41586-018-07780-5",
+      "Beware 'persuasive communication devices' when writing and reading scientific articles (2023) Olivier Corneille et al., Elife; doi:10.7554/eLife.88654",
+      "Ten common statistical mistakes to watch out for when writing or reviewing a manuscript (2019) Tamar R Makin et al., Elife; doi:10.7554/eLife.48175"
+    ],
+    "additional_info": "Curated recent and landmark articles from high-impact journals in Molecular Biology, Biotechnology, and Bioinformatics."
+  },
+  { "course_code":"BT6670",
+    "course_name": "Stem cell Biology and Regenerative Medicine",
+    "credit": 2,
+    "semester": 2,
+    "instructor": "Dr. Ashish Misra",
+    "objective": "Provide a solid foundation in stem cell biology and related human diseases, covering current and future therapies.",
+    "course_contents": [
+      "Basics of stem cell biology",
+      "Induced pluripotent stem (iPS) cells",
+      "Biochemistry of pluripotency",
+      "Stem cell epigenetics",
+      "Embryonic and adult stem cells",
+      "Tumor stem cells",
+      "Cloning and stem cell reprogramming",
+      "Stem cell research methodologies",
+      "Clinical applications of stem cell research",
+      "Ethical and legal issues related to embryonic stem cell work"
+    ],
+    "suggested_reading": [
+      "Essentials of Stem Cell Biology by Lanza R et al.",
+      "Stem Cell Biology by Marshak DN et al.",
+      "Stem Cells: Biology and Diseases by Rex Turner"
+    ]
+  },
+  {"course_code":"BT6150",
+    "course_name": "Molecular Basis of Cancer",
+    "credit": 2,
+    "semester": 2,
+    "instructor": "Prof. Anindya Roy",
+    "objective": "Provide molecular level understanding of cancer.",
+    "course_contents": [
+      "Etiology of cancer",
+      "Oncogenes",
+      "Signaling pathways in cancer",
+      "Tumor suppressor genes",
+      "Cell cycle control and cancer",
+      "DNA damage and cell cycle checkpoints",
+      "Immune system and cancer",
+      "Multistep process of carcinogenesis"
+    ],
+    "text_books": [
+      "The Biology of Cancer (3rd edition) by Robert Weinberg; Garland Science; 2017",
+      "Molecular Biology of Cancer: Mechanisms, Targets, and Therapeutics (3rd edition) by Lauren Pecorino; Oxford University Press; 2016"
+    ]
+  }]
 }

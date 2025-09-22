@@ -10,8 +10,8 @@
     "Targeted Program and Year": "1st Year",
     "Contents": "Relevance of Biological Principles to Engineering undergraduates.  Water  and  its  special  properties:  Relevance  to life. Building blocks of life: Bio-molecules and their structure-function aspects. Cell structure and organelles, cell membrane, cellular transport and signaling. How does a cell sustain life? Cell metabolism and its regulation;  Cell energetic: harvesting chemical  and  solar  energy.  Cell  division  and  cancer.  DNA structure  and  packing. its replication,  damage  and repair: Consequences of unrepaired DNA damage. Dogma in Molecular Biology: Transfer of information from DNA to protein synthesis. Biotechnology.",
     "References": "",
-    "Course Objective": "",
-    "Justification:": ""
+    "Course Objectives": "",
+    "Justification": ""
   },
   {
     
@@ -24,8 +24,8 @@
     "Targeted Program and Year": "1st Year",
     "Contents": "Introduction to the biomolecules (DNA, RNA, Proteins, Lipids and Carbohydrates); gene, genome, DNA and Protein sequence, sequence assembly, sequence comparison, biological databases, similarity  searches,  multiple  sequence  alignment,  Visualizing protein and DNA 3-D structures",
     "References": "1. Essential Bioinformatics by Jin Xiong, Cambridge University Press, ISBN-13 978-0-511-16815-4 eBook; 978-0-521-84098-9 hardcopy 2. Bioinformatics Sequence and Genome Analysis by David W. Mount, Cold Spring Harbor Laboratory Press, ISBN: 978-087969712-9 3. Bioinformatics: A practical guide to the analysis of genes and proteins by Baxevanis A.D. and Ouellette B.F. John Wiley & Sons, New York, ISBN: 978-0-471-47878-2 4. Bioinformatics An Introduction by Ramsden Jeremy, Springer 2021, ISBN: 9783030456078",
-    "Course Objective": "This  course  is  designed  to  introduce  fundamental  concepts  of bioinformatics and its applications in biomedical research.",
-    "Justification:": ""
+    "Course Objectives": "This  course  is  designed  to  introduce  fundamental  concepts  of bioinformatics and its applications in biomedical research.",
+    "Justification": ""
   },
   {
     
@@ -38,8 +38,8 @@
     "Targeted Program and Year": "1st Year",
     "Contents": "Introduction to nanotechnology and bionanotechnology, Biological self-assembly, Biologically inspired nanostructures - introduction to biomimetics, Nucleic acid nanotechnology, DNA origami, Protein engineering, Lipid nanotechnology, Chirality in biological systems, Interaction of nanomaterials with biological systems, Virology: viruses and vaccines",
     "References": "1. Introduction to bionanotechnology by Young-Chul Lee and Ju-Young Moon ASIN  :  B085WNVX1T; Springer; 1st ed. (2020) 2. Physical Biology of a cell by Rob Phillip, Jane Kondev and Julie Theriot ASIN 0815344503; Garland Science; 2nd edition (2012)",
-    "Course Objective": "Introducing students with the concept of designing nanodevices using  biological  matter,  famously  known  as  living  software revolution.",
-    "Justification:": "The idea of programming biomolecules to create nanodevices for their  proposed  applications  in  therapeutics,  sequencing,  drug-delivery etc is taking shape. This course focusses on giving the students  a  feel  for  this  emerging  research  area  of  biological sciences. No large matching with the existing course of IITH."
+    "Course Objectives": "Introducing students with the concept of designing nanodevices using  biological  matter,  famously  known  as  living  software revolution.",
+    "Justification": "The idea of programming biomolecules to create nanodevices for their  proposed  applications  in  therapeutics,  sequencing,  drug-delivery etc is taking shape. This course focusses on giving the students  a  feel  for  this  emerging  research  area  of  biological sciences. No large matching with the existing course of IITH."
   },
   {
     
@@ -52,7 +52,7 @@
     "Targeted Program and Year": "2nd Year",
     "Contents": "Basic  practices  of the  biotechnology laboratory (laboratory safety, introduction to basic laboratory equipments and calibrations,  Solution  and  buffer  preparation,  working  under aseptic  condition  and  sterilization,  biological  waste  disposal), introduction to good laboratory practices (GLP), preparation of bacterial culture media and sterilization, preparation of LB agar plates, microbial plate streaking, bacterial growth curve, storage and  preservation  of  microbial  cultures,  Genomic  and  plasmid DNA  extraction,  Nanodrop  estimation  of  DNA,  agarose  gel electrophoresis,  bacterial transformation,  protein  extraction, quantitative  protein  estimation  using  Bradford  reagent,  SDS-polyacrylamide gel electrophoresis (SDS-PAGE), Staining and destaining of PAGE gels.",
     "References": "Text Books: 1. Sambrook, Joseph. Molecular Cloning : a Laboratory Manual. Cold Spring Harbor, N.Y. :Cold Spring Harbor Laboratory Press, (2010). 2. Basic Laboratory Methods for Biotechnology by Lisa Seidman, Cynthia Moore, Second Edition, Pearson publisher, ISBN: 0321570146 (2008) 3. Biotechnology: A Laboratory Skills Course by J. Kirk Brown, Student Edition, Second Edition, ISBN: 978-0-9832396-3-5 (2011) 4. Biotechnology: A Laboratory Course 2nd Edition by Jeffery Becker, Gay Caldwell, Eve Ann Zachgo, Academic Press, ISBN: 0120845628 (1996)",
-    "Objective": "This course provides practical training to  work in the biotechnology laboratory.",
+    "Course Objectives": "This course provides practical training to  work in the biotechnology laboratory.",
     "Justification": "The  course  covers  basic  hands-on  techniques  required  for  the undergraduates. It has about no overlap with other courses."
   },
   {
@@ -66,8 +66,8 @@
     "Targeted Program and Year": "2nd Year",
     "Contents": "Plotting and data visualization, Measures of central tendencies, Dispersion and shape of distributions, Correlation and Regression, Interpolation and extrapolations,  2 test and goodness of a fit, Non-linear data fitting, Introduction to python and  R  programming,  Probability,  Conditional  probability  and Bayes theorem, Random variables, Probability density function, Expectation,  variance  and  co-variance,  Binomial,  Poisson  and Gaussian  distributions,  Data  distributions  and  central limit theorem,  Confidence intervals, Test of hypothesis.",
     "References": "1. Introduction to Probability & Statistics by Medenhall, Beaver and Beaver 14th Edition Publisher ; Cengage Learning; 14th edition (2012) ISBN-10  :  1133103758 2. Introduction to Probability & Statistics for Engineers and Scientists by S M Ross, 3rd Edition; Academic Press; 5th edition (2014) ISBN-10 : 0123948118",
-    "Course Objective": "This course is designed to introduce the basic concept of data or statistics and their application into the related areas of biosciences. Students will be able to effectively present their data and  findings  in  different  situations,  achieve  greater  precision with available recourses.",
-    "Justification:": "In the age of information, statistics has become an integral part of research, particularly it has profound applications in human health and disease control. Overall this course will help students to  understand  the  importance  of  data  and  preparing  them  for scientific research and presentation.  No large matching with the existing course of IITH."
+    "Course Objectives": "This course is designed to introduce the basic concept of data or statistics and their application into the related areas of biosciences. Students will be able to effectively present their data and  findings  in  different  situations,  achieve  greater  precision with available recourses.",
+    "Justification": "In the age of information, statistics has become an integral part of research, particularly it has profound applications in human health and disease control. Overall this course will help students to  understand  the  importance  of  data  and  preparing  them  for scientific research and presentation.  No large matching with the existing course of IITH."
   },
   {
     
@@ -80,7 +80,7 @@
     "Targeted Program and Year": "2nd Year",
     "Contents": "Stereoisomers and life; thermodynamics of biochemical reactions;  Structural  biochemistry:  Protein  Structure,  Protein Folding; Enzyme Catalysis, Enzyme Kinetics; Lipid structure and membrane assembly, Bioenergetics: Glycolysis, Glycolysis of red blood  cells  and  liver,  The  citric  acid  cycle,  Electron  transport, ATP synthesis;  Photosynthesis;  Regulation  of  blood sugar: Overview of metabolic biochemistry; Overview of synthesis and degradation of Biomolecules.",
     "References": "Text Books: 1. Lehninger Principles of Biochemistry (WH Freeman, 7th Edition, (2017) by David L. Nelson and Michael M. Cox 2. Voets Principles of Biochemistry (John Wiley & Sons, 5th Edition, (2018) by Donald Voet, Judith G. Voet, Charlotte W. Pratt",
-    "Objective": "This course aims to provide basic concepts of biochemistry",
+    "Course Objectives": "This course aims to provide basic concepts of biochemistry",
     "Justification": "The course covers basic concepts of biochemistry of the cell, that is  essential  for  understanding the  cellular  process  especially metabolic processes and physiology of the cell. It has about 10% overlap with the masters level course BT5010."
   },
   {
@@ -94,21 +94,21 @@
     "Targeted Program and Year": "2nd Year",
     "Contents": "Evolution  of  microorganisms  and  microbiology;  Cell  structure and  organisation  -  prokaryotic  and  eukaryotic  cells;  Microbial taxonomy  and  diversity;  Staining  and  microscopy;  Microbial growth;  Bacterial culture  methods;  Microbial  metabolism; Control of microorganisms - physical and chemical methods for control of  microorganisms, antimicrobial chemotherapy, resistance to antibiotics; Microorganisms in the environment  microbiology of soil, air, freshwater, and seawater; Biogeochemical  cycles  -carbon  cycle,  nitrogen  cycle,  sulphur cycle;  Medical  microbiology  and  virology-  microbial  diseases, detection and control; Industrial and food microbiology",
     "References": "1. Prescott's Microbiology 11th Edition - By Joanne Willey and Kathleen Sandman and Dorothy Wood, McGraw-Hill, ISBN13: 9781260211887. 2. Microbiology by E.C.S. Chan,Michael J. Pelczar, Jr.,Noel R. Krieg, Tata McGraw-Hill Education Pvt. Ltd, ISBN 13: 9780074623206. 3. Fundamental Principles of Bacteriology by A.J. Salle, Tata McGraw Hill Education; 7th edition, ISBN-13: 978-0070995628.",
-    "Course Objective": "This course aims to deliver elementary concepts of microbiology",
-    "Justification:": ""
+    "Course Objectives": "This course aims to deliver elementary concepts of microbiology",
+    "Justification": ""
   },
   {
     
     "Course Code": "BT20053",
     "Course Name": "Big Data Biology and Biological Databases",
-    "Prerequisite (If any)": "",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "Theory",
     "Type of Course": "Departmental Core",
-    "Credit": "3",
+    "Credits": "3",
     "Targeted Program and Year": "2nd Year",
     "Contents": "Introduction to big data in biology, Big data characteristics, Big data  revolution,  Industrialization  of  big  data  biology,  Big  data analytics, Challenges in big data analytics, Big data privacy and security,  Big  data  visualization and integration,  Big  data analytics  in  health  research,  Electronic  health  records  (EHR), OMICS  disciplines  and  revolution,  OMICS  data  integration, OMICS  data  management,  OMICS  tools,  Biological  databases and  their  development,  Nucleic  acid  databases,  Protein  data banks, Genomic and proteomic databases, Pathway databases.",
     "References": "Text Book(s): 1) Bioinformatics for Omics Data (Methods and Protocols), Editors: Mayer, Bernd (Ed.) (Springer) (2011) 2) Big Data Analysis for Bioinformatics and Biomedical Discoveries. ISBN 9780367240226 Chapman and Hall/CRC Shui Qing Ye (Ed.)  (2019) 3) Big Data Analytics in Bioinformatics and Healthcare (IGI Global) by Baoying Wang, Ruowang Li and William Perrizo. ISBN: 9781466666115  (2014)",
-    "Objective": "The course aims to provide insight into high-throughput big data in biology, its analysis, interpretation and storage.",
+    "Course Objectives": "The course aims to provide insight into high-throughput big data in biology, its analysis, interpretation and storage.",
     "Justification": "In the recent time, we are witnessing a huge surge of biological data  specially  omics  data  coming  from  different  worldwide projects.  Big  data  always  comes  with  its  own  challenges  e.g., analysis, storage, maintenance, security and privacy. This course work aims to impart knowledge on these aspects of big data in biology to students. This course is unique and not matching with other existing courses at large."
   },
   {
@@ -122,8 +122,8 @@
     "Targeted Program and Year": "2nd Year",
     "Contents": "Basics of cell and cell organelles, introduction to biomolecules (DNA,  RNA,  Proteins,  Fatty  Acids),  cell  cycle  (mitosis  and meiosis) and its regulation, enzymes, enzyme kinetics, cellular energetics, eukaryotic and prokaryotic  DNA replication, transcription (gene regulation), and translation (protein synthesis), protein sorting, 3D genome organization, epigenetics, mitotic  bookmarking  and  epigenetic transcription  memory, apoptosis, necrosis, cell junctions, stem cells. Techniques used in  cell  and  molecular  biology:  PCR,  RT-PCR,  Electrophoresis for DNA and proteins, blotting techniques, cloning, visualizing cellular processes by fluorescence microscopy, immunofluorescence, immunoprecipitation assays, FACS, chromatography (affinity, ion-exchange, size exclusion, HPLC), electron  microscopy  (TEM/SEM),  next  generation  sequencing, cell  and  tissue  culture,  CRISPR-Cas9  based  genome  editing, DNA and protein  microarrays,  X-Ray diffraction,  mass-spectrometry. The practical component of this course contains a demonstration of  PCR,  RT-PCR,  Gel  electrophoresis  of  DNA  and  proteins, western blotting, cloning, fluorescence microscopy, immunofluorescence,  microscopy image processing using ImageJ, and data analysis.",
     "References": "Text Book(s) 1) Molecular Biology of the Cell by Bruce Alberts, Alexander Johnson, Julian Lewis, David Morgan, Martin Raff, Keith Roberts, W.W. Norton & Company, ISBN: 0815344643 2) Molecular Cell Biology by Harvey Lodish, Arnold Berk, Chris Kaiser, Monty Krieger, Matthew Scott, Anthony Bretscher, Hidde Ploegh, Paul Matsudaira, W.H. Freeman publisher, ISBN: 1429203145",
-    "Course Objective": "This course provides a basic understanding of how a cell works, and  how  cellular  machines  are regulated for fundamental processes  of life. It  covers  different topics  and techniques pertaining to cell biology and molecular biology. The practical component  of  this  course  provides  a  demonstration  of  cutting-edge research tools used in cell and molecular biology research.",
-    "Justification:": "Cell  and  Molecular  Biology  is  one  of  the  core  branches  of Medical Biotechnology, with immense applications in"
+    "Course Objectives": "This course provides a basic understanding of how a cell works, and  how  cellular  machines  are regulated for fundamental processes  of life. It  covers  different topics  and techniques pertaining to cell biology and molecular biology. The practical component  of  this  course  provides  a  demonstration  of  cutting-edge research tools used in cell and molecular biology research.",
+    "Justification": "Cell  and  Molecular  Biology  is  one  of  the  core  branches  of Medical Biotechnology, with immense applications in"
   },
   {},
   {
@@ -137,8 +137,8 @@
     "Targeted Program and Year": "2nd Year",
     "Contents": "Cell growth kinetics, Cell growth in batch and continuous stirred tank fermentation, Kinetics of substrate utilization and product formation, Enzymes, Role of enzymes in biochemical reactions, Kinetics  of  enzyme  catalysed reactions,  Enzyme Inhibition kinetics and types (competitive, non-competitive, uncompetitive), Reaction thermodynamics (laws of thermodynamics, Gibbs free energy, entropy, enthalpy, endothermic  and  exothermic  reactions,  chemical  equilibrium),  Bioprocess stoichiometry and yield concepts, Mass and energy balances  in  biochemical  engineering,  Transport  phenomena  in bioprocess  system  (mechanism  of  transportation,  mixing,  heat transfer,  mass  transfer),  Fermentation  technology  (submerged fermentation,  solid-state  fermentation,  industrial  fermenter  and material analysis),  Process control and automation,  Bio-separation and downstream processing (cell disruption, sedimentation, centrifugation, filtration, extraction, evaporation, crystallization),  Membrane  processes  (dialysis,  ultrafiltration, microfiltration, reverse osmosis), Scale-up and economic analysis in biochemical processes.",
     "References": "Text book: 1) Biochemical Engineering Fundamentals by James Bailey and David Ollis, 2nd edition, McGraw Hill Education publisher, ISBN: 9780070701236 2) Introduction to Biochemical Engineering by D G Rao, 2nd edition, McGraw Hill Education publisher, ISBN: 0070151385 3) Biochemical Engineering: A textbook for engineers, chemist and biologist, 2nd edition by Shigeo Katoh, Jun-ichi Horiuchi and Fumitake Yoshida, Wiley-VCH publisher, ISBN: 9783527338047",
-    "Course Objective": "Biochemical Engineers develop processes of a variety of natural as  well  as  synthetic  substances  such  as  platform  chemicals, biofuels,  ecological  development,  environmental  changes,  and developing  medicines  to  improve  the  quality  of  the  healthcare sector,  diagnostic  processes,  food  processing  and  medicines. This  course  is  designed  to  teach  fundamentals  of  biochemical engineering.",
-    "Justification:": ""
+    "Course Objectives": "Biochemical Engineers develop processes of a variety of natural as  well  as  synthetic  substances  such  as  platform  chemicals, biofuels,  ecological  development,  environmental  changes,  and developing  medicines  to  improve  the  quality  of  the  healthcare sector,  diagnostic  processes,  food  processing  and  medicines. This  course  is  designed  to  teach  fundamentals  of  biochemical engineering.",
+    "Justification": ""
   },
   {
     
@@ -154,33 +154,33 @@
     "Course Objectives": "On passing the course, students should know 1) Early methods of DNA sequencing 2) Different generations of DNA sequencing methods 3) How high throughput DNA sequencing methods work 4) Basic  knowledge  of  NGS  data  analysis  and  relevant bioinformatics tools 5) Clinical applications of NGS technologies in understanding of genetic diseases.",
     "Justification": "Next generation sequencing (NGS) technologies revolutionized the health sector and the recent advancements in  NGS technologies tremendously increase our capabilities to sequence the complex genomes in a massively parallel fashion. Importance"
   },
-  {},
+
   {
     
-    "Course Code:": "BT20090",
-    "Course Name:": "Protein structure, function and disease",
-    "Prerequisite (If any)": "",
+    "Course Code": "BT20090",
+    "Course Name": "Protein structure, function and disease",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "",
     "Type of Course": "Departmental Core",
-    "Credit": "3",
+    "Credits": "3",
     "Targeted Program and Year": "2nd Year",
     "Contents": "Primary  structure    Secondary  structure    Tertiary  Structure  -  Quaternary  Structure    Ramachandran  Diagram -  Fibrous proteins  Globular proteins  sequence-to-structure-to-function paradigm- protein fold classification - Sickle cell anaemia",
     "References": "",
-    "Objective": "The  course  provides the  elementary  concepts  about  protein structure and function",
+    "Course Objectives": "The  course  provides the  elementary  concepts  about  protein structure and function",
     "Justification": ""
   },
   {
     
-    "Course Code:": "BT20120",
-    "Course Name:": "Molecular Biophysics and Macromolecular Structural Biology",
-    "Prerequisite (If any)": "Biochemistry (BT2030)",
+    "Course Code": "BT20120",
+    "Course Name": "Molecular Biophysics and Macromolecular Structural Biology",
+    "Pre-Requisites (If any)": "Biochemistry (BT2030)",
     "Nature of Course": "Theory",
     "Type of Course": "Departmental Elective",
-    "Credit": "3",
+    "Credits": "3",
     "Targeted Program and Year": "2nd Year",
     "Contents": "Biophysical  measurements, the structure  and  properties  of proteins, enzyme action, the structure and properties of nucleic acids at the molecular level. Cooperative transitions in biological macromolecules. Quantification and characterization of interactions, involving proteins with other molecules termed as ligands (proteins, nucleic acids, carbohydrate, peptide, inorganic molecules etc), using appropriate biophysical techniques. Art of macromolecules crystallization. Macromolecular crystallography and macromolecular structural biology. Biophysical approaches to understand structure-function relationship of macromolecules. It will also cover understanding of entropy and enthalpy driven processes, biochemical equilibrium, phase transitions in lipid, bilayers and membranes, intra-  and intermolecular interactions,  and spectroscopy  of proteins  and  nucleic  acids.  Physical techniques  and  related biology.",
     "References": "Reference books: 1. Biophysics: An Introduction: R. Glaser (2012) Springer 2. Physical Biology of the Cell: Rob Phillips, Jane Kondev, Julie Theriot, and Hernan Garcia (2012) Garland Science. 3. Outline of Crystallography for Biologists: D. Blow (2002), Oxford University Press 4. Essentials Of Biophysics, P. Narayanan, New Age International Publishers, 2007",
-    "Objective": "The  course  covers  basic  concepts  of  biophysics  and  physical biochemistry.",
+    "Course Objectives": "The  course  covers  basic  concepts  of  biophysics  and  physical biochemistry.",
     "Justification": "This  course  covers the  physical  aspects  of  macromolecules interactions  and  quantifications.  These  are  basic  concepts  for drug discovery, engineering biomaterials and understanding the functioning of macromolecules in the cell."
   },
   {
@@ -194,14 +194,14 @@
     "Targeted Program and Year": "2nd Year",
     "Contents": "Historical perspective, Statistical ensembles, Quantum Mechanics  (QM)  Foundations  of  Molecular  Mechanics  (MM), Force-fields, Introduction  molecular  dynamics simulations, Equation of  motion, Scheme of integrations, Langevin Dynamics,  Non-bonded  Computations,  Brownian  Dynamics, Monte Carlo Techniques, Coarse Graining Models",
     "References": "1. Molecular modelling and simulation: An interdisciplinary guide by Tamar Schlick Springer; 2nd ed. 2010 ISBN-10  :  1441963502 2. Computer Simulations of Liquids by M.P. Allen and D. J. Tildesly Oxford  ISBN-13: 9780198803195 (2017) 3. Understanding molecular: From Algorithms to Applications by Daan Frenkel and Berend Smit Academic Press; 2nd edition (2001) ISBN: 0122673514",
-    "Course Objective": "To provide an introduction to computer  modeling of biomolecules.  Prepare the  students  for  multiscale  modelling approaches in biotechnology and bioinformatics.",
-    "Justification:": "With the advancement in computer architecture and algorithms, computer  simulation  has  become  a  valuable tool to  probe biomolecular form  and function.  This introductory  course focuses  on  presenting an interdisciplinary  guide for ever increasing field of biomolecular modeling and simulation.  No large matching with the existing course of IITH"
+    "Course Objectives": "To provide an introduction to computer  modeling of biomolecules.  Prepare the  students  for  multiscale  modelling approaches in biotechnology and bioinformatics.",
+    "Justification": "With the advancement in computer architecture and algorithms, computer  simulation  has  become  a  valuable tool to  probe biomolecular form  and function.  This introductory  course focuses  on  presenting an interdisciplinary  guide for ever increasing field of biomolecular modeling and simulation.  No large matching with the existing course of IITH"
   },
   {
     
     "Course Code": "BT20140",
     "Course Name": "Model Systems in Biology",
-    "Pre-Requisites (if any)": "",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "",
     "Type of Course": "Departmental Elective",
     "Credits": "3",
@@ -229,7 +229,7 @@
     
     "Course Code": "BT30043",
     "Course Name": "Genetic Engineering",
-    "Pre-Requisites (if any)": "",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "Theory and Lab",
     "Type of Course": "Departmental Core",
     "Credits": "3",
@@ -250,8 +250,8 @@
     "Targeted Program and Year": "3rd Year",
     "Contents": "Brief overview of prokaryotic and eukaryotic genome; Extrachromosomal DNA: bacterial plasmids, mitochondria and chloroplast;  The  Organization and  Structure  of  Genomes; Mapping  and  sequencing  genomes;  Next  Generation  DNA Sequencing (NGS);  Analysis of the transcriptome;  RNA sequencing;  Human  genome  project;  Accessing  and  retrieving information  from  different  genome  projects;  Genomic  insight into evolution-comparative genomic analysis; Pharmacogenomics;  Transition  from  genomics  to  proteomics; Basics of protein chemistry and proteomics; Technical aspects of different  quantitative  proteomics  methods;  Mass-spectrometry and  data  analysis;  Analysis  of  protein-protein interactions; Human proteome projects; Proteogenomics; Metabolomics and global biochemical networks; Integrated omics technologies and personalised medicine",
     "References": "1) Functional Genomics (Methods in Molecular Biology) by Kaufmann, Michael, Klinger, Claudia, Savelsbergh, Andreas, Humana Press; ISBN: 978-1-4939-7230-2.  2) Proteomics: From Protein Sequence to Function. Stephen Pennington, Michael J Dunn, Viva Books Private Limited, ISBN: 9789386105998. 3) Discovering genomics, proteomics, and bioinformatics, by A Malcolm Campbell; Laurie J Heyer; Cold Spring Harbor Laboratory Press.; Benjamin/Cummings Publishing Company, ISBN:  0805382194 9780805382198. 4) Principles of Gene manipulation and Genomics, 7th edition/S. By Sandy B. Primrose, Richard Twyman. Wiley-Blackwell, ISBN: 978-1-405-13544-3.",
-    "Course Objective": "The  course  purposes  to  make  the  students  familiar  with  the concepts of technologies pertinent to Genomics, Transcriptomics,  and  Proteomics,  and to  demonstrate their applications.",
-    "Justification:": ""
+    "Course Objectives": "The  course  purposes  to  make  the  students  familiar  with  the concepts of technologies pertinent to Genomics, Transcriptomics,  and  Proteomics,  and to  demonstrate their applications.",
+    "Justification": ""
   },
   {
     
@@ -264,63 +264,63 @@
     "Targeted Program and Year": "3rd Year",
     "Contents": "R: Installation of R and RStudio, Basics of R, Vector, Matrix, Array,  Lists,  Dataframe,  Workflows,  Data  visualization  with ggplot2,  heatmaps, strings,  dplyr, tidyr, statistics in  R, Bioconductor packages Python: Introduction to Python: Installing Python and Jupyter Notebook,  importing  packages;  Conditional  statements  and loops; Data structures in Python: Lists, tuples, dictionary, sets; String handling; Functions; Iterables & Iterators; Generators; File handling Application of  R and Python in  Bioinformatics and computational biology",
     "References": "1. Master Python Programming : Learn essential Python for Machine Learning and Data Science (Volume 1) 2. Learn to Code by Solving Problems: A Python Programming Primer by Daniel Zingaro 3. The Book of R by Tilman M. Davis; ISBN: 9781593276515 4. R for Data Science by Hadley Wickham; ISBN: 9781491910344 5. Learning R Programming by Kun Ren; ISBN: 9781785889776",
-    "Course Objective": "This course is designed to understand the basics of Python and R  programming,  data  organization,  basic  operations  and  get hands-on experience to develop scripts for biological problems",
-    "Justification:": "As  part  of  modern  biology,  many  high-throughput  omics technologies  generate  biological  big  data that is  usually organized in the form of large matrices. To process this data from  files,  perform  mathematical  /  statistical  operations  on such matrices and to generate relevant outputs in the form of visualizations,  reports,  the  knowledge  of  Python  and  R  is essential  for  biotechnology  graduates.  This  will  expand  the technical expertise of the students and also make them relevant to current career expectations from engineering graduates."
+    "Course Objectives": "This course is designed to understand the basics of Python and R  programming,  data  organization,  basic  operations  and  get hands-on experience to develop scripts for biological problems",
+    "Justification": "As  part  of  modern  biology,  many  high-throughput  omics technologies  generate  biological  big  data that is  usually organized in the form of large matrices. To process this data from  files,  perform  mathematical  /  statistical  operations  on such matrices and to generate relevant outputs in the form of visualizations,  reports,  the  knowledge  of  Python  and  R  is essential  for  biotechnology  graduates.  This  will  expand  the technical expertise of the students and also make them relevant to current career expectations from engineering graduates."
   },
   {
     
-    "Course Code:": "BT30203",
-    "Course Name:": "Machine Learning in Bioinformatics",
-    "Prerequisite (If any)": "",
+    "Course Code": "BT30203",
+    "Course Name": "Machine Learning in Bioinformatics",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "Combined, theory and lab",
     "Type of Course": "Department Elective",
-    "Credit": "2",
+    "Credits": "2",
     "Targeted Program and Year": "3rd Year",
     "Contents": "Theory:  Introduction  to  statistical  learning:  classification  and regression problems, concepts of features and instances, supervised and unsupervised clustering approaches; Unsupervised ML algorithms: Hierarchical clustering, K-means clustering,  graph-based  clustering;  Supervised  ML  algorithms: logistic  regression,  artificial  neural  networks,  support  vector machines,  decision  trees  &  random  forests;  Feature  selection: principal component analysis, SVM-RFE; Performance metrics: accuracy, sensitivity, specificity,  precision, recall,  F-score, Mathews  correlation  coefficient; Introduction to  Multi-class learning; Introduction to deep learning concepts Lab: Supervised and unsupervised clustering with toy examples. Programming for machine learning classification and regression using r-weka, caret, e1071",
     "References": "1. The Hundred-Page machine learning book by Andriy Burkov 2. A guide to machine learning for biologists, Greener et al., 2021, Nature Reviews Molecular Cell Biology 3. Statquest YouTube Channel: https://www.youtube.com/@statquest/playlists",
-    "Objective": "This  course  will train  biologists to  apply  machine-learning techniques  to  biological  problems.  This  course  will  cover  the basics of supervised and unsupervised clustering with emphasis on popularly used machine learning algorithms",
+    "Course Objectives": "This  course  will train  biologists to  apply  machine-learning techniques  to  biological  problems.  This  course  will  cover  the basics of supervised and unsupervised clustering with emphasis on popularly used machine learning algorithms",
     "Justification": "Machine learning is one of the fastly growing areas in all fields of  science.  High-throughput  omics  approaches  generate  an enormous volume of data that can be used to create predictive models for answering specific biological questions.  ML approaches  have found applications in the  biotechnology industry to solve problems related to healthcare, agriculture, and drug discovery. Students need to be exposed to the concepts of machine learning and deep learning approaches for performing biological  big  data  analysis  which  will  enhance  their  future career prospects."
   },
   {
     
-    "Course Code:": "BT40130",
-    "Course Name:": "Neuroscience and Technology",
-    "Prerequisite (If any)": "",
+    "Course Code": "BT40130",
+    "Course Name": "Neuroscience and Technology",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "",
     "Type of Course": "Departmental Elective",
-    "Credit": "2",
+    "Credits": "2",
     "Targeted Program and Year": "3rd Year",
     "Contents": "Introduction and basic neurobiology;  Neuroscience: past, present,  and  future;  Structural  and  functional  neuroanatomy  of the human brain; Brain energy metabolism; The central nervous system;  Cellular components of nervous tissue;  Neural communications;  Sensory  and  motor  systems;  Principles  and methods in  neuroimaging;  Brain  and  behaviour;  Circadian clocks; Sleep-wake cycles; Neural regulation of the cardiovascular system; Neurological disorders.",
     "References": "1) Neuroscience: Exploring the Brain, by Mark F. Bear, Barry W. Connors, Michael A. Paradiso, ISBN: 9780781778176.  2) Fundamental Neuroscience-4th Edition, by Larry Squire Darwin Berg Floyd E. Bloom Sascha du Lac Anirvan Ghosh Nicholas C. Spitzer, Academic Press (Elsevier), ISBN: 9780123858702. 3) Fundamental Neuroscience for Basic and Clinical Applications, Fifth Edition \u2022 2018, by Duane E. Haines and Gregory A. Mihailoff, Elsevier, ISBN: 978-0-323-39632-5.",
-    "Objective": "This course intends to provide basic of concepts in neurobiology, including neurophysiology of the human central nervous system, neural signaling, and neurological disorders.",
+    "Course Objectives": "This course intends to provide basic of concepts in neurobiology, including neurophysiology of the human central nervous system, neural signaling, and neurological disorders.",
     "Justification": ""
   },
   {
     
-    "Course Code:": "BT40010",
-    "Course Name:": "Computer aided Drug Design",
-    "Prerequisite (If any)": "",
+    "Course Code": "BT40010",
+    "Course Name": "Computer aided Drug Design",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "",
     "Type of Course": "Departmental Core",
-    "Credit": "3",
+    "Credits": "3",
     "Targeted Program and Year": "4th Year",
     "Contents": "It covers the basic principles of how new drugs are discovered with emphasis on lead identification, lead optimization, classification  and  kinetics  of  molecules  targeting  enzymes  and receptors, prodrug design and applications, as well as structure-based  drug  design  methods.  Recent  advances  in  the  use  of computational and combinatorial chemistry in drug design will also be presented.",
     "References": "1. Kerns, E.H.; Di, L. Drug-Like Properties: Concepts, Structure Design and Methods: from ADME to Toxicity Optimization, Academic Press, Oxford, 2008  2. BMC  Burgers Medicinal Chemistry and Drug Discovery, 5th Edition, Vol. 1. Principles and Practice, edited by M. E. Wolff, John Wiley & Sons: New York, 1995.  3. PMC  Principles of Medicinal Chemistry, 4th Edition, edited by W.O. Foye, T.L. Lemke, and D. A. Williams, Williams and Wilkins: Philadelphia, 1995.  4. MCPP  Medicinal Chemistry: Principles and Practice, edited by F.D. King, Royal Society of Chemistry: Cambridge, 1994.  5. CC  A Practical Guide to Combinatorial Chemistry, edited by A. W. Czarnik and S. H. DeWitt, American Chemical Society: Washington DC, 1997.",
-    "Objective": "The purpose of this course is to acquaint the students about the process of drug discovery and development from the identification of novel drug targets",
+    "Course Objectives": "The purpose of this course is to acquaint the students about the process of drug discovery and development from the identification of novel drug targets",
     "Justification": ""
   },
   {
     
-    "Course Code:": "BT40026",
-    "Course Name:": "Seminar in Biotechnology and Bioinformatics",
-    "Prerequisite (If any)": "",
+    "Course Code": "BT40026",
+    "Course Name": "Seminar in Biotechnology and Bioinformatics",
+    "Pre-Requisites (If any)": "",
     "Nature of Course": "Seminar",
     "Type of Course": "Departmental Core",
-    "Credit": "1",
+    "Credits": "1",
     "Targeted Program and Year": "4th Year",
     "Contents": "Seminar course deals with student presentations and discussion of latest journal articles in the frontier areas of biotechnology and bioinformatics.  The seminar articles  will be selected in consultation with the faculty coordinator.",
     "References": "Recent  articles in  various  peer-reviewed journals,  such  as, Nature, Science, Cell Nature Biotechnology Molecular Cancer, Genomics  Proteomics  &  Bioinformatics,  PLoS  Computational Biology,  Proceedings  of  the  National  Academy  of  Sciences  of the USA (PNAS) and related journals",
-    "Objective": "The objective of seminar course is to impart the skills of effective comprehension  and  communication  of  science  to  the  audience and at the same time getting familiar with the latest cutting-edge research.",
+    "Course Objectives": "The objective of seminar course is to impart the skills of effective comprehension  and  communication  of  science  to  the  audience and at the same time getting familiar with the latest cutting-edge research.",
     "Justification": "This  course  focuses  on  developing  presentation  skill,  critical analysis of scientific research papers, familiarity with upcoming technologies biotechnology and bioinformatics."
   },
   {
@@ -334,8 +334,8 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Bioproducts  and  their  market,  Classification  of  bio-products, Small molecules (primary metabolites, secondary metabolites), Large molecules, Types of bioproducts (bioenergy, biomaterials and biochemicals), Industrial fermentation processes (microbial biomass, industrial enzymes, metabolites, recombinant products, transformation processes),  Single cell proteins, Classification  of  bioreactors (batch, fed-batch,  continuous, packed bed, airlift reactor etc), Bioreactor design and analysis, Fermentation  media,  Sterilization  process (media  and  air), Microbial thermal death kinetics,  Bioprocesses for the production of organic acids, antibiotics, proteins, polysaccharides, lipids; Recovery and purification of bioproducts  (cell  separation  and  disruption,  extraction  (solid-liquid,  liquid-liquid,  aqueous  two  phase,  supercritical  fluid), Chromatography, Safety management in bioprocess industries.",
     "References": "Textbook: 1) Bioprocess Engineering: Kinetics, Sustainability and Reactor Design by Shijie Liu, 3rd Edition. Elsevier Science Publishing Company. ISBN: 0128210125. 2) Essentials in Fermentation Technology by Berenjian Aydin, Springer International Publishing, ISBN: 9783030162306, eBook. 3) Principles and Applications of Fermentation Technology by Arindam Kuila and Vinay Sharma, ISBN: 9781119460381, eBook.",
-    "Course Objective": "Bioprocess engineers design a series of integrated bioreactions to make up a bioprocess that is economically viable to produce chemicals,  biopharmaceuticals,  antibiotics  and  biofuels.  This course  is  intended  to  provide  an  overview  of  the  bioprocess engineering and fermentation technologies, its applications and challenges.",
-    "Justification:": ""
+    "Course Objectives": "Bioprocess engineers design a series of integrated bioreactions to make up a bioprocess that is economically viable to produce chemicals,  biopharmaceuticals,  antibiotics  and  biofuels.  This course  is  intended  to  provide  an  overview  of  the  bioprocess engineering and fermentation technologies, its applications and challenges.",
+    "Justification": ""
   },
   {
     
@@ -348,7 +348,7 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Cells and organs of the immune system, innate immunity, T-cell development,  B-cell  development,  B-cell receptor, antigen recognition  by  B-cells,  hybridoma technology  and  antibody production, applications of antibodies in diagnostics and research  covering their  use in techniques  such  as  ELISA, ELISpot, immunohistochemistry, immunocytochemistry, western  blot  and flow  cytometry,  T-cell receptor,  antigen recognition by T-cells, introduction to major histocompatibility complex  and  its  role  in  recognition  of  antigens  by  T-cells,  the complement system, immune response to malaria and challenges therein.",
     "References": "Text Book: 1) Goldsby, Kindt, and Osborne. Kuby Immunology 6th ed. Freeman, 2007. 2) Roitt's Essential Immunology. 12th Edition.Peter J. Delves,Seamus J. Martin, Dennis R. Burton,Ivan M. Roitt  (2011) 3. Reference book: 1) David Male, Jonathan Brostoff, David Roth, Ivan Roitt, Immunology; Mosby Publisher, 7th ed. 2006",
-    "Objective": "The learning outcome of this course is an overview of vertebrate immune system and basic knowledge of the essential components of the immune system and application of immunology.",
+    "Course Objectives": "The learning outcome of this course is an overview of vertebrate immune system and basic knowledge of the essential components of the immune system and application of immunology.",
     "Justification": "A  healthy  human  being  can  fight  many  infections  on  his  own. This is due to our highly developed immune system. This course provides  the  detailed  understanding  of  the  immune  system,  its components and their function for beginners. This understanding and technological developments have allowed us to use immune system in various therapeutics. This topic will be covered in the applications of immunology in this course. This course has ~ 10 % overlap with BT6020 which is advanced masters level course focusing on advancements and therapeutics involving immunology."
   },
   {
@@ -362,8 +362,8 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Important factors in  maintaining  genome stability;  protein complexes  involved  in  DNA  replication,  DNA  repair,  DNA damage  tolerance,  DNA  damage  signalling,  cell  cycle  control and apoptosis.  Defects that lead to increased  mutations, chromosomal instability, cancer, cellular senescence and organismal  aging.  The  role  of  chromatin  in  genome  stability, human  diseases  associated  with  genome  instability  as  well  as changes in genome stability in response to aging.",
     "References": "1. Genome Stability, DNA Repair and Recombination by James E Haber (ISBN 9780815344858) Published by Garland Science (2014, 1st ed) 2. DNA Replication, Recombination, and Repair: Molecular Mechanisms and Pathology by Fumio Hanaoka, Kaoru Sugasawa (eds.) (ISBN: 443155873X) Sprnger (2016 1st ed)",
-    "Course Objective": "This  elective  will  cover  major  causes  and types  of  DNA damages, as well as the mechanisms providing DNA repair and genomic stability in prokaryotic and eukaryotic organisms. The disease will cover cancers, neurodegenerative diseases, developmental syndromes, and many more. Students will learn to recognise and to explain the role of DNA repair and genome integrity for cell survival and its importance for human health.",
-    "Justification:": "There  are  no  similar  courses  available  in  IIT  Hyderabad.  This will expand the molecular biology knowledge of the students and also  make  them  aware  about  the  current  advances  in  DNA technology."
+    "Course Objectives": "This  elective  will  cover  major  causes  and types  of  DNA damages, as well as the mechanisms providing DNA repair and genomic stability in prokaryotic and eukaryotic organisms. The disease will cover cancers, neurodegenerative diseases, developmental syndromes, and many more. Students will learn to recognise and to explain the role of DNA repair and genome integrity for cell survival and its importance for human health.",
+    "Justification": "There  are  no  similar  courses  available  in  IIT  Hyderabad.  This will expand the molecular biology knowledge of the students and also  make  them  aware  about  the  current  advances  in  DNA technology."
   },
   {
     
@@ -376,7 +376,7 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "History  of  molecular  dynamics  simulation  Energy  functions and molecular conformations - Force field and potential energy landscape- Units and derivatives -  Newtons equation of motion and  molecular dynamics simulation-  Verlet algorithm - Ensembles    Trajectories  and  analyse.  s   Introduction to enhanced sampling.",
     "References": "1) Molecular Modelling for Beginners, 2nd Edition, Alan Hinchliffe ISBN: 978-0-470-51314-9 2) Molecular Modeling and Simulation: An Interdisciplinary Guide by Tamar Schlick (2013) Springer ISBN 978-1-4419-6351-2",
-    "Objective": "The objective of the course is to provide the concept behind the classical  molecular  dynamics  simulations  and  their  application understanding the biomacromolecular conformations",
+    "Course Objectives": "The objective of the course is to provide the concept behind the classical  molecular  dynamics  simulations  and  their  application understanding the biomacromolecular conformations",
     "Justification": ""
   },
   {
@@ -390,7 +390,7 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Techniques related to chromatography, HPLC, gel electrophoresis  of  proteins.  Recombinant  protein  production, Protein purification, Assay development using absorption and fluorescence spectrometry,  Gene expression in mammalian cell lines, Cell culture techniques, cell-based assay development",
     "References": "Text Books: 1) Analytical Biotechnology by Kane Lloyd, Callisto Reference publisher, ISBN: 1641164922. (2019) 2) Analytical Techniques in Biotechnology by Suzy Hill, Syrawood Publishing House 2016, ISBN: 1682862380.(2016) 3) Analytical Biotechnology by C. Van Dijk, Elsevier, ISBN: 9780444599186. 4th Ed. (1996) 4) Analytical Biotechnology by Thomas Schalkhammer, Birkhauser publisher, ISBN: 9783034881012 (2002)",
-    "Objective": "The course aims to provide insight into high-throughput big data in biology, its analysis, interpretation and storage.",
+    "Course Objectives": "The course aims to provide insight into high-throughput big data in biology, its analysis, interpretation and storage.",
     "Justification": "This course focuses on the teaching application in cutting-edge technologies related to  analytical  biochemistry,  molecular biology and cell biology.  No overlap or match with the existing course of IITH."
   },
   {
@@ -404,8 +404,8 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Principles of pharmacology, Pharmacodynamics, Pharmacokinetics, Metabolism, toxicity. Case studies of adverse drug reactions.",
     "References": "1) Principles of Pharmacology: The Pathophysiologic Basis of Drug Therapy-David E. Golan, Armen H. Tashjian, Ehrin J. Armstrong- Lippincott Williams & Wilkins (2011).  2) Pharmacology: An Essential Textbook,  Mark Simmons, Thieme Medical Publishers Inc; 2020 (2nd ed)",
-    "Course Objective": "The  learning  outcome  of  the  course  is  to  provide  knowledge about the principles of pharmacology.",
-    "Justification:": ""
+    "Course Objectives": "The  learning  outcome  of  the  course  is  to  provide  knowledge about the principles of pharmacology.",
+    "Justification": ""
   },
   {
     
@@ -418,8 +418,8 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Introduction to molecular interactions; Theory and concepts of network analysis;  Functional insights into  biological  data through network analysis; Protein-protein interaction networks; Data  repositories,  resources  and  tools  available  for  biological pathways and network analysis;  Gene  Ontology (GO) annotations; Protein ANalysis THrough Evolutionary Relationships (PANTHER), Reactome pathway Knowledgebase,  Search  Tool  for  the  Retrieval  of  Interacting Genes/Proteins (STRING), Database for Annotation, Visualization  and  Integrated  Discovery  (DAVID);  Extending pathways - data integration; Hands-on experience in the use of PANTHER, DAVID, Cytoscape, and STRING.",
     "References": "1. Biological Network Analysis. by Pietro Hiram Guzzi and Swarup Roy, Elsevier, ISBN: 978-0-12-819350-1.  2. Biological Networks and Pathway Analysis (Methods in Molecular Biology), By Tatiana V. Tatarinova, Yuri Nikolsky, Springer, Humana Press, New York, NY, ISBN: 978-1-4939-7025-4. 3. Protein Networks and Pathway Analysis (Methods in Molecular Biology) by Yuri Nikolsky, Julie Bryant, Humana Press, ISBN: 978-1-60761-174-5.",
-    "Course Objective": "This course will introduce concepts about biological network and pathway  analysis  of  omics  data.  The  course  will  also  provide details regarding the  data repositories, resources  and tools available to reconnoitre  and  analyse large  datasets from  a network viewpoint.",
-    "Justification:": ""
+    "Course Objectives": "This course will introduce concepts about biological network and pathway  analysis  of  omics  data.  The  course  will  also  provide details regarding the  data repositories, resources  and tools available to reconnoitre  and  analyse large  datasets from  a network viewpoint.",
+    "Justification": ""
   },
   {
     
@@ -432,8 +432,8 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Definition and  history  of  precision  medicine,  origin and development  of  precision  of  medicine,  precision  oncology, impact of precision of medicine on human health, application of precision  medicine  other than  oncology,  future  of  precision medicine,  role  of  bioinformatics  in  precision  medicine,  digital medicine and its relation precision medicine, Indian perspectives of  precision  medicine, industrial  opportunities in  precision medicine.",
     "References": "1. Clinical precision medicine; Editor Judy Crabtree; ISBN: 9780128198346 2. Precision Medicine: A Guide to Genomics in Clinical Practice by Bryce Mendelsohn 3. Genomic and Precision Medicine by Geoffrey Ginsburg ISBN: 9780128006849",
-    "Course Objective": "This  course is  designed to  enhance the  understanding  of precision medicine and application of bioinformatics in tailoring the precision medicine for the better treatment outcome.",
-    "Justification:": "Due to the advancement in technology, field of medicine grown rapidly, which lead to the birth of precision medicine. Precision medicine  utilizes the information in  genetic  architecture  of patients and help in designing of therapy regimen. Right from the inception of precision medicine, bioinformatics played a critical role in this field and helped in fine tuning of precision medicine. This  course  will  impart  knowledge  of  how  precision  medicine improved  human  health  and  how  bioinformatics  became  a central part of it."
+    "Course Objectives": "This  course is  designed to  enhance the  understanding  of precision medicine and application of bioinformatics in tailoring the precision medicine for the better treatment outcome.",
+    "Justification": "Due to the advancement in technology, field of medicine grown rapidly, which lead to the birth of precision medicine. Precision medicine  utilizes the information in  genetic  architecture  of patients and help in designing of therapy regimen. Right from the inception of precision medicine, bioinformatics played a critical role in this field and helped in fine tuning of precision medicine. This  course  will  impart  knowledge  of  how  precision  medicine improved  human  health  and  how  bioinformatics  became  a central part of it."
   },
   {
     
@@ -446,7 +446,7 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Brief history and idea DNA nanotechnology, Holliday junctions, Tile-based DNA nanostructures, Wireframe and tensegrity DNA nanostructures, .  DNA origami nanostructures, caDNAno designing of DNA origami, RNA nanostructures, Thermodynamics  and  self-assembly  of  DNA  nanostructures, Forces  and  interactions  at  nanoscale,  Functional  and  dynamic DNA  nanostructures,  Application  of  DNA  nanotechnology. Virus  structure and replication, Virus-host interactions,  Impact of  viruses  on  human  health.  Virus  bioinformatics,  Molecular Simulations of Virus Dynamics and Interactions",
     "References": "1. DNA Nanotechnology  From Structure to Function, Edited by Chunhai Fan  2. DNA Nanotechnology: Methods and Protocols, Edited by  Giampaolo Zuccheri and Bruno Samor\u00ec, Humana Press  3. Virology: Principles and Applications\" by John B. Carter and Venetia L. Saunders",
-    "Objective": "Introducing  students  with  the  idea  of  creating  nanostructure using  DNA  and  RNA.  Highlighting  the  usage  of  computer  in understanding the  form  and  functions  of  viruses,  provide  a comprehensive overview of the computational approaches used in the field of virology.",
+    "Course Objectives": "Introducing  students  with  the  idea  of  creating  nanostructure using  DNA  and  RNA.  Highlighting  the  usage  of  computer  in understanding the  form  and  functions  of  viruses,  provide  a comprehensive overview of the computational approaches used in the field of virology.",
     "Justification": "DNA  nanotechnology  was  incepted  on  1980s  by  Ned  Seeman and holds promise for future of nanodevices. The past decade has witnessed  a transition  of  nucleic  acid  nanotechnology  from adolescence into adulthood, from laboratory to real life applications.  This  course  makes  students familiar  with the functional DNA nanostructures and their usage in devices. The second part of the course deals with the computational methods which  will  help in  understanding the  molecular structure, evolution,  and  replication  of  viruses,  as  well  as  the  host-virus interactions and the development of antiviral therapies"
   },
   {
@@ -459,10 +459,8 @@
     "Credits": "3",
     "Targeted Program and Year": "4th Year",
     "Contents": "This course will cover four major biological data analyses: 1. Genomics:  Microbial/Eukaryotic genome assembly using  Illumina  or/and  PacBio  data,  preprocessing  of  raw  data, read alignment, Genome annotation, Genome assembly quality assessment, Genome Browser, biological interpretations, visualization Comparative genomics: Sequence/profile-based homology analysis, homology between  multiple genomes, species identification strategies. Pan-genome studies. 2. Metagenomics:  Amplicon-based taxonomy  profiling, metagenome assembly,  metagenome binning,  metagenome annotation, quality check, function assessment, and identification of core microbes. 3. Transcriptomics: Introduction to Transcriptome, types of RNAs, preprocessing of raw data, read alignment, transcriptome reconstruction, expression quantification, differential expression analysis, normalization, biological interpretations, visualization  4.  Single-cell  omics:  Overview  of  single-cell  transcriptomics, proteomics,  metabolomics,  epigenomics;  Focus  on  single-cell transcriptome sequencing and data analysis; Cell ranger, Seurat; Clustering  and  marker  set  analysis,  Single/multi-omics  dataset integration, Walkthrough of Seurat Analysis pipelines using test data  for  understanding  single-and  multi-dataset  clustering  and annotations",
-    "References": "1. Bioinformatics: Methods and Applications. Editors: Dev Bukhsh Singh, Rajesh Kumar Pathak. 1st Edition - October 21, 2021. https://www.elsevier.com/books/bioinformatics/singh/978-0-323-89775-4  2. Advances in Bioinformatics. Editors: Vijai Singh, Ajay Kumar. DOI: https://doi.org/10.1007/978-981-33-6191-1  3. Tutorial: guidelines for the computational analysis of single-cell RNA sequencing data, Andrews et al. Nature Protocols, 2021 4. Current best practices in single-cell RNA-seq analysis: a tutorial, Leucken and Theis, Molecular Systems Biology, 2019 Seurat tutorials from Satija Lab: https://satijalab.org/seurat/index.html"
-  },
-  {
-    "Objective": "This  course is  designed to  provide  practical  knowledge  of biological  data  analysis.  Here,  students  will  get  full  hands-on exposure  to  diverse  data  handling,  analysis,  interpretation,  and visualization tools to execute genomics,  metagenomics, transcriptomics, and experimental single-cell omics analysis. In addition,  they  will  learn  to  handle  high-throughput  sequencing data and get extensive training in exploratory data analysis.",
+    "References": "1. Bioinformatics: Methods and Applications. Editors: Dev Bukhsh Singh, Rajesh Kumar Pathak. 1st Edition - October 21, 2021. https://www.elsevier.com/books/bioinformatics/singh/978-0-323-89775-4  2. Advances in Bioinformatics. Editors: Vijai Singh, Ajay Kumar. DOI: https://doi.org/10.1007/978-981-33-6191-1  3. Tutorial: guidelines for the computational analysis of single-cell RNA sequencing data, Andrews et al. Nature Protocols, 2021 4. Current best practices in single-cell RNA-seq analysis: a tutorial, Leucken and Theis, Molecular Systems Biology, 2019 Seurat tutorials from Satija Lab: https://satijalab.org/seurat/index.html",
+    "Course Objectives": "This  course is  designed to  provide  practical  knowledge  of biological  data  analysis.  Here,  students  will  get  full  hands-on exposure  to  diverse  data  handling,  analysis,  interpretation,  and visualization tools to execute genomics,  metagenomics, transcriptomics, and experimental single-cell omics analysis. In addition,  they  will  learn  to  handle  high-throughput  sequencing data and get extensive training in exploratory data analysis.",
     "Justification": "Modern biology is becoming increasingly data-oriented, where high throughput data is teasing apart different scales of biological systems for finding  mechanisms and asking fundamental questions.  Therefore,  bioinformatics  approaches  to  biological data analysis are required to use this high throughput data and extract  meaningful information. In this context, exposing students  to  the  current  &  future  technologies  (e.  g.,  genomics, metagenomics,  transcriptomics,  single-cell  omics)  and  current directions  of  biological  research  are  essential  to  shape  their careers and be up-to-date with these new advances."
   },
   {
@@ -476,7 +474,7 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Cellular level systems: genetic switches and oscillators, network motifs, genetic network evolution, and cellular decision-making. Population-level  systems:  models  of  pattern  formation,  cell-cell communication, and evolutionary systems biology.",
     "References": "Text Book(s) 2) Alon, Uri. An Introduction to Systems Biology: Design Principles of Biological Circuits. Chapman & Hall / CRC, 2006. ISBN: 9781584886426.  (2006) 3) Nowak, M. A. Evolutionary Dynamics: Exploring the Equations of Life. Belknap Press, 2006. ISBN: 9780674023383.  Reference(s) 1) Alberts, Bruce. Essential Cell Biology. Garland Science, 2009. ISBN: 9780815341291. 2) Strogatz, Steven H. Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering. Westview Press, 2014. ISBN: 9780813349107.",
-    "Objective": "The course aims to provide the concept of systems biology and its applications  Course  content:  Introduction to  cellular  and  population-level systems biology with an emphasis on synthetic biology, modeling of  genetic  networks,  cell-cell interactions  and  evolutionary dynamics.",
+    "Course Objectives": "The course aims to provide the concept of systems biology and its applications  Course  content:  Introduction to  cellular  and  population-level systems biology with an emphasis on synthetic biology, modeling of  genetic  networks,  cell-cell interactions  and  evolutionary dynamics.",
     "Justification": "This course focuses on basic understanding biological process at the system level combining latest analytical advances of biotechnology and bioinformatics.  No overlap with any existing IITH course."
   },
   {
@@ -490,7 +488,7 @@
     "Targeted Program and Year": "4th Year",
     "Contents": "Introduction  to  cell  signalling:  different  ways  in  which  cells signal to each other, coordination of cell signalling, Components that comprise signalling pathways: ligands (hormones, cytokines, growth, factors, neurotransmitters), receptors, kinases and phosphatases, cyclic nucleotides and G-proteins  intracellular  calcium  ions,  Techniques  used  to  study cell  signalling,  Specific  examples  of  signalling  pathways  and events: calcium signalling in cardiomyocytes and heart dysfunction, signalling in diabetes.",
     "References": "1) Cell Signalling. John T Hancock, Oxford university press. 2017 (3rd edition) ISBN9780199658480 2) Molecular and cellular signaling, Martin Beckerman, Springer-Verlag New York, (1st Ed.) 2005.",
-    "Objective": "The learning outcome of this course is the knowledge of signal transduction and to understand how cells can detect and respond to events in physiology and pathophysiology.",
+    "Course Objectives": "The learning outcome of this course is the knowledge of signal transduction and to understand how cells can detect and respond to events in physiology and pathophysiology.",
     "Justification": ""
   }
 ]

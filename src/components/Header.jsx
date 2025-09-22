@@ -1,202 +1,133 @@
+// src/components/Header.jsx
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Logo from "./iithlogo.png";
+
 const Header = () => {
-  const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileDropdown, setMobileDropdown] = useState(null); // For mobile submenu open/close
   const location = useLocation();
-  const dropdownRef = useRef(null);
 
-  // ... your existing code ...
+  const isActive = (path) => {
+    if (path === "/") {
+      return location.pathname === "/" ? "text-yellow-300 border-b-2 border-yellow-300 font-semibold" : "hover:text-yellow-200 font-normal";
+    }
+    return location.pathname.startsWith(path) ? "text-yellow-300 border-b-2 border-yellow-300 font-semibold" : "hover:text-yellow-200 font-normal";
+  };
 
-  // helper functions same as before
+  const navItems = [
+    { name: "Home", path: "/" },
+    {
+      name: "Academics",
+      path: "/academics",
+      sub: [
+        { name: "Programs", path: "/academics/programs" },
+        { name: "Committee", path: "/academics/committee" },
+      ],
+    },
+    {
+      name: "Research",
+      path: "/research",
+      sub: [
+        { name: "Research Areas", path: "/research/researcharea" },
+        { name: "Projects", path: "/research/projects" },
+        { name: "Collaborations", path: "/research/collaborations" },
+      ],
+    },
+    {
+      name: "People",
+      path: "/people",
+      sub: [
+        { name: "Faculty", path: "/people/faculty" },
+        { name: "DAC Members", path: "/people/dacmembers" },
+        { name: "Staff", path: "/people/staff" },
+        { name: "Students", path: "/people/students" },
+        { name: "Alumni", path: "/people/alumni" },
+      ],
+    },
+    { name: "Facilities", path: "/facilities" },
+    { name: "Achievements", path: "/achievements" },
+    { name: "Announcements", path: "/announcements" },
+    { name: "Events", path: "/events" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
-    <header className="flex flex-col w-full">
-      {/* ... Top Bar and desktop nav as before ... */}
+    <header className="bg-indigo-900 text-white shadow-md w-full fixed top-0 z-50">
+      <div className="container mx-auto flex flex-wrap items-center justify-between px-6 py-4">
 
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden text-white text-2xl"
-        onClick={() => setMobileOpen(!mobileOpen)}
-      >
-        ☰
-      </button>
+        {/* Left: Logo + Dept Name */}
+        <div className="flex items-center space-x-3 flex-shrink-0">
+          <img src={Logo} alt="IIT Hyderabad Logo" className="h-14 w-14 object-contain" />
+          <div className="leading-tight text-lg">
+            <span className="font-semibold text-xl block">Deptartment of Biotechnology</span>
+            <span className="text-base font-normal block">IIT Hyderabad</span>
+          </div>
+        </div>
 
-      {/* Mobile menu */}
+        {/* Desktop Nav (align right) */}
+        <nav className="hidden md:flex flex-1 justify-end space-x-10 text-lg font-normal">
+          {navItems.map((item) => (
+            <div key={item.path} className="relative group">
+              <Link to={item.path} className={isActive(item.path)}>
+                {item.name}
+              </Link>
+
+              {item.sub && (
+                <div className="absolute right-0 top-full mt-2 w-56 bg-white text-gray-800 rounded shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all z-50">
+                  {item.sub.map((subItem) => (
+                    <Link
+                      key={subItem.path}
+                      to={subItem.path}
+                      className={`block px-4 py-2 hover:bg-indigo-100 ${isActive(subItem.path)}`}
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white text-3xl ml-auto"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white shadow-md px-4 py-4 space-y-2 animate-slideDown">
-          <Link
-            to="/"
-            className={`block px-4 py-2 ${isActive("/")}`}
-            onClick={() => setMobileOpen(false)}
-          >
-            Home
-          </Link>
+        <div className="md:hidden bg-indigo-800 shadow-md px-6 py-4 space-y-3 animate-slideDown">
+          {navItems.map((item) => (
+            <div key={item.path}>
+              <Link
+                to={item.path}
+                className={`block text-lg ${isActive(item.path)}`}
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.name}
+              </Link>
 
-          {/* Mobile Academics Dropdown */}
-          <div>
-            <button
-              className={`w-full text-left px-4 py-2 hover:bg-gray-100 flex justify-between items-center ${
-                isParentActive("/academics")
-              }`}
-              onClick={() =>
-                setMobileDropdown(mobileDropdown === "academics" ? null : "academics")
-              }
-            >
-              Academics
-              <span>{mobileDropdown === "academics" ? "▲" : "▼"}</span>
-            </button>
-            {mobileDropdown === "academics" && (
-              <div className="pl-4">
-                <Link
-                  to="/academics/programs"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/academics/programs")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Programs
-                </Link>
-                <Link
-                  to="/academics/committee"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/academics/committee")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Committee
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Mobile Research Dropdown */}
-          <div>
-            <button
-              className={`w-full text-left px-4 py-2 hover:bg-gray-100 flex justify-between items-center ${
-                isParentActive("/research")
-              }`}
-              onClick={() =>
-                setMobileDropdown(mobileDropdown === "research" ? null : "research")
-              }
-            >
-              Research
-              <span>{mobileDropdown === "research" ? "▲" : "▼"}</span>
-            </button>
-            {mobileDropdown === "research" && (
-              <div className="pl-4">
-                <Link
-                  to="/research/researcharea"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/research/researcharea")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Research Areas
-                </Link>
-                <Link
-                  to="/research/projects"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/research/projects")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Projects
-                </Link>
-                <Link
-                  to="/research/collaborations"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/research/collaborations")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Collaborations
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Mobile People Dropdown */}
-          <div>
-            <button
-              className={`w-full text-left px-4 py-2 hover:bg-gray-100 flex justify-between items-center ${
-                isParentActive("/people")
-              }`}
-              onClick={() =>
-                setMobileDropdown(mobileDropdown === "people" ? null : "people")
-              }
-            >
-              People
-              <span>{mobileDropdown === "people" ? "▲" : "▼"}</span>
-            </button>
-            {mobileDropdown === "people" && (
-              <div className="pl-4">
-                <Link
-                  to="/people/faculty"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/people/faculty")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Faculty
-                </Link>
-                <Link
-                  to="/people/dacmembers"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/people/dacmembers")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  DAC Members
-                </Link>
-                <Link
-                  to="/people/staff"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/people/staff")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Staff
-                </Link>
-                <Link
-                  to="/people/students"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/people/students")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Students
-                </Link>
-                <Link
-                  to="/people/alumni"
-                  className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/people/alumni")}`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Alumni
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Other links */}
-          <Link
-            to="/facilities"
-            className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/facilities")}`}
-            onClick={() => setMobileOpen(false)}
-          >
-            Facilities
-          </Link>
-          <Link
-            to="/achievements"
-            className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/achievements")}`}
-            onClick={() => setMobileOpen(false)}
-          >
-            Achievements
-          </Link>
-          <Link
-            to="/announcements"
-            className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/announcements")}`}
-            onClick={() => setMobileOpen(false)}
-          >
-            Announcements
-          </Link>
-          <Link
-            to="/events"
-            className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/events")}`}
-            onClick={() => setMobileOpen(false)}
-          >
-            Events
-          </Link>
-          <Link
-            to="/contact"
-            className={`block px-4 py-2 hover:bg-gray-100 ${isActive("/contact")}`}
-            onClick={() => setMobileOpen(false)}
-          >
-            Contact Us
-          </Link>
+              {item.sub &&
+                item.sub.map((subItem) => (
+                  <Link
+                    key={subItem.path}
+                    to={subItem.path}
+                    className={`block ml-5 text-base ${isActive(subItem.path)}`}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {subItem.name}
+                  </Link>
+                ))}
+            </div>
+          ))}
         </div>
       )}
     </header>
   );
 };
+
+export default Header;

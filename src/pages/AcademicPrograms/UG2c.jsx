@@ -40,7 +40,7 @@ export default function UG() {
   const handleButtonClick = (key) => {
     if (key === "timetable") {
       // Open timetable PDF
-      window.open("/academics/BT_Sem.pdf", "_blank");
+      window.open("/academics/TT_UG_July.pdf", "_blank");
       // Show timetable view, so syllabus & courses are hidden if you want timetable content on this page
       // But since timetable is a PDF opened in new tab, maybe no need to set activeView here
       setActiveView(null);
