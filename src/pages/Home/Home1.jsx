@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Lightbulb, Rocket, Gem } from "lucide-react";
-import Announcements from "../Announcements/Announcements.jsx"
+import Announcements from "../Announcements/Announcements.jsx";
 import Events from "../Events/Events.jsx";
 
 export default function Home() {
@@ -10,14 +10,38 @@ export default function Home() {
     "/images/image3.jpg",
   ];
   const [current, setCurrent] = useState(0);
+  const intervalRef = useRef(null);
 
+  // Start auto-slider
+  const startSlider = () => {
+    stopSlider(); // prevent multiple intervals
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 2000);
+  };
+
+  // Stop auto-slider
+  const stopSlider = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  // Manual controls
   const prevSlide = () =>
     setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   const nextSlide = () =>
     setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
 
+  // Start on mount
+  useEffect(() => {
+    startSlider();
+    return stopSlider; // Cleanup on unmount
+  }, []);
+
   return (
-    <>
+    <div onClick={startSlider}>
       {/* ---------------- Hero Section ---------------- */}
       <section
         style={{ margin: "40px 60px", padding: "20px 40px" }}
@@ -57,61 +81,58 @@ export default function Home() {
         </button>
       </section>
 
-     {/* ---------------- Message from HOD ---------------- */}
-<section className="w-full bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-3xl ">
-  <h2 className="text-4xl md:text-5xl font-extrabold mb-10 text-center text-gray-800">
-    Message from HOD
-  </h2>
+      {/* ---------------- Message from HOD ---------------- */}
+      <section className="w-full bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-3xl ">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-10 text-center text-gray-800">
+          Message from HOD
+        </h2>
 
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-    {/* Left - Image with artistic effects */}
-    <div className="flex justify-center">
-      <div className="relative group">
-        <div className="absolute -inset-3 bg-gradient-to-tr from-pink-400 via-indigo-400 to-purple-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition"></div>
-        <img
-          src="/images/hod.jpg"
-          alt="Head of Department"
-          className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
-        />
-      </div>
-    </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          {/* Left - Image */}
+          <div className="flex justify-center">
+            <div className="relative group">
+              <div className="absolute -inset-3 bg-gradient-to-tr from-pink-400 via-indigo-400 to-purple-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition"></div>
+              <img
+                src="/images/hod.jpg"
+                alt="Head of Department"
+                className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
+              />
+            </div>
+          </div>
 
-    {/* Right - Message (spanning 2 columns) */}
-    <div className="lg:col-span-2 text-gray-700 leading-relaxed text-justify space-y-6 px-2">
-      <p>
-        Since the biotechnology department started its journey in 2010, the
-        department has been striving for excellence in teaching and research.
-        We have been continuously acquiring new capabilities and producing
-        brilliant future scientists. We recently moved to our newly
-        constructed state-of-the-art building in 2022, which is in the shape
-        of a chromosome, further asserting our commitment to excellence.
-      </p>
-      <p>
-        We have 17 world-class research laboratories and a dedicated teaching
-        laboratory for students. The department offers B.Tech. in
-        Biotechnology and Bioinformatics, M.Tech. in Medical Biotechnology,
-        and Ph.D. in various Biotechnology and allied multidisciplinary areas
-        at the forefront. Over the years, our uniquely formulated and tailored
-        academic programs have attracted the best students. The total number
-        of students in our department is currently 188.
-      </p>
-      <p>
-        Our curriculum provides multifaceted opportunities to the students,
-        including exposure to industrial problems so that we can address
-        critical challenges not only faced by society but also industries
-        which is the first and foremost requirement for "AatmaNirbhar Bharat".
-        We also have a unique biannual hands-on lab training, an outreach
-        programme, for researchers or students from Indian universities and
-        institutes, and industrial professionals who want to enhance their
-        wet-lab or computational biology research skills.
-      </p>
-      <p className="mt-6 font-semibold text-gray-900">
-        — Head of Department
-      </p>
-    </div>
-  </div>
-</section>
-
+          {/* Right - Message */}
+          <div className="lg:col-span-2 text-gray-700 leading-relaxed text-justify space-y-6 px-2">
+            <p>
+              Since the biotechnology department started its journey in 2010, the
+              department has been striving for excellence in teaching and research.
+              We have been continuously acquiring new capabilities and producing
+              brilliant future scientists. We recently moved to our newly
+              constructed state-of-the-art building in 2022, which is in the shape
+              of a chromosome, further asserting our commitment to excellence.
+            </p>
+            <p>
+              We have 17 world-class research laboratories and a dedicated teaching
+              laboratory for students. The department offers B.Tech. in
+              Biotechnology and Bioinformatics, M.Tech. in Medical Biotechnology,
+              and Ph.D. in various Biotechnology and allied multidisciplinary areas
+              at the forefront.
+            </p>
+            <p>
+              Our curriculum provides multifaceted opportunities to the students,
+              including exposure to industrial problems so that we can address
+              critical challenges not only faced by society but also industries,
+              which is the first and foremost requirement for "AatmaNirbhar Bharat".
+              We also have a unique biannual hands-on lab training, an outreach
+              programme, for researchers or students from Indian universities and
+              institutes, and industrial professionals who want to enhance their
+              wet-lab or computational biology research skills.
+            </p>
+            <p className="mt-6 font-semibold text-gray-900">
+              — Head of Department
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ---------------- Vision, Mission, Values ---------------- */}
       <section
@@ -136,9 +157,7 @@ export default function Home() {
           <p className="text-gray-600 text-justify mt-2 flex-grow">
             Our mission is to accelerate as an outstanding educational hub with an
             equal emphasis on excellence in teaching, research, and community
-            engagement. We are committed to the utmost professional and academic
-            standards to ensure intellectual excellence and to create a global
-            impact by transmitting advanced knowledge.
+            engagement.
           </p>
         </div>
 
@@ -148,127 +167,109 @@ export default function Home() {
           <p className="text-gray-600 text-justify mt-2 flex-grow">
             We aspire to value the highest academic and professional integrity,
             scientific ethics, and excellence in teaching and research to realize
-            the full potential of biotechnology. We promote equality and empower
-            our students, staff, and faculty to achieve intellectual rigor, academic
-            leadership, and global recognition to best serve the nation and society.
+            the full potential of biotechnology.
           </p>
         </div>
       </section>
 
-   {/* ---------------- Announcements & Events ---------------- */}
-              <div style={{ margin: "40px 40px", padding: "20px 40px" }}>
-  <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
-    {/* Admissions */}
-    <div>
-      {/* Section heading */}
-      <h1 className="text-2xl font-extrabold text-indigo-800 mb-4 text-center">
-        Announcements
-      </h1>
+      {/* ---------------- Announcements & Events ---------------- */}
+      <div style={{ margin: "40px 40px", padding: "20px 40px" }}>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* Announcements */}
+          <div
+            onMouseEnter={stopSlider}
+            onMouseLeave={startSlider}
+            onClick={stopSlider}
+          >
+            <h1 className="text-2xl font-extrabold text-indigo-800 mb-4 text-center">
+              Announcements
+            </h1>
+            <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col justify-between max-h-[350px] overflow-hidden relative">
+              <div className="scrolling-content fast-scroll">
+                <div>
+                  <Announcements />
+                </div>
+                <div>
+                  <Announcements />
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-4">
+              <a
+                href="/announcements"
+                className="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-indigo-700 transition"
+              >
+                Read More →
+              </a>
+            </div>
+          </div>
 
-      <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col justify-between max-h-[350px] overflow-hidden relative">
-        <div className="scrolling-content fast-scroll">
-          <div>
-            <Announcements />
+          {/* Events */}
+          <div
+            onMouseEnter={stopSlider}
+            onMouseLeave={startSlider}
+            onClick={stopSlider}
+          >
+            <h1 className="text-2xl font-extrabold text-green-800 mb-4 text-center">
+              Events
+            </h1>
+            <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col justify-between max-h-[350px] overflow-hidden relative">
+              <div className="scrolling-content slow-scroll">
+                <div>
+                  <Events />
+                </div>
+                <div>
+                  <Events />
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-4">
+              <a
+                href="/events"
+                className="inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-green-700 transition"
+              >
+                Read More →
+              </a>
+            </div>
           </div>
-          <div>
-            <Announcements /> {/* duplicate for infinite loop */}
-          </div>
-        </div>
+        </section>
       </div>
 
-      {/* Read More Button */}
-      <div className="text-center mt-4">
-        <a
-          href="/announcements"
-          className="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-indigo-700 transition"
-        >
-          Read More →
-        </a>
-      </div>
+      
+
+      {/* ---------------- Animations ---------------- */}
+      <style jsx>{`
+        .scrolling-content {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .fast-scroll {
+          animation: scrollUpFast 8s linear infinite;
+        }
+
+        .slow-scroll {
+          animation: scrollUpSlow 18s linear infinite;
+        }
+
+        @keyframes scrollUpFast {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+
+        @keyframes scrollUpSlow {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+      `}</style>
     </div>
-
-    {/* Events */}
-    <div>
-      {/* Section heading */}
-      <h1 className="text-2xl font-extrabold text-green-800 mb-4 text-center">
-        Events
-      </h1>
-
-      <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col justify-between max-h-[350px] overflow-hidden relative">
-        <div className="scrolling-content slow-scroll">
-          <div>
-            <Events />
-          </div>
-          <div>
-            <Events /> {/* duplicate for infinite loop */}
-          </div>
-        </div>
-      </div>
-
-      {/* Read More Button */}
-      <div className="text-center mt-4">
-        <a
-          href="/events"
-          className="inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-green-700 transition"
-        >
-          Read More →
-        </a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<style jsx>{`
-  .scrolling-content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Admissions (fast scroll) */
-  .fast-scroll {
-    animation: scrollUpFast 8s linear infinite;
-  }
-
-  /* Events (slow scroll) */
-  .slow-scroll {
-    animation: scrollUpSlow 18s linear infinite;
-  }
-
-  @keyframes scrollUpFast {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-50%);
-    }
-  }
-
-  @keyframes scrollUpSlow {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-50%);
-    }
-  }
-`}</style>
-
-      {/* ---------------- Gallery ---------------- */}
-      <section
-        style={{ margin: "40px 60px", padding: "20px 40px" }}
-        className="text-center bg-white rounded-3xl shadow p-10"
-      >
-        <h2 className="text-3xl font-bold mb-6">Gallery</h2>
-        <p className="text-gray-600 mb-6">
-          Explore glimpses of our labs, events, and campus life.
-        </p>
-        <a
-          href="/gallery"
-          className="bg-pink-600 text-white px-6 py-3 rounded-lg shadow hover:bg-pink-700 transition"
-        >
-          View Full Gallery
-        </a>
-      </section>
-    </>
   );
 }

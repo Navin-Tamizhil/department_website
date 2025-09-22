@@ -55,37 +55,33 @@ const nationalCollaborators = [
 
 export default function Collaborations() {
   return (
-    <div className="min-h-screen bg-blue-50 container mx-auto p-6 space-y-20 font-sans text-gray-800">
+    <div className="min-h-screen bg-blue-50 px-4 py-10 sm:px-6 lg:px-20 space-y-20 text-gray-800">
 
-      {/* International Collaborations Section */}
+      {/* International Collaborators */}
       <section>
-        <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">
-          International Collaborators
-        </h2>
-        <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="md:w-[732px] flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-white">
+        <h2 className="text-3xl font-bold text-center mb-8">International Collaborators</h2>
+        <div className="flex flex-col lg:flex-row gap-10">
+          <div className="flex-shrink-0 w-full lg:w-[720px] h-[400px] rounded-lg overflow-hidden shadow-md bg-white">
             <img
               src="/collabrations_images/international_collabrations.jpg"
               alt="International Collaborations"
-              className="w-full h-auto object-cover rounded-lg"
-              style={{ maxHeight: 422 }}
+              className="w-full h-full object-cover"
             />
           </div>
-
           <div className="flex-1 overflow-auto max-h-[480px] rounded-lg shadow-md p-4 bg-white">
-            <table className="min-w-full table-auto text-sm border-collapse">
-              <thead className="bg-blue-100 sticky top-0 z-30 shadow-md">
+            <table className="w-full text-sm">
+              <thead className="bg-blue-100">
                 <tr>
                   <th className="px-4 py-2 text-left font-semibold">Collaborator Name</th>
-                  <th className="px-4 py-2 text-left font-semibold">Institute Name</th>
-                  <th className="px-4 py-2 text-left font-semibold">Institute Country</th>
+                  <th className="px-4 py-2 text-left font-semibold">Institute</th>
+                  <th className="px-4 py-2 text-left font-semibold">Country</th>
                 </tr>
               </thead>
               <tbody>
                 {internationalCollaborators.map(({ name, institute, country }, idx) => (
                   <tr
                     key={idx}
-                    className="hover:bg-blue-100 transition-colors duration-150 even:bg-white odd:bg-blue-50"
+                    className="even:bg-blue-50 odd:bg-white hover:bg-blue-100 transition-colors"
                   >
                     <td className="px-4 py-2">{name}</td>
                     <td className="px-4 py-2">{institute}</td>
@@ -98,37 +94,33 @@ export default function Collaborations() {
         </div>
       </section>
 
-      {/* National Collaborations Section */}
+      {/* National Collaborators */}
       <section>
-        <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">
-          National Collaborators
-        </h2>
-        <div className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="md:w-[392px] rounded-lg overflow-hidden shadow-md bg-white flex-shrink-0">
+        <h2 className="text-3xl font-bold text-center mb-8">National Collaborators</h2>
+        <div className="flex flex-col lg:flex-row gap-10">
+          <div className="flex-shrink-0 w-full lg:w-[400px] h-[400px] rounded-lg overflow-hidden shadow-md bg-white">
             <img
               src="/collabrations_images/national_collabration.jpg"
               alt="National Collaborations"
-              className="w-full h-auto object-cover rounded-lg"
-              style={{ maxHeight: 452 }}
+              className="w-full h-full object-cover"
             />
           </div>
-
           <div className="flex-1 overflow-auto max-h-[480px] rounded-lg shadow-md p-4 bg-white">
-            <table className="min-w-full table-auto text-sm border-collapse">
-              <thead className="bg-blue-100 sticky top-0 z-30 shadow-md">
+            <table className="w-full text-sm">
+              <thead className="bg-blue-100">
                 <tr>
                   <th className="px-4 py-2 text-left font-semibold">Collaborator Name</th>
-                  <th className="px-4 py-2 text-left font-semibold">Institute Name</th>
+                  <th className="px-4 py-2 text-left font-semibold">Institute</th>
                 </tr>
               </thead>
               <tbody>
                 {nationalCollaborators.map(({ name, institute }, idx) => (
                   <tr
                     key={idx}
-                    className="hover:bg-blue-100 transition-colors duration-150 even:bg-white odd:bg-blue-50"
+                    className="even:bg-blue-50 odd:bg-white hover:bg-blue-100 transition-colors"
                   >
                     <td className="px-4 py-2">{name}</td>
-                    <td className="px-4 py-2">{institute || "-"}</td>
+                    <td className="px-4 py-2">{institute}</td>
                   </tr>
                 ))}
               </tbody>
@@ -137,17 +129,18 @@ export default function Collaborations() {
         </div>
       </section>
 
-      {/* Industry Collaborations Section */}
-      <section className="space-y-8">
-        <h2 className="text-3xl font-extrabold text-center mb-8 text-gray-900">Industry Collaborations</h2>
-        <div className="flex flex-col md:flex-row gap-16 justify-center items-center">
-          <div className="flex flex-col items-center space-y-4 md:w-1/3 border border-gray-300 rounded-lg p-6 shadow-md bg-white">
+      {/* Industry Collaborators */}
+      <section>
+        <h2 className="text-3xl font-bold text-center mb-12">Industry Collaborations</h2>
+        <div className="flex flex-col md:flex-row justify-center gap-12">
+          {/* Boltzmann */}
+          <div className="flex flex-col items-center p-6 rounded-lg border shadow-md bg-white w-full max-w-sm">
             <img
               src="/collabrations_images/boltzmann_logo.png"
-              alt="Boltzmann company logo"
-              className="w-[256px] h-auto object-contain"
+              alt="Boltzmann Company"
+              className="w-56 h-auto object-contain"
             />
-            <div className="text-center space-y-1">
+            <div className="mt-4 text-center space-y-1">
               <p className="font-semibold text-lg">Dr. Rajakumara Eerappa</p>
               <p>
                 Company Name: <span className="font-medium">Boltzmann company</span>
@@ -157,16 +150,21 @@ export default function Collaborations() {
               </p>
             </div>
           </div>
-          <div className="flex flex-col items-center space-y-4 md:w-1/3 border border-gray-300 rounded-lg p-6 shadow-md bg-white">
+
+          {/* Dr. Reddy's */}
+          <div className="flex flex-col items-center p-6 rounded-lg border shadow-md bg-white w-full max-w-sm">
             <img
               src="/collabrations_images/dr_reddys_logo.png"
-              alt="Dr. Reddy's Laboratories logo"
-              className="w-[188px] h-auto object-contain"
+              alt="Dr. Reddy's Laboratories"
+              className="w-48 h-auto object-contain"
             />
-            <div className="text-center space-y-1">
+            <div className="mt-4 text-center space-y-1">
               <p className="font-semibold text-lg">Biotechnology Department</p>
               <p>
-                Company Name: <span className="font-medium">Dr. Reddy's Laboratories (Joint-students programme)</span>
+                Company Name:{" "}
+                <span className="font-medium">
+                  Dr. Reddy's Laboratories (Joint-students programme)
+                </span>
               </p>
               <p>
                 Country: <span className="font-medium">India</span>
@@ -175,7 +173,6 @@ export default function Collaborations() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
