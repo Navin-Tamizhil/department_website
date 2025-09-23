@@ -9,9 +9,10 @@ const syllabusFiles = [
   "/academics_excel/ug_semester6.xlsx",
   "/academics_excel/ug_semester7.xlsx",
   "/academics_excel/ug_semester8.xlsx",
+  "/academics_excel/ug_department_elective.xlsx",
 ];
 
-// Function to fetch & parse Excel
+// Function to fetch & parse Excel files and return structured syllabus data
 export async function ugloadSyllabus() {
   const allData = [];
 
@@ -23,8 +24,12 @@ export async function ugloadSyllabus() {
     const sheet = workbook.Sheets[sheetName];
     const jsonData = XLSX.utils.sheet_to_json(sheet);
 
+    // Label semesters 1 to 8 accordingly, and the last as Department Elective
+    let semesterLabel =
+      i < 8 ? `Semester ${i + 1}` : "Department Elective";
+
     allData.push({
-      semester: `Semester ${i + 1}`,
+      semester: semesterLabel,
       data: jsonData,
     });
   }

@@ -7,8 +7,28 @@ const syllabusFiles = [
   "/academics_excel/pg_semester4.xlsx",
 ];
 
-// Function to fetch & parse Excel
-export async function pgloadSyllabus() {
+// Elective files with custom semester labels
+const electiveFiles = [
+  {
+    path: "/academics_excel/pg_semester1_elective.xlsx",
+    semester: "Semester 1 Department Elective",
+  },
+  {
+    path: "/academics_excel/pg_semester2_elective.xlsx",
+    semester: "Semester 2 Department Elective",
+  },
+  {
+    path: "/academics_excel/pg_semest1_other_elective.xlsx",
+    semester: "Semester 1 Other Department Elective",
+  },
+  {
+    path: "/academics_excel/pg_semester2_other_elective.xlsx",
+    semester: "Semester 2 Other Department Elective",
+  },
+];
+
+// Load main syllabus files
+async function loadMainSyllabus() {
   const allData = [];
 
   for (let i = 0; i < syllabusFiles.length; i++) {
@@ -26,4 +46,33 @@ export async function pgloadSyllabus() {
   }
 
   return allData;
+}
+
+// Load electives separately with their specific semester headers
+async function loadElectiveSyllabus() {
+  const electiveData = [];
+
+  for (const file of electiveFiles) {
+    const response = await fetch(file.path);
+    const arrayBuffer = await response.arrayBuffer();
+    const workbook = XLSX.read(arrayBuffer, { type: "array" });
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const jsonData = XLSX.utils.sheet_to_json(sheet);
+
+    electiveData.push({
+      semester: file.semester,
+      data: jsonData,
+    });
+  }
+
+  return electiveData;
+}
+
+// Main loader function exporting combined syllabus
+export async function pgloadSyllabus() {
+  const mainSyllabus = await loadMainSyllabus();
+  const electiveSyllabus = await loadElectiveSyllabus();
+
+  return [...mainSyllabus, ...electiveSyllabus];
 }
