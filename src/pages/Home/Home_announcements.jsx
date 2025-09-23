@@ -1,47 +1,61 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { CalendarDays, ExternalLink, Clock, MapPin, Users, ChevronRight, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { CalendarDays, ExternalLink, ChevronRight, X } from 'lucide-react';
 
 // =============== ANNOUNCEMENTS COMPONENT ===============
 export const AnnouncementsModified = ({ onItemClick }) => {
   const [expandedItem, setExpandedItem] = useState(null);
   
- const admissions = [
-  {
-    id: 1,
-    title: "Ph.D. Admissions July 2025",
-    date: "Applications closed – Selected candidates have been informed",
-    links: [{label: "Notification",
-      brouchere: "/announcements/PhD_Admissions_July_2025_Brochure_BT_final_150325.pdf"}],
-    isNew: false,
-  },
-  {
-    id: 2,
-    title: "M.Tech. Admissions July 2025",
-    date: "Results for M.Tech. Medical Biotechnology (Self-Sponsored) Interviews",
-    links: [{label: "Notification",
-      brouchere:"/announcements/Brochure_MTech_Medical_Biotech_2025.pdf"},
-    {label: "Results",
-      brouchere:"/announcements/MTech_MedicalBiotechnology_SelfSponsored_InterviewResults.pdf"}],
-    isNew: false,
-  },
-  {
-    id: 3,
-    title: "Hands-on Lab Training in Biotechnology / Bioinformatics",
-    date: "Brochure available",
-    links: [{label: "Notification",
-      brouchere: "/announcements/HLT_Brochure_Latest_120625.pdf"}]
-  },
-];
+  const admissions = [
+    {
+      id: 1,
+      title: "Ph.D. Admissions July 2025",
+      date: "Applications closed – Selected candidates have been informed",
+      links: [
+        {
+          label: "Notification",
+          brouchere: "/announcements/PhD_Admissions_July_2025_Brochure_BT_final_150325.pdf",
+        },
+      ],
+      isNew: false,
+    },
+    {
+      id: 2,
+      title: "M.Tech. Admissions July 2025",
+      date: "Results for M.Tech. Medical Biotechnology (Self-Sponsored) Interviews",
+      links: [
+        {
+          label: "Notification",
+          brouchere: "/announcements/Brochure_MTech_Medical_Biotech_2025.pdf",
+        },
+        {
+          label: "Results",
+          brouchere: "/announcements/MTech_MedicalBiotechnology_SelfSponsored_InterviewResults.pdf",
+        },
+      ],
+      isNew: false,
+    },
+    {
+      id: 3,
+      title: "Hands-on Lab Training in Biotechnology / Bioinformatics",
+      date: "Brochure available",
+      links: [
+        {
+          label: "Notification",
+          brouchere: "/announcements/HLT_Brochure_Latest_120625.pdf",
+        },
+      ],
+      isNew: true,
+    },
+  ];
 
   const announcements = [
-  {
-    id: 1,
-    title: "Featured Research Article on ACS Chemical Biology Cover Page",
-    description:
-      "Prof. Rajakumara Eerappa's group research article titled 'Regulatory and Catalytic Domains of Poly(ADP-ribose) Polymerases Cross-Complement for DNA-Break-Dependent Allosteric Stimulation of Catalytic Activity' is featured.",
-  
-  },]
-
+    {
+      id: 1,
+      title: "Featured Research Article on ACS Chemical Biology Cover Page",
+      description:
+        "Prof. Rajakumara Eerappa's group research article titled 'Regulatory and Catalytic Domains of Poly(ADP-ribose) Polymerases Cross-Complement for DNA-Break-Dependent Allosteric Stimulation of Catalytic Activity' is featured.",
+    },
+  ];
 
   const handleItemClick = (e, itemId, itemTitle) => {
     e.stopPropagation();
@@ -102,7 +116,7 @@ export const AnnouncementsModified = ({ onItemClick }) => {
                   {item.links.map((link, idx) => (
                     <a
                       key={idx}
-                      href={link.url}
+                      href={link.brouchere}  // <-- Fixed here
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}

@@ -45,7 +45,7 @@ export default function Admissions() {
                     {item.links.map((lnk, idx) => (
                       <a
                         key={idx}
-                        href={lnk.url}
+                        href={lnk.brouchere}  // changed from lnk.url to lnk.brouchere
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-4 py-2 bg-indigo-50 text-indigo-700 border border-indigo-200 rounded-lg hover:bg-indigo-100 hover:text-indigo-900 text-sm font-medium transition"
