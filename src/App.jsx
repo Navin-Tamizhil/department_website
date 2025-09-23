@@ -1,3 +1,4 @@
+// src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -24,35 +25,29 @@ import Staff from "./pages/People/Staff";
 import Students from "./pages/People/Students";
 import Alumni from "./pages/People/Alumni";
 
-// Facilities
+// Other Pages
 import Facilities from "./pages/Facilities/Facilities.jsx";
-
-// Achievements
 import Achievements from "./pages/Achievements/Achievements.jsx";
-
-// Announcements & Events
 import Announcements from "./pages/Announcements/Announcements.jsx";
 import Events from "./pages/Events/Events.jsx";
-
-// Contact
 import Contact from "./pages/Contact";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow mt-2">
         <Routes>
           <Route path="/" element={<Home />} />
 
-          {/* Academics with subpages */}
+          {/* Academics */}
           <Route path="/academics" element={<Academics />}>
             <Route index element={<Programs />} />
             <Route path="programs" element={<Programs />} />
             <Route path="committee" element={<Committee />} />
           </Route>
 
-          {/* Research with subpages */}
+          {/* Research */}
           <Route path="/research" element={<Research />}>
             <Route index element={<ResearchAreas />} />
             <Route path="researcharea" element={<ResearchAreas />} />
@@ -60,7 +55,7 @@ function App() {
             <Route path="collaborations" element={<Collaborations />} />
           </Route>
 
-          {/* People with subpages */}
+          {/* People */}
           <Route path="/people" element={<PeopleLayout />}>
             <Route index element={<Faculty />} />
             <Route path="faculty" element={<Faculty />} />
@@ -70,7 +65,7 @@ function App() {
             <Route path="alumni" element={<Alumni />} />
           </Route>
 
-          {/* Single pages */}
+          {/* Others */}
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/announcements" element={<Announcements />} />

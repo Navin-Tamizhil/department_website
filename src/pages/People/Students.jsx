@@ -42,7 +42,9 @@ export default function Students() {
       "btech_2022.csv",
       "btech_2023.csv",
       "btech_2024.csv",
+      "btech_2025.csv",
       "mtech_2024.csv",
+      "mtech_2025.csv",
       "phd_2015_january.csv",
       "phd_2017_january.csv",
       "phd_2017_july.csv",
@@ -264,7 +266,7 @@ export default function Students() {
 {activeTab === "stats" && (
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
     {/* 2/3 Width Bar Chart */}
-    <div className="bg-white shadow-lg rounded-lg p-6 lg:col-span-2 col-span-1">
+    <div className="bg-white shadow-lg rounded-lg p-4 lg:col-span-2 col-span-1">
       <h3 className="text-2xl font-bold mb-6 text-indigo-700 text-center">
         Students Per Batch (All Programs)
       </h3>
@@ -294,7 +296,7 @@ export default function Students() {
     </div>
 
     {/* 1/3 Width Pie Chart */}
-    <div className="bg-white shadow-lg rounded-lg p-6 text-center col-span-1">
+    <div className="bg-white shadow-lg rounded-lg p-1 text-center col-span-1">
       <h3 className="text-2xl font-bold mb-6 text-indigo-700">
         Student Distribution
       </h3>

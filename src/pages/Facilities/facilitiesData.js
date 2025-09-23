@@ -9,7 +9,7 @@ const facilities = [
       "Sample Requirements": "Room temperature whole-cell recordings of ion channel currents from heterologous or native mammalian cell lines",
       "Location": "BT 222"
     },
-    contact: "Dr. Anamika Bhargava, Associate Professor / Mr Ankush Sharma, PhD student",
+    contact: "Dr. Anamika Bhargava, Professor / Mr Ankush Sharma, PhD student",
     email: "abhargava@bt.iith.ac.in, bo21resch11004@iith.ac.in",
     imageUrl: null
   },
@@ -51,7 +51,7 @@ const facilities = [
       "Sample Requirements": "Any chemical/bio-molecules in solution state; High salt concentration should be avoided",
       "Location": "BT 219"
     },
-    contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor / Mr Uttam Das",
+    contact: "Dr. Thenmalarchelvi Rathinavelan,  Professor / Mr Uttam Das",
     email: "tr@bt.iith.ac.in, bo22resch11008@iith.ac.in",
     imageUrl: null
   },
@@ -65,7 +65,7 @@ const facilities = [
       "Sample Requirements": "Fluorescently labeled Biomolecules in solution state",
       "Location": "BT 119"
     },
-    contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor / Ms Sruthi Sundaresan",
+    contact: "Dr. Thenmalarchelvi Rathinavelan,  Professor / Ms Sruthi Sundaresan",
     email: "tr@bt.iith.ac.in, BO20RESCH11002@iith.ac.in",
     imageUrl: null
   },
@@ -79,7 +79,7 @@ const facilities = [
       "Sample Requirements": "Analyze and quantify interactions between a set of molecules, Binding Kinetics, Room temperature. User need to buy consumables, Biosensors and labelling kit, etc.",
       "Location": "BT 119"
     },
-    contact: "Dr. Rajakumara Eerappa, Associate Professor",
+    contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
     imageUrl: null
   },
@@ -93,7 +93,7 @@ const facilities = [
       "Sample Requirements": "Liquid dispensing system for macromolecules crystallization. User need to buy consumables, nanolitre tips and 96 well plates etc.",
       "Location": "BT 119"
     },
-    contact: "Dr. Rajakumara Eerappa, Associate Professor",
+    contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
     imageUrl: null
   },
@@ -107,8 +107,8 @@ const facilities = [
       "Sample Requirements": "Protein sample (solution)",
       "Location": "JICA Lab; BT"
     },
-    contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor / Ms Sruthi Sundaresan",
-    email: "tr@bt.iith.ac.in; bo20resch11002@iith.ac.in",
+    contact: "Dr. Anindya Roy, Professor",
+    email: "",
     imageUrl: null
   },
   {
@@ -135,7 +135,7 @@ const facilities = [
       "Sample Requirements": "Binding affinity and Thermodynamics of binding, 10°C to 25°C",
       "Location": "BT 119"
     },
-    contact: "Dr. Rajakumara Eerappa, Associate Professor",
+    contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
     imageUrl: null
   },
@@ -149,7 +149,7 @@ const facilities = [
       "Sample Requirements": "Non corrosive, non-infectious samples in solution",
       "Location": "BT 220"
     },
-    contact: "Dr. Basant Kumar Patel, Associate Professor",
+    contact: "Dr. Basant Kumar Patel,  Professor",
     email: "basantkpatel@bt.iith.ac.in",
     imageUrl: null
   },
@@ -163,8 +163,121 @@ const facilities = [
       "Sample Requirements": "Soluble protein sample for separation",
       "Location": "BT 219"
     },
-    contact: "Dr. Anindya Roy, Professor",
-    email: "anindya@bt.iith.ac.in",
+    contact: "Dr. Thenmalarchelvi Rathinavelan, Professor",
+    email: "tr@bt.iith.ac.in",
+    imageUrl: null
+  },
+    {
+    name: "Micromanipulator Microscope",
+    make: "",
+    model: "",
+    description: "Tetrad Dissection",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr. Anamika Bhargava, Professor",
+    email: "",
+    imageUrl: null
+  },
+      {
+    name: "Shaker Incubator",
+    make: "",
+    model: "",
+    description: "",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr. Basant kumar Patel, Professor",
+    email: "",
+    imageUrl: null
+  },
+
+  {
+    name: "Sonicator",
+    make: "",
+    model: "",
+    description: "",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr. Basant kumar Patel, Professor",
+    email: "",
+    imageUrl: null
+  },
+    {
+    name: "Gel Doc",
+    make: "",
+    model: "",
+    description: "",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr. Basant kumar Patel, Professor",
+    email: "",
+    imageUrl: null
+  },
+  {
+    name: "Millipore",
+    make: "",
+    model: "",
+    description: "",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr.N.K.Raghavendra, Associate Professor",
+    email: "",
+    imageUrl: null
+  },
+  {
+    name: "Multi mode Plate Reader",
+    make: "",
+    model: "",
+    description: "",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr.N.K.Raghavendra, Associate Professor",
+    email: "",
+    imageUrl: null
+  },
+      {
+    name: "UV/Visible spectrophotometer",
+    make: "Beckman coulter",
+    model: "",
+    description: "",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr.N.K.Raghavendra, Associate Professor",
+    email: "",
+    imageUrl: null
+  },
+        {
+    name: "  Drosophila Activity Monitor (DAM)",
+    make: "",
+    model: "",
+    description: "",
+    specs: {
+     /*  "Operational Status": "Operational", */
+      // "Sample Requirements": "Soluble protein sample for separation",
+      // "Location": "BT 219"
+    },
+    contact: "Dr. Sandipan Ray, Assistant Professor",
+    email: "",
     imageUrl: null
   },
   {
@@ -177,7 +290,7 @@ const facilities = [
       "Sample Requirements": "Non corrosive, non-infectious samples only",
       "Location": "BT 220"
     },
-    contact: "Dr. Basant Kumar Patel, Associate Professor",
+    contact: "Dr. Basant Kumar Patel,  Professor",
     email: "basantkpatel@bt.iith.ac.in",
     imageUrl: null
   },
@@ -205,14 +318,14 @@ const facilities = [
       "Sample Requirements": "Protein purification",
       "Location": "BT 224"
     },
-    contact: "Dr. Rajakumara Eerappa, Associate Professor",
+    contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
     imageUrl: null
   },
   {
     name: "Avanti Refrigerated Centrifuge",
     make: "Beckman coulter",
-    model: "Avanti",
+    model: "Avanthi",
     description: "Separation",
     specs: {
       /* "Operational Status": "Operational", */
@@ -247,7 +360,7 @@ const facilities = [
       "Sample Requirements": "cell separations, 4°C to 20°C",
       "Location": "BT 224"
     },
-    contact: "Dr. Rajakumara Eerappa, Associate Professor",
+    contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
     imageUrl: null
   },
@@ -261,7 +374,7 @@ const facilities = [
       "Sample Requirements": "Basic microscope for Non-infectious cells and Non-corrosive samples only",
       "Location": "BT 219"
     },
-    contact: "Dr. Basant Kumar Patel, Associate Professor",
+    contact: "Dr. Basant Kumar Patel,  Professor",
     email: "basantkpatel@bt.iith.ac.in",
     imageUrl: null
   },
@@ -317,7 +430,7 @@ const facilities = [
       "Sample Requirements": "Data Storage space (External) and Required software",
       "Location": "Academic Block, A 006"
     },
-    contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor / Ms Sruthi Sundaresan",
+    contact: "Dr. Thenmalarchelvi Rathinavelan,  Professor / Ms Sruthi Sundaresan",
     email: "tr@bt.iith.ac.in; BO20RESCH11002@iith.ac.in",
     imageUrl: null
   },
@@ -401,8 +514,8 @@ const facilities = [
       "Sample Requirements": "User-specific",
       "Location": "BT 319"
     },
-    contact: "Dr. NK Raghavendra, Associate Professor",
-    email: "raghunk@bt.iith.ac.in",
+    contact: "Dr. Anindya Roy, Professor",
+    email: "anindya@bt.iith.ac.in",
     imageUrl: null
   },
   {

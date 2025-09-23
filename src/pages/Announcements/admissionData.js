@@ -22,6 +22,7 @@ export const admissions = [
     title: "Hands-on Lab Training in Biotechnology / Bioinformatics",
     date: "Brochure available",
     links: [{label: "Notification",
-      brouchere: "/announcements/HLT_Brochure_Latest_120625.pdf"}]
+      brouchere: "/announcements/HLT_Brochure_Latest_120625.pdf"}],
+      isNew: true,
   },
 ];

@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Lightbulb, Rocket, Gem } from "lucide-react";
-import Announcements from "../Announcements/Announcements.jsx";
-import Events from "../Events/Events.jsx";
+import { AnnouncementsModified } from "./Home_announcements.jsx";
+import { EventsModified } from "./Home_events.jsx";
 
 export default function Home() {
   const images = [
@@ -12,48 +12,58 @@ export default function Home() {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef(null);
 
-  // Start auto-slider
+// ====== AUTO SLIDER ======
   const startSlider = () => {
-    stopSlider(); // prevent multiple intervals
+    stopSlider();
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
     }, 2000);
   };
-
-  // Stop auto-slider
   const stopSlider = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
   };
-
-  // Manual controls
-  const prevSlide = () =>
-    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  const nextSlide = () =>
-    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-
-  // Start on mount
   useEffect(() => {
     startSlider();
-    return stopSlider; // Cleanup on unmount
+    return stopSlider;
   }, []);
 
+  // ====== SCROLL CONTROL ======
+  const [scrollingPaused, setScrollingPaused] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemClick = (title, event) => {
+    // Don't pause if a link was clicked
+    if (event.target.tagName === "A") return;
+
+    setScrollingPaused(true);
+    setSelectedItem(title);
+
+    // auto-resume after 5s
+    setTimeout(() => {
+      setScrollingPaused(false);
+      setSelectedItem(null);
+    }, 5000);
+  };
+
+  const resumeScrolling = () => {
+    setScrollingPaused(false);
+    setSelectedItem(null);
+  };
+
+
   return (
-    <div onClick={startSlider}>
+    <div>
       {/* ---------------- Hero Section ---------------- */}
-      <section
-        style={{ margin: "40px 60px", padding: "20px 40px" }}
-        className="relative h-[75vh] overflow-hidden rounded-3xl shadow-lg bg-gray-100"
-      >
+      <section className="relative h-[75vh] overflow-hidden rounded-3xl shadow-lg bg-gray-100 mx-14 my-10 px-10 py-6">
         <img
           src={images[current]}
           alt="Welcome"
           className="absolute inset-0 w-full h-full object-cover transition-all duration-700 rounded-3xl"
         />
 
-        {/* Overlay content only on first slide */}
         {current === 0 && (
           <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white px-6 animate-fadeIn rounded-3xl">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
@@ -66,15 +76,19 @@ export default function Home() {
           </div>
         )}
 
-        {/* Navigation arrows */}
+        {/* Navigation */}
         <button
-          onClick={prevSlide}
+          onClick={() =>
+            setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+          }
           className="absolute left-6 bottom-6 bg-white/80 hover:bg-white rounded-full p-3 shadow-md"
         >
           ◀
         </button>
         <button
-          onClick={nextSlide}
+          onClick={() =>
+            setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+          }
           className="absolute right-6 bottom-6 bg-white/80 hover:bg-white rounded-full p-3 shadow-md"
         >
           ▶
@@ -172,25 +186,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------------- Status Bar ---------------- */}
+      {scrollingPaused && (
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-yellow-100 border border-yellow-400 rounded-lg px-4 py-2 shadow-lg">
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-yellow-800">
+              Scrolling paused – viewing: <strong>{selectedItem}</strong>
+            </span>
+            <button
+              onClick={resumeScrolling}
+              className="px-3 py-1 bg-yellow-500 text-white rounded text-xs font-semibold hover:bg-yellow-600"
+            >
+              Resume
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* ---------------- Announcements & Events ---------------- */}
-      <div style={{ margin: "40px 40px", padding: "20px 40px" }}>
+      <div className="mx-10 my-10 px-10 py-6">
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Announcements */}
-          <div
-            onMouseEnter={stopSlider}
-            onMouseLeave={startSlider}
-            onClick={stopSlider}
-          >
+          <div>
             <h1 className="text-2xl font-extrabold text-indigo-800 mb-4 text-center">
               Announcements
             </h1>
-            <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col justify-between max-h-[350px] overflow-hidden relative">
-              <div className="scrolling-content fast-scroll">
-                <div>
-                  <Announcements />
-                </div>
-                <div>
-                  <Announcements />
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-hidden relative">
+              <div className={scrollingPaused ? "" : "animate-scroll-slow"}>
+                <AnnouncementsModified onItemClick={handleItemClick} />
+                <div className="mt-4">
+                  <AnnouncementsModified onItemClick={handleItemClick} />
                 </div>
               </div>
             </div>
@@ -199,27 +224,21 @@ export default function Home() {
                 href="/announcements"
                 className="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-indigo-700 transition"
               >
-                Read More →
+                View All Announcements →
               </a>
             </div>
           </div>
 
           {/* Events */}
-          <div
-            onMouseEnter={stopSlider}
-            onMouseLeave={startSlider}
-            onClick={stopSlider}
-          >
+          <div>
             <h1 className="text-2xl font-extrabold text-green-800 mb-4 text-center">
               Events
             </h1>
-            <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col justify-between max-h-[350px] overflow-hidden relative">
-              <div className="scrolling-content slow-scroll">
-                <div>
-                  <Events />
-                </div>
-                <div>
-                  <Events />
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-hidden relative">
+              <div className={scrollingPaused ? "" : "animate-scroll-fast"}>
+                <EventsModified onItemClick={handleItemClick} />
+                <div className="mt-4">
+                  <EventsModified onItemClick={handleItemClick} />
                 </div>
               </div>
             </div>
@@ -228,31 +247,16 @@ export default function Home() {
                 href="/events"
                 className="inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-green-700 transition"
               >
-                Read More →
+                View All Events →
               </a>
             </div>
           </div>
         </section>
       </div>
 
-      
-
-      {/* ---------------- Animations ---------------- */}
+      {/* ---------------- Scroll CSS ---------------- */}
       <style jsx>{`
-        .scrolling-content {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .fast-scroll {
-          animation: scrollUpFast 8s linear infinite;
-        }
-
-        .slow-scroll {
-          animation: scrollUpSlow 18s linear infinite;
-        }
-
-        @keyframes scrollUpFast {
+        @keyframes scroll-slow {
           0% {
             transform: translateY(0);
           }
@@ -260,14 +264,24 @@ export default function Home() {
             transform: translateY(-50%);
           }
         }
-
-        @keyframes scrollUpSlow {
+        @keyframes scroll-fast {
           0% {
             transform: translateY(0);
           }
           100% {
             transform: translateY(-50%);
           }
+        }
+        .animate-scroll-slow {
+          animation: scroll-slow 20s linear infinite;
+        }
+        .animate-scroll-fast {
+          animation: scroll-fast 15s linear infinite;
+        }
+        /* Pause on hover */
+        .animate-scroll-slow:hover,
+        .animate-scroll-fast:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </div>

@@ -1,4 +1,4 @@
-// src/pages/Announcements/Admissions.jsx
+// src/pages/Announcements/Adnnouncements.jsx
 import React from "react";
 import { admissions } from "./admissionData";
 import { announcements } from "./announcementData"; // import announcements dataset
