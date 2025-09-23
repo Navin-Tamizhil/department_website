@@ -27,11 +27,34 @@ export default function Admissions() {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
                     {item.title}
-                    {item.isNew && (
-                      <span className="px-2 py-0.5 bg-green-600 text-white text-xs rounded-full animate-pulse">
-                        OPEN
-                      </span>
-                    )}
+                        {item.isNew && (
+                          <span
+                            className="
+                              px-3 py-1 
+                              rounded-full 
+                              font-bold text-white text-xs 
+                              bg-gradient-to-r from-pink-500 via-yellow-400 to-red-600 
+                              animate-glowPulse 
+                              inline-flex items-center gap-1
+                              select-none
+                            "
+                            style={{ animation: "glowPulse 2.5s ease-in-out infinite" }}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-4 w-4 animate-bounce"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                            OPEN
+                          </span>
+                        )}
+
+                  
                   </h3>
                   <p className="text-sm text-gray-500 flex items-center gap-1 mt-1">
                     <CalendarDays className="w-4 h-4 text-gray-400" />

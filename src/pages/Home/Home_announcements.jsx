@@ -98,11 +98,31 @@ export const AnnouncementsModified = ({ onItemClick }) => {
               <div className="flex items-start gap-2">
                 <h4 className="text-sm font-semibold text-gray-800 flex-1">
                   {item.title}
-                  {item.isNew && (
-                    <span className="ml-2 px-2 py-0.5 bg-green-600 text-white text-xs rounded-full animate-pulse">
-                      OPEN
-                    </span>
-                  )}
+                 {item.isNew && (
+                        <span
+                          className="
+                            ml-2 px-3 py-0.5 
+                            rounded-full 
+                            font-semibold text-white text-xs 
+                            bg-gradient-to-r from-pink-500 via-yellow-400 to-red-600
+                            inline-flex items-center gap-1 
+                            select-none
+                          "
+                          style={{ animation: "glowPulse 2.5s ease-in-out infinite" }}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-4 w-4 animate-bounce"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                          </svg>
+                          OPEN
+                        </span>
+                      )}
                 </h4>
               </div>
               
