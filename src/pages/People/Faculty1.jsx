@@ -1,6 +1,6 @@
 import { useState } from "react";
 import regularFaculty from "./data/regularFaculty.json";
-import associateFaculty from "./data/associateFaculty.json";
+import associateFaculty from "./data/associateFaculty.js";
 import { ChevronDown, ChevronRight } from "lucide-react";
 
 const FacultySection = ({ title, data, sort = false }) => {

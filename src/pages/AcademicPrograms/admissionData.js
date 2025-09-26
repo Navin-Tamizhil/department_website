@@ -1,0 +1,38 @@
+export const admissions = [
+    {
+    id: 1,
+    title: "Ph.D. Admissions September 2025",
+    date: "Applications are opened [Special round (Deadline: 12th October 2025)]",
+    links: [{label: "Notification",
+      brouchere: "/announcements/PhD_Admissions_September_2025_Brochure_BT.pdf"},
+    {label: "Link for Application",
+      brouchere: "https://docs.google.com/forms/d/e/1FAIpQLSdOyuZwX4JA2A9TLJIrZg1nDrsH1wp6tC06OoEh1bUft6OxPw/viewform"}],
+    isNew: true,
+  },
+  {
+    id: 2,
+    title: "Ph.D. Admissions July 2025",
+    date: "Applications closed – Selected candidates have been informed",
+    links: [{label: "Notification",
+      brouchere: "/announcements/PhD_Admissions_July_2025_Brochure_BT_final_150325.pdf"}],
+    isNew: false,
+  },
+  {
+    id: 3,
+    title: "M.Tech. Admissions July 2025",
+    date: "Results for M.Tech. Medical Biotechnology (Self-Sponsored) Interviews",
+    links: [{label: "Notification",
+      brouchere:"/announcements/Brochure_MTech_Medical_Biotech_2025.pdf"},
+    {label: "Results",
+      brouchere:"/announcements/MTech_MedicalBiotechnology_SelfSponsored_InterviewResults.pdf"}],
+    isNew: false,
+  },
+  {
+    id: 4,
+    title: "Hands-on Lab Training in Biotechnology / Bioinformatics",
+    date: "Brochure available",
+    links: [{label: "Notification",
+      brouchere: "/announcements/HLT_Brochure_Latest_120625.pdf"}],
+      isNew: true,
+  },
+];

@@ -42,10 +42,6 @@ export default function PhD() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
-                International peer-reviewed publications
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
                 Patent filing opportunities
               </li>
               <li className="flex items-start gap-2">
@@ -54,7 +50,7 @@ export default function PhD() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>
-                Joint Doctoral Programs (JDPs)
+                Joint Doctoral Programs (JDPs) with renowned foregin universities
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></span>

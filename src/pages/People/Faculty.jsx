@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import regularFaculty from "./data/regularFaculty.json";
-import associateFaculty from "./data/associateFaculty.json";
+import associateFaculty from "./data/associateFaculty.js";
 
 export default function FacultyProfile() {
   const { id } = useParams();

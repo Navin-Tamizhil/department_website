@@ -57,8 +57,9 @@ export default function Footer() {
                 <a href="https://library.iith.ac.in/" target="_blank" className="hover:text-indigo-400 transition">Library</a>
               </li>
               <li>
-                <a href="https://iith.ac.in/computer-centre/" className="hover:text-indigo-400 transition">Computer Centre</a>
+                <a href="https://www.iith.ac.in/academics/assets/files/calendars/ITH-Acdemic-Calendar-Jul-Nov-2025.pdf" className="hover:text-indigo-400 transition">Academic Calander</a>
               </li>
+              
             </ul>
           </div>
 
@@ -66,7 +67,7 @@ export default function Footer() {
             <h5 className="text-lg font-semibold text-white">Campus</h5>
             <ul className="mt-3 space-y-2 text-sm">
               <li>
-                <a href="https://www.iith.ac.in/bus_schedule/" className="hover:text-indigo-400 transition">Bus Schedule</a>
+                <a href="https://hostel.iith.ac.in/" className="hover:text-indigo-400 transition">Hostel</a>
               </li>
               <li>
                 <a href="https://sunshine.iith.ac.in/" className="hover:text-indigo-400 transition">Sunshine</a>
@@ -78,6 +79,13 @@ export default function Footer() {
                 <a href="https://iith.ac.in/about/aboutiith/#reach" className="hover:text-indigo-400 transition">Getting Here</a>
               </li>
               
+              <li>
+                <a href="https://dost.iith.ac.in/" className="hover:text-indigo-400 transition">Dean (Student) Office</a>
+              </li>
+              <li>
+                <a href="https://ocs.iith.ac.in/" className="hover:text-indigo-400 transition">Office of Carrier Services [Placement/ Internsahip]</a>
+              </li>
+
             </ul>
           </div>
 
@@ -88,18 +96,19 @@ export default function Footer() {
                 <a href="https://intranet.iith.ac.in" target="_blank" className="hover:text-indigo-400 transition">Intranet</a>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("/emergency_contacts")}
-                  className={`hover:text-indigo-400 transition ${
-                    isActive("/emergency_contacts") ? "text-indigo-400 font-semibold" : ""
-                  }`}
-                >
-                  Emergency Contacts
-                </button>
+                <a href="https://www.iith.ac.in/emergency_contacts/" target="_blank" className="hover:text-indigo-400 transition">Emergency Contacts</a>
+              </li>
+              <li>
+                <a href="https://www.iith.ac.in/careers/" target="_blank" className="hover:text-indigo-400 transition">Recruitment</a>
               </li>
               <li>
                 <a href="https://iith.ac.in/statutory-bodies/" target="_blank" className="hover:text-indigo-400 transition">
                   Statutory Bodies
+                </a>
+              </li>
+               <li>
+                <a href="https://sites.google.com/iith.ac.in/safety" target="_blank" className="hover:text-indigo-400 transition">
+                  Laboratory Safety
                 </a>
               </li>
             </ul>

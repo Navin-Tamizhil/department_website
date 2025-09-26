@@ -14,6 +14,7 @@ export default function Contact() {
               Address
             </h2>
             <address className="not-italic text-gray-700 leading-relaxed space-y-1 text-lg">
+              <p>BT113,</p>
               <p>Department of Biotechnology,</p>
               <p>BTBM Building,</p>
               <p>Indian Institute of Technology Hyderabad,</p>
@@ -28,14 +29,7 @@ export default function Contact() {
               Email
             </h2>
             <p className="text-gray-700 text-lg space-y-2">
-              <a
-                href="mailto:head@bt.iith.ac.in"
-                className="inline-flex items-center gap-2 text-indigo-600 hover:underline"
-              >
-                <span>📧</span> head@bt.iith.ac.in
-              </a>
-              <br />
-              <a
+                      <a
                 href="mailto:office@bt.iith.ac.in"
                 className="inline-flex items-center gap-2 text-indigo-600 hover:underline"
               >

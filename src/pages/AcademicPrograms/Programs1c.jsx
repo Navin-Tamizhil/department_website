@@ -19,7 +19,7 @@ export default function Programs() {
       key: "pg", 
       label: "Postgraduate", 
       icon: GraduationCap,
-      subtitle: "M.Tech (Biotechnology)"
+      subtitle: "M.Tech (Medical Biotechnology)"
     },
     { 
       key: "phd", 

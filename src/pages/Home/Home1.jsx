@@ -141,9 +141,10 @@ export default function Home() {
               institutes, and industrial professionals who want to enhance their
               wet-lab or computational biology research skills.
             </p>
-            <p className="mt-6 font-semibold text-gray-900">
-              — Head of Department
-            </p>
+            <p className="text-gray-900 text-right p-4">
+                <b>Dr. Anamika Bhargava,</b><br />
+                Professor and Head of the Department.
+              </p>
           </div>
         </div>
       </section>

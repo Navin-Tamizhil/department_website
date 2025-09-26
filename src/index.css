@@ -150,3 +150,19 @@
     text-shadow: 0 0 10px #ff1493, 0 0 20px #ff6347;
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee 15s linear infinite;
+  white-space: nowrap;
+}

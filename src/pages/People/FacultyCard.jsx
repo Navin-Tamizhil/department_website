@@ -11,6 +11,7 @@ const FacultyCard = ({ person }) => (
         src={person.image}
         alt={person.name}
         className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-indigo-200 group-hover:border-indigo-400 transition"
+
       />
     )}
 

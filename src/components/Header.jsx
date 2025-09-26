@@ -59,6 +59,7 @@ const Header = () => {
       sub: [
         { name: "Programs", path: "/academics/programs" },
         { name: "Committee", path: "/academics/committee" },
+        { name: "Admissions", path: "/academics/admissions" },
       ],
     },
     {
@@ -83,8 +84,9 @@ const Header = () => {
     },
     { name: "Facilities", path: "/facilities" },
     { name: "Achievements", path: "/achievements" },
-    { name: "Announcements", path: "/announcements" },
+    
     { name: "Events", path: "/events" },
+    { name: "Biotechsociety", path: "/biotechsociety" },    
     { name: "Contact", path: "/contact" },
   ];
 

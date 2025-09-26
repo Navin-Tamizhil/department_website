@@ -1,25 +1,31 @@
 import { useState } from "react";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
-import { BookOpen, Users } from "lucide-react";
+import { BookOpen, Users, UserPlus } from "lucide-react";
 
 export default function Academics() {
   const navigate = useNavigate();
   const location = useLocation();
   
-  const tabs = [
-    { 
-      key: "programs", 
-      label: "Academic Programs", 
-      icon: BookOpen,
-      path: "/academics/programs"
-    },
-    { 
-      key: "committee", 
-      label: "Committees", 
-      icon: Users,
-      path: "/academics/committee"
-    }
-  ];
+const tabs = [
+  { 
+    key: "programs", 
+    label: "Academic Programs", 
+    icon: BookOpen,
+    path: "/academics/programs"
+  },
+  { 
+    key: "committee", 
+    label: "Committees", 
+    icon: Users,
+    path: "/academics/committee"
+  },
+  { 
+    key: "admission", 
+    label: "Admission", 
+    icon: UserPlus,
+    path: "/academics/admissions"
+  }
+];
 
   const getActiveTab = () => {
     const currentPath = location.pathname;

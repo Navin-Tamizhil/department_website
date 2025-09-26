@@ -10,6 +10,7 @@ import Home from "./pages/Home/Home1";
 import Academics from "./pages/AcademicPrograms/Academics1.jsx";
 import Programs from "./pages/AcademicPrograms/Programs1c.jsx";
 import Committee from "./pages/AcademicPrograms/Committee.jsx";
+import Admissions from "./pages/AcademicPrograms/Admissions.jsx";
 
 // Research
 import Research from "./pages/Research/Research";
@@ -19,7 +20,7 @@ import Collaborations from "./pages/Research/Collaborations.jsx";
 
 // People
 import PeopleLayout from "./pages/People/PeopleLayout";
-import Faculty from "./pages/People/Faculty1";
+import Faculty from "./pages/People/Faculty2";
 import DACMembers from "./pages/People/DACMembers";
 import Staff from "./pages/People/Staff";
 import Students from "./pages/People/Students";
@@ -28,8 +29,8 @@ import Alumni from "./pages/People/Alumni";
 // Other Pages
 import Facilities from "./pages/Facilities/Facilities.jsx";
 import Achievements from "./pages/Achievements/Achievements.jsx";
-import Announcements from "./pages/Announcements/Announcements.jsx";
 import Events from "./pages/Events/Events.jsx";
+import {Biotechsociety} from "./pages/Biotechsociety/BiotechSociety.jsx";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route index element={<Programs />} />
             <Route path="programs" element={<Programs />} />
             <Route path="committee" element={<Committee />} />
+            <Route path="admissions" element={<Admissions />} />
           </Route>
 
           {/* Research */}
@@ -68,8 +70,8 @@ function App() {
           {/* Others */}
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/achievements" element={<Achievements />} />
-          <Route path="/announcements" element={<Announcements />} />
           <Route path="/events" element={<Events />} />
+           <Route path="/biotechsociety" element={<Biotechsociety />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

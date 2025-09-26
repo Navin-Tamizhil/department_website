@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import PGCourseDescription from "./PG_CourseDescription1c";
 import { pgloadSyllabus } from "./PGsyllabusData";
-import { BookOpen, Calendar, FileText, Clock, Users, Award, ChevronDown, ChevronRight } from "lucide-react";
+import { BookOpen, Calendar, FileText, Clock, Users, Award, ChevronDown, ChevronRight, UserPlus } from "lucide-react";
 
 export default function PG() {
   const [syllabus, setSyllabus] = useState([]);
@@ -65,10 +65,12 @@ export default function PG() {
         <div className="mb-8">
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-8 border border-emerald-100">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">M.Tech (Medical Biotechnology)</h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Advanced degree program designed to provide in-depth knowledge and research experience in medical biotechnology.
-              Students engage in cutting-edge research while developing expertise in specialized areas of biotechnology with
-              medical applications.
+            <p className="text-gray-700 text-justify leading-relaxed mb-6">
+              Advanced degree program cultivating a profound understanding of biological processes and their medical applications,
+              fostering genuine interest in medical biotechnology. Students receive hands-on training with state-of-the-art technologies,
+              engage in innovative research, and develop strong scientific communication skills. The program prepares graduates to  excel in 
+              both academia and industry by equipping them with the knowledge, practical expertise, and professional abilities essential for success. 
+              
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-3">
@@ -78,10 +80,23 @@ export default function PG() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="w-5 h-5 text-emerald-600" />
-                  <span className="font-semibold">Eligibility:</span> GATE qualified or equivalent
+                  <span className="font-semibold">Eligibility:</span> <span><b>Through GATE</b> B.Tech/B.E./M.Sc. in any area of life sciences/M.Pharm, with a valid GATE score
+ (in BT or XL). IIT B.Tech graduates with a CGPA of 8 or above without a GATE score are eligible to apply. <b>Self sponsored</b>B.Tech/B.E./M.Sc. in any area of life 
+ sciences/M.Pharm with a CGPA of 7 and above (GATE score not required)</span> 
                 </div>
               </div>
+              
+              
               <div className="space-y-3">
+                <div className="flex items-start gap-2">
+                  <UserPlus className="w-5 h-5 text-emerald-600 mt-0.5" />
+                  <div>
+                    <span className="font-semibold">Admission procedure:</span>
+                    <span className="text-sm text-gray-600 ml-2">
+                    (through GATE) based on GATE score through COAP, (self-sponsored) Online interviews
+                    </span>
+                  </div>
+                </div>
                 <div className="flex items-start gap-2">
                   <Award className="w-5 h-5 text-emerald-600 mt-0.5" />
                   <div>

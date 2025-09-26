@@ -8,7 +8,7 @@ import {
   Calendar,
   FileText,
   Clock,
-  Users,
+  Users, UserPlus2
 } from "lucide-react";
 
 export default function UG() {
@@ -87,6 +87,11 @@ export default function UG() {
               </div>
             </div>
             <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                                <UserPlus2 className="w-5 h-5 text-indigo-600" />
+                                <span className="font-semibold">Admission procedure</span> GATE qualified or equivalent
+                              </div>
+                            
               <div className="flex items-start gap-2">
                 <BookOpen className="w-5 h-5 text-indigo-600 mt-0.5" />
                 <div>
