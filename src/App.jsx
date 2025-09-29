@@ -15,7 +15,7 @@ import Admissions from "./pages/AcademicPrograms/Admissions.jsx";
 // Research
 import Research from "./pages/Research/Research";
 import ResearchAreas from "./pages/Research/ResearchAreas3.jsx";
-import Projects from "./pages/Research/Projects1.jsx";
+import Projects from "./pages/Research/Projects.jsx";
 import Collaborations from "./pages/Research/Collaborations.jsx";
 
 // People

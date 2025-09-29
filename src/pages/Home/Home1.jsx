@@ -243,7 +243,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick }) {
               : "bg-gray-200 text-gray-700 hover:bg-indigo-100"
           }`}
         >
-          Announcements & Events
+          Latest 
         </button>
 
         <button
@@ -289,7 +289,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick }) {
           </div>
           <div className="text-center mt-6">
             <a
-              href="/announcements"
+              href="/academics/admissions"
               className="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-indigo-700 transition mr-4"
             >
               View All Announcements →

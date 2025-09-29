@@ -1,195 +1,152 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { Pie } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+
+} from "chart.js";
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function Projects() {
-  const [projects, setProjects] = useState({ ongoing: [], completed: {} });
-  const [activeTab, setActiveTab] = useState("ongoing");
+  const [projects, setProjects] = useState([]);
+  const [years, setYears] = useState([]);
   const [selectedYear, setSelectedYear] = useState(null);
 
   useEffect(() => {
-    async function loadData() {
-      // Load Ongoing Projects
-      const ongoingRes = await fetch("/research_excel/ongoing_projects.xlsx");
-      const ongoingBuffer = await ongoingRes.arrayBuffer();
-      const ongoingWB = XLSX.read(ongoingBuffer, { type: "array" });
-      const ongoingSheet = ongoingWB.Sheets[ongoingWB.SheetNames[0]];
-      let ongoingData = XLSX.utils.sheet_to_json(ongoingSheet);
-
-      // Sort ongoing by year (latest first)
-      ongoingData = ongoingData.sort((a, b) => b["Year"] - a["Year"]);
-
-      // Load Completed Projects
-      const completedRes = await fetch("/research_excel/completed_projects.xlsx");
-      const completedBuffer = await completedRes.arrayBuffer();
-      const completedWB = XLSX.read(completedBuffer, { type: "array" });
-      const completedSheet = completedWB.Sheets[completedWB.SheetNames[0]];
-      const completedData = XLSX.utils.sheet_to_json(completedSheet);
-
-      // Organize completed by year
-      const completedByYear = {};
-      completedData.forEach((proj) => {
-        const year = proj["Year"];
-        if (!completedByYear[year]) completedByYear[year] = [];
-        completedByYear[year].push(proj);
-      });
-
-      setProjects({ ongoing: ongoingData, completed: completedByYear });
-      setSelectedYear(Object.keys(completedByYear).sort((a, b) => b - a)[0]);
-    }
-
-    loadData();
+    loadProjects();
   }, []);
 
-  // Prepare Pie Chart data for ongoing projects (using "Category" column for example)
-  const pieData = Object.values(
-    projects.ongoing.reduce((acc, proj) => {
-      const category = proj["Category"] || "Others";
-      acc[category] = (acc[category] || 0) + 1;
-      return acc;
-    }, {})
-  ).map((count, idx, arr) => ({
-    name: Object.keys(
-      projects.ongoing.reduce((acc, proj) => {
-        const category = proj["Category"] || "Others";
-        acc[category] = (acc[category] || 0) + 1;
-        return acc;
-      }, {})
-    )[idx],
-    value: count,
-  }));
+  const loadProjects = async () => {
+    try {
+      const res = await fetch("/research_excel/projects_all.xlsx");
+      if (!res.ok) throw new Error("HTTP error " + res.status);
 
-  const COLORS = ["#6366F1", "#22C55E", "#F59E0B", "#EF4444", "#3B82F6", "#9333EA"];
+      const buf = await res.arrayBuffer();
+      const wb = XLSX.read(buf, { type: "array" });
+      const ws = wb.Sheets[wb.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(ws, { defval: "" });
+
+      const cleaned = rows.map((r) => ({
+        Year: r["Year"],
+        FundingAgency: (r["Funding Agency"] || "").trim(),
+        ProjectTitle: r["Project Title"] || "",
+      }));
+
+      cleaned.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+      const uniqueYears = [...new Set(cleaned.map((r) => r.Year))].sort(
+        (a, b) => parseInt(b) - parseInt(a)
+      );
+
+      setProjects(cleaned);
+      setYears(uniqueYears);
+      setSelectedYear(uniqueYears[0]);
+    } catch (err) {
+      console.error("Failed to load Excel data:", err);
+    }
+  };
+
+  const filteredProjects = projects.filter((p) => p.Year === selectedYear);
+
+  const fundingCounts = filteredProjects.reduce((acc, proj) => {
+    const fa = proj.FundingAgency || "Unknown";
+    acc[fa] = (acc[fa] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Calculate percentages for the pie chart labels
+  const totalProjects = Object.values(fundingCounts).reduce(
+    (a, b) => a + b,
+    0
+  );
+
+  // Chart.js options to show percentages on tooltip and labels
+  const pieOptions = {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const label = context.label || "";
+            const value = context.parsed || 0;
+            const percentage = ((value / totalProjects) * 100).toFixed(1);
+            return `${label}: ${percentage}% (${value})`;
+          },
+        },
+      },
+      legend: {
+        position: "bottom",
+        labels: {
+          boxWidth: 18,
+          padding: 15,
+        },
+      },
+    },
+  };
+
+  const pieData = {
+    labels: Object.keys(fundingCounts),
+    datasets: [
+      {
+        label: "Projects by Funding Agency",
+        data: Object.values(fundingCounts),
+        backgroundColor: [
+          "#6366F1", "#EC4899", "#F59E0B", "#10B981",
+          "#3B82F6", "#EF4444", "#8B5CF6", "#14B8A6",
+          "#F43F5E", "#EAB308", "#A78BFA", "#06B6D4",
+          "#F87171", "#4ADE80",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6 text-indigo-700">Projects</h1>
+    <div className="container mx-auto px-4 py-10">
+      <h3 className="text-3xl font-bold mb-8 text-center text-indigo-700">
+        Research Projects
+      </h3>
 
-      {/* Tabs */}
-      <div className="flex gap-4 mb-6">
-        <button
-          onClick={() => setActiveTab("ongoing")}
-          className={`px-4 py-2 rounded-lg shadow-md ${
-            activeTab === "ongoing"
-              ? "bg-indigo-600 text-white"
-              : "bg-gray-200 hover:bg-gray-300"
-          }`}
-        >
-          Ongoing
-        </button>
-        <button
-          onClick={() => setActiveTab("completed")}
-          className={`px-4 py-2 rounded-lg shadow-md ${
-            activeTab === "completed"
-              ? "bg-indigo-600 text-white"
-              : "bg-gray-200 hover:bg-gray-300"
-          }`}
-        >
-          Completed
-        </button>
+      
+
+      {/* Centered Pie Chart */}
+      <div className="flex justify-center mb-12">
+        <div className="w-full max-w-md">
+          <h4 className="text-lg font-semibold mb-4 text-center text-gray-700">
+            Projects by Funding Agency 
+          </h4>
+          {Object.keys(fundingCounts).length > 0 ? (
+            <Pie data={pieData} options={pieOptions} />
+          ) : (
+            <p className="text-center text-gray-500">No data for this year.</p>
+          )}
+        </div>
       </div>
 
-      {/* Ongoing Projects */}
-      {activeTab === "ongoing" && (
-        <div className="space-y-6">
-          {/* Pie Chart */}
-          {pieData.length > 0 && (
-            <div className="w-full h-80 mb-6">
-              <ResponsiveContainer>
-                <PieChart>
-                  <Pie
-                    data={pieData}
-                    dataKey="value"
-                    nameKey="name"
-                    outerRadius={120}
-                    fill="#8884d8"
-                    label
-                  >
-                    {pieData.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={COLORS[index % COLORS.length]}
-                      />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
-              </ResponsiveContainer>
+      {/* Artistic Project Titles with Funding Agency name */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project, index) => (
+            <div
+              key={index}
+              className="p-6 bg-gradient-to-br from-indigo-50 to-green-50 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
+            >
+              <p className="text-indigo-600 text-center font-semibold mb-1 uppercase tracking-wider text-sm">
+                {project.FundingAgency || "Unknown Agency"}
+              </p>
+              <p className="text-indigo-800 text-lg font-semibold text-center italic tracking-wide">
+                {project.ProjectTitle || "Untitled Project"}
+              </p>
             </div>
-          )}
-
-          {/* Cards */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.ongoing.map((proj, idx) => (
-              <div
-                key={idx}
-                className="p-4 border border-gray-200 rounded-xl shadow hover:shadow-lg transition"
-              >
-                <h3 className="text-lg font-semibold text-indigo-700">
-                  {proj["Project Title"]}
-                </h3>
-                <p className="text-gray-600 mt-1">
-                  <span className="font-medium">{proj["PI"]}</span>
-                  {proj["Co-PI"] ? ` & ${proj["Co-PI"]}` : ""}
-                </p>
-                <p className="text-sm text-gray-500 mt-2">
-                  {proj["Funding Agency"]} | {proj["Month/Year"]}
-                </p>
-                {proj["Category"] && (
-                  <span className="inline-block mt-3 px-2 py-1 text-xs rounded bg-indigo-100 text-indigo-700">
-                    {proj["Category"]}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Completed Projects */}
-      {activeTab === "completed" && selectedYear && (
-        <div>
-          {/* Year Tabs */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {Object.keys(projects.completed)
-              .sort((a, b) => b - a)
-              .map((year) => (
-                <button
-                  key={year}
-                  onClick={() => setSelectedYear(year)}
-                  className={`px-3 py-1 rounded-lg shadow ${
-                    selectedYear === year
-                      ? "bg-green-600 text-white"
-                      : "bg-gray-200 hover:bg-gray-300"
-                  }`}
-                >
-                  {year}
-                </button>
-              ))}
-          </div>
-
-          {/* Cards */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.completed[selectedYear].map((proj, idx) => (
-              <div
-                key={idx}
-                className="p-4 border border-gray-200 rounded-xl shadow hover:shadow-lg transition"
-              >
-                <h3 className="text-lg font-semibold text-indigo-700">
-                  {proj["Project Title"]}
-                </h3>
-                <p className="text-gray-600 mt-1">
-                  <span className="font-medium">{proj["Investigator"]}</span>
-                </p>
-                <p className="text-sm text-gray-500 mt-2">
-                  {proj["Funding Agency"]} | {proj["Month/Year"]}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+          ))
+        ) : (
+          <p className="text-gray-500 col-span-full text-center">
+            No projects found for {selectedYear}.
+          </p>
+        )}
+      </div>
     </div>
   );
 }

@@ -39,6 +39,10 @@ export default function Research() {
           tabIndex={0}
           onKeyDown={(e) => e.key === "Enter" && setActiveGroupId(null)}
         >
+           {/* Group Name - displayed once at the top */}
+    <h2 className="text-3xl font-bold text-indigo-700 mb-6 text-center">
+      {activeGroup.name}
+    </h2>
           {/* Image + PI Labs container */}
           <div className="bg-white rounded-xl shadow-lg p-6 mb-10 max-w-7xl mx-auto">
             {/* Large Image */}
