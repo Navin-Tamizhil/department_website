@@ -1,18 +1,24 @@
 import { useEffect, useState } from "react";
 import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
   PieChart,
   Pie,
   Cell,
-  Legend,
+  Tooltip,
   ResponsiveContainer,
-  LabelList,
+  Legend,
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Bar,
 } from "recharts";
+
+// Simple CSV parsing helper to get trimmed lines
+const parseCSV = (csvText) =>
+  csvText
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
 
 export default function Students() {
   const tabs = [
@@ -23,22 +29,28 @@ export default function Students() {
   ];
 
   const [activeTab, setActiveTab] = useState("btech");
-  const [selectedYear, setSelectedYear] = useState("2022-2026");
-  const [data, setData] = useState({ btech: [], mtech: [], phd: [] });
+  const [selectedYear, setSelectedYear] = useState(null);
 
-  // Capitalize student names properly
-  const capitalizeName = (name) => {
-    if (!name) return "";
-    return name
-      .toString()
-      .split(" ")
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
-      .join(" ");
-  };
+  const [data, setData] = useState({
+    btech: [],
+    mtech: [],
+    phd: [],
+    alumni: { btech: [], mtech: [] },
+  });
 
-  // Fetch and process CSV files
+  // Capitalize names helper
+  const capitalizeName = (name) =>
+    name
+      ? name
+          .toString()
+          .split(" ")
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+          .join(" ")
+      : "";
+
+  // Load data for students and alumni
   const loadData = async () => {
-    const files = [
+    const studentFiles = [
       "btech_2022.csv",
       "btech_2023.csv",
       "btech_2024.csv",
@@ -63,28 +75,42 @@ export default function Students() {
       "phd_2025_january.csv",
     ];
 
-    const newData = { btech: [], mtech: [], phd: [] };
+    // Alumni files based on your folder structure
+    const alumniFiles = [
+      "alumini_excel/btech_2021.csv",
+      "alumini_excel/mtech_2012.csv",
+      "alumini_excel/mtech_2013.csv",
+      "alumini_excel/mtech_2014.csv",
+      "alumini_excel/mtech_2015.csv",
+      "alumini_excel/mtech_2016.csv",
+      "alumini_excel/mtech_2017.csv",
+      "alumini_excel/mtech_2018.csv",
+      "alumini_excel/mtech_2019.csv",
+    ];
 
-    for (const file of files) {
+    const newData = { btech: [], mtech: [], phd: [], alumni: { btech: [], mtech: [] } };
+
+    // Load student files
+    for (const file of studentFiles) {
       try {
         const res = await fetch(`/students_excel/${file}`);
         if (!res.ok) continue;
         const text = await res.text();
-        const rows = text.split("\n").map((r) => r.trim()).filter(Boolean);
-        const students = rows.map(capitalizeName);
+        const rows = parseCSV(text).map(capitalizeName);
 
         if (file.startsWith("btech")) {
           const year = parseInt(file.match(/btech_(\d+)/)[1], 10);
-          newData.btech.push({ year, students });
+          newData.btech.push({ year, students: rows });
         } else if (file.startsWith("mtech")) {
           const year = parseInt(file.match(/mtech_(\d+)/)[1], 10);
-          newData.mtech.push({ year, students });
+          newData.mtech.push({ year, students: rows });
         } else if (file.startsWith("phd")) {
-          const [, year, batch] = file.match(/phd_(\d+)_(january|july)/);
+          const [, yearStr, batch] = file.match(/phd_(\d+)_(january|july)/);
+          const year = parseInt(yearStr, 10);
           newData.phd.push({
-            year: parseInt(year, 10),
+            year,
             batch: batch.charAt(0).toUpperCase() + batch.slice(1),
-            students,
+            students: rows,
           });
         }
       } catch (err) {
@@ -92,31 +118,45 @@ export default function Students() {
       }
     }
 
+    // Load alumni files
+    for (const file of alumniFiles) {
+      try {
+        const res = await fetch(`/${file}`);
+        if (!res.ok) continue;
+        const text = await res.text();
+        const rows = parseCSV(text).map(capitalizeName);
+
+        const match = file.match(/(btech|mtech)_(\d{4})\.csv$/i);
+        if (match) {
+          const [, program, yearStr] = match;
+          const year = parseInt(yearStr, 10);
+          newData.alumni[program.toLowerCase()].push({
+            year,
+            students: rows,
+          });
+        }
+      } catch (err) {
+        console.error("Error loading alumni file", file, err);
+      }
+    }
+
+    // Sort by year
     newData.btech.sort((a, b) => a.year - b.year);
     newData.mtech.sort((a, b) => a.year - b.year);
     newData.phd.sort((a, b) =>
-      a.year === b.year
-        ? a.batch === "January"
-          ? -1
-          : 1
-        : a.year - b.year
+      a.year === b.year ? (a.batch === "January" ? -1 : 1) : a.year - b.year
     );
+    newData.alumni.btech.sort((a, b) => a.year - b.year);
+    newData.alumni.mtech.sort((a, b) => a.year - b.year);
 
     setData(newData);
   };
 
-  // Load data on mount
   useEffect(() => {
     loadData();
   }, []);
 
-  // Automatically select the first year when tab or data changes
-  useEffect(() => {
-    const years = getYears(activeTab);
-    if (years.length > 0) setSelectedYear(years[0]);
-    else setSelectedYear(null);
-  }, [activeTab, data]);
-
+  // Get years for tabs
   const getYears = (tab) => {
     if (tab === "btech") return data.btech.map((b) => `${b.year}-${b.year + 4}`);
     if (tab === "mtech") return data.mtech.map((m) => `${m.year}-${m.year + 2}`);
@@ -124,6 +164,12 @@ export default function Students() {
     return [];
   };
 
+  useEffect(() => {
+    const years = getYears(activeTab);
+    setSelectedYear(years.length > 0 ? years[0] : null);
+  }, [activeTab, data]);
+
+  // Get students by tab and year selection
   const getStudents = (tab, year) => {
     if (tab === "btech") {
       const startYear = parseInt(year.split("-")[0], 10);
@@ -139,194 +185,237 @@ export default function Students() {
     return [];
   };
 
-  // Color palette
-  const COLOR_SCHEME = {
-    btech: ["#0f78be", "#719ab8"],
-    mtech: ["#10B981", "#6EE7B7"],
-    phd: ["#e99a11", "#FCD34D"],
-  };
+  // Calculate statistics
+  const totalBtech = data.btech.reduce((acc, d) => acc + d.students.length, 0);
+  const totalMtech = data.mtech.reduce((acc, d) => acc + d.students.length, 0);
+  const totalPhd = data.phd.reduce((acc, d) => acc + d.students.length, 0);
+  const totalBtechAlumni = data.alumni.btech.reduce((acc, d) => acc + d.students.length, 0);
+  const totalMtechAlumni = data.alumni.mtech.reduce((acc, d) => acc + d.students.length, 0);
 
-  const statsData = () => {
-    const btech = data.btech.map((b, i) => ({
-      course: `B.Tech ${b.year}`,
-      count: b.students.length,
-      color: COLOR_SCHEME.btech[i % 2],
-    }));
-    const mtech = data.mtech.map((m, i) => ({
-      course: `M.Tech ${m.year}`,
-      count: m.students.length,
-      color: COLOR_SCHEME.mtech[i % 2],
-    }));
-    const phd = data.phd.map((p, i) => ({
-      course: `Ph.D ${p.year}-${p.batch}`,
-      count: p.students.length,
-      color: COLOR_SCHEME.phd[i % 2],
-    }));
-    return [...btech, ...mtech, ...phd];
-  };
-
-  const totalCounts = {
-    btech: data.btech.reduce((a, b) => a + b.students.length, 0),
-    mtech: data.mtech.reduce((a, b) => a + b.students.length, 0),
-    phd: data.phd.reduce((a, b) => a + b.students.length, 0),
-  };
-  const grandTotal = totalCounts.btech + totalCounts.mtech + totalCounts.phd;
-
-  const pieData = [
-    { name: "B.Tech", value: totalCounts.btech, color: COLOR_SCHEME.btech[0] },
-    { name: "M.Tech", value: totalCounts.mtech, color: COLOR_SCHEME.mtech[0] },
-    { name: "Ph.D.", value: totalCounts.phd, color: COLOR_SCHEME.phd[0] },
+  // Overall ratio pie chart
+  const overallPieData = [
+    { name: "B.Tech Current", value: totalBtech, color: "#0f78be" },
+    { name: "M.Tech Current", value: totalMtech, color: "#10B981" },
+    { name: "Ph.D. Current", value: totalPhd, color: "#e99a11" },
+    { name: "B.Tech Alumni", value: totalBtechAlumni, color: "#60a5fa" },
+    { name: "M.Tech Alumni", value: totalMtechAlumni, color: "#34d399" },
   ];
+
+  // Program ratio pie chart
+  const programRatioPieData = [
+    { name: "B.Tech", value: totalBtech, color: "#0f78be" },
+    { name: "M.Tech", value: totalMtech, color: "#10B981" },
+    { name: "Ph.D.", value: totalPhd, color: "#e99a11" },
+  ];
+
+  // BTech bar chart data (year-wise current + alumni)
+  const allBtechYears = [...new Set([
+    ...data.btech.map(d => d.year),
+    ...data.alumni.btech.map(d => d.year)
+  ])].sort();
+
+  const btechBarData = allBtechYears.map(year => ({
+    year: year.toString(),
+    Current: data.btech.find(d => d.year === year)?.students.length || 0,
+    Alumni: data.alumni.btech.find(d => d.year === year)?.students.length || 0,
+  }));
+
+  // MTech bar chart data
+  const allMtechYears = [...new Set([
+    ...data.mtech.map(d => d.year),
+    ...data.alumni.mtech.map(d => d.year)
+  ])].sort();
+
+  const mtechBarData = allMtechYears.map(year => ({
+    year: year.toString(),
+    Current: data.mtech.find(d => d.year === year)?.students.length || 0,
+    Alumni: data.alumni.mtech.find(d => d.year === year)?.students.length || 0,
+  }));
+
+  // PhD bar chart data
+  const allPhdYears = [...new Set(data.phd.map(d => d.year))].sort();
+  const phdBarData = allPhdYears.map(year => ({
+    year: year.toString(),
+    Students: data.phd.filter(d => d.year === year).reduce((sum, d) => sum + d.students.length, 0),
+  }));
 
   return (
     <section className="container mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold text-center text-indigo-700 mb-10 drop-shadow-lg">
-        Meet Our Students
-      </h1>
-
       {/* Tabs */}
-      <div className="flex gap-4 mb-8 border-b border-gray-300">
-        {tabs.map((tab) => (
-          <button
-            key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
-            className={`px-4 py-2 font-medium border-b-2 transition ${
-              activeTab === tab.key
-                ? "border-indigo-600 text-indigo-600"
-                : "border-transparent text-gray-600 hover:text-indigo-500"
+      <ul className="flex gap-4 border-b border-gray-300 mb-8">
+        {tabs.map(({ key, label }) => (
+          <li
+            key={key}
+            className={`cursor-pointer px-4 py-2 ${
+              activeTab === key
+                ? "border-b-2 border-indigo-700 text-indigo-700 font-semibold"
+                : "text-gray-600 hover:text-indigo-700"
             }`}
+            onClick={() => setActiveTab(key)}
           >
-            {tab.label}
-          </button>
+            {label}
+          </li>
         ))}
-      </div>
+      </ul>
 
-      {/* Year Selection */}
+      {/* Year/Batch selector */}
       {activeTab !== "stats" && (
-        <div className="flex flex-wrap gap-3 mb-6">
-          {getYears(activeTab).map((year) => (
-            <button
-              key={year}
-              onClick={() => setSelectedYear(year)}
-              className={`px-4 py-2 rounded-md border font-medium shadow-sm transition ${
-                selectedYear === year
-                  ? "bg-indigo-100 border-indigo-600 text-indigo-800"
-                  : "bg-white hover:bg-gray-100 border-gray-300"
-              }`}
-            >
-              {year}
-            </button>
-          ))}
+        <div className="mb-6">
+          <select
+            className="border border-gray-300 rounded px-3 py-1"
+            value={selectedYear || ""}
+            onChange={(e) => setSelectedYear(e.target.value)}
+          >
+            {getYears(activeTab).map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
         </div>
       )}
 
-      {/* Student List */}
-      {selectedYear && activeTab !== "stats" && (() => {
-        if (activeTab === "phd") {
-          const jan = getStudents("phd", selectedYear).find((b) => b.batch === "January")?.students || [];
-          const jul = getStudents("phd", selectedYear).find((b) => b.batch === "July")?.students || [];
+      {/* Content for B.Tech, M.Tech */}
+      {(activeTab === "btech" || activeTab === "mtech") && selectedYear && (
+        <ul className="list-disc pl-6 max-h-[400px] overflow-auto bg-white shadow rounded p-4">
+          {getStudents(activeTab, selectedYear).map((student, i) => (
+            <li key={i} className="mb-1">
+              {student}
+            </li>
+          ))}
+        </ul>
+      )}
 
-          if (jan.length === 0 && jul.length === 0) return null;
-
-          return (
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-indigo-700">
-                Ph.D. – {selectedYear}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[{ name: "January", list: jan }, { name: "July", list: jul }].map(({ name, list }) =>
-                  list.length > 0 ? (
-                    <div key={name}>
-                      <h4 className="font-semibold text-gray-700 mb-2">{selectedYear} – {name}</h4>
-                      <ul className="list-disc ml-5 space-y-1">{list.map((s, i) => <li key={i}>{s}</li>)}</ul>
-                    </div>
-                  ) : null
-                )}
+      {/* PhD batches */}
+      {activeTab === "phd" && selectedYear && (
+        <>
+          {data.phd
+            .filter((d) => d.year === selectedYear)
+            .map(({ batch, students }) => (
+              <div key={batch} className="mb-6">
+                <h4 className="text-lg font-semibold mb-2 text-indigo-700">
+                  Batch: {batch}
+                </h4>
+                <ul className="list-disc pl-6 max-h-[300px] overflow-auto bg-white shadow rounded p-4">
+                  {students.map((student, i) => (
+                    <li key={i} className="mb-1">
+                      {student}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          );
-        } else {
-          const students = getStudents(activeTab, selectedYear);
-          if (students.length === 0) return null;
+            ))}
+        </>
+      )}
 
-          return (
+      {/* Statistics Tab */}
+      {activeTab === "stats" && (
+        <div className="space-y-8">
+          {/* BTech Statistics */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <h3 className="text-2xl font-bold mb-4 text-indigo-700 text-center">
+              B.Tech Statistics
+            </h3>
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart data={btechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" />
+                <YAxis allowDecimals={false} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="Current" fill="#0f78be" />
+                <Bar dataKey="Alumni" fill="#60a5fa" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* MTech Statistics */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <h3 className="text-2xl font-bold mb-4 text-green-700 text-center">
+              M.Tech Statistics
+            </h3>
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart data={mtechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" />
+                <YAxis allowDecimals={false} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="Current" fill="#10B981" />
+                <Bar dataKey="Alumni" fill="#34d399" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* PhD Statistics */}
+          <div className="bg-white shadow-lg rounded-lg p-6">
+            <h3 className="text-2xl font-bold mb-4 text-yellow-700 text-center">
+              Ph.D. Statistics
+            </h3>
+            <ResponsiveContainer width="100%" height={400}>
+              <BarChart data={phdBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="year" />
+                <YAxis allowDecimals={false} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="Students" fill="#e99a11" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+
+          {/* Pie Charts */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Program Ratio Pie Chart */}
             <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-indigo-700">
-                {tabs.find((t) => t.key === activeTab)?.label} – {selectedYear}
+              <h3 className="text-xl font-bold mb-4 text-indigo-700 text-center">
+                Current Students Ratio
               </h3>
-              <ul className="list-disc ml-5 space-y-1">
-                {students.map((s, i) => <li key={i}>{s}</li>)}
-              </ul>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={programRatioPieData}
+                    dataKey="value"
+                    nameKey="name"
+                    outerRadius={100}
+                    label={({ name, value }) => `${name}: ${value}`}
+                  >
+                    {programRatioPieData.map((entry, index) => (
+                      <Cell key={index} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                  <Legend />
+                </PieChart>
+              </ResponsiveContainer>
             </div>
-          );
-        }
-      })()}
 
-      {/* Statistics Section */}
-{activeTab === "stats" && (
-  <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
-    {/* 2/3 Width Bar Chart */}
-    <div className="bg-white shadow-lg rounded-lg p-2 lg:col-span-2 col-span-1">
-      <h3 className="text-2xl font-bold mb-6 text-indigo-700 text-center">
-        Students Per Batch (All Programs)
-      </h3>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart
-          data={statsData()}
-          margin={{ top: 20, right: 20, left: 10, bottom: 80 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="course"
-            angle={-45}
-            textAnchor="end"
-            interval={0}
-            height={100}
-          />
-          <YAxis />
-          <Tooltip />
-          <Bar dataKey="count">
-            {statsData().map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-            <LabelList dataKey="count" position="top" />
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
-
-    {/* 1/3 Width Pie Chart */}
-    <div className="bg-white shadow-lg rounded-lg p-1 text-center col-span-1">
-      <h3 className="text-2xl font-bold mb-6 text-indigo-700">
-        Student Distribution
-      </h3>
-      <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
-          <Pie
-            data={pieData}
-            dataKey="value"
-            cx="50%"
-            cy="50%"
-            outerRadius={100}
-            label={({ name, value }) =>
-              `${name}: ${value} (${((value / grandTotal) * 100).toFixed(1)}%)`
-            }
-          >
-            {pieData.map((entry, i) => (
-              <Cell key={i} fill={entry.color} />
-            ))}
-          </Pie>
-          <Tooltip formatter={(val, name) => [`${val} students`, name]} />
-          <Legend />
-        </PieChart>
-      </ResponsiveContainer>
-      <p className="mt-4 font-semibold text-gray-700">
-        Total: <span className="text-indigo-700">{grandTotal}</span> Students
-      </p>
-    </div>
-  </div>
-)}
-
+            {/* Overall Distribution Pie Chart */}
+            <div className="bg-white shadow-lg rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-4 text-indigo-700 text-center">
+                Current & Alumni Distribution
+              </h3>
+              <ResponsiveContainer width="100%" height={300}>
+                <PieChart>
+                  <Pie
+                    data={overallPieData}
+                    dataKey="value"
+                    nameKey="name"
+                    outerRadius={100}
+                    label={({ name, value }) => `${name}: ${value}`}
+                  >
+                    {overallPieData.map((entry, index) => (
+                      <Cell key={index} fill={entry.color} />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                  <Legend />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

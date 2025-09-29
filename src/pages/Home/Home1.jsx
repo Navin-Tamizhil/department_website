@@ -107,10 +107,12 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute -inset-3 bg-gradient-to-tr from-pink-400 via-indigo-400 to-purple-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition"></div>
               <img
-                src="/images/hod.jpg"
+                src="/images/AB1_medium.jpg"
                 alt="Head of Department"
-                className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
-              />
+                 width="4359"
+                 height="3400"
+               className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
+                  />
             </div>
           </div>
 
