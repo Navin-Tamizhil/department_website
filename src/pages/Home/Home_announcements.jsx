@@ -1,61 +1,12 @@
 import React, { useState } from 'react';
-import { CalendarDays, ExternalLink, ChevronRight, X } from 'lucide-react';
+import { CalendarDays, ExternalLink, X } from 'lucide-react';
+import { admissions } from '../AcademicPrograms/admissionData';
 
-// =============== ANNOUNCEMENTS COMPONENT ===============
 export const AnnouncementsModified = ({ onItemClick }) => {
   const [expandedItem, setExpandedItem] = useState(null);
-  
-  const admissions = [
-    {
-      id: 1,
-      title: "Ph.D. Admissions July 2025",
-      date: "Applications closed – Selected candidates have been informed",
-      links: [
-        {
-          label: "Notification",
-          brouchere: "/announcements/PhD_Admissions_July_2025_Brochure_BT_final_150325.pdf",
-        },
-      ],
-      isNew: false,
-    },
-    {
-      id: 2,
-      title: "M.Tech. Admissions July 2025",
-      date: "Results for M.Tech. Medical Biotechnology (Self-Sponsored) Interviews",
-      links: [
-        {
-          label: "Notification",
-          brouchere: "/announcements/Brochure_MTech_Medical_Biotech_2025.pdf",
-        },
-        {
-          label: "Results",
-          brouchere: "/announcements/MTech_MedicalBiotechnology_SelfSponsored_InterviewResults.pdf",
-        },
-      ],
-      isNew: false,
-    },
-    {
-      id: 3,
-      title: "Hands-on Lab Training in Biotechnology / Bioinformatics",
-      date: "Brochure available",
-      links: [
-        {
-          label: "Notification",
-          brouchere: "/announcements/HLT_Brochure_Latest_120625.pdf",
-        },
-      ],
-      isNew: true,
-    },
-  ];
 
-  const announcements = [
-    {
-      id: 1,
-      title: "Featured Research Article on ACS Chemical Biology Cover Page",
-      description:
-        "Prof. Rajakumara Eerappa's group research article titled 'Regulatory and Catalytic Domains of Poly(ADP-ribose) Polymerases Cross-Complement for DNA-Break-Dependent Allosteric Stimulation of Catalytic Activity' is featured.",
-    },
-  ];
+  // Filter admissions for only latest
+  const latestAdmissions = admissions.filter(item => item.islatest === true);
 
   const handleItemClick = (e, itemId, itemTitle) => {
     e.stopPropagation();
@@ -76,7 +27,7 @@ export const AnnouncementsModified = ({ onItemClick }) => {
       <div>
         <h3 className="text-lg font-bold text-indigo-700 mb-3">Admissions</h3>
         <div className="space-y-3">
-          {admissions.map((item) => (
+          {latestAdmissions.map((item) => (
             <div
               key={item.id}
               onClick={(e) => handleItemClick(e, `admission-${item.id}`, item.title)}
@@ -98,31 +49,28 @@ export const AnnouncementsModified = ({ onItemClick }) => {
               <div className="flex items-start gap-2">
                 <h4 className="text-sm font-semibold text-gray-800 flex-1">
                   {item.title}
-                 {item.isNew && (
-                        <span
-                          className="
-                            ml-2 px-3 py-0.5 
-                            rounded-full 
-                            font-semibold text-white text-xs 
-                            bg-gradient-to-r from-pink-500 via-yellow-400 to-red-600
-                            inline-flex items-center gap-1 
-                            select-none
-                          "
-                          style={{ animation: "glowPulse 2.5s ease-in-out infinite" }}
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-4 w-4 animate-bounce"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                          </svg>
-                          OPEN
-                        </span>
-                      )}
+                  {item.isNew && (
+                    <span
+                      className="
+                        ml-2 px-3 py-0.5 rounded-full font-semibold text-white text-xs
+                        bg-gradient-to-r from-pink-500 via-yellow-400 to-red-600
+                        inline-flex items-center gap-1 select-none
+                      "
+                      style={{ animation: "glowPulse 2.5s ease-in-out infinite" }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 animate-bounce"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                      </svg>
+                      OPEN
+                    </span>
+                  )}
                 </h4>
               </div>
               
@@ -136,7 +84,7 @@ export const AnnouncementsModified = ({ onItemClick }) => {
                   {item.links.map((link, idx) => (
                     <a
                       key={idx}
-                      href={link.brouchere}  // <-- Fixed here
+                      href={link.brochure}  // fixed typo
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
@@ -147,70 +95,6 @@ export const AnnouncementsModified = ({ onItemClick }) => {
                     </a>
                   ))}
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* General Announcements */}
-      <div>
-        <h3 className="text-lg font-bold text-green-700 mb-3">Announcements</h3>
-        <div className="space-y-3">
-          {announcements.map((item) => (
-            <div
-              key={item.id}
-              onClick={(e) => handleItemClick(e, `announce-${item.id}`, item.title)}
-              className={`p-4 bg-white rounded-lg border-l-4 transition-all cursor-pointer ${
-                expandedItem === `announce-${item.id}` 
-                  ? 'border-l-green-600 shadow-lg scale-105 z-10 relative' 
-                  : 'border-l-green-500 hover:shadow-md'
-              }`}
-            >
-              {expandedItem === `announce-${item.id}` && (
-                <button 
-                  onClick={closeExpanded}
-                  className="absolute top-2 right-2 p-1 bg-gray-100 rounded-full hover:bg-gray-200"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
-              
-              <h4 className="text-sm font-semibold text-green-700 pr-6">
-                {item.title}
-              </h4>
-              
-              {expandedItem === `announce-${item.id}` ? (
-                <>
-                  {item.date && (
-                    <p className="text-xs text-gray-600 mt-2">
-                      <strong>Date:</strong> {item.date}
-                    </p>
-                  )}
-                  {item.time && (
-                    <p className="text-xs text-gray-600">
-                      <strong>Time:</strong> {item.time}
-                    </p>
-                  )}
-                  {item.description && (
-                    <p className="text-xs text-gray-700 mt-2">{item.description}</p>
-                  )}
-                  {item.link && (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 mt-2 text-green-600 hover:text-green-700 text-xs font-medium"
-                    >
-                      Read more <ChevronRight className="w-3 h-3" />
-                    </a>
-                  )}
-                </>
-              ) : (
-                <p className="text-xs text-gray-500 mt-1">
-                  Click to expand details
-                </p>
               )}
             </div>
           ))}

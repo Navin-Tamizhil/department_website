@@ -8,6 +8,7 @@ export const admissions = [
     {label: "Link for Application",
       brouchere: "https://docs.google.com/forms/d/e/1FAIpQLSdOyuZwX4JA2A9TLJIrZg1nDrsH1wp6tC06OoEh1bUft6OxPw/viewform"}],
     isNew: true,
+    islatest: true,
   },
   {
     id: 2,

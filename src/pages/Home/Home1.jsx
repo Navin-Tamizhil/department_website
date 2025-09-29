@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Lightbulb, Rocket, Gem } from "lucide-react";
 import { AnnouncementsModified } from "./Home_announcements.jsx";
-import { EventsModified } from "./Home_events.jsx";
+import  EventsModified from "./Home_events";
 
 export default function Home() {
   const images = [
@@ -189,73 +189,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------------- Status Bar ---------------- */}
-      {scrollingPaused && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-yellow-100 border border-yellow-400 rounded-lg px-4 py-2 shadow-lg">
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-yellow-800">
-              Scrolling paused – viewing: <strong>{selectedItem}</strong>
-            </span>
-            <button
-              onClick={resumeScrolling}
-              className="px-3 py-1 bg-yellow-500 text-white rounded text-xs font-semibold hover:bg-yellow-600"
-            >
-              Resume
-            </button>
-          </div>
-        </div>
-      )}
 
-      {/* ---------------- Announcements & Events ---------------- */}
-      <div className="mx-10 my-10 px-10 py-6">
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Announcements */}
-          <div>
-            <h1 className="text-2xl font-extrabold text-indigo-800 mb-4 text-center">
-              Announcements
-            </h1>
-            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-hidden relative">
-              <div className={scrollingPaused ? "" : "animate-scroll-slow"}>
-                <AnnouncementsModified onItemClick={handleItemClick} />
-                <div className="mt-4">
-                  <AnnouncementsModified onItemClick={handleItemClick} />
-                </div>
-              </div>
-            </div>
-            <div className="text-center mt-4">
-              <a
-                href="/announcements"
-                className="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-indigo-700 transition"
-              >
-                View All Announcements →
-              </a>
-            </div>
-          </div>
-
-          {/* Events */}
-          <div>
-            <h1 className="text-2xl font-extrabold text-green-800 mb-4 text-center">
-              Events
-            </h1>
-            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-hidden relative">
-              <div className={scrollingPaused ? "" : "animate-scroll-fast"}>
-                <EventsModified onItemClick={handleItemClick} />
-                <div className="mt-4">
-                  <EventsModified onItemClick={handleItemClick} />
-                </div>
-              </div>
-            </div>
-            <div className="text-center mt-4">
-              <a
-                href="/events"
-                className="inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-green-700 transition"
-              >
-                View All Events →
-              </a>
-            </div>
-          </div>
-        </section>
-      </div>
+      {/* ---------------- Announcements & Events Tabs ---------------- */}
+      <AnnouncementsEventsTabs scrollingPaused={scrollingPaused} handleItemClick={handleItemClick} />
 
       {/* ---------------- Scroll CSS ---------------- */}
       <style jsx>{`
@@ -287,6 +223,100 @@ export default function Home() {
           animation-play-state: paused;
         }
       `}</style>
+    </div>
+  );
+}
+
+// Extracted AnnouncementsEventsTabs component
+function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick }) {
+  const [activeTab, setActiveTab] = useState("announceEvents"); // "announceEvents" or "lifeDept"
+
+  return (
+    <div className="mx-10 my-10 px-10 py-6">
+      {/* Tabs Header */}
+      <div className="flex justify-center space-x-8 mb-8">
+        <button
+          onClick={() => setActiveTab("announceEvents")}
+          className={`px-6 py-2 font-semibold rounded-full transition ${
+            activeTab === "announceEvents"
+              ? "bg-indigo-600 text-white shadow-lg"
+              : "bg-gray-200 text-gray-700 hover:bg-indigo-100"
+          }`}
+        >
+          Announcements & Events
+        </button>
+
+        <button
+          onClick={() => setActiveTab("lifeDept")}
+          className={`px-6 py-2 font-semibold rounded-full transition ${
+            activeTab === "lifeDept"
+              ? "bg-green-600 text-white shadow-lg"
+              : "bg-gray-200 text-gray-700 hover:bg-green-100"
+          }`}
+        >
+          Life at Department
+        </button>
+      </div>
+
+      {/* Tabs Content */}
+      {activeTab === "announceEvents" && (
+        <section className="space-y-10">
+          {/* Announcements + Events merged vertically */}
+          <div>
+            <h1 className="text-2xl font-extrabold text-indigo-800 mb-4 text-center">
+              Announcements
+            </h1>
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-auto relative mb-10">
+              <div className={scrollingPaused ? "" : "animate-scroll-slow"}>
+                <AnnouncementsModified onItemClick={handleItemClick} />
+                <div className="mt-4">
+                  <AnnouncementsModified onItemClick={handleItemClick} />
+                </div>
+              </div>
+            </div>
+
+            <h1 className="text-2xl font-extrabold text-green-800 mb-4 text-center">
+              Events
+            </h1>
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-auto relative">
+              <div className={scrollingPaused ? "" : "animate-scroll-fast"}>
+                <EventsModified onItemClick={handleItemClick} />
+                <div className="mt-4">
+                  <EventsModified onItemClick={handleItemClick} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="text-center mt-6">
+            <a
+              href="/announcements"
+              className="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-indigo-700 transition mr-4"
+            >
+              View All Announcements →
+            </a>
+            <a
+              href="/events"
+              className="inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-green-700 transition"
+            >
+              View All Events →
+            </a>
+          </div>
+        </section>
+      )}
+
+      {activeTab === "lifeDept" && (
+        <section>
+          <h1 className="text-2xl font-extrabold text-blue-800 mb-4 text-center">
+            Life at Department
+          </h1>
+          <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[600px] overflow-auto relative">
+            {/* Replace this with your actual content */}
+            <p className="text-center text-gray-600">
+              Content about Life at Department goes here...
+            </p>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
