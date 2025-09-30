@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
+import { BookOpen } from "lucide-react";
 
 export default function Publications() {
   const [publications, setPublications] = useState([]);
@@ -41,8 +42,8 @@ export default function Publications() {
   );
 
   return (
-    <div>
-      <h3 className="text-2xl font-bold mb-6">Publications 📘</h3>
+    <div className="animate-fadeIn">
+    
 
       {/* Year Buttons */}
       <div className="flex flex-wrap gap-3 mb-8">
@@ -52,8 +53,8 @@ export default function Publications() {
             onClick={() => setSelectedYear(year)}
             className={`px-4 py-2 rounded-lg border font-medium ${
               selectedYear === year
-                ? "bg-indigo-100 border-indigo-500 text-indigo-700"
-                : "bg-gray-50 hover:bg-gray-100 border-gray-300"
+                ? "bg-indigo-600 border-indigo-600 text-white shadow-md"
+                : "bg-white hover:bg-indigo-50 border-gray-300 text-gray-700 hover:border-indigo-300"
             }`}
           >
             {year}
@@ -67,7 +68,7 @@ export default function Publications() {
           {filteredPublications.map((pub, i) => (
             <div
               key={i}
-              className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition border-l-4 border-indigo-500"
+              className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl hover:border-indigo-500 transition-all border-l-4 border-indigo-200"
             >
               <p className="font-semibold text-gray-800 mb-1">{pub.Authors}</p>
               <p className="italic text-indigo-700 mb-2">“{pub.Title}”</p>

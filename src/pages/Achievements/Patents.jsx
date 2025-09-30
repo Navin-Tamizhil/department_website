@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
+import { FileBadge } from "lucide-react";
 
 export default function Patents() {
   const [patents, setPatents] = useState([]);
@@ -24,13 +25,13 @@ export default function Patents() {
   };
 
   return (
-    <div className="space-y-6">
-      <h3 className="text-2xl font-bold mb-6">Patents 🔬</h3>
+    <div className="space-y-6 animate-fadeIn">
+   
       {patents.length > 0 ? (
         patents.map((pat, i) => (
           <div
             key={i}
-            className="p-5 bg-white rounded-xl shadow hover:shadow-lg transition border-l-4 border-green-500"
+            className="p-5 bg-white rounded-xl shadow-md hover:shadow-xl hover:border-green-500 transition-all border-l-4 border-green-200"
           >
             <p className="font-semibold text-gray-800">{pat.Name}</p>
             <p className="text-gray-600">

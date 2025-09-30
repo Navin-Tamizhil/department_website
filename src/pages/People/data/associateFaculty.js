@@ -9,7 +9,7 @@
  export const  AffiliatedFaculty = [{
     "id": 2,
     "name": "Dr. Neeraj Kumar",
-    "designation": "Assistant Professor, Liberal Arts, IIT Hyderabad",
+    "designation": "Assistant Professor, Liberal Arts",
     "image": "/associate_faculty/neeraj_kumar.jpeg",
     "area": [
       "Sensorimotor Learning",
@@ -17,6 +17,6 @@
       "Non-invasive Brain Stimulation",
       "Stroke Rehabilitation"
     ],
-    "address" : "Room: C-112/F, Academic Block C, Indian Institute of Technology Hyderabad, Kandi-502284, Sangareddy, Telangana, India"
+    "address" : "Room: C-112/F, Academic Block C, IIT Hyderabad"
   }
 ]

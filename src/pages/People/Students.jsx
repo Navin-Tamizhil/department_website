@@ -50,7 +50,7 @@ export default function Students() {
 
   // Load data for students and alumni
   const loadData = async () => {
-    const studentFiles = [
+    const files = [
       "btech_2022.csv",
       "btech_2023.csv",
       "btech_2024.csv",
@@ -74,6 +74,7 @@ export default function Students() {
       "phd_2024_july.csv",
       "phd_2025_january.csv",
     ];
+
 
     // Alumni files based on your folder structure
     const alumniFiles = [
@@ -341,8 +342,8 @@ export default function Students() {
                 <YAxis allowDecimals={false} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Current" fill="#10B981" />
-                <Bar dataKey="Alumni" fill="#34d399" />
+                <Bar dataKey="Current" fill="#00f8aae5" />
+                <Bar dataKey="Alumni" fill="rgba(15, 128, 75, 1)" />
               </BarChart>
             </ResponsiveContainer>
           </div>
