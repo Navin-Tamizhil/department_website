@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Lightbulb, Rocket, Gem } from "lucide-react";
+import { Lightbulb, Rocket, Gem, Sparkles, Star } from "lucide-react";
 import { AnnouncementsModified } from "./Home_announcements.jsx";
-import  EventsModified from "./Home_events";
+import EventsModified from "./Home_events";
+import { admissions } from "../AcademicPrograms/admissionData";
+import { eventsData } from "../Events/eventsData";
 
 export default function Home() {
   const images = [
@@ -190,8 +192,22 @@ export default function Home() {
       </section>
 
 
-      {/* ---------------- Announcements & Events Tabs ---------------- */}
-      <AnnouncementsEventsTabs scrollingPaused={scrollingPaused} handleItemClick={handleItemClick} />
+      {/* ---------------- Artistic Announcements & Events Tabs ---------------- */}
+      <div className="relative">
+        {/* Floating decorative elements */}
+        <div className="absolute -top-10 -left-10 opacity-20">
+          <Sparkles className="w-20 h-20 text-purple-400" />
+        </div>
+        <div className="absolute -bottom-10 -right-10 opacity-20">
+          <Star className="w-16 h-16 text-blue-400" />
+        </div>
+        <AnnouncementsEventsTabs
+          scrollingPaused={scrollingPaused}
+          handleItemClick={handleItemClick}
+          announcements={admissions}
+          events={eventsData}
+        />
+      </div>
 
       {/* ---------------- Scroll CSS ---------------- */}
       <style jsx>{`
@@ -222,101 +238,137 @@ export default function Home() {
         .animate-scroll-fast:hover {
           animation-play-state: paused;
         }
+        
+        /* Fade-in animation for tabs */
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.6s ease-out;
+        }
       `}</style>
     </div>
   );
 }
 
-// Extracted AnnouncementsEventsTabs component
-function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick }) {
-  const [activeTab, setActiveTab] = useState("announceEvents"); // "announceEvents" or "lifeDept"
+function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcements, events }) {
+  // Fix the typo in the field name - it's 'islatest' not 'isLatest'
+  const hasLatestAnnouncements = announcements.some((a) => a.islatest);
+  const hasLatestEvents = events.some((e) => e.islatest);
+  const hasLatest = hasLatestAnnouncements || hasLatestEvents;
 
+  // Auto-switch to Life at Department if no latest content
+  const [activeTab, setActiveTab] = useState(hasLatest ? "announceEvents" : "lifeDept");
+
+  const lifeAtDeptImages = [
+    { src: "/images/life/image1.jpg", alt: "Students in the lab" },
+    { src: "/images/life/image2.jpg", alt: "Department event" },
+    { src: "/images/life/image3.jpg", alt: "Research presentation" },
+    { src: "/images/life/image4.jpg", alt: "Group discussion" },
+    { src: "/images/life/image5.jpg", alt: "State-of-the-art equipment" },
+    { src: "/images/life/image6.jpg", alt: "Campus view" },
+  ];
   return (
-    <div className="mx-10 my-10 px-10 py-6">
+    <div className="mx-10 my-10 px-10 py-8 bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden">
+      {/* Artistic background elements */}
+      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full -translate-x-16 -translate-y-16 opacity-40"></div>
+      <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-full translate-x-20 translate-y-20 opacity-40"></div>
+      
       {/* Tabs Header */}
-      <div className="flex justify-center space-x-8 mb-8">
-        <button
-          onClick={() => setActiveTab("announceEvents")}
-          className={`px-6 py-2 font-semibold rounded-full transition ${
-            activeTab === "announceEvents"
-              ? "bg-indigo-600 text-white shadow-lg"
-              : "bg-gray-200 text-gray-700 hover:bg-indigo-100"
-          }`}
-        >
-          Latest 
-        </button>
+      <div className="flex justify-center space-x-8 mb-10 relative z-10">
+        {/* Announcements & Events tab - only show if there are latest items */}
+        {hasLatest && (
+          <button
+            onClick={() => setActiveTab("announceEvents")}
+            className={`px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg ${
+              activeTab === "announceEvents"
+                ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-indigo-200"
+                : "bg-white text-gray-700 hover:bg-indigo-50 border-2 border-gray-200"
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-5 h-5" />
+              Latest
+            </div>
+          </button>
+        )}
 
+        {/* Life at Department tab - always show */}
         <button
           onClick={() => setActiveTab("lifeDept")}
-          className={`px-6 py-2 font-semibold rounded-full transition ${
+          className={`px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg ${
             activeTab === "lifeDept"
-              ? "bg-green-600 text-white shadow-lg"
-              : "bg-gray-200 text-gray-700 hover:bg-green-100"
+              ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-green-200"
+              : "bg-white text-gray-700 hover:bg-green-50 border-2 border-gray-200"
           }`}
         >
-          Life at Department
+          <div className="flex items-center gap-2">
+            <Star className="w-5 h-5" />
+            Life at Department
+          </div>
         </button>
       </div>
 
       {/* Tabs Content */}
-      {activeTab === "announceEvents" && (
-        <section className="space-y-10">
-          {/* Announcements + Events merged vertically */}
-          <div>
-            <h1 className="text-2xl font-extrabold text-indigo-800 mb-4 text-center">
-              Announcements
-            </h1>
-            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-auto relative mb-10">
+      <div className="relative z-10">
+        {activeTab === "announceEvents" && hasLatest && (
+          <section className="space-y-8 animate-fadeIn">
+            {/* Combined Announcements and Events Section */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 max-h-[400px] overflow-auto border border-white/30">
               <div className={scrollingPaused ? "" : "animate-scroll-slow"}>
-                <AnnouncementsModified onItemClick={handleItemClick} />
-                <div className="mt-4">
-                  <AnnouncementsModified onItemClick={handleItemClick} />
-                </div>
-              </div>
-            </div>
-
-            <h1 className="text-2xl font-extrabold text-green-800 mb-4 text-center">
-              Events
-            </h1>
-            <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[500px] overflow-auto relative">
-              <div className={scrollingPaused ? "" : "animate-scroll-fast"}>
-                <EventsModified onItemClick={handleItemClick} />
-                <div className="mt-4">
+                {hasLatestAnnouncements && (
+                  <div className="mb-8">
+                    <AnnouncementsModified onItemClick={handleItemClick} />
+                  </div>
+                )}
+                {hasLatestEvents && (
                   <EventsModified onItemClick={handleItemClick} />
-                </div>
+                )}
               </div>
             </div>
-          </div>
-          <div className="text-center mt-6">
-            <a
-              href="/academics/admissions"
-              className="inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-indigo-700 transition mr-4"
-            >
-              View All Announcements →
-            </a>
-            <a
-              href="/events"
-              className="inline-block bg-green-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:bg-green-700 transition"
-            >
-              View All Events →
-            </a>
-          </div>
-        </section>
-      )}
+            {/* View All Links */}
+            <div className="text-center mt-8">
+              <a
+                href="/academics/admissions"
+                className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 mr-4"
+              >
+                View Admissions →
+              </a>
+              <a
+                href="/events"
+                className="inline-block bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                View All Events →
+              </a>
+            </div>
+          </section>
+        )}
 
-      {activeTab === "lifeDept" && (
-        <section>
-          <h1 className="text-2xl font-extrabold text-blue-800 mb-4 text-center">
-            Life at Department
-          </h1>
-          <div className="bg-white rounded-2xl shadow-lg p-6 max-h-[600px] overflow-auto relative">
-            {/* Replace this with your actual content */}
-            <p className="text-center text-gray-600">
-              Content about Life at Department goes here...
-            </p>
-          </div>
-        </section>
-      )}
+        {activeTab === "lifeDept" && (
+          <section className="animate-fadeIn">
+            <h1 className="text-3xl font-extrabold text-blue-800 mb-8 text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Life at Department
+            </h1>
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 max-h-[500px] overflow-auto border border-white/30">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {lifeAtDeptImages.map((image, index) => (
+                  <div key={index} className="group relative">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+                      <p className="text-white text-center text-sm p-2">{image.alt}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+      </div>
     </div>
   );
 }

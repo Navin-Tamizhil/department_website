@@ -129,50 +129,7 @@ export default function Collaborations() {
         </div>
       </section>
 
-      {/* Industry Collaborators */}
-      <section>
-        <h2 className="text-3xl font-bold text-center mb-12">Industry Collaborations</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-12">
-          {/* Boltzmann */}
-          <div className="flex flex-col items-center p-6 rounded-lg border shadow-md bg-white w-full max-w-sm">
-            <img
-              src="/collabrations_images/boltzmann_logo.png"
-              alt="Boltzmann Company"
-              className="w-56 h-auto object-contain"
-            />
-            <div className="mt-4 text-center space-y-1">
-              <p className="font-semibold text-lg">Dr. Rajakumara Eerappa</p>
-              <p>
-                Company Name: <span className="font-medium">Boltzmann company</span>
-              </p>
-              <p>
-                Country: <span className="font-medium">India</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Dr. Reddy's */}
-          <div className="flex flex-col items-center p-6 rounded-lg border shadow-md bg-white w-full max-w-sm">
-            <img
-              src="/collabrations_images/dr_reddys_logo.png"
-              alt="Dr. Reddy's Laboratories"
-              className="w-48 h-auto object-contain"
-            />
-            <div className="mt-4 text-center space-y-1">
-              <p className="font-semibold text-lg">Biotechnology Department</p>
-              <p>
-                Company Name:{" "}
-                <span className="font-medium">
-                  Dr. Reddy's Laboratories (Joint-students programme)
-                </span>
-              </p>
-              <p>
-                Country: <span className="font-medium">India</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 }

@@ -120,7 +120,7 @@ export default function Projects() {
           {Object.keys(fundingCounts).length > 0 ? (
             <Pie data={pieData} options={pieOptions} />
           ) : (
-            <p className="text-center text-gray-500">No data for this year.</p>
+            <p className="text-center text-gray-500">Loading....</p>
           )}
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function Projects() {
           ))
         ) : (
           <p className="text-gray-500 col-span-full text-center">
-            No projects found for {selectedYear}.
+            Loading..... {selectedYear}.
           </p>
         )}
       </div>
