@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <div>
       {/* ---------------- Hero Section ---------------- */}
-      <section className="relative h-[75vh] overflow-hidden rounded-3xl shadow-lg bg-gray-100 mx-14 my-10 px-10 py-6">
+      <section className="relative h-[60vh] md:h-[75vh] overflow-hidden rounded-3xl shadow-lg bg-gray-100 mx-4 md:mx-14 my-10 px-4 md:px-10 py-6">
         <img
           src={images[current]}
           alt="Welcome"
@@ -67,8 +67,8 @@ export default function Home() {
         />
 
         {current === 0 && (
-          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white px-6 animate-fadeIn rounded-3xl">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center text-white p-4 sm:p-6 animate-fadeIn rounded-3xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
               Welcome to the Department of Biotechnology
             </h1>
             <p className="max-w-3xl text-lg md:text-xl leading-relaxed drop-shadow-lg">
@@ -83,7 +83,7 @@ export default function Home() {
           onClick={() =>
             setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1))
           }
-          className="absolute left-6 bottom-6 bg-white/80 hover:bg-white rounded-full p-3 shadow-md"
+          className="absolute left-2 md:left-6 bottom-4 md:bottom-6 bg-white/80 hover:bg-white rounded-full p-2 md:p-3 shadow-md"
         >
           ◀
         </button>
@@ -91,15 +91,15 @@ export default function Home() {
           onClick={() =>
             setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1))
           }
-          className="absolute right-6 bottom-6 bg-white/80 hover:bg-white rounded-full p-3 shadow-md"
+          className="absolute right-2 md:right-6 bottom-4 md:bottom-6 bg-white/80 hover:bg-white rounded-full p-2 md:p-3 shadow-md"
         >
           ▶
         </button>
       </section>
 
       {/* ---------------- Message from HOD ---------------- */}
-      <section className="w-full bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-3xl ">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-10 text-center text-gray-800">
+      <section className="w-full bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-3xl p-4 md:p-8">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-10 text-center text-gray-800">
           Message from HOD
         </h2>
 
@@ -113,13 +113,13 @@ export default function Home() {
                 alt="Head of Department"
                  width="4359"
                  height="3400"
-               className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
+               className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
                   />
             </div>
           </div>
 
           {/* Right - Message */}
-          <div className="lg:col-span-2 text-gray-700 leading-relaxed text-justify space-y-6 px-2">
+          <div className="lg:col-span-2 text-gray-700 leading-relaxed text-justify space-y-6 px-4 sm:px-2">
             <p>
               Since the biotechnology department started its journey in 2010, the
               department has been striving for excellence in teaching and research.
@@ -155,8 +155,8 @@ export default function Home() {
 
       {/* ---------------- Vision, Mission, Values ---------------- */}
       <section
-        style={{ margin: "40px 60px", padding: "20px 40px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 mx-4 md:mx-14 my-10 px-4 md:px-10 py-6"
       >
         <div className="flex flex-col h-full p-6 rounded-2xl shadow-md bg-white hover:bg-gradient-to-br hover:from-yellow-50 hover:to-white hover:shadow-xl hover:scale-105 transition-all duration-300">
           <Lightbulb className="mx-auto w-12 h-12 text-yellow-500" />
@@ -270,18 +270,18 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
     { src: "/images/life/image6.jpg", alt: "Campus view" },
   ];
   return (
-    <div className="mx-10 my-10 px-10 py-8 bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden">
+    <div className="mx-4 md:mx-10 my-10 px-4 md:px-10 py-8 bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden">
       {/* Artistic background elements */}
       <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full -translate-x-16 -translate-y-16 opacity-40"></div>
       <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-full translate-x-20 translate-y-20 opacity-40"></div>
       
       {/* Tabs Header */}
-      <div className="flex justify-center space-x-8 mb-10 relative z-10">
+      <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-10 relative z-10">
         {/* Announcements & Events tab - only show if there are latest items */}
         {hasLatest && (
           <button
             onClick={() => setActiveTab("announceEvents")}
-            className={`px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg ${
+            className={`px-6 py-3 sm:px-8 font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg ${
               activeTab === "announceEvents"
                 ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-indigo-200"
                 : "bg-white text-gray-700 hover:bg-indigo-50 border-2 border-gray-200"
@@ -297,7 +297,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
         {/* Life at Department tab - always show */}
         <button
           onClick={() => setActiveTab("lifeDept")}
-          className={`px-8 py-3 font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg ${
+          className={`px-6 py-3 sm:px-8 font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg ${
             activeTab === "lifeDept"
               ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-green-200"
               : "bg-white text-gray-700 hover:bg-green-50 border-2 border-gray-200"
@@ -328,16 +328,16 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
               </div>
             </div>
             {/* View All Links */}
-            <div className="text-center mt-8">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
               <a
                 href="/academics/admissions"
-                className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 mr-4"
+                className="w-full sm:w-auto text-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 View Admissions →
               </a>
               <a
                 href="/events"
-                className="inline-block bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="w-full sm:w-auto text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 View All Events →
               </a>
@@ -347,17 +347,17 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
 
         {activeTab === "lifeDept" && (
           <section className="animate-fadeIn">
-            <h1 className="text-3xl font-extrabold text-blue-800 mb-8 text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-3xl font-extrabold text-blue-800 mb-8 text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
               Life at Department
             </h1>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 max-h-[500px] overflow-auto border border-white/30">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {lifeAtDeptImages.map((image, index) => (
                   <div key={index} className="group relative">
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-40 sm:h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                       <p className="text-white text-center text-sm p-2">{image.alt}</p>

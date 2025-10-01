@@ -17,7 +17,7 @@ export default function Achievements() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-700">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-700">
             Milestones & Accolades
           </h1>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
@@ -27,12 +27,12 @@ export default function Achievements() {
 
         {/* Tabs Navigation */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-inner border border-gray-200/80 flex gap-2">
+          <div className="bg-white/80 backdrop-blur-sm p-2 rounded-2xl sm:rounded-full shadow-inner border border-gray-200/80 flex flex-col sm:flex-row gap-2 w-full max-w-xs sm:w-auto sm:max-w-none">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`flex items-center gap-2 px-6 py-3 font-semibold rounded-full transition-all duration-300 ${
+                className={`flex items-center justify-center gap-2 px-4 py-3 sm:px-6 font-semibold rounded-xl sm:rounded-full transition-all duration-300 ${
                   activeTab === tab.key
                     ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md"
                     : "text-gray-600 hover:bg-gray-100 hover:text-gray-800"
