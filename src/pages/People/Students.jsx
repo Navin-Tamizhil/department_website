@@ -92,7 +92,7 @@ export default function Students() {
     const newData = { btech: [], mtech: [], phd: [], alumni: { btech: [], mtech: [] } };
 
     // Load student files
-    for (const file of studentFiles) {
+    for (const file of files) {
       try {
         const res = await fetch(`/students_excel/${file}`);
         if (!res.ok) continue;

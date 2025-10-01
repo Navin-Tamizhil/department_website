@@ -211,7 +211,7 @@ export default function Home() {
       </div>
 
       {/* ---------------- Scroll CSS ---------------- */}
-      <style jsx>{`
+      <style>{`
         @keyframes scroll-slow {
           0% {
             transform: translateY(0);
