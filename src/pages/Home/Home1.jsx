@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Lightbulb, Rocket, Gem, Sparkles, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import { AnnouncementsModified } from "./Home_announcements.jsx";
 import EventsModified from "./Home_events";
 import { admissions } from "../AcademicPrograms/admissionData";
@@ -329,18 +330,18 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
             </div>
             {/* View All Links */}
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-              <a
-                href="/academics/admissions"
+              <Link
+                to="/academics/admissions"
                 className="w-full sm:w-auto text-center bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 View Admissions →
-              </a>
-              <a
-                href="/events"
+              </Link>
+              <Link
+                to="/events"
                 className="w-full sm:w-auto text-center bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 View All Events →
-              </a>
+              </Link>
             </div>
           </section>
         )}
