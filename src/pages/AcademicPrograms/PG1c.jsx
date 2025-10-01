@@ -78,11 +78,15 @@ export default function PG() {
                   <Clock className="w-5 h-5 text-emerald-600" />
                   <span className="font-semibold">Duration:</span> 2 years (4 semesters)
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-start gap-2">
                   <Users className="w-5 h-5 text-emerald-600" />
-                  <span className="font-semibold">Eligibility:</span> <span><b>Through GATE</b> B.Tech/B.E./M.Sc. in any area of life sciences/M.Pharm, with a valid GATE score
- (in BT or XL). IIT B.Tech graduates with a CGPA of 8 or above without a GATE score are eligible to apply. <b>Self sponsored</b>B.Tech/B.E./M.Sc. in any area of life 
- sciences/M.Pharm with a CGPA of 7 and above (GATE score not required)</span> 
+                  <div>
+                    <span className="font-semibold">Eligibility:</span>
+                    <ul className="list-disc pl-5 mt-1 text-sm text-gray-600 space-y-1">
+                      <li><b>Through GATE:</b> B.Tech/B.E./M.Sc. in any area of life sciences/M.Pharm, with a valid GATE score (in BT or XL). IIT B.Tech graduates with a CGPA of 8 or above are also eligible without a GATE score.</li>
+                      <li><b>Self-sponsored:</b> B.Tech/B.E./M.Sc. in any area of life sciences/M.Pharm with a CGPA of 7 and above (GATE score not required).</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               

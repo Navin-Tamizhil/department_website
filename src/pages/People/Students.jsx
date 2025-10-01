@@ -241,23 +241,29 @@ export default function Students() {
   }));
 
   return (
-    <section className="container mx-auto px-6 py-16">
+    <section className="container mx-auto px-4 sm:px-6 py-12">
+      <h1 className="text-4xl font-bold text-center text-indigo-700 mb-10 drop-shadow-lg">
+        Our Students
+      </h1>
+
       {/* Tabs */}
-      <ul className="flex gap-4 border-b border-gray-300 mb-8">
+      <div className="flex justify-center mb-10">
+        <div className="bg-white p-1.5 rounded-full shadow-md border flex flex-wrap justify-center gap-2">
         {tabs.map(({ key, label }) => (
-          <li
+          <button
             key={key}
-            className={`cursor-pointer px-4 py-2 ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-colors duration-300 text-sm sm:text-base ${
               activeTab === key
-                ? "border-b-2 border-indigo-700 text-indigo-700 font-semibold"
-                : "text-gray-600 hover:text-indigo-700"
+                ? "bg-indigo-600 text-white shadow-sm"
+                : "text-gray-600 hover:bg-gray-100"
             }`}
             onClick={() => setActiveTab(key)}
           >
             {label}
-          </li>
+          </button>
         ))}
-      </ul>
+        </div>
+      </div>
 
       {/* Year/Batch selector */}
       {activeTab !== "stats" && (

@@ -196,7 +196,7 @@ const Faculty = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-12">
-        <div className="relative mb-16">
+        <div className="relative mb-16 flex flex-col md:block">
           <div className="text-center">
            <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-[1.5] text-transparent bg-clip-text bg-gradient-to-r from-indigo-800 to-purple-600">
               Meet Our Faculty
@@ -207,7 +207,7 @@ const Faculty = () => {
           </div>
           
           {/* Search Bar */}
-          <div className="absolute top-0 right-0 w-full md:w-auto md:max-w-sm mt-4 md:mt-0">
+          <div className="md:absolute top-0 right-0 w-full md:w-auto md:max-w-sm mt-4 md:mt-0">
             <div className="relative">
               <input
                 type="text"

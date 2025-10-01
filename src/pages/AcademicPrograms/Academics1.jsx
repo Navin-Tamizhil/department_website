@@ -41,8 +41,8 @@ const tabs = [
 
       {/* Navigation Tabs */}
       <div className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-6">
-          <nav className="flex space-x-8">
+        <div className="container mx-auto px-2 sm:px-6">
+          <nav className="flex space-x-2 sm:space-x-8 -mb-px overflow-x-auto">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = getActiveTab() === tab.key;
@@ -51,7 +51,7 @@ const tabs = [
                 <button
                   key={tab.key}
                   onClick={() => handleTabClick(tab.path)}
-                  className={`flex items-center space-x-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                  className={`flex-shrink-0 flex items-center space-x-2 py-4 px-3 sm:px-2 border-b-2 font-medium text-sm transition-colors ${
                     isActive
                       ? "border-indigo-600 text-indigo-600"
                       : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
@@ -67,7 +67,7 @@ const tabs = [
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 py-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8">
         <Outlet />
       </div>
     </section>

@@ -142,7 +142,7 @@ export default function Alumni() {
             {activeTab !== "phd" ? `– ${getYearRange(activeTab, selectedYear)}` : ""}
           </h3>
           {getRows(activeTab, selectedYear).length > 0 ? (
-            <div className="overflow-x-auto rounded-lg shadow">
+            <div className="overflow-x-auto rounded-lg shadow-md border border-gray-200">
               <table className="w-full divide-y divide-gray-200">
                 <thead className="bg-indigo-100">
                   <tr>
@@ -150,7 +150,7 @@ export default function Alumni() {
                       (key) => (
                         <th
                           key={key}
-                          className="px-4 py-3 text-left text-indigo-700 font-semibold"
+                          className="px-6 py-3 text-left text-sm font-semibold text-indigo-800 uppercase tracking-wider whitespace-nowrap"
                         >
                           {key}
                         </th>
@@ -164,7 +164,7 @@ export default function Alumni() {
                       {Object.entries(row).map(([key, val], i) => (
                         <td
                           key={i}
-                          className={`px-4 py-2 ${
+                          className={`px-6 py-4 whitespace-nowrap text-sm text-gray-700 ${
                             key.toLowerCase().includes("current")
                               ? "text-green-700 font-medium"
                               : ""

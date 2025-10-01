@@ -60,7 +60,7 @@ export default function Collaborations() {
       {/* International Collaborators */}
       <section>
         <h2 className="text-3xl font-bold text-center mb-8">International Collaborators</h2>
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex flex-col lg:flex-row gap-10 items-start">
           <div className="flex-shrink-0 w-full lg:w-[720px] h-[400px] rounded-lg overflow-hidden shadow-md bg-white">
             <img
               src="/collabrations_images/international_collabrations.jpg"
@@ -68,7 +68,7 @@ export default function Collaborations() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex-1 overflow-auto max-h-[480px] rounded-lg shadow-md p-4 bg-white">
+          <div className="flex-1 overflow-x-auto max-h-[480px] rounded-lg shadow-md p-4 bg-white">
             <table className="w-full text-sm">
               <thead className="bg-blue-100">
                 <tr>
@@ -97,7 +97,7 @@ export default function Collaborations() {
       {/* National Collaborators */}
       <section>
         <h2 className="text-3xl font-bold text-center mb-8">National Collaborators</h2>
-        <div className="flex flex-col lg:flex-row gap-10">
+        <div className="flex flex-col lg:flex-row gap-10 items-start">
           <div className="flex-shrink-0 w-full lg:w-[400px] h-[400px] rounded-lg overflow-hidden shadow-md bg-white">
             <img
               src="/collabrations_images/national_collabration.jpg"
@@ -105,7 +105,7 @@ export default function Collaborations() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex-1 overflow-auto max-h-[480px] rounded-lg shadow-md p-4 bg-white">
+          <div className="flex-1 overflow-x-auto max-h-[480px] rounded-lg shadow-md p-4 bg-white">
             <table className="w-full text-sm">
               <thead className="bg-blue-100">
                 <tr>
