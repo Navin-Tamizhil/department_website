@@ -125,28 +125,7 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Artistic Project Titles with Funding Agency name */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="p-6 bg-gradient-to-br from-indigo-50 to-green-50 rounded-xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1"
-            >
-              <p className="text-indigo-600 text-center font-semibold mb-1 uppercase tracking-wider text-sm">
-                {project.FundingAgency || "Unknown Agency"}
-              </p>
-              <p className="text-indigo-800 text-lg font-semibold text-center italic tracking-wide">
-                {project.ProjectTitle || "Untitled Project"}
-              </p>
-            </div>
-          ))
-        ) : (
-          <p className="text-gray-500 col-span-full text-center">
-            Loading..... {selectedYear}.
-          </p>
-        )}
-      </div>
+      
     </div>
   );
 }
