@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import * as XLSX from "xlsx";
 
 export default function Alumni() {
   const tabs = [
@@ -17,34 +16,61 @@ export default function Alumni() {
   }, []);
 
   const loadData = async () => {
+    // Switched to .json files for better performance and simpler parsing
     const files = [
-      "btech_2021.xlsx",
-      "mtech_2012.xlsx", "mtech_2013.xlsx", "mtech_2014.xlsx",
-      "mtech_2015.xlsx", "mtech_2016.xlsx", "mtech_2017.xlsx",
-      "mtech_2018.xlsx", "mtech_2019.xlsx", "mtech_2020.xlsx",
-      "mtech_2021.xlsx", "mtech_2022.xlsx", "mtech_2023.xlsx",
-      "phd_alumini.xlsx",
+      "btech_2021.json",
+      "MTech_Alumni_2012___2014_Batch.json",
+      "MTech_Alumni_2013___2015_Batch.json",
+      "MTech_Alumni_2014___2016_Batch.json",
+      "MTech_Alumni_2015___2017_Batch.json",
+      "MTech_Alumni_2016___2018_Batch.json",
+      "MTech_Alumni_2017___2019_Batch.json",
+      "MTech_Alumni_2018___2020_Batch.json",
+      "MTech_Alumni_2019___2021_Batch.json",
+      "MTech_Alumni_2020___2022_Batch.json",
+      "MTech_Alumni_2021___2023_Batch.json",
+      "MTech_Alumni_2022___2024_Batch.json",
+      "MTech_Alumni_2023___2025_Batch.json",
+      "PhD_Alumni.json",
     ];
 
     const newData = { btech: [], mtech: [], phd: [] };
 
+    // Helper to clean data, replacing NaN with empty strings
+    const cleanRow = (row) => {
+      const newRow = {};
+      for (const key in row) {
+        // Check for NaN, which can occur from spreadsheet conversions
+        newRow[key] = Number.isNaN(row[key]) ? "" : row[key];
+      }
+      return newRow;
+    };
+
     for (const file of files) {
-      const res = await fetch(`/alumini_excel/${file}`);
-      if (!res.ok) continue;
-
-      const buf = await res.arrayBuffer();
-      const wb = XLSX.read(buf, { type: "array" });
-      const ws = wb.Sheets[wb.SheetNames[0]];
-      const rows = XLSX.utils.sheet_to_json(ws, { defval: "" });
-
+      try {
+        const res = await fetch(`/alumini_excel/${file}`);
+        if (!res.ok) continue;
+        
+        // Fetch as text first to handle invalid JSON with NaN values
+        const text = await res.text();
+        // Replace standalone NaN with null to make it valid JSON
+        const sanitizedText = text.replace(/:\s*NaN/g, ":null");
+        const rawRows = JSON.parse(sanitizedText);
+        const rows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
+        
       if (file.startsWith("btech")) {
         const year = parseInt(file.match(/btech_(\d+)/)[1], 10);
         newData.btech.push({ year, rows });
-      } else if (file.startsWith("mtech")) {
-        const year = parseInt(file.match(/mtech_(\d+)/)[1], 10);
+      } else if (file.startsWith("MTech")) {
+        // Extract the first year from filenames like 'M.Tech Alumni 2012 - 2014 Batch.json'
+        const yearMatch = file.match(/(\d{4})/);
+        const year = yearMatch ? parseInt(yearMatch[1], 10) : null;
         newData.mtech.push({ year, rows });
-      } else if (file.startsWith("phd")) {
+      } else if (file.startsWith("PhD")) {
         newData.phd.push({ rows });
+      }
+      } catch (error) {
+        console.error(`Failed to load or parse ${file}:`, error);
       }
     }
 

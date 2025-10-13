@@ -1,0 +1,56 @@
+[
+    {
+        "Sl.No": "1",
+        "Name of the Student": "Vinod Singh Bisht",
+        "Current Position": null,
+        "Company/Institution": null
+    },
+    {
+        "Sl.No": "2",
+        "Name of the Student": "Srinithi P",
+        "Current Position": null,
+        "Company/Institution": "Med Genome"
+    },
+    {
+        "Sl.No": "3",
+        "Name of the Student": "Sreeragh Sivadas",
+        "Current Position": "Project Scientist II",
+        "Company/Institution": "CSIR institute of Microbial Technology"
+    },
+    {
+        "Sl.No": "4",
+        "Name of the Student": "S Arivarasan",
+        "Current Position": null,
+        "Company/Institution": null
+    },
+    {
+        "Sl.No": "5",
+        "Name of the Student": "Kripi Tomar",
+        "Current Position": "Completed PhD",
+        "Company/Institution": "Max Plank"
+    },
+    {
+        "Sl.No": "6",
+        "Name of the Student": "Musukha Mala Bramha",
+        "Current Position": "Completed PhD",
+        "Company/Institution": "University of Waseda"
+    },
+    {
+        "Sl.No": "7",
+        "Name of the Student": "S Jeevotham",
+        "Current Position": "Postdoctoral Research Scientist",
+        "Company/Institution": "Columbia University Irving medical centre"
+    },
+    {
+        "Sl.No": "8",
+        "Name of the Student": "Isha Goel",
+        "Current Position": "Post doctoral fellow",
+        "Company/Institution": "University of Cambridge, UK"
+    },
+    {
+        "Sl.No": "9",
+        "Name of the Student": "Ghule Komal Sanjeevan",
+        "Current Position": "Working as a Senior Associate Scientist",
+        "Company/Institution": "Syngene International LTD"
+    }
+]

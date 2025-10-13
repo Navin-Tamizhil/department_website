@@ -13,13 +13,6 @@ import {
   Bar,
 } from "recharts";
 
-// Simple CSV parsing helper to get trimmed lines
-const parseCSV = (csvText) =>
-  csvText
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-
 export default function Students() {
   const tabs = [
     { key: "btech", label: "B.Tech." },
@@ -35,7 +28,7 @@ export default function Students() {
     btech: [],
     mtech: [],
     phd: [],
-    alumni: { btech: [], mtech: [] },
+    alumni: { btech: [], mtech: [], phd: [] },
   });
 
   // Capitalize names helper
@@ -50,96 +43,133 @@ export default function Students() {
 
   // Load data for students and alumni
   const loadData = async () => {
+    // Use .json files for faster loading
     const files = [
-      "btech_2022.csv",
-      "btech_2023.csv",
-      "btech_2024.csv",
-      "btech_2025.csv",
-      "mtech_2024.csv",
-      "mtech_2025.csv",
-      "phd_2015_january.csv",
-      "phd_2017_january.csv",
-      "phd_2017_july.csv",
-      "phd_2018_july.csv",
-      "phd_2019_january.csv",
-      "phd_2020_january.csv",
-      "phd_2020_july.csv",
-      "phd_2021_january.csv",
-      "phd_2021_july.csv",
-      "phd_2022_january.csv",
-      "phd_2022_july.csv",
-      "phd_2023_january.csv",
-      "phd_2023_july.csv",
-      "phd_2024_january.csv",
-      "phd_2024_july.csv",
-      "phd_2025_january.csv",
+      "btech_2022.json",
+      "btech_2023.json",
+      "btech_2024.json",
+      "btech_2025.json",
+      "mtech_2024.json",
+      "mtech_2025.json",
+      "phd_2015_january.json",
+      "phd_2017_january.json",
+      "phd_2017_july.json",
+      "phd_2018_july.json",
+      "phd_2019_january.json",
+      "phd_2020_january.json",
+      "phd_2020_july.json",
+      "phd_2021_january.json",
+      "phd_2021_july.json",
+      "phd_2022_january.json",
+      "phd_2022_july.json",
+      "phd_2023_january.json",
+      "phd_2023_july.json",
+      "phd_2024_january.json",
+      "phd_2024_july.json",
+      "phd_2025_january.json",
     ];
 
 
     // Alumni files based on your folder structure
     const alumniFiles = [
-      "alumini_excel/btech_2021.csv",
-      "alumini_excel/mtech_2012.csv",
-      "alumini_excel/mtech_2013.csv",
-      "alumini_excel/mtech_2014.csv",
-      "alumini_excel/mtech_2015.csv",
-      "alumini_excel/mtech_2016.csv",
-      "alumini_excel/mtech_2017.csv",
-      "alumini_excel/mtech_2018.csv",
-      "alumini_excel/mtech_2019.csv",
+      "btech_2021.json", // Assuming this file exists and is correct
+      "MTech_Alumni_2012___2014_Batch.json",
+      "MTech_Alumni_2013___2015_Batch.json",
+      "MTech_Alumni_2014___2016_Batch.json",
+      "MTech_Alumni_2015___2017_Batch.json",
+      "MTech_Alumni_2016___2018_Batch.json",
+      "MTech_Alumni_2017___2019_Batch.json",
+      "MTech_Alumni_2018___2020_Batch.json",
+      "MTech_Alumni_2019___2021_Batch.json",
+      "MTech_Alumni_2020___2022_Batch.json",
+      "MTech_Alumni_2021___2023_Batch.json",
+      "MTech_Alumni_2022___2024_Batch.json",
+      "MTech_Alumni_2023___2025_Batch.json",
+      "PhD_Alumni.json",
     ];
 
-    const newData = { btech: [], mtech: [], phd: [], alumni: { btech: [], mtech: [] } };
+    const newData = { btech: [], mtech: [], phd: [], alumni: { btech: [], mtech: [], phd: [] } };
 
     // Load student files
-    for (const file of files) {
+    const studentPromises = files.map(async (file) => { // e.g., btech_2022.json
       try {
         const res = await fetch(`/students_excel/${file}`);
-        if (!res.ok) continue;
-        const text = await res.text();
-        const rows = parseCSV(text).map(capitalizeName);
+        if (!res.ok) {
+          console.warn(`Failed to fetch student file: ${file}`);
+          return;
+        }
+        const rows = await res.json(); // JSON is likely an array of strings
+        const students = rows.map(capitalizeName);
 
         if (file.startsWith("btech")) {
           const year = parseInt(file.match(/btech_(\d+)/)[1], 10);
-          newData.btech.push({ year, students: rows });
+          newData.btech.push({ year, students });
         } else if (file.startsWith("mtech")) {
           const year = parseInt(file.match(/mtech_(\d+)/)[1], 10);
-          newData.mtech.push({ year, students: rows });
+          newData.mtech.push({ year, students });
         } else if (file.startsWith("phd")) {
-          const [, yearStr, batch] = file.match(/phd_(\d+)_(january|july)/);
+          // Make regex more flexible for PhD files
+          const match = file.match(/phd_(\d+)(?:_(january|july))?/); // e.g., phd_2022_january.json or phd_2021.json
+          if (!match) return;
+          const [, yearStr, batch] = match;
           const year = parseInt(yearStr, 10);
           newData.phd.push({
-            year,
-            batch: batch.charAt(0).toUpperCase() + batch.slice(1),
-            students: rows,
+            year, // e.g., 2022
+            batch: batch ? batch.charAt(0).toUpperCase() + batch.slice(1) : "Annual", // e.g., "January" or "Annual"
+            students, // Array of student names
           });
         }
       } catch (err) {
         console.error("Error loading", file, err);
       }
-    }
+    });
 
     // Load alumni files
-    for (const file of alumniFiles) {
+    const alumniPromises = alumniFiles.map(async (file) => { // e.g., mtech_2012.json
       try {
-        const res = await fetch(`/${file}`);
-        if (!res.ok) continue;
+        const res = await fetch(`/alumini_excel/${file}`);
+        if (!res.ok) {
+          console.warn(`Failed to fetch alumni file: ${file}`);
+          return;
+        }
+        // Fetch as text first to handle invalid JSON with NaN values
         const text = await res.text();
-        const rows = parseCSV(text).map(capitalizeName);
+        // Replace standalone NaN with null to make it valid JSON
+        const sanitizedText = text.replace(/:\s*NaN/g, ":null");
+        const rows = JSON.parse(sanitizedText);
 
-        const match = file.match(/(btech|mtech)_(\d{4})\.csv$/i);
-        if (match) {
+        if (file.startsWith("btech_")) {
+          const yearMatch = file.match(/_(\d{4})/);
+          if (!yearMatch) return;
+          const year = parseInt(yearMatch[1], 10);
+          const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
+          newData.alumni.btech.push({ year, students: studentNames });
+        } else if (file.startsWith("MTech")) {
+          // Correctly handle M.Tech alumni files which are arrays of objects
+          const yearMatch = file.match(/(\d{4})/);
+          if (yearMatch) {
+            const year = parseInt(yearMatch[1], 10);
+            const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
+            newData.alumni.mtech.push({ year, students: studentNames });
+          }
+        } else if (file.startsWith("PhD_Alumni")) {
+            // Assuming PhD alumni file is an array of student objects
+            const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
+            newData.alumni.phd.push({ year: "Alumni", students: studentNames });
+        } else { // Fallback for simple btech/mtech_year.json format
+          const match = file.match(/(btech|mtech)_(\d{4})\.json$/i);
+          if (!match) return;
           const [, program, yearStr] = match;
           const year = parseInt(yearStr, 10);
-          newData.alumni[program.toLowerCase()].push({
-            year,
-            students: rows,
-          });
+          const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
+          newData.alumni[program.toLowerCase()].push({ year, students: studentNames });
         }
       } catch (err) {
         console.error("Error loading alumni file", file, err);
       }
-    }
+    });
+
+    await Promise.all([...studentPromises, ...alumniPromises]);
 
     // Sort by year
     newData.btech.sort((a, b) => a.year - b.year);
@@ -149,6 +179,7 @@ export default function Students() {
     );
     newData.alumni.btech.sort((a, b) => a.year - b.year);
     newData.alumni.mtech.sort((a, b) => a.year - b.year);
+    // No need to sort PhD alumni as it's a single group
 
     setData(newData);
   };
@@ -181,7 +212,7 @@ export default function Students() {
       return data.mtech.find((m) => m.year === startYear)?.students || [];
     }
     if (tab === "phd") {
-      return data.phd.filter((b) => b.year === year);
+      return data.phd.filter((b) => b.year === parseInt(year, 10));
     }
     return [];
   };
@@ -192,6 +223,7 @@ export default function Students() {
   const totalPhd = data.phd.reduce((acc, d) => acc + d.students.length, 0);
   const totalBtechAlumni = data.alumni.btech.reduce((acc, d) => acc + d.students.length, 0);
   const totalMtechAlumni = data.alumni.mtech.reduce((acc, d) => acc + d.students.length, 0);
+  const totalPhdAlumni = data.alumni.phd.reduce((acc, d) => acc + d.students.length, 0);
 
   // Overall ratio pie chart
   const overallPieData = [
@@ -200,6 +232,7 @@ export default function Students() {
     { name: "Ph.D. Current", value: totalPhd, color: "#e99a11" },
     { name: "B.Tech Alumni", value: totalBtechAlumni, color: "#60a5fa" },
     { name: "M.Tech Alumni", value: totalMtechAlumni, color: "#34d399" },
+    { name: "Ph.D. Alumni", value: totalPhdAlumni, color: "#facc15" },
   ];
 
   // Program ratio pie chart
@@ -239,6 +272,11 @@ export default function Students() {
     year: year.toString(),
     Students: data.phd.filter(d => d.year === year).reduce((sum, d) => sum + d.students.length, 0),
   }));
+  // Add PhD Alumni as a single bar
+  if (totalPhdAlumni > 0) {
+    phdBarData.push({ year: "Alumni", Students: totalPhdAlumni });
+  }
+
 
   return (
     <section className="container mx-auto px-4 sm:px-6 py-12">
@@ -297,7 +335,7 @@ export default function Students() {
       {activeTab === "phd" && selectedYear && (
         <>
           {data.phd
-            .filter((d) => d.year === selectedYear)
+            .filter((d) => d.year === parseInt(selectedYear, 10))
             .map(({ batch, students }) => (
               <div key={batch} className="mb-6">
                 <h4 className="text-lg font-semibold mb-2 text-indigo-700">
@@ -378,13 +416,13 @@ export default function Students() {
               <h3 className="text-xl font-bold mb-4 text-indigo-700 text-center">
                 Current Students Ratio
               </h3>
-              <ResponsiveContainer width="100%" height={300}>
+              <ResponsiveContainer width="100%" height={350}>
                 <PieChart>
                   <Pie
                     data={programRatioPieData}
                     dataKey="value"
                     nameKey="name"
-                    outerRadius={100}
+                    outerRadius={120}
                     label={({ name, value }) => `${name}: ${value}`}
                   >
                     {programRatioPieData.map((entry, index) => (
@@ -402,13 +440,13 @@ export default function Students() {
               <h3 className="text-xl font-bold mb-4 text-indigo-700 text-center">
                 Current & Alumni Distribution
               </h3>
-              <ResponsiveContainer width="100%" height={300}>
+              <ResponsiveContainer width="100%" height={350}>
                 <PieChart>
                   <Pie
                     data={overallPieData}
                     dataKey="value"
                     nameKey="name"
-                    outerRadius={100}
+                    outerRadius={120}
                     label={({ name, value }) => `${name}: ${value}`}
                   >
                     {overallPieData.map((entry, index) => (

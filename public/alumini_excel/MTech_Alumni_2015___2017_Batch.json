@@ -1,0 +1,44 @@
+[
+    {
+        "Sl.No": "1",
+        "Name of the Student": "Vinuthna Vani M",
+        "Current Position": "Pursuing PhD",
+        "Company/Institution": "University of Tokyo"
+    },
+    {
+        "Sl.No": "2",
+        "Name of the Student": "Shivani Dixit",
+        "Current Position": "Working as Research investigator",
+        "Company/Institution": "Syngene international LTD"
+    },
+    {
+        "Sl.No": "3",
+        "Name of the Student": "Ruchi Rajkumar Manglunia",
+        "Current Position": "Pursuing PhD",
+        "Company/Institution": "University of Zurich, Switzerland"
+    },
+    {
+        "Sl.No": "4",
+        "Name of the Student": "Karpagam Sudhakar",
+        "Current Position": null,
+        "Company/Institution": null
+    },
+    {
+        "Sl.No": "5",
+        "Name of the Student": "Diksha Jain",
+        "Current Position": "Working as a MES Consultant",
+        "Company/Institution": "Sanofi, Singapore"
+    },
+    {
+        "Sl.No": "7",
+        "Name of the Student": "Raghuvamsi P V",
+        "Current Position": "Postdoctoral Fellow",
+        "Company/Institution": "Bioinformatics institute ( A *Star), Singapore"
+    },
+    {
+        "Sl.No": "8",
+        "Name of the Student": "Dhananjaya Baghar",
+        "Current Position": "Working as a Trainee",
+        "Company/Institution": "Baghar associates"
+    }
+]
