@@ -1,17 +1,17 @@
-const facilities = [
+export const facilitiesData = [
   {
     name: "Ion Channel Assay System",
     make: "MCS",
     model: "MCS Patch server",
     description: "Measurement of ion channel currents",
     specs: {
-      /* "Operational Status": "Operational", */
-      "Sample Requirements": "Room temperature whole-cell recordings of ion channel currents from heterologous or native mammalian cell lines",
-      "Location": "BT 222"
+      "Sample Requirements":
+        "Room temperature whole-cell recordings of ion channel currents from heterologous or native mammalian cell lines",
+      Location: "BT 222",
     },
     contact: "Dr. Anamika Bhargava, Professor / Mr Ankush Sharma, PhD student",
     email: "abhargava@bt.iith.ac.in, bo21resch11004@iith.ac.in",
-    imageUrl: null
+    img: "/equipments/ion_channel_assay_sys.jpg",
   },
   {
     name: "BD FACS Melody Cell Sorter",
@@ -25,7 +25,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "anindya@bt.iith.ac.in",
-    imageUrl: null
+    img: "/equipments/facs_melody_cell.jpg"
   },
   {
     name: "Oligo Synthesizer",
@@ -39,7 +39,7 @@ const facilities = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    imageUrl: null
+    img: "/equipments/oligo_synthesizer.jpg"
   },
   {
     name: "CD Polarimeter",
@@ -53,7 +53,7 @@ const facilities = [
     },
     contact: "Dr. Thenmalarchelvi Rathinavelan,  Professor / Mr Uttam Das",
     email: "tr@bt.iith.ac.in, bo22resch11008@iith.ac.in",
-    imageUrl: null
+    img: "/equipments/cd_polarimeter.jpg"
   },
   {
     name: "Microscale Thermophoresis",
@@ -67,7 +67,7 @@ const facilities = [
     },
     contact: "Dr. Thenmalarchelvi Rathinavelan,  Professor / Ms Sruthi Sundaresan",
     email: "tr@bt.iith.ac.in, BO20RESCH11002@iith.ac.in",
-    imageUrl: null
+    img: "/equipments/mic"
   },
   {
     name: "Octet K2 (Bio-layer Interferometry)",
@@ -81,7 +81,7 @@ const facilities = [
     },
     contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Mosquito Robotic Liquid Handling System",
@@ -95,7 +95,7 @@ const facilities = [
     },
     contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Fast Protein Liquid Chromatography",
@@ -109,7 +109,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
   {
     name: "HPLC",
@@ -123,7 +123,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "anindya@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Isothermal Titration Calorimeter",
@@ -137,7 +137,7 @@ const facilities = [
     },
     contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Bench-Top UltraCentrifuge",
@@ -151,7 +151,7 @@ const facilities = [
     },
     contact: "Dr. Basant Kumar Patel,  Professor",
     email: "basantkpatel@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Fast Protein Liquid Chromatography (WIPRO)",
@@ -165,7 +165,7 @@ const facilities = [
     },
     contact: "Dr. Thenmalarchelvi Rathinavelan, Professor",
     email: "tr@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
     {
     name: "Micromanipulator Microscope",
@@ -179,7 +179,7 @@ const facilities = [
     },
     contact: "Dr. Anamika Bhargava, Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
       {
     name: "Shaker Incubator",
@@ -193,7 +193,7 @@ const facilities = [
     },
     contact: "Dr. Basant kumar Patel, Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
 
   {
@@ -208,7 +208,7 @@ const facilities = [
     },
     contact: "Dr. Basant kumar Patel, Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
     {
     name: "Gel Doc",
@@ -222,7 +222,7 @@ const facilities = [
     },
     contact: "Dr. Basant kumar Patel, Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
   {
     name: "Millipore",
@@ -236,7 +236,7 @@ const facilities = [
     },
     contact: "Dr.N.K.Raghavendra, Associate Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
   {
     name: "Multi mode Plate Reader",
@@ -250,7 +250,7 @@ const facilities = [
     },
     contact: "Dr.N.K.Raghavendra, Associate Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
       {
     name: "UV/Visible spectrophotometer",
@@ -264,7 +264,7 @@ const facilities = [
     },
     contact: "Dr.N.K.Raghavendra, Associate Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
         {
     name: "  Drosophila Activity Monitor (DAM)",
@@ -278,7 +278,7 @@ const facilities = [
     },
     contact: "Dr. Sandipan Ray, Assistant Professor",
     email: "",
-    imageUrl: null
+    img: null
   },
   {
     name: "Spectramax-Microplate Reader",
@@ -292,7 +292,7 @@ const facilities = [
     },
     contact: "Dr. Basant Kumar Patel,  Professor",
     email: "basantkpatel@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Fast Protein Liquid Chromatography (Biosciences)",
@@ -306,7 +306,7 @@ const facilities = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Fast Protein Liquid Chromatography (Bio-Rad)",
@@ -320,7 +320,7 @@ const facilities = [
     },
     contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Avanti Refrigerated Centrifuge",
@@ -334,7 +334,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "anindya@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Cell Analyzer",
@@ -348,7 +348,7 @@ const facilities = [
     },
     contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor",
     email: "tr@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Floor Model Superspeed Centrifuge",
@@ -362,7 +362,7 @@ const facilities = [
     },
     contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Upright Fluorescence Microscope",
@@ -376,7 +376,7 @@ const facilities = [
     },
     contact: "Dr. Basant Kumar Patel,  Professor",
     email: "basantkpatel@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Real Time PCR",
@@ -390,7 +390,7 @@ const facilities = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Multimode Plate Reader (Perkin Elmer)",
@@ -404,7 +404,7 @@ const facilities = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Cell Imaging System",
@@ -418,7 +418,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "anindya@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Computer Nodes",
@@ -432,7 +432,7 @@ const facilities = [
     },
     contact: "Dr. Thenmalarchelvi Rathinavelan,  Professor / Ms Sruthi Sundaresan",
     email: "tr@bt.iith.ac.in; BO20RESCH11002@iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Water Purification System",
@@ -446,7 +446,7 @@ const facilities = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "SyngeneG Box - XR5",
@@ -460,7 +460,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "anindya@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Molecular Imager Chemidoc XRST System",
@@ -474,7 +474,7 @@ const facilities = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Isoelectric Focusing Unit",
@@ -488,7 +488,7 @@ const facilities = [
     },
     contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor",
     email: "tr@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Cyclone Phosphor Scanner",
@@ -502,7 +502,7 @@ const facilities = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Ultra Speed Centrifuge",
@@ -516,7 +516,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "anindya@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Multimode Plate Reader (Biotek)",
@@ -530,7 +530,7 @@ const facilities = [
     },
     contact: "Dr. Anindya Roy, Professor",
     email: "anindya@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "Nucleic Acid Purification System",
@@ -544,7 +544,7 @@ const facilities = [
     },
     contact: "Dr. Ashish Misra, Assistant Professor",
     email: "ashishmisra@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   },
   {
     name: "High-end Fluorescence microscope",
@@ -558,8 +558,8 @@ const facilities = [
     },
     contact: "Dr. Ashish Misra, Assistant Professor",
     email: "ashishmisra@bt.iith.ac.in",
-    imageUrl: null
+    img: null
   }
 ];
 
-export default facilities;
+

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import facilities from "./facilitiesData";
+import { facilitiesData } from "./facilitiesData"; // import your dataset
 
 export default function Facilities() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -10,27 +10,27 @@ export default function Facilities() {
   };
 
   return (
-    <section className="min-h-screen px-4 md:px-8 py-12">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center text-indigo-700 mb-12 drop-shadow-md">
+    <section className="min-h-screen px-4 md:px-8 py-12 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-500">
           Research Facilities
         </h1>
 
         <div className="space-y-6">
-          {facilities.map((fac, idx) => {
+          {facilitiesData.map((fac, idx) => {
             const isOpen = openIndex === idx;
 
             return (
               <div
                 key={idx}
-                className={`transition-all duration-300 rounded-xl backdrop-blur-lg bg-white/70 shadow-xl border border-indigo-200 overflow-hidden ${
+                className={`transition-all duration-300 rounded-2xl backdrop-blur-lg bg-white/70 shadow-xl border border-indigo-200 overflow-hidden ${
                   isOpen ? "ring-2 ring-indigo-400" : ""
                 }`}
               >
-                {/* Header Button */}
+                {/* Header */}
                 <button
                   onClick={() => toggleCard(idx)}
-                  className="w-full flex justify-between items-center px-6 py-4 text-left text-xl font-semibold text-gray-800 hover:bg-indigo-100/30 transition-colors duration-200"
+                  className="w-full flex justify-between items-center px-6 py-4 text-left text-xl font-semibold text-gray-800 hover:bg-indigo-100/40 transition-colors duration-200"
                 >
                   <span>{fac.name || "Unnamed Facility"}</span>
                   {isOpen ? (
@@ -40,30 +40,32 @@ export default function Facilities() {
                   )}
                 </button>
 
-                {/* Collapsible Content */}
+                {/* Expanded content */}
                 {isOpen && (
-                  <div className="p-6 pt-0 space-y-6 animate-fade-in">
+                  <div className="p-6 pt-0 space-y-5 animate-fade-in">
                     {/* Image */}
-                    {fac.imageUrl ? (
+                    {fac.img ? (
                       <div className="overflow-hidden rounded-lg">
                         <img
-                          src={fac.imageUrl}
+                          src={fac.img}
                           alt={fac.name}
-                          className="w-full h-56 object-cover rounded-lg transform hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          className="w-full h-64 object-contain rounded-lg transform hover:scale-105 transition-transform duration-300 bg-gray-100"
                         />
                       </div>
                     ) : (
-                      <div className="h-56 flex items-center justify-center bg-gray-200 text-gray-500 rounded-lg text-sm">
-                        Image ...
+                      <div className="h-56 flex items-center justify-center bg-gray-100 text-gray-500 rounded-lg text-sm">
+                        No image available
                       </div>
                     )}
 
-                    {/* Make & Model */}
+                    {/* Optional fields */}
                     {(fac.make || fac.model) && (
                       <p className="text-sm text-gray-700">
                         {fac.make && (
                           <>
-                            <strong>Make:</strong> {fac.make} <br />
+                            <strong>Make:</strong> {fac.make}
+                            <br />
                           </>
                         )}
                         {fac.model && (
@@ -76,15 +78,17 @@ export default function Facilities() {
 
                     {/* Description */}
                     {fac.description && (
-                      <p className="text-base text-gray-800 leading-relaxed">
+                      <p className="text-gray-800 leading-relaxed">
                         {fac.description}
                       </p>
                     )}
 
-                    {/* Specs */}
+                    {/* Specifications */}
                     {fac.specs && Object.keys(fac.specs).length > 0 && (
                       <div>
-                        <h4 className="text-md font-semibold text-indigo-700 mb-1">Specifications:</h4>
+                        <h4 className="text-md font-semibold text-indigo-700 mb-1">
+                          Specifications:
+                        </h4>
                         <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                           {Object.entries(fac.specs).map(([key, value]) => (
                             <li key={key}>
@@ -95,10 +99,26 @@ export default function Facilities() {
                       </div>
                     )}
 
-                    {/* Contact */}
-                    {fac.contact && (
+                    {/* Contact info */}
+                    {(fac.contact || fac.email) && (
                       <p className="text-sm text-gray-600">
-                        <strong>Contact:</strong> {fac.contact}
+                        {fac.contact && (
+                          <>
+                            <strong>Contact:</strong> {fac.contact}
+                            <br />
+                          </>
+                        )}
+                        {fac.email && (
+                          <>
+                            <strong>Email:</strong>{" "}
+                            <a
+                              href={`mailto:${fac.email}`}
+                              className="text-blue-600 hover:underline"
+                            >
+                              {fac.email}
+                            </a>
+                          </>
+                        )}
                       </p>
                     )}
                   </div>

@@ -53,7 +53,39 @@ export const Biotechsociety = () => {
       course: "M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
       img: "/society/KeerthanaK.webp",
-    }
+    },
+     {
+      name: " Yashika Shadija",
+      post: "Journal Club Head",
+      year: "",
+      course: "M.Tech. Medical Biotechnology",
+      dept: "Deptartment of Biotechnology",
+      img: "/society/YashikaShadija.jpeg",
+    },
+     {
+      name: "Harshita Bansal",
+      post: "Design Head",
+      year: "",
+      course: "M.Tech. Medical Biotechnology",
+      dept: "Deptartment of Biotechnology",
+      img: "/society/HarshitaBansal.jpg",
+    },
+      {
+      name: "Vasistha Krishna C",
+      post: "Media & Content Head",
+      year: "",
+      course: "B.Tech. Biotechnology and Bioinformaticsy",
+      dept: "Deptartment of Biotechnology",
+      img: "/society/VasisthaKrishnaC.jpeg",
+    },
+       {
+      name: "Prachi Tailor",
+      post: "PR and Outreach Head",
+      year: "",
+      course: "M.Tech. Medical Biotechnology",
+      dept: "Deptartment of Biotechnology",
+      img: "/society/prachitailor.jpg",
+    },
     //  {
     //   name: "aaa",
     //   post: "Secretary",
@@ -113,7 +145,7 @@ export const Biotechsociety = () => {
 
       {/* Members Section */}
       <section className="px-6">
-        <h2 className="text-3xl font-bold mb-10 text-center text-indigo-800">Society Members</h2>
+        <h2 className="text-3xl font-bold mb-10 text-center text-indigo-800">Society Heads</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
        
           {members.map((m, i) => (
