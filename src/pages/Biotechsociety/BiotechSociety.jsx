@@ -1,6 +1,6 @@
 // src/pages/Biotechsociety.jsx
 import { useState, useEffect } from "react";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Twitter, Instagram } from "lucide-react";
 
 export const Biotechsociety = () => {
   // --- Hero Carousel Images ---
@@ -22,45 +22,46 @@ export const Biotechsociety = () => {
   // --- Society Members Data ---
   const members = [
     {
-      name: "",
+      name: "Ashwath Kumar B",
       post: "President",
       year: "",
-      course: " Biotechnology",
-      dept: "Biotech Dept",
-      img: "/images/members/abc.jpg",
-    },
-    {
-      name: "aaa",
-      post: "Secretary",
-      year: "0000000000",
-      course: " Biotechnology",
-      dept: "Biotech Dept",
-      img: "/images/members/qwetry.jpg",
+      course: " M.Tech. Medical Biotechnology",
+      dept: "Deptartment of Biotechnology",
+      img: "/society/AshwathKumarB.webp",
+    },                                                      
+     {
+      name: "Tholkappian R",
+      post: "Vice President",
+      year: "",
+      course: "M.Tech. Medical Biotechnology",
+      dept: "Deptartment of Biotechnology",
+   
+      img: "/society/TholkappianR.webp",
     },
      {
-      name: "aaa",
-      post: "Secretary",
-      year: "0000000000",
-      course: " Biotechnology",
-      dept: "Biotech Dept",
-      img: "/images/members/qwetry.jpg",
+      name: "Amritha Varshini S",
+      post: "Treasurer",
+      year: "",
+      course: "M.Tech. Medical Biotechnology",
+      dept: "Deptartment of Biotechnology",
+      img: "/society/AmrithaVarshiniS.webp",
     },
      {
-      name: "aaa",
-      post: "Secretary",
-      year: "0000000000",
-      course: " Biotechnology",
-      dept: "Biotech Dept",
-      img: "/images/members/qwetry.jpg",
-    },
-     {
-      name: "aaa",
-      post: "Secretary",
-      year: "0000000000",
-      course: " Biotechnology",
-      dept: "Biotech Dept",
-      img: "/images/members/qwetry.jpg",
+      name: "Keerthana K",
+      post: "Event Head",
+      year: "",
+      course: "M.Tech. Medical Biotechnology",
+      dept: "Deptartment of Biotechnology",
+      img: "/society/KeerthanaK.webp",
     }
+    //  {
+    //   name: "aaa",
+    //   post: "Secretary",
+    //   year: "0000000000",
+    //   course: " Biotechnology",
+    //   dept: "Biotech Dept",
+    //   img: "/images/members/qwetry.jpg",
+    // }
    
   ];
 
@@ -82,32 +83,56 @@ export const Biotechsociety = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <div className="relative w-full h-[400px] overflow-hidden rounded-2xl shadow-lg">
+      {/* <div className="relative w-full h-[400px] overflow-hidden rounded-2xl shadow-lg">
         <img
           src={heroImages[currentIndex]}
           alt="Hero Slide"
           className="w-full h-full object-cover transition-all duration-700"
         />
-      </div>
+      </div> */}
+
+      {/* Faculty in Charge Section */}
+      <section className="px-6">
+        <h2 className="text-3xl font-bold mb-10 text-center text-indigo-800">Faculty in Charge</h2>
+        <div className="flex justify-center">
+          <div
+            className="bg-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center w-full max-w-sm"
+          >
+            <img
+              src="/society/fic.png"
+              alt="Dr. Himanshu Joshi"
+              className="w-40 h-48 rounded-lg object-cover border-4 border-indigo-200 shadow-md"
+            />
+            <h3 className="mt-5 text-xl font-semibold text-gray-800">Dr. Himanshu Joshii</h3>
+            <p className="text-gray-600">Faculty in Charge</p>
+            <p className="text-sm text-gray-400">Department of Biotechnology</p>
+          </div>
+        </div>
+      </section>
+
 
       {/* Members Section */}
       <section className="px-6">
-        <h2 className="text-3xl font-bold mb-6">Society Members</h2>
-        <div className="grid md:grid-cols-5 gap-3">
+        <h2 className="text-3xl font-bold mb-10 text-center text-indigo-800">Society Members</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+       
           {members.map((m, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow p-4 text-center"
+              className="bg-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center"
+             
             >
               <img
                 src={m.img}
                 alt={m.name}
-                className="w-32 h-32 mx-auto rounded-full object-cover"
+                className="w-40 h-48 rounded-lg object-cover border-4 border-indigo-200 shadow-md"
               />
-              <h3 className="mt-4 text-xl font-semibold">{m.name}</h3>
+              <h3 className="mt-5 text-xl font-semibold text-gray-800">{m.name}</h3>
               <p className="text-gray-600">{m.post}</p>
               <p className="text-sm text-gray-500">
-                {m.year} • {m.course}
+                {m.year} </p> 
+                <p className="text-sm text-gray-500">
+                  {m.course}
               </p>
               <p className="text-sm text-gray-400">{m.dept}</p>
             </div>
@@ -116,7 +141,7 @@ export const Biotechsociety = () => {
       </section>
 
       {/* Activities Tabs */}
-      <section className="px-6">
+      {/* <section className="px-6">
         <h2 className="text-3xl font-bold mb-6">Activities</h2>
         <div className="flex gap-4 mb-4">
           {Object.keys(activities).map((tab) => (
@@ -136,10 +161,10 @@ export const Biotechsociety = () => {
         <p className="bg-gray-100 p-6 rounded-xl shadow">
           {activities[activeTab]}
         </p>
-      </section>
+      </section> */}
 
       {/* News Scroller */}
-      <section className="bg-yellow-100 py-3 overflow-hidden">
+      {/* <section className="bg-yellow-100 py-3 overflow-hidden">
         <div className="animate-marquee whitespace-nowrap">
           {news.map((n, i) => (
             <span key={i} className="mx-8 text-lg font-medium">
@@ -147,21 +172,19 @@ export const Biotechsociety = () => {
             </span>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Social Media */}
-      <footer className="flex justify-center gap-6 py-6 bg-gray-900 text-white">
+      {/* <footer className="flex justify-center gap-6 py-6 bg-gray-900 text-white">
         
         <a href="https://twitter.com" target="_blank" rel="noreferrer">
           <Twitter className="w-6 h-6" />
         </a>
         <a href="https://instagram.com" target="_blank" rel="noreferrer">
           <Instagram className="w-6 h-6" />
-        </a>
+        </a> 
 
-      </footer>
+      </footer> */}
     </div>
   );
 };
-
-

@@ -5,6 +5,7 @@ import { AnnouncementsModified } from "./Home_announcements.jsx";
 import EventsModified from "./Home_events";
 import { admissions } from "../AcademicPrograms/admissionData";
 import { eventsData } from "../Events/eventsData";
+import { lifeAtDeptImages } from "./lifeAtDeptImages";
 
 export default function Home() {
   const images = [
@@ -262,14 +263,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
   // Auto-switch to Life at Department if no latest content
   const [activeTab, setActiveTab] = useState(hasLatest ? "announceEvents" : "lifeDept");
 
-  const lifeAtDeptImages = [
-    { src: "/images/life/image1.jpg", alt: "Students in the lab" },
-    { src: "/images/life/image2.jpg", alt: "Department event" },
-    { src: "/images/life/image3.jpg", alt: "Research presentation" },
-    { src: "/images/life/image4.jpg", alt: "Group discussion" },
-    { src: "/images/life/image5.jpg", alt: "State-of-the-art equipment" },
-    { src: "/images/life/image6.jpg", alt: "Campus view" },
-  ];
+
   return (
     <div className="mx-4 md:mx-10 my-10 px-4 md:px-10 py-8 bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden">
       {/* Artistic background elements */}
@@ -346,28 +340,28 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
           </section>
         )}
 
-        {activeTab === "lifeDept" && (
-          <section className="animate-fadeIn">
-            <h1 className="text-2xl md:text-3xl font-extrabold text-blue-800 mb-8 text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Life at Department
-            </h1>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 max-h-[500px] overflow-auto border border-white/30">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {lifeAtDeptImages.map((image, index) => (
-                  <div key={index} className="group relative">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-40 sm:h-48 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-                      <p className="text-white text-center text-sm p-2">{image.alt}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+       {activeTab === "lifeDept" && (
+  <section className="animate-fadeIn">
+    <h1 className="text-2xl md:text-3xl font-extrabold text-blue-800 mb-8 text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+      Life at Department
+    </h1>
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-white/30">
+      <div className="columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">
+        {lifeAtDeptImages.map((image, index) => (
+          <div key={index} className="group relative break-inside-avoid">
+            <img
+              src={image.src}
+              
+              className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+             
             </div>
-          </section>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
         )}
       </div>
     </div>
