@@ -30,7 +30,8 @@ import Alumni from "./pages/People/Alumni";
 import Facilities from "./pages/Facilities/Facilities.jsx";
 import Achievements from "./pages/Achievements/Achievements.jsx";
 import Events from "./pages/Events/Events.jsx";
-import {Biotechsociety} from "./pages/Biotechsociety/BiotechSociety.jsx";
+import BiotechSociety from "./pages/Biotechsociety/BiotechSociety.jsx";
+
 import Contact from "./pages/Contact";
 
 function App() {
@@ -71,7 +72,7 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/events" element={<Events />} />
-           <Route path="/biotechsociety" element={<Biotechsociety />} />
+           <Route path="/biotechsociety" element={<BiotechSociety />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

@@ -81,7 +81,7 @@ export const facilitiesData = [
     },
     contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
-    img: "/equipments/octet_ bio_layer_infometry.jpg"
+    img: "/equipments/octet_bio_layer_infometry.jpg"
   },
   {
     name: "Mosquito Robotic Liquid Handling System",
@@ -137,7 +137,7 @@ export const facilitiesData = [
     },
     contact: "Dr. Rajakumara Eerappa,  Professor ",
     email: "eraj@bt.iith.ac.in",
-    img: "/equipments/isothermal_titration_calorimeter.jpg"
+    img: "/equipments/isothermal_titration_calorimeter.jpg",
   },
   {
     name: "Beckmann UltraCentrifuge",
@@ -224,16 +224,15 @@ export const facilitiesData = [
     email: "",
     img: "/equipments/gel_doc.jpg"
   },
-
   {
     name: "Multi mode Plate Reader",
-    make: "",
-    model: "",
-    description: "",
+    make: "Perkin Elmer",
+    model: "Enspire",
+    description: "Measures fluorescent tag interaction",
     specs: {
      /*  "Operational Status": "Operational", */
-      // "Sample Requirements": "Soluble protein sample for separation",
-      // "Location": "BT 219"
+      "Sample Requirements": "User-specific",
+      "Location": "BT 012"
     },
     contact: "Dr.N.K.Raghavendra, Associate Professor",
     email: "",
@@ -243,7 +242,7 @@ export const facilitiesData = [
     name: "UV/Visible spectrophotometer",
     make: "Beckman coulter",
     model: "",
-    description: "",
+    description: "Measures absorbance of samples",
     specs: {
      /*  "Operational Status": "Operational", */
       // "Sample Requirements": "Soluble protein sample for separation",
@@ -257,7 +256,7 @@ export const facilitiesData = [
     name: "  Drosophila Activity Monitor (DAM)",
     make: "",
     model: "",
-    description: "",
+    description: "Monitors activity and circadian rhythms in Drosophila.",
     specs: {
      /*  "Operational Status": "Operational", */
       // "Sample Requirements": "Soluble protein sample for separation",
@@ -391,7 +390,7 @@ export const facilitiesData = [
     },
     contact: "Dr. NK Raghavendra, Associate Professor",
     email: "raghunk@bt.iith.ac.in",
-    img: "/equipments/multimode_plate_reader.jpg"
+    img: "/equipments/multimode_plate_reader_perkin_elmer.jpg"
   },
   {
     name: "Cell Imaging System",
@@ -548,5 +547,3 @@ export const facilitiesData = [
     img: "/equipments/high_end_fluorescence_microscope.jpg"
   }
 ];
-
-

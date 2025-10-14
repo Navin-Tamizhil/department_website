@@ -86,7 +86,7 @@ const Header = () => {
     { name: "Achievements", path: "/achievements" },
     
     { name: "Events", path: "/events" },
-    { name: "Biotechsociety", path: "/biotechsociety" },    
+    { name: "BiotechSociety", path: "/biotechsociety" },    
     { name: "Contact", path: "/contact" },
   ];
 
