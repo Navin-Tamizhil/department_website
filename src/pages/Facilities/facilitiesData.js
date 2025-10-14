@@ -332,7 +332,7 @@ export const facilitiesData = [
       "Sample Requirements": "N/A",
       "Location": "BT 012"
     },
-    contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor",
+    contact: "Dr. Thenmalarchelvi Rathinavelan, Professor",
     email: "tr@bt.iith.ac.in",
     img: "/equipments/cell_analyzer.jpg"
   },
@@ -472,7 +472,7 @@ export const facilitiesData = [
       "Sample Requirements": "N/A",
       "Location": "BT 117"
     },
-    contact: "Dr. Thenmalarchelvi Rathinavelan, Associate Professor",
+    contact: "Dr. Thenmalarchelvi Rathinavelan, Professor",
     email: "tr@bt.iith.ac.in",
     img: "/equipments/isoelectric_focusing_unit.png"
   },

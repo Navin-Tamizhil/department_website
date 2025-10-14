@@ -123,7 +123,7 @@ const Biotechsociety = () => {
           <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/50 transform hover:-translate-y-2 transition-transform duration-300">
             <div className="flex items-center gap-4 mb-4">
               <div className="p-3 bg-gradient-to-br from-green-500 to-teal-500 rounded-full text-white"><Eye className="w-6 h-6" /></div>
-              <h2 className="text-2xl font-bold text-gray-800">Our Vision for 2025</h2>
+              <h2 className="text-2xl font-bold text-gray-800">Vision for 2025</h2>
             </div>
             <p className="text-gray-700 leading-relaxed">
               To transform the Biotech Society into a multidimensional, student-led club that becomes a model of departmental unity, scientific exchange, and student empowerment across the academic and cultural spectrum.
