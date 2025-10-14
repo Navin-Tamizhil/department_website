@@ -12,25 +12,18 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300 py-10">
       <div className="max-w-7xl mx-auto px-6 space-y-10">
         
-        {/* Row 1 - Gallery, Facebook, Brochure */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center md:text-left">
-          <button
-            onClick={() => navigate("/gallery")}
-            className={`flex items-center justify-center md:justify-start gap-2 hover:text-indigo-400 transition ${
-              isActive("/gallery") ? "text-indigo-400 font-semibold" : ""
-            } items-center`}
-          >
-            <BookOpen className="w-5 h-5" /> <span>Gallery</span>
-          </button>
+        {/* Row 1 -  Facebook, Brochure */}
+        <div className="flex flex-col sm:flex-row sm:justify-around items-center gap-6 text-center md:text-left">
 
-          <a
+
+          {/* <a
             href="https://www.facebook.com/biotechiith/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center md:justify-start gap-2 hover:text-indigo-400 transition items-center"
           >
             <Users className="w-5 h-5" /> <span>Facebook</span>
-          </a>
+          </a> */}
 
           <a
             href="/footer/Dept_brouchere.pdf"
