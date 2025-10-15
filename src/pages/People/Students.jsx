@@ -51,22 +51,6 @@ export default function Students() {
       "btech_2025.json",
       "mtech_2024.json",
       "mtech_2025.json",
-      "phd_2015_january.json",
-      "phd_2017_january.json",
-      "phd_2017_july.json",
-      "phd_2018_july.json",
-      "phd_2019_january.json",
-      "phd_2020_january.json",
-      "phd_2020_july.json",
-      "phd_2021_january.json",
-      "phd_2021_july.json",
-      "phd_2022_january.json",
-      "phd_2022_july.json",
-      "phd_2023_january.json",
-      "phd_2023_july.json",
-      "phd_2024_january.json",
-      "phd_2024_july.json",
-      "phd_2025_january.json",
     ];
 
 
@@ -85,7 +69,6 @@ export default function Students() {
       "MTech_Alumni_2021___2023_Batch.json",
       "MTech_Alumni_2022___2024_Batch.json",
       "MTech_Alumni_2023___2025_Batch.json",
-      "PhD_Alumni.json",
     ];
 
     const newData = { btech: [], mtech: [], phd: [], alumni: { btech: [], mtech: [], phd: [] } };
@@ -107,17 +90,6 @@ export default function Students() {
         } else if (file.startsWith("mtech")) {
           const year = parseInt(file.match(/mtech_(\d+)/)[1], 10);
           newData.mtech.push({ year, students });
-        } else if (file.startsWith("phd")) {
-          // Make regex more flexible for PhD files
-          const match = file.match(/phd_(\d+)(?:_(january|july))?/); // e.g., phd_2022_january.json or phd_2021.json
-          if (!match) return;
-          const [, yearStr, batch] = match;
-          const year = parseInt(yearStr, 10);
-          newData.phd.push({
-            year, // e.g., 2022
-            batch: batch ? batch.charAt(0).toUpperCase() + batch.slice(1) : "Annual", // e.g., "January" or "Annual"
-            students, // Array of student names
-          });
         }
       } catch (err) {
         console.error("Error loading", file, err);
@@ -152,10 +124,6 @@ export default function Students() {
             const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
             newData.alumni.mtech.push({ year, students: studentNames });
           }
-        } else if (file.startsWith("PhD_Alumni")) {
-            // Assuming PhD alumni file is an array of student objects
-            const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
-            newData.alumni.phd.push({ year: "Alumni", students: studentNames });
         } else { // Fallback for simple btech/mtech_year.json format
           const match = file.match(/(btech|mtech)_(\d{4})\.json$/i);
           if (!match) return;
@@ -169,16 +137,42 @@ export default function Students() {
       }
     });
 
-    await Promise.all([...studentPromises, ...alumniPromises]);
+    // Load and process the single PhD data file
+    const loadPhdData = async () => {
+      try {
+        const res = await fetch(`/students_excel/phd_all.json`);
+        if (!res.ok) {
+          console.warn(`Failed to fetch phd_all.json`);
+          return;
+        }
+        const allPhdStudents = await res.json();
+
+        const onRollStudents = allPhdStudents.filter(s => s.Status === "Onroll");
+        const graduatedStudents = allPhdStudents.filter(s => s.Status === "Graduated");
+
+        const phdByYear = onRollStudents.reduce((acc, student) => {
+          const year = student.Year;
+          if (!acc[year]) acc[year] = [];
+          acc[year].push(capitalizeName(student.Name));
+          return acc;
+        }, {});
+
+        newData.phd = Object.entries(phdByYear).map(([year, students]) => ({ year: parseInt(year, 10), batch: 'Annual', students }));
+        newData.alumni.phd = graduatedStudents; // Keep full object for stats
+      } catch (err) {
+        console.error("Error loading phd_all.json", err);
+      }
+    };
+    await Promise.all([...studentPromises, ...alumniPromises, loadPhdData()]);
 
     // Sort by year
-    newData.btech.sort((a, b) => a.year - b.year);
-    newData.mtech.sort((a, b) => a.year - b.year);
+    newData.btech.sort((a, b) => b.year - a.year);
+    newData.mtech.sort((a, b) => b.year - a.year);
     newData.phd.sort((a, b) =>
-      a.year === b.year ? (a.batch === "January" ? -1 : 1) : a.year - b.year
+      a.year === b.year ? (a.batch === "July" ? -1 : 1) : b.year - a.year
     );
-    newData.alumni.btech.sort((a, b) => a.year - b.year);
-    newData.alumni.mtech.sort((a, b) => a.year - b.year);
+    newData.alumni.btech.sort((a, b) => b.year - a.year);
+    newData.alumni.mtech.sort((a, b) => b.year - a.year);
     // No need to sort PhD alumni as it's a single group
 
     setData(newData);
@@ -223,16 +217,18 @@ export default function Students() {
   const totalPhd = data.phd.reduce((acc, d) => acc + d.students.length, 0);
   const totalBtechAlumni = data.alumni.btech.reduce((acc, d) => acc + d.students.length, 0);
   const totalMtechAlumni = data.alumni.mtech.reduce((acc, d) => acc + d.students.length, 0);
-  const totalPhdAlumni = data.alumni.phd.reduce((acc, d) => acc + d.students.length, 0);
+  const totalPhdAlumni = data.alumni.phd.length;
+  const totalOnRoll = totalBtech + totalMtech + totalPhd;
+
 
   // Overall ratio pie chart
   const overallPieData = [
     { name: "B.Tech Current", value: totalBtech, color: "#0f78be" },
     { name: "M.Tech Current", value: totalMtech, color: "#10B981" },
-    { name: "Ph.D. Current", value: totalPhd, color: "#e99a11" },
-    { name: "B.Tech Alumni", value: totalBtechAlumni, color: "#60a5fa" },
-    { name: "M.Tech Alumni", value: totalMtechAlumni, color: "#34d399" },
-    { name: "Ph.D. Alumni", value: totalPhdAlumni, color: "#facc15" },
+    { name: "Ph.D. Current", value: totalPhd, color: "#ffc658" },
+    { name: "B.Tech Alumni", value: totalBtechAlumni, color: "#8884d8" },
+    { name: "M.Tech Alumni", value: totalMtechAlumni, color: "#82ca9d" },
+    { name: "Ph.D. Alumni", value: totalPhdAlumni, color: "#ff8042" },
   ];
 
   // Program ratio pie chart
@@ -246,7 +242,7 @@ export default function Students() {
   const allBtechYears = [...new Set([
     ...data.btech.map(d => d.year),
     ...data.alumni.btech.map(d => d.year)
-  ])].sort();
+  ])].sort((a, b) => b - a);
 
   const btechBarData = allBtechYears.map(year => ({
     year: year.toString(),
@@ -258,7 +254,7 @@ export default function Students() {
   const allMtechYears = [...new Set([
     ...data.mtech.map(d => d.year),
     ...data.alumni.mtech.map(d => d.year)
-  ])].sort();
+  ])].sort((a, b) => b - a);
 
   const mtechBarData = allMtechYears.map(year => ({
     year: year.toString(),
@@ -267,21 +263,22 @@ export default function Students() {
   }));
 
   // PhD bar chart data
-  const allPhdYears = [...new Set(data.phd.map(d => d.year))].sort();
+  const allPhdYears = [...new Set([
+    ...data.phd.map(d => d.year),
+    ...data.alumni.phd.map(d => d.Year)
+  ])].sort((a, b) => b - a);
+
   const phdBarData = allPhdYears.map(year => ({
     year: year.toString(),
-    Students: data.phd.filter(d => d.year === year).reduce((sum, d) => sum + d.students.length, 0),
+    Current: data.phd.find(d => d.year === year)?.students.length || 0,
+    Graduated: data.alumni.phd.filter(d => d.Year === year).length || 0,
   }));
-  // Add PhD Alumni as a single bar
-  if (totalPhdAlumni > 0) {
-    phdBarData.push({ year: "Alumni", Students: totalPhdAlumni });
-  }
 
 
   return (
     <section className="container mx-auto px-4 sm:px-6 py-12">
-      <h1 className="text-4xl font-bold text-center text-indigo-700 mb-10 drop-shadow-lg">
-        Our Students
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-500">
+        Our Students on Roll
       </h1>
 
       {/* Tabs */}
@@ -306,8 +303,8 @@ export default function Students() {
       {/* Year/Batch selector */}
       {activeTab !== "stats" && (
         <div className="mb-6">
-          <select
-            className="border border-gray-300 rounded px-3 py-1"
+          <select // A styled dropdown might be better, but for simplicity:
+            className="border border-gray-300 rounded-lg px-4 py-2 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
             value={selectedYear || ""}
             onChange={(e) => setSelectedYear(e.target.value)}
           >
@@ -322,7 +319,7 @@ export default function Students() {
 
       {/* Content for B.Tech, M.Tech */}
       {(activeTab === "btech" || activeTab === "mtech") && selectedYear && (
-        <ul className="list-disc pl-6 max-h-[400px] overflow-auto bg-white shadow rounded p-4">
+        <ul className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-white/30 columns-1 md:columns-2 lg:columns-3 gap-x-8 space-y-2">
           {getStudents(activeTab, selectedYear).map((student, i) => (
             <li key={i} className="mb-1">
               {student}
@@ -337,11 +334,8 @@ export default function Students() {
           {data.phd
             .filter((d) => d.year === parseInt(selectedYear, 10))
             .map(({ batch, students }) => (
-              <div key={batch} className="mb-6">
-                <h4 className="text-lg font-semibold mb-2 text-indigo-700">
-                  Batch: {batch}
-                </h4>
-                <ul className="list-disc pl-6 max-h-[300px] overflow-auto bg-white shadow rounded p-4">
+              <div key={batch} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-white/30">
+                <ul className="columns-1 md:columns-2 lg:columns-3 gap-x-8 space-y-2">
                   {students.map((student, i) => (
                     <li key={i} className="mb-1">
                       {student}
@@ -369,7 +363,7 @@ export default function Students() {
                 <Tooltip />
                 <Legend />
                 <Bar dataKey="Current" fill="#0f78be" />
-                <Bar dataKey="Alumni" fill="#60a5fa" />
+                <Bar dataKey="Alumni" fill="#82ca9d" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -386,8 +380,8 @@ export default function Students() {
                 <YAxis allowDecimals={false} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Current" fill="#00f8aae5" />
-                <Bar dataKey="Alumni" fill="rgba(15, 128, 75, 1)" />
+                <Bar dataKey="Current" fill="#10B981" />
+                <Bar dataKey="Alumni" fill="#8884d8" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -404,15 +398,16 @@ export default function Students() {
                 <YAxis allowDecimals={false} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Students" fill="#e99a11" />
+                <Bar dataKey="Current" stackId="a" fill="#ffc658" />
+                <Bar dataKey="Graduated" stackId="a" fill="#ff8042" />
               </BarChart>
             </ResponsiveContainer>
           </div>
 
           {/* Pie Charts */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex justify-center">
             {/* Program Ratio Pie Chart */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
               <h3 className="text-xl font-bold mb-4 text-indigo-700 text-center">
                 Current Students Ratio
               </h3>
@@ -433,30 +428,9 @@ export default function Students() {
                   <Legend />
                 </PieChart>
               </ResponsiveContainer>
-            </div>
-
-            {/* Overall Distribution Pie Chart */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-indigo-700 text-center">
-                Current & Alumni Distribution
-              </h3>
-              <ResponsiveContainer width="100%" height={350}>
-                <PieChart>
-                  <Pie
-                    data={overallPieData}
-                    dataKey="value"
-                    nameKey="name"
-                    outerRadius={120}
-                    label={({ name, value }) => `${name}: ${value}`}
-                  >
-                    {overallPieData.map((entry, index) => (
-                      <Cell key={index} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                  <Legend />
-                </PieChart>
-              </ResponsiveContainer>
+              <p className="text-center text-gray-700 font-semibold mt-4 text-lg">
+                Total Students on Roll: <span className="text-indigo-700">{totalOnRoll}</span>
+              </p>
             </div>
           </div>
         </div>

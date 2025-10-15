@@ -6,7 +6,7 @@ export const AnnouncementsModified = ({ onItemClick }) => {
   const [expandedItem, setExpandedItem] = useState(null);
 
   // Filter admissions for only latest
-  const latestAdmissions = admissions.filter(item => item.islatest === true);
+  const latestAdmissions = admissions.filter(item => item.isLatest === true);
 
   const handleItemClick = (e, itemId, itemTitle) => {
     e.stopPropagation();

@@ -1,15 +1,11 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import regularFaculty from "./data/regularFaculty.json";
 import { DistinguishedFaculty, AffiliatedFaculty } from "./data/associateFaculty";
-import { ChevronDown, Phone, Mail, MapPin, ExternalLink, GraduationCap, Search, Building, Link as LinkIcon } from "lucide-react";
+import { ChevronDown, Phone, Mail, MapPin, ExternalLink, GraduationCap, Search, Building, Link as LinkIcon, Users } from "lucide-react";
 
-const FacultyCard = ({ person }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
+const FacultyCard = ({ person, isOpen, onToggle, isHighlighted, cardRef, showGroupPicture = false }) => {
   return (
-    <div className="relative bg-white rounded-2xl shadow-lg border border-gray-200/80 overflow-hidden transition-all duration-500 ease-in-out hover:shadow-2xl hover:-translate-y-2 group">
+    <div ref={cardRef} className={`relative bg-white rounded-2xl shadow-lg border border-gray-200/80 overflow-hidden transition-all duration-500 ease-in-out hover:shadow-2xl hover:-translate-y-2 group ${isHighlighted ? 'animate-highlight' : ''}`} id={`faculty-card-${person.id}`}>
       {/* Decorative corner accent */}
       <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-bl-full transition-all duration-500 group-hover:w-32 group-hover:h-32"></div>
       
@@ -33,7 +29,7 @@ const FacultyCard = ({ person }) => {
         <h3 className="text-xl font-bold text-gray-900 mb-1 transition-colors group-hover:text-indigo-700">{person.name}</h3>
         <p className="text-sm text-indigo-600 font-medium mb-4 line-clamp-2 h-10">{person.designation}</p>
         <button
-          onClick={toggle}
+          onClick={onToggle}
           className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-gradient-to-r from-gray-100 to-gray-50 hover:from-indigo-100 hover:to-purple-100 text-indigo-700 rounded-lg transition-all duration-300 font-semibold text-sm shadow-sm hover:shadow-md"
         >
           <span>{isOpen ? "Show Less" : "View Details"}</span>
@@ -43,31 +39,52 @@ const FacultyCard = ({ person }) => {
 
       <div className={`transition-all duration-500 ease-in-out grid ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
         <div className="overflow-hidden">
-          <div className="border-t border-gray-200 bg-gradient-to-br from-gray-50 to-indigo-50/30 p-6 space-y-4">
-            {person.address && <InfoItem icon={MapPin} text={person.address} isLink={false} />}
-            {person.phone && <InfoItem icon={Phone} text={person.phone} href={`tel:${person.phone}`} isLink={false} />}
-            {person.email && <InfoItem icon={Mail} text={person.email} href={`mailto:${person.email}`} isLink={false} />}
-            {person.iithPage && <InfoItem icon={Building} text="IITH Page" href={person.iithPage} isLink />}
-            {person.googleScholar && <InfoItem icon={GraduationCap} text="Google Scholar" href={person.googleScholar} isLink />}
-            {person.personalWebsite && <InfoItem icon={LinkIcon} text="Personal Website" href={person.personalWebsite} isLink />}
-            {person.labWebsite && <InfoItem icon={ExternalLink} text="Lab Website" href={person.labWebsite} isLink />}
-            
-            {person.area && person.area.length > 0 && (
-              <div className="pt-2">
-                <h4 className="font-semibold text-indigo-800 mb-2 flex items-center gap-2 text-sm">
-                  <GraduationCap className="w-4 h-4" />
-                  Research Areas
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {person.area.map((area, i) => (
-                    <span 
-                      key={i} 
-                      className="px-3 py-1 bg-gradient-to-r from-teal-100 to-cyan-100 text-teal-800 text-xs font-semibold rounded-full shadow-sm hover:shadow-md transition-shadow"
-                    >
-                      {area}
-                    </span>
-                  ))}
+          <div className="border-t border-gray-200 bg-gradient-to-br from-gray-50 to-indigo-50/30 p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Left side: Details */}
+            <div className="space-y-4">
+              {person.address && <InfoItem icon={MapPin} text={person.address} isLink={false} />}
+              {person.phone && <InfoItem icon={Phone} text={person.phone} href={`tel:${person.phone}`} isLink={false} />}
+              {person.email && <InfoItem icon={Mail} text={person.email} href={`mailto:${person.email}`} isLink={false} />}
+              {person.iithPage && <InfoItem icon={Building} text="IITH Page" href={person.iithPage} isLink />}
+              {person.googleScholar && <InfoItem icon={GraduationCap} text="Google Scholar" href={person.googleScholar} isLink />}
+              {person.personalWebsite && <InfoItem icon={LinkIcon} text="Personal Website" href={person.personalWebsite} isLink />}
+              {person.labWebsite && <InfoItem icon={ExternalLink} text="Lab Website" href={person.labWebsite} isLink />}
+              
+              {person.area && person.area.length > 0 && (
+                <div className="pt-2">
+                  <h4 className="font-semibold text-indigo-800 mb-2 flex items-center gap-2 text-sm">
+                    <GraduationCap className="w-4 h-4" />
+                    Research Areas
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {person.area.map((area, i) => (
+                      <span 
+                        key={i} 
+                        className="px-3 py-1 bg-gradient-to-r from-teal-100 to-cyan-100 text-teal-800 text-xs font-semibold rounded-full shadow-sm hover:shadow-md transition-shadow"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+              )}
+            </div>
+            {/* Right side: Group Picture (conditional) */}
+            {showGroupPicture && (
+              <div className="space-y-4">
+                <h4 className="font-semibold text-indigo-800 mb-2 flex items-center gap-2 text-sm">
+                  <Users className="w-4 h-4" />
+                  Group Picture
+                </h4>
+                {person.teamPicture ? (
+                  <div className="w-full aspect-video bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden shadow-inner">
+                    <img src={person.teamPicture} alt={`${person.name}'s Group`} className="w-full h-full object-cover" />
+                  </div>
+                ) : (
+                  <div className="w-full aspect-video bg-gray-100 rounded-xl flex items-center justify-center text-sm text-gray-500">
+                    No team picture available
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -77,7 +94,10 @@ const FacultyCard = ({ person }) => {
   );
 };
 
-const FacultySection = ({ title, data, sort = false }) => {
+const FacultySection = ({ title, data, sort = false, openFacultyId, setOpenFacultyId, lastViewedId, setLastViewedId, showGroupPicture = false }) => {
+  const sectionRef = useRef(null);
+  const cardRefs = useRef({});
+
   const designationOrder = {
     Professor: 1,
     "Associate Professor": 2,
@@ -117,26 +137,70 @@ const FacultySection = ({ title, data, sort = false }) => {
     });
   }, [data, sort]);
 
+  const selectedItem = openFacultyId !== null ? processedData.find(p => p.id === openFacultyId) : null;
+  const otherItems = processedData.filter(p => p.id !== openFacultyId);
+
+  useEffect(() => {
+    if (lastViewedId && cardRefs.current[lastViewedId]) {
+      cardRefs.current[lastViewedId].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+      // Clear after scrolling and highlighting
+      const timer = setTimeout(() => setLastViewedId(null), 1500); // Highlight duration
+      return () => clearTimeout(timer);
+    }
+  }, [lastViewedId, setLastViewedId]);
+
+  const toggleFaculty = (id) => {
+    const isOpening = openFacultyId !== id;
+    if (isOpening) {
+      setOpenFacultyId(id);
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      setOpenFacultyId(null);
+      setLastViewedId(id);
+    }
+  };
+
   return (
-    <div className="mb-16">
+    <div className="mb-16" ref={sectionRef}>
       <h2 className="text-4xl font-bold mb-5 leading-[1.5] text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-700 drop-shadow-sm">
         {title}
       </h2>
       <div className="w-32 h-1 bg-gradient-to-r from-indigo-400 to-purple-400 mx-auto mb-12 rounded-full"></div>
+      
+      {/* Expanded Item */}
+      {selectedItem && (
+        <div className="mb-8 animate-fadeIn" id={`faculty-member-${selectedItem.id}`}>
+          <FacultyCard person={selectedItem} isOpen={true} onToggle={() => toggleFaculty(selectedItem.id)} showGroupPicture={showGroupPicture} />
+        </div>
+      )}
+
       <div
         className={`gap-8 ${
-          processedData.length < 3 ? 'flex flex-wrap justify-center' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          otherItems.length < 3 ? 'flex flex-wrap justify-center' : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
         }`}
       >
-        {processedData.map((person) => (
-          <FacultyCard key={person.id} person={person} />
-        ))}
+        {otherItems.map((person) => {
+          return (
+            <FacultyCard 
+              key={person.id} 
+              person={person} 
+              isOpen={false} 
+              onToggle={() => toggleFaculty(person.id)}
+              isHighlighted={lastViewedId === person.id}
+              cardRef={el => cardRefs.current[person.id] = el}
+              showGroupPicture={showGroupPicture}
+            />
+          );
+        })}
       </div>
     </div>
   );
 };
 
-const AffiliatedFacultySection = ({ title, data }) => {
+const AffiliatedFacultySection = ({ title, data, openFacultyId, setOpenFacultyId }) => {
   if (!data || data.length === 0) return null;
 
   return (
@@ -150,7 +214,14 @@ const AffiliatedFacultySection = ({ title, data }) => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-12">
-        {data.map((person) => <FacultyCard key={person.id} person={person} />)}
+        {data.map((person) => (
+          <FacultyCard 
+            key={person.id} 
+            person={person} 
+            isOpen={openFacultyId === person.id} 
+            onToggle={() => setOpenFacultyId(openFacultyId === person.id ? null : person.id)} 
+          />
+        ))}
       </div>
     </div>
   );
@@ -171,6 +242,9 @@ const InfoItem = ({ icon: Icon, text, href, isLink = false }) => (
 
 const Faculty = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [openRegularId, setOpenRegularId] = useState(null);
+  const [lastViewedRegularId, setLastViewedRegularId] = useState(null);
+  const [openAffiliatedId, setOpenAffiliatedId] = useState(null);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -222,15 +296,44 @@ const Faculty = () => {
         </div>
 
         {/* Regular Faculty - sorted */}
-        {filteredRegularFaculty.length > 0 && <FacultySection title="Regular Faculty" data={filteredRegularFaculty} sort />}
+        {filteredRegularFaculty.length > 0 && 
+          <FacultySection 
+            title="Regular Faculty" 
+            data={filteredRegularFaculty} 
+            sort 
+            openFacultyId={openRegularId} 
+            setOpenFacultyId={setOpenRegularId}
+            lastViewedId={lastViewedRegularId}
+            setLastViewedId={setLastViewedRegularId}
+          />
+        }
 
         {/* Distinguished Faculty */}
-        {filteredDistinguishedFaculty.length > 0 && <FacultySection title="Distinguished Faculty" data={filteredDistinguishedFaculty} />}
+        {filteredDistinguishedFaculty.length > 0 && 
+          <FacultySection 
+            title="Distinguished Faculty" 
+            data={filteredDistinguishedFaculty} 
+            openFacultyId={openAffiliatedId} 
+            setOpenFacultyId={setOpenAffiliatedId} 
+            // Note: Highlighting not fully implemented for combined sections yet
+          />
+        }
 
         {/* Affiliated Faculty */}
-        <AffiliatedFacultySection title="Affiliated Faculty" data={filteredAffiliatedFaculty} />
+        <AffiliatedFacultySection title="Affiliated Faculty" data={filteredAffiliatedFaculty} openFacultyId={openAffiliatedId} setOpenFacultyId={setOpenAffiliatedId} />
       </div>
-    </div>
+      <style>{`
+        @keyframes highlight {
+          0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+          70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+        }
+        .animate-highlight {
+          animation: highlight 5s ease-out;
+        }
+      `}</style>
+      </div>
+  
   );
 };
 

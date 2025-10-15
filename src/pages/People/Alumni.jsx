@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 export default function Alumni() {
   const tabs = [
-    { key: "btech", label: "B.Tech.", duration: 4 },
-    { key: "mtech", label: "M.Tech.", duration: 2 },
     { key: "phd", label: "Ph.D." },
+    { key: "mtech", label: "M.Tech.", duration: 2 },
+    { key: "btech", label: "B.Tech.", duration: 4 },
+    { key: "placement", label: "Placement" }
   ];
 
-  const [activeTab, setActiveTab] = useState("btech");
+  const [activeTab, setActiveTab] = useState("phd");
   const [selectedYear, setSelectedYear] = useState(null);
-  const [data, setData] = useState({ btech: [], mtech: [], phd: [] });
+  const [data, setData] = useState({ btech: [], mtech: [], phd: [], placement: { mtech: [], phd: [] }});
 
   useEffect(() => {
     loadData();
   }, []);
 
   const loadData = async () => {
-    // Switched to .json files for better performance and simpler parsing
     const files = [
       "btech_2021.json",
       "MTech_Alumni_2012___2014_Batch.json",
@@ -30,17 +30,14 @@ export default function Alumni() {
       "MTech_Alumni_2020___2022_Batch.json",
       "MTech_Alumni_2021___2023_Batch.json",
       "MTech_Alumni_2022___2024_Batch.json",
-      "MTech_Alumni_2023___2025_Batch.json",
-      "PhD_Alumni.json",
     ];
 
-    const newData = { btech: [], mtech: [], phd: [] };
+    const newData = { btech: [], mtech: [], phd: [], placement: { mtech: [], phd: [] } };
 
     // Helper to clean data, replacing NaN with empty strings
     const cleanRow = (row) => {
       const newRow = {};
       for (const key in row) {
-        // Check for NaN, which can occur from spreadsheet conversions
         newRow[key] = Number.isNaN(row[key]) ? "" : row[key];
       }
       return newRow;
@@ -51,9 +48,7 @@ export default function Alumni() {
         const res = await fetch(`/alumini_excel/${file}`);
         if (!res.ok) continue;
         
-        // Fetch as text first to handle invalid JSON with NaN values
         const text = await res.text();
-        // Replace standalone NaN with null to make it valid JSON
         const sanitizedText = text.replace(/:\s*NaN/g, ":null");
         const rawRows = JSON.parse(sanitizedText);
         const rows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
@@ -62,24 +57,57 @@ export default function Alumni() {
         const year = parseInt(file.match(/btech_(\d+)/)[1], 10);
         newData.btech.push({ year, rows });
       } else if (file.startsWith("MTech")) {
-        // Extract the first year from filenames like 'M.Tech Alumni 2012 - 2014 Batch.json'
         const yearMatch = file.match(/(\d{4})/);
         const year = yearMatch ? parseInt(yearMatch[1], 10) : null;
         newData.mtech.push({ year, rows });
-      } else if (file.startsWith("PhD")) {
-        newData.phd.push({ rows });
       }
       } catch (error) {
         console.error(`Failed to load or parse ${file}:`, error);
       }
     }
 
+    // Load and process the single PhD data file
+    try {
+      const res = await fetch(`/alumini_excel/PhD_Alumini.json`);
+      if (res.ok) {
+        const text = await res.text();
+        const sanitizedText = text.replace(/:\s*NaN/g, ":null");
+        const rawRows = JSON.parse(sanitizedText);
+        newData.phd.push({ rows: Array.isArray(rawRows) ? rawRows.map(cleanRow) : [] });
+      }
+    } catch (error) {
+      console.error("Error loading PhD_Alumini.json", error);
+    }
+
+    // Aggregate placement data
+    const mtechPlacementCounts = newData.mtech.flatMap(batch => batch.rows)
+      .reduce((acc, row) => {
+        const type = row.Type;
+        if (type) {
+          acc[type] = (acc[type] || 0) + 1;
+        }
+        return acc;
+      }, {});
+
+    const phdPlacementCounts = newData.phd.flatMap(batch => batch.rows)
+      .reduce((acc, row) => {
+        // Assuming PhD alumni might have a 'Type' column in the future
+        const type = row.Type;
+        if (type) {
+          acc[type] = (acc[type] || 0) + 1;
+        }
+        return acc;
+      }, {});
+
+    newData.placement.mtech = Object.entries(mtechPlacementCounts).map(([name, count]) => ({ name, count }));
+    newData.placement.phd = Object.entries(phdPlacementCounts).map(([name, count]) => ({ name, count }));
+
     // Sort descending by start year
     newData.btech.sort((a, b) => b.year - a.year);
     newData.mtech.sort((a, b) => b.year - a.year);
 
-    if (newData.btech.length > 0) {
-      setSelectedYear(newData.btech[0].year);
+    if (newData.phd.length > 0) {
+      setActiveTab("phd");
     }
 
     setData(newData);
@@ -108,23 +136,19 @@ export default function Alumni() {
       return data.phd.length > 0 ? data.phd[0].rows : [];
     }
     return [];
-  };
+  };;
 
-  return (
-    <section className="container mx-auto px-6 py-16">
-      {/* Page Header */}
-      <h1 className="text-4xl font-extrabold mb-12 text-indigo-700">Alumni</h1>
-
-      {/* Tabs */}
-      <div className="flex gap-6 mb-10 border-b border-gray-200">
+  const renderTabs = () => (
+    <div className="flex gap-6 mb-10 border-b border-gray-200">
         {tabs.map((tab) => (
           <button
             key={tab.key}
             onClick={() => {
               setActiveTab(tab.key);
               setSelectedYear(null);
-              // Reset selected year to latest batch on tab switch
-              if (tab.key === "btech" && data.btech.length > 0) {
+              if (tab.key === "phd" && data.phd.length > 0) {
+                // No year selection for PhD
+              } else if (tab.key === "btech" && data.btech.length > 0) {
                 setSelectedYear(data.btech[0].year);
               } else if (tab.key === "mtech" && data.mtech.length > 0) {
                 setSelectedYear(data.mtech[0].year);
@@ -139,11 +163,12 @@ export default function Alumni() {
             {tab.label}
           </button>
         ))}
-      </div>
+    </div>
+  );
 
-      {/* Years Row (only for B.Tech. & M.Tech.) */}
-      {activeTab !== "phd" && (
-        <div className="flex flex-wrap gap-3 mb-8">
+  const renderYearSelector = () => (
+    (activeTab === "btech" || activeTab === "mtech") && (
+      <div className="flex flex-wrap gap-3 mb-8">
           {getYears(activeTab).map((year) => (
             <button
               key={year}
@@ -157,22 +182,59 @@ export default function Alumni() {
               {getYearRange(activeTab, year)}
             </button>
           ))}
-        </div>
-      )}
+      </div>
+    )
+  );
 
-      {/* Alumni Table */}
-      {(selectedYear || activeTab === "phd") && (
-        <div>
-          <h3 className="text-xl font-bold mb-6">
+  const renderPlacementCharts = () => (
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-bold text-center text-indigo-700 mb-4">M.Tech. Placement Types</h3>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={data.placement.mtech} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis allowDecimals={false} />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="count" fill="#8884d8" name="Count" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-bold text-center text-indigo-700 mb-4">Ph.D. Placement Types</h3>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={data.placement.phd} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis allowDecimals={false} />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="count" fill="#82ca9d" name="Count" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+
+  const renderAlumniTable = () => {
+    const rows = getRows(activeTab, selectedYear);
+    if (rows.length === 0) {
+      return <p className="text-gray-500">No alumni data available for this selection.</p>;
+    }
+    const headers = Object.keys(rows[0] || {});
+
+    return (
+      <div>
+          <h3 className="text-2xl font-bold mb-6 text-gray-800">
             {tabs.find((t) => t.key === activeTab)?.label}{" "}
             {activeTab !== "phd" ? `– ${getYearRange(activeTab, selectedYear)}` : ""}
           </h3>
-          {getRows(activeTab, selectedYear).length > 0 ? (
-            <div className="overflow-x-auto rounded-lg shadow-md border border-gray-200">
+          <div className="overflow-x-auto rounded-lg shadow-md border border-gray-200">
               <table className="w-full divide-y divide-gray-200">
                 <thead className="bg-indigo-100">
                   <tr>
-                    {Object.keys(getRows(activeTab, selectedYear)[0] || {}).map(
+                    {headers.map(
                       (key) => (
                         <th
                           key={key}
@@ -185,13 +247,13 @@ export default function Alumni() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
-                  {getRows(activeTab, selectedYear).map((row, idx) => (
+                  {rows.map((row, idx) => (
                     <tr key={idx} className="hover:bg-indigo-50 transition">
                       {Object.entries(row).map(([key, val], i) => (
                         <td
                           key={i}
                           className={`px-6 py-4 whitespace-nowrap text-sm text-gray-700 ${
-                            key.toLowerCase().includes("current")
+                            key.toLowerCase().includes("position")
                               ? "text-green-700 font-medium"
                               : ""
                           }`}
@@ -204,11 +266,26 @@ export default function Alumni() {
                 </tbody>
               </table>
             </div>
-          ) : (
-            <p className="text-gray-500">No alumni data available.</p>
-          )}
-        </div>
-      )}
+      </div>
+    );
+  };
+
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 px-4 py-12">
+      <div className="container mx-auto">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-500">Our Alumni</h1>
+        
+        {renderTabs()}
+        
+        {activeTab === "placement" ? (
+          renderPlacementCharts()
+        ) : (
+          <>
+            {renderYearSelector()}
+            {renderAlumniTable()}
+          </>
+        )}
+      </div>
     </section>
   );
 }

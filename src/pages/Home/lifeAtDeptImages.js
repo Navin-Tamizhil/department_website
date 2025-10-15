@@ -23,6 +23,5 @@ export const lifeAtDeptImages = [
   { src: "/gallery/23.jpeg" },
   { src: "/gallery/24.jpeg" },
   { src: "/gallery/25.jpeg" },
-  { src: "/gallery/26.jpeg" },
   { src: "/gallery/27.jpeg" },
 ];

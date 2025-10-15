@@ -3,48 +3,56 @@
         "Sl.No": "1",
         "Name of the Student": "M J Vidhya Bharathi",
         "Current Position": "Post-doc",
-        "Company/Institution": "Mayo clinic, USA"
+        "Company/Institution": "Mayo clinic, USA",
+        "Type": "Industry"
     },
     {
         "Sl.No": "2",
         "Name of the Student": "Shivangi Sachdeva",
         "Current Position": "Working as Medical editor",
-        "Company/Institution": "KlicK, Toronto, Canada"
+        "Company/Institution": "KlicK, Toronto, Canada",
+        "Type": "Industry"
     },
     {
         "Sl.No": "3",
         "Name of the Student": "Satish Mutyala",
         "Current Position": "Working as Assistant Professor",
-        "Company/Institution": "School of Sciences, Woxsen University"
+        "Company/Institution": "School of Sciences, Woxsen University",
+        "Type": "Academia"
     },
     {
         "Sl.No": "4",
         "Name of the Student": "Aarthi N",
         "Current Position": null,
-        "Company/Institution": null
+        "Company/Institution": null,
+        "Type": null
     },
     {
         "Sl.No": "5",
         "Name of the Student": "Mohammed Tanveer Ahmed",
         "Current Position": "Post Doctoral Associate",
-        "Company/Institution": "University of Pittsburgh"
+        "Company/Institution": "University of Pittsburgh",
+        "Type": "Academia"
     },
     {
         "Sl.No": "7",
         "Name of the Student": "Md Mehedi Hossain",
         "Current Position": null,
-        "Company/Institution": null
+        "Company/Institution": null,
+        "Type": null
     },
     {
         "Sl.No": "8",
         "Name of the Student": "L PONOOP PRASAD PATRO",
         "Current Position": "Post doctoral Fellow",
-        "Company/Institution": "Lehigh University"
+        "Company/Institution": "Lehigh University",
+        "Type": "Academia"
     },
     {
         "Sl.No": "9",
         "Name of the Student": "Keerthana B",
         "Current Position": "Working as a scientist",
-        "Company/Institution": "Dr Reddy's"
+        "Company/Institution": "Dr Reddy's",
+        "Type": "Industry"
     }
 ]

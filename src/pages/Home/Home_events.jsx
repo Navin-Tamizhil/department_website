@@ -6,7 +6,7 @@ const EventsModified = ({ onItemClick }) => {
   const [expandedEvent, setExpandedEvent] = useState(null);
 
   // Filter events to only include those with islatest: true
-  const latestEvents = eventsData.filter(event => event.islatest);
+  const latestEvents = eventsData.filter(event => event.isLatest);
 
   const handleEventClick = (e, eventId, eventTitle) => {
     e.stopPropagation();

@@ -206,7 +206,7 @@ export default function Home() {
         <AnnouncementsEventsTabs
           scrollingPaused={scrollingPaused}
           handleItemClick={handleItemClick}
-          announcements={admissions}
+          announcements={admissions} // Pass admissions data
           events={eventsData}
         />
       </div>
@@ -235,9 +235,13 @@ export default function Home() {
         .animate-scroll-fast {
           animation: scroll-fast 15s linear infinite;
         }
+        .animate-scroll-faster {
+          animation: scroll-fast 10s linear infinite; /* Using same keyframe, just faster */
+        }
         /* Pause on hover */
         .animate-scroll-slow:hover,
-        .animate-scroll-fast:hover {
+        .animate-scroll-fast:hover,
+        .animate-scroll-faster:hover {
           animation-play-state: paused;
         }
         
@@ -255,9 +259,8 @@ export default function Home() {
 }
 
 function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcements, events }) {
-  // Fix the typo in the field name - it's 'islatest' not 'isLatest'
-  const hasLatestAnnouncements = announcements.some((a) => a.islatest);
-  const hasLatestEvents = events.some((e) => e.islatest);
+  const hasLatestAnnouncements = announcements.some((a) => a.isLatest);
+  const hasLatestEvents = events.some((e) => e.isLatest);
   const hasLatest = hasLatestAnnouncements || hasLatestEvents;
 
   // Auto-switch to Life at Department if no latest content
@@ -300,7 +303,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
         >
           <div className="flex items-center gap-2">
             <Star className="w-5 h-5" />
-            Life at Department
+            Life @ BT IITH
           </div>
         </button>
       </div>
@@ -311,7 +314,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
           <section className="space-y-8 animate-fadeIn">
             {/* Combined Announcements and Events Section */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 max-h-[400px] overflow-auto border border-white/30">
-              <div className={scrollingPaused ? "" : "animate-scroll-slow"}>
+              <div className={scrollingPaused ? "" : "animate-scroll-faster"}>
                 {hasLatestAnnouncements && (
                   <div className="mb-8">
                     <AnnouncementsModified onItemClick={handleItemClick} />
@@ -343,7 +346,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
        {activeTab === "lifeDept" && (
   <section className="animate-fadeIn">
     <h1 className="text-2xl md:text-3xl font-extrabold text-blue-800 mb-8 text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-      Life at Department
+      Life @ BT IITH
     </h1>
     <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-white/30">
       <div className="columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">

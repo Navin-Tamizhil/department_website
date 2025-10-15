@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Excel file name
-excel_file = 'alumini.xlsx'
+excel_file = 'alumini1.xlsx'
 
 # Load the entire Excel file
 xls = pd.ExcelFile(excel_file)

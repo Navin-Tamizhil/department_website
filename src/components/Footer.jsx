@@ -13,89 +13,72 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 space-y-10">
         
         {/* Row 1 -  Facebook, Brochure */}
-        <div className="flex flex-col sm:flex-row sm:justify-around items-center gap-6 text-center md:text-left">
-
-
-          {/* <a
-            href="https://www.facebook.com/biotechiith/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center md:justify-start gap-2 hover:text-indigo-400 transition items-center"
-          >
-            <Users className="w-5 h-5" /> <span>Facebook</span>
-          </a> */}
-
-          <a
-            href="/footer/Dept_brouchere.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center md:justify-start gap-2 hover:text-indigo-400 transition items-center"
-          >
-            <FileText className="w-5 h-5" /> <span>Department Brochure</span>
-          </a>
+        <div className="text-center border-b border-gray-700 pb-10">
+          <div className="flex justify-center">
+            <a
+              href="/footer/Dept_brouchere.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 hover:text-indigo-400 transition"
+            >
+              <FileText className="w-5 h-5" /> <span>Department Brochure</span>
+            </a>
+          </div>
         </div>
 
         {/* Row 2 - Quick Links */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 text-center md:text-left">
-          <div>
-            <h5 className="text-lg font-semibold text-white">Quick Links</h5>
-            <ul className="mt-3 space-y-2 text-sm">
+        <div>
+          <h5 className="text-lg font-semibold text-white text-center">Quick Links</h5>
+          <div className="mt-2 mb-6 h-px w-20 bg-indigo-400 mx-auto"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 text-center md:text-left">
+            <ul className="space-y-2 text-sm">
               <li>
-                <a href="https://aims.iith.ac.in/aims/" target="_blank" className="hover:text-indigo-400 transition">AIMS</a>
+                <a href="https://aims.iith.ac.in/aims/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">AIMS</a>
               </li>
               <li>
-                <a href="https://www.iith.ac.in/academics/assets/files/calendars/ITH-Acdemic-Calendar-Jul-Nov-2025.pdf" className="hover:text-indigo-400 transition">Academic Calander</a>
+                <a href="https://www.iith.ac.in/academics/assets/files/calendars/ITH-Acdemic-Calendar-Jul-Nov-2025.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Academic Calander</a>
               </li>
               <li>
-                <a href="https://iith.ac.in/gian/" target="_blank" className="hover:text-indigo-400 transition">GIAN</a>
+                <a href="https://iith.ac.in/gian/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">GIAN</a>
               </li>
               <li>
-                <a href="https://library.iith.ac.in/" target="_blank" className="hover:text-indigo-400 transition">Library</a>
+                <a href="https://library.iith.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Library</a>
               </li>
               <li>
-                <a href="https://dost.iith.ac.in/" className="hover:text-indigo-400 transition">Dean (Student) Office</a>
-              </li> 
+                <a href="https://dost.iith.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Dean (Student) Office</a>
+              </li>
             </ul>
 
-          </div>
-
-          <div>
-            <h5 className="text-lg font-semibold text-white">Quick Links</h5>
-            <ul className="mt-3 space-y-2 text-sm">
-          
+            <ul className="space-y-2 text-sm">
               <li>
-                <a href="https://hostel.iith.ac.in/" className="hover:text-indigo-400 transition">Hostel</a>
+                <a href="https://hostel.iith.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Hostel</a>
               </li>
               <li>
-                <a href="https://hospital.iith.ac.in/" target="_blank" className="hover:text-indigo-400 transition">Medical Facilities</a>
+                <a href="https://hospital.iith.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Medical Facilities</a>
               </li>
               <li>
-                <a href="https://ocs.iith.ac.in/" className="hover:text-indigo-400 transition">Office of Carrier Services [Placement/ Internship]</a>
+                <a href="https://ocs.iith.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Office of Carrier Services [Placement/ Internship]</a>
               </li>
               <li>
-                <a href="https://sunshine.iith.ac.in/" className="hover:text-indigo-400 transition">Sunshine</a>
+                <a href="https://sunshine.iith.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Sunshine</a>
               </li>
-             
             </ul>
-          </div>
 
-          <div>
-            <h5 className="text-lg font-semibold text-white">Quick Links</h5>
-            <ul className="mt-3 space-y-2 text-sm">
+            <ul className="space-y-2 text-sm">
               <li>
-                <a href="https://www.iith.ac.in/emergency_contacts/" target="_blank" className="hover:text-indigo-400 transition">Emergency Contacts</a>
+                <a href="https://www.iith.ac.in/emergency_contacts/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Emergency Contacts</a>
               </li>
               <li>
-                <a href="https://intranet.iith.ac.in" target="_blank" className="hover:text-indigo-400 transition">Intranet</a>
+                <a href="https://intranet.iith.ac.in" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Intranet</a>
               </li>
               <li>
-                <a href="https://sites.google.com/iith.ac.in/safety" target="_blank" className="hover:text-indigo-400 transition">Laboratory Safety</a>
+                <a href="https://sites.google.com/iith.ac.in/safety" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Laboratory Safety</a>
               </li>
               <li>
-                <a href="https://www.iith.ac.in/careers/" target="_blank" className="hover:text-indigo-400 transition">Recruitment</a>
+                <a href="https://www.iith.ac.in/careers/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">Recruitment</a>
               </li>
               <li>
-                <a href="https://iith.ac.in/statutory-bodies/" target="_blank" className="hover:text-indigo-400 transition">
+                <a href="https://iith.ac.in/statutory-bodies/" target="_blank" rel="noopener noreferrer" className="hover:text-indigo-400 transition">
                   Statutory Bodies
                 </a>
               </li>

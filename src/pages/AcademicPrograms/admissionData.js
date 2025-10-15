@@ -1,23 +1,28 @@
 export const admissions = [
-    {
+      {
     id: 1,
-    title: "Ph.D. Admissions September 2025",
-    date: "Applications are opened [Special round (Deadline: 12th October 2025)]",
+    title: "Ph.D. Admissions January 2026",
+    date: "Start date for the Application Portal is 10-Oct-2025 12:00 IST, Last date for the Application portal is 24-Oct-2025 23:59 IST",
     links: [{label: "Notification",
-      brouchere: "/announcements/PhD_Admissions_September_2025_Brochure_BT.pdf"},
-    {label: "Link for Application",
-      brouchere: "https://docs.google.com/forms/d/e/1FAIpQLSdOyuZwX4JA2A9TLJIrZg1nDrsH1wp6tC06OoEh1bUft6OxPw/viewform"}],
+      brouchere: "https://www.iith.ac.in/phdadmissions/"},
+      {label: " Regular Admissions Flye",
+      brouchere: "https://iith.ac.in/assets/files/brochures/jan_2026/phd/Regular-PhD-admission-January-2026.pdf"},
+      {label: " Direct (High CGPA) Admissions Flyer",
+      brouchere: "https://iith.ac.in/assets/files/brochures/jan_2026/phd/Direct-PhD-admission-for-high-CGPA-students-January-2026.pdf"}
+    ],
     isNew: true,
-    islatest: true,
-  },
-  {
+     isLatest: true,
+  },{
     id: 2,
-    title: "Ph.D. Admissions July 2025",
-    date: "Applications closed – Selected candidates have been informed",
+    title: "Ph.D. Admissions September 2025",
+    date: "Applications Closed [Special round (Deadline: 12th October 2025)]",
     links: [{label: "Notification",
-      brouchere: "/announcements/PhD_Admissions_July_2025_Brochure_BT_final_150325.pdf"}],
+      brouchere: "/admissions/PhD_Admissions_September_2025_Brochure_BT.pdf"},
+    ],
     isNew: false,
+    isLatest: true,
   },
+
   {
     id: 3,
     title: "M.Tech. Admissions July 2025",

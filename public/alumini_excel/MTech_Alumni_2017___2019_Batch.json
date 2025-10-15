@@ -3,48 +3,56 @@
         "Sl.No": "1",
         "Name of the Student": "Rukmini Sarma",
         "Current Position": null,
-        "Company/Institution": null
+        "Company/Institution": null,
+        "Type": null
     },
     {
         "Sl.No": "2",
         "Name of the Student": "P Surekha",
         "Current Position": "PhD  Scholar",
-        "Company/Institution": "Molecular Biophysics Unit, IISc Bangalore"
+        "Company/Institution": "Molecular Biophysics Unit, IISc Bangalore",
+        "Type": "Academia"
     },
     {
         "Sl.No": "3",
         "Name of the Student": "Preethi S",
         "Current Position": "PhD  Scholar",
-        "Company/Institution": "IIT Hyderabad"
+        "Company/Institution": "IIT Hyderabad",
+        "Type": "Academia"
     },
     {
         "Sl.No": "4",
         "Name of the Student": "Jadhav Harshada Sudesh",
         "Current Position": "PhD  Scholar",
-        "Company/Institution": "PMRF, IISc Bangalore"
+        "Company/Institution": "PMRF, IISc Bangalore",
+        "Type": "Academia"
     },
     {
         "Sl.No": "5",
         "Name of the Student": "Irene Tomy Parappuram",
         "Current Position": "PhD  Scholar",
-        "Company/Institution": "Bielefield University"
+        "Company/Institution": "Bielefield University",
+        "Type": "Academia"
     },
     {
         "Sl.No": "6",
         "Name of the Student": "Rajat B Patil",
         "Current Position": "Co-founder",
-        "Company/Institution": "Oloka world of organics"
+        "Company/Institution": "Oloka world of organics",
+        "Type": "Start-up"
     },
     {
         "Sl.No": "7",
         "Name of the Student": "Vinothini V",
         "Current Position": "Junior research Associate (R&D)",
-        "Company/Institution": "Bharat Biotech International LTD"
+        "Company/Institution": "Bharat Biotech International LTD",
+        "Type": "Industry"
     },
     {
         "Sl.No": "8",
         "Name of the Student": "M L N V Sai Krishna",
         "Current Position": "Intern",
-        "Company/Institution": "Amensys Inc, UT Dallas Texas"
+        "Company/Institution": "Amensys Inc, UT Dallas Texas",
+        "Type": "Industry"
     }
 ]

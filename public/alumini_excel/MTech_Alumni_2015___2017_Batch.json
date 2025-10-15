@@ -3,42 +3,49 @@
         "Sl.No": "1",
         "Name of the Student": "Vinuthna Vani M",
         "Current Position": "Pursuing PhD",
-        "Company/Institution": "University of Tokyo"
+        "Company/Institution": "University of Tokyo",
+        "Type": "Academia"
     },
     {
         "Sl.No": "2",
         "Name of the Student": "Shivani Dixit",
         "Current Position": "Working as Research investigator",
-        "Company/Institution": "Syngene international LTD"
+        "Company/Institution": "Syngene international LTD",
+        "Type": "Industry"
     },
     {
         "Sl.No": "3",
         "Name of the Student": "Ruchi Rajkumar Manglunia",
         "Current Position": "Pursuing PhD",
-        "Company/Institution": "University of Zurich, Switzerland"
+        "Company/Institution": "University of Zurich, Switzerland",
+        "Type": "Academia"
     },
     {
         "Sl.No": "4",
         "Name of the Student": "Karpagam Sudhakar",
         "Current Position": null,
-        "Company/Institution": null
+        "Company/Institution": null,
+        "Type": null
     },
     {
         "Sl.No": "5",
         "Name of the Student": "Diksha Jain",
         "Current Position": "Working as a MES Consultant",
-        "Company/Institution": "Sanofi, Singapore"
+        "Company/Institution": "Sanofi, Singapore",
+        "Type": "Industry"
     },
     {
         "Sl.No": "7",
         "Name of the Student": "Raghuvamsi P V",
         "Current Position": "Postdoctoral Fellow",
-        "Company/Institution": "Bioinformatics institute ( A *Star), Singapore"
+        "Company/Institution": "Bioinformatics institute ( A *Star), Singapore",
+        "Type": "Academia"
     },
     {
         "Sl.No": "8",
         "Name of the Student": "Dhananjaya Baghar",
         "Current Position": "Working as a Trainee",
-        "Company/Institution": "Baghar associates"
+        "Company/Institution": "Baghar associates",
+        "Type": "Industry"
     }
 ]
