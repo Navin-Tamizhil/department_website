@@ -1,9 +1,14 @@
 export const lifeAtDeptImages = [
   { src: "/gallery/1.jpeg" },
+  { src: "/gallery/23.jpeg" }, // Portrait
   { src: "/gallery/2.jpeg" },
+  { src: "/gallery/24.jpeg" }, // Portrait
   { src: "/gallery/3.jpeg" },
+  { src: "/gallery/36.jpeg" }, // Portrait
   { src: "/gallery/4.jpeg" },
+  { src: "/gallery/37.jpeg" }, // Portrait
   { src: "/gallery/5.jpeg" },
+  { src: "/gallery/38.jpeg" }, // Portrait
   { src: "/gallery/6.jpeg" },
   { src: "/gallery/7.jpeg" },
   { src: "/gallery/8.jpeg" },
@@ -18,10 +23,19 @@ export const lifeAtDeptImages = [
   { src: "/gallery/17.jpeg" },
   { src: "/gallery/18.jpeg" },
   { src: "/gallery/19.jpeg" },
+  { src: "/gallery/20.jpeg" },
   { src: "/gallery/21.jpeg" },
   { src: "/gallery/22.jpeg" },
-  { src: "/gallery/23.jpeg" },
-  { src: "/gallery/24.jpeg" },
   { src: "/gallery/25.jpeg" },
+  { src: "/gallery/26.jpeg" },
   { src: "/gallery/27.jpeg" },
+  { src: "/gallery/28.jpeg" },
+  { src: "/gallery/29.jpeg" },
+  { src: "/gallery/30.jpeg" },
+  { src: "/gallery/31.jpeg" },
+  { src: "/gallery/32.jpeg" },
+  { src: "/gallery/33.jpeg" },
+  { src: "/gallery/34.jpeg" },
+  { src: "/gallery/35.jpeg" },
+  { src: "/gallery/39.jpeg" },
 ];

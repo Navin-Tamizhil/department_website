@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Lightbulb, Rocket, Gem, Sparkles, Star } from "lucide-react";
+import { Lightbulb, Rocket, Gem, Sparkles, Star, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnnouncementsModified } from "./Home_announcements.jsx";
 import EventsModified from "./Home_events";
@@ -12,6 +12,9 @@ export default function Home() {
     "/images/home_background.jpg",
     "/images/image2.jpg",
     "/images/image3.jpg",
+    "/images/image4.jpg",
+    "/images/image5.jpg",
+    
   ];
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef(null);
@@ -266,6 +269,9 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
   // Auto-switch to Life at Department if no latest content
   const [activeTab, setActiveTab] = useState(hasLatest ? "announceEvents" : "lifeDept");
 
+  // State for image modal
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
 
   return (
     <div className="mx-4 md:mx-10 my-10 px-4 md:px-10 py-8 bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden">
@@ -351,13 +357,15 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
     <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-white/30">
       <div className="columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">
         {lifeAtDeptImages.map((image, index) => (
-          <div key={index} className="group relative break-inside-avoid">
+          <div key={index} className="group relative break-inside-avoid cursor-pointer" onClick={() => setSelectedImageIndex(index)}>
             <img
               src={image.src}
-              
+              alt={`Life at Department - Image ${index + 1}`}
               className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+            <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+              <p className="text-white text-sm font-bold">View Image</p>
              
             </div>
           </div>
@@ -367,6 +375,46 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
   </section>
         )}
       </div>
+
+      {/* Image Modal */}
+      {selectedImageIndex !== null && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn">
+          <button
+            onClick={() => setSelectedImageIndex(null)}
+            className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-50"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : lifeAtDeptImages.length - 1));
+            }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all z-50"
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImageIndex((prev) => (prev < lifeAtDeptImages.length - 1 ? prev + 1 : 0));
+            }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-all z-50"
+          >
+            <ChevronRight className="w-8 h-8" />
+          </button>
+
+          <div className="relative max-w-4xl max-h-[90vh] p-4">
+            <img
+              src={lifeAtDeptImages[selectedImageIndex].src}
+              alt={`Life at Department - Image ${selectedImageIndex + 1}`}
+              className="w-full h-full object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

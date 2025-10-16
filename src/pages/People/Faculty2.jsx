@@ -39,9 +39,9 @@ const FacultyCard = ({ person, isOpen, onToggle, isHighlighted, cardRef, showGro
 
       <div className={`transition-all duration-500 ease-in-out grid ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
         <div className="overflow-hidden">
-          <div className="border-t border-gray-200 bg-gradient-to-br from-gray-50 to-indigo-50/30 p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className={`border-t border-gray-200 bg-gradient-to-br from-gray-50 to-indigo-50/30 p-6 grid grid-cols-1 ${showGroupPicture ? 'md:grid-cols-2' : ''} gap-8`}>
             {/* Left side: Details */}
-            <div className="space-y-4">
+            <div className="space-y-4 md:col-span-1">
               {person.address && <InfoItem icon={MapPin} text={person.address} isLink={false} />}
               {person.phone && <InfoItem icon={Phone} text={person.phone} href={`tel:${person.phone}`} isLink={false} />}
               {person.email && <InfoItem icon={Mail} text={person.email} href={`mailto:${person.email}`} isLink={false} />}
@@ -71,7 +71,7 @@ const FacultyCard = ({ person, isOpen, onToggle, isHighlighted, cardRef, showGro
             </div>
             {/* Right side: Group Picture (conditional) */}
             {showGroupPicture && (
-              <div className="space-y-4">
+              <div className="space-y-4 md:col-span-1">
                 <h4 className="font-semibold text-indigo-800 mb-2 flex items-center gap-2 text-sm">
                   <Users className="w-4 h-4" />
                   Group Picture
@@ -305,6 +305,7 @@ const Faculty = () => {
             setOpenFacultyId={setOpenRegularId}
             lastViewedId={lastViewedRegularId}
             setLastViewedId={setLastViewedRegularId}
+            showGroupPicture={true}
           />
         }
 

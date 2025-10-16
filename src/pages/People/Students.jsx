@@ -17,7 +17,7 @@ export default function Students() {
   const tabs = [
     { key: "btech", label: "B.Tech." },
     { key: "mtech", label: "M.Tech." },
-    { key: "phd", label: "Ph.D." },
+    { key: "phd", label: "Ph.D" },
     { key: "stats", label: "Statistics" },
   ];
 
@@ -225,7 +225,7 @@ export default function Students() {
   const overallPieData = [
     { name: "B.Tech Current", value: totalBtech, color: "#0f78be" },
     { name: "M.Tech Current", value: totalMtech, color: "#10B981" },
-    { name: "Ph.D. Current", value: totalPhd, color: "#ffc658" },
+    { name: "Ph.D Current", value: totalPhd, color: "#ffc658" },
     { name: "B.Tech Alumni", value: totalBtechAlumni, color: "#8884d8" },
     { name: "M.Tech Alumni", value: totalMtechAlumni, color: "#82ca9d" },
     { name: "Ph.D. Alumni", value: totalPhdAlumni, color: "#ff8042" },
@@ -235,7 +235,7 @@ export default function Students() {
   const programRatioPieData = [
     { name: "B.Tech", value: totalBtech, color: "#0f78be" },
     { name: "M.Tech", value: totalMtech, color: "#10B981" },
-    { name: "Ph.D.", value: totalPhd, color: "#e99a11" },
+    { name: "Ph.D", value: totalPhd, color: "#e99a11" },
   ];
 
   // BTech bar chart data (year-wise current + alumni)
@@ -389,7 +389,7 @@ export default function Students() {
           {/* PhD Statistics */}
           <div className="bg-white shadow-lg rounded-lg p-6">
             <h3 className="text-2xl font-bold mb-4 text-yellow-700 text-center">
-              Ph.D. Statistics
+              Ph.D Statistics
             </h3>
             <ResponsiveContainer width="100%" height={400}>
               <BarChart data={phdBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>

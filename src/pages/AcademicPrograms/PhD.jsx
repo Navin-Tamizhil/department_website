@@ -3,10 +3,10 @@ export default function PhD() {
   return (
     <div className="p-8">
       <div className="bg-gradient-to-r from-purple-50 to-violet-50 rounded-2xl p-8 border border-purple-100">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Ph.D. (Biotechnology)</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Ph.D (Biotechnology)</h2>
         
         <p className="text-gray-700 leading-relaxed mb-8">
-          Research-intensive Ph.D. program developing future leaders in biotechnology through independent 
+          Research-intensive Ph.D program developing future leaders in biotechnology through independent 
           thinking, interdisciplinary research, and cutting-edge technologies to address complex biological problems.
         </p>
         

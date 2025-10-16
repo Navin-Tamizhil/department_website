@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 export default function Alumni() {
   const tabs = [
-    { key: "phd", label: "Ph.D." },
+    { key: "phd", label: "Ph.D" },
     { key: "mtech", label: "M.Tech.", duration: 2 },
     { key: "btech", label: "B.Tech.", duration: 4 },
     { key: "placement", label: "Placement" }
@@ -186,32 +186,67 @@ export default function Alumni() {
     )
   );
 
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'];
+
+  const RADIAN = Math.PI / 180;
+  const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+  };
+
   const renderPlacementCharts = () => (
     <div className="grid md:grid-cols-2 gap-8">
       <div className="bg-white rounded-xl shadow-lg p-6">
         <h3 className="text-xl font-bold text-center text-indigo-700 mb-4">M.Tech. Placement Types</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={data.placement.mtech} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis allowDecimals={false} />
+          <PieChart>
+            <Pie
+              data={data.placement.mtech}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={renderCustomizedLabel}
+              outerRadius={100}
+              fill="#8884d8"
+              dataKey="count"
+            >
+              {data.placement.mtech.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
             <Tooltip />
             <Legend />
-            <Bar dataKey="count" fill="#8884d8" name="Count" />
-          </BarChart>
+          </PieChart>
         </ResponsiveContainer>
       </div>
       <div className="bg-white rounded-xl shadow-lg p-6">
         <h3 className="text-xl font-bold text-center text-indigo-700 mb-4">Ph.D. Placement Types</h3>
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={data.placement.phd} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis allowDecimals={false} />
+          <PieChart>
+            <Pie 
+              data={data.placement.phd} 
+              dataKey="count" 
+              nameKey="name" 
+              cx="50%" 
+              cy="50%" 
+              outerRadius={100} 
+              fill="#82ca9d" 
+              labelLine={false}
+              label={renderCustomizedLabel}>
+              {data.placement.phd.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
             <Tooltip />
             <Legend />
-            <Bar dataKey="count" fill="#82ca9d" name="Count" />
-          </BarChart>
+          </PieChart>
         </ResponsiveContainer>
       </div>
     </div>
