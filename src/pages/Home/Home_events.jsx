@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CalendarDays, ExternalLink, MapPin, Users, X } from 'lucide-react';
+import { CalendarDays, ExternalLink, MapPin, Users, Link as LinkIcon, X } from 'lucide-react';
 import { eventsData } from '../Events/eventsData';
 
 const EventsModified = ({ onItemClick }) => {
@@ -53,40 +53,40 @@ const EventsModified = ({ onItemClick }) => {
             <div className="mt-3 space-y-1 text-xs">
               {event.venue && (
                 <p className="flex items-center gap-1 text-gray-600">
-                  <MapPin className="w-3 h-3" />
-                  {event.venue}
+                  <MapPin className="w-3 h-3" /> {event.venue}
                 </p>
               )}
               {event.organizer && (
                 <p className="flex items-center gap-1 text-gray-600">
-                  <Users className="w-3 h-3" />
-                  {event.organizer}
+                  <Users className="w-3 h-3" /> {event.organizer}
                 </p>
               )}
-              {event.affiliation && (
-                <p className="text-gray-600">
-                  <strong>Affiliation:</strong> {event.affiliation}
-                </p>
-              )}
-              {event.topic && (
-                <p className="text-gray-600">
-                  <strong>Topic:</strong> {event.topic}
-                </p>
-              )}
-              {event.description && (
-                <p className="text-gray-700 mt-2">{event.description}</p>
-              )}
-              {event.link && (
-                <a
-                  href={event.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1 mt-2 text-green-600 hover:text-green-700 font-medium"
-                >
-                  More info <ExternalLink className="w-3 h-3" />
-                </a>
-              )}
+              {event.affiliation && <p className="text-gray-600"><strong>Affiliation:</strong> {event.affiliation}</p>}
+              {event.topic && <p className="text-gray-600"><strong>Topic:</strong> {event.topic}</p>}
+              {event.description && <p className="text-gray-700 mt-2">{event.description}</p>}
+              
+              <div className="mt-4 pt-3 border-t border-gray-200 flex flex-wrap gap-x-4 gap-y-2">
+                {event.link && (
+                  <a href={event.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="inline-flex items-center gap-1 text-blue-600 hover:underline font-medium">
+                    <ExternalLink className="w-3 h-3" /> More info
+                  </a>
+                )}
+                {event.registrationLink && (
+                  <a href={event.registrationLink} target="_blank" rel="noopener noreferrer" className="text-white bg-green-600 hover:bg-green-700 font-semibold flex items-center gap-1 px-3 py-1 rounded-md shadow-sm">
+                    <LinkIcon size={14} /> Register Here
+                  </a>
+                )}
+                {event.pamphletLink && (
+                  <a href={event.pamphletLink} target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline font-medium">
+                    Workshop pamphlet
+                  </a>
+                )}
+                {event.flyerLink && (
+                  <a href={event.flyerLink} target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline font-medium">
+                    Flyer
+                  </a>
+                )}
+              </div>
             </div>
           ) : (
             <p className="text-xs text-gray-500 mt-1">

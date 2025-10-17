@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 export default function Alumni() {
   const tabs = [
     { key: "phd", label: "Ph.D" },
@@ -10,7 +10,7 @@ export default function Alumni() {
 
   const [activeTab, setActiveTab] = useState("phd");
   const [selectedYear, setSelectedYear] = useState(null);
-  const [data, setData] = useState({ btech: [], mtech: [], phd: [], placement: { mtech: [], phd: [] }});
+  const [data, setData] = useState({ btech: [], mtech: [], phd: [], placement: { btech: [], mtech: [], phd: [] }});
 
   useEffect(() => {
     loadData();
@@ -18,7 +18,7 @@ export default function Alumni() {
 
   const loadData = async () => {
     const files = [
-      "btech_2021.json",
+      "BTech_Alumni.json",
       "MTech_Alumni_2012___2014_Batch.json",
       "MTech_Alumni_2013___2015_Batch.json",
       "MTech_Alumni_2014___2016_Batch.json",
@@ -32,7 +32,7 @@ export default function Alumni() {
       "MTech_Alumni_2022___2024_Batch.json",
     ];
 
-    const newData = { btech: [], mtech: [], phd: [], placement: { mtech: [], phd: [] } };
+    const newData = { btech: [], mtech: [], phd: [], placement: { btech: [], mtech: [], phd: [] } };
 
     // Helper to clean data, replacing NaN with empty strings
     const cleanRow = (row) => {
@@ -53,13 +53,25 @@ export default function Alumni() {
         const rawRows = JSON.parse(sanitizedText);
         const rows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
         
-      if (file.startsWith("btech")) {
-        const year = parseInt(file.match(/btech_(\d+)/)[1], 10);
-        newData.btech.push({ year, rows });
+        // Helper to remove 'Type' property from each row
+        const removeType = (row) => {
+          const { Type, ...rest } = row;
+          return rest;
+        };
+
+      if (file.startsWith("BTech")) {
+        // Group B.Tech alumni by graduation year
+        const btechByYear = rows.reduce((acc, row) => {
+          const year = row["Year Of Graduation"];
+          if (!acc[year]) acc[year] = [];
+          acc[year].push(removeType(row));
+          return acc;
+        }, {});
+        newData.btech = Object.entries(btechByYear).map(([year, yearRows]) => ({ year: parseInt(year), rows: yearRows }));
       } else if (file.startsWith("MTech")) {
         const yearMatch = file.match(/(\d{4})/);
         const year = yearMatch ? parseInt(yearMatch[1], 10) : null;
-        newData.mtech.push({ year, rows });
+        newData.mtech.push({ year, rows: rows.map(removeType) });
       }
       } catch (error) {
         console.error(`Failed to load or parse ${file}:`, error);
@@ -73,13 +85,26 @@ export default function Alumni() {
         const text = await res.text();
         const sanitizedText = text.replace(/:\s*NaN/g, ":null");
         const rawRows = JSON.parse(sanitizedText);
-        newData.phd.push({ rows: Array.isArray(rawRows) ? rawRows.map(cleanRow) : [] });
+        const cleanedRows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
+        newData.phd.push({ rows: cleanedRows.map(row => {
+          const { Type, ...rest } = row;
+          return rest;
+        }) });
       }
     } catch (error) {
       console.error("Error loading PhD_Alumini.json", error);
     }
 
     // Aggregate placement data
+    const btechPlacementCounts = newData.btech.flatMap(batch => batch.rows)
+      .reduce((acc, row) => {
+        const type = row.Type;
+        if (type) {
+          acc[type] = (acc[type] || 0) + 1;
+        }
+        return acc;
+      }, {});
+
     const mtechPlacementCounts = newData.mtech.flatMap(batch => batch.rows)
       .reduce((acc, row) => {
         const type = row.Type;
@@ -98,7 +123,8 @@ export default function Alumni() {
         }
         return acc;
       }, {});
-
+    
+    newData.placement.btech = Object.entries(btechPlacementCounts).map(([name, count]) => ({ name, count }));
     newData.placement.mtech = Object.entries(mtechPlacementCounts).map(([name, count]) => ({ name, count }));
     newData.placement.phd = Object.entries(phdPlacementCounts).map(([name, count]) => ({ name, count }));
 
@@ -123,6 +149,10 @@ export default function Alumni() {
   const getYearRange = (tabKey, startYear) => {
     const tab = tabs.find((t) => t.key === tabKey);
     if (!tab || !tab.duration) return startYear;
+    if (tabKey === 'btech') {
+      const endYear = startYear;
+      return `${endYear - tab.duration} - ${endYear}`;
+    }
     const endYear = startYear + tab.duration;
     return `${startYear} - ${endYear}`;
   };
@@ -202,7 +232,30 @@ export default function Alumni() {
   };
 
   const renderPlacementCharts = () => (
-    <div className="grid md:grid-cols-2 gap-8">
+    <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-bold text-center text-indigo-700 mb-4">B.Tech. Placement Types</h3>
+        <ResponsiveContainer width="100%" height={300}>
+          <PieChart>
+            <Pie
+              data={data.placement.btech}
+              cx="50%"
+              cy="50%"
+              labelLine={false}
+              label={renderCustomizedLabel}
+              outerRadius={100}
+              fill="#8884d8"
+              dataKey="count"
+            >
+              {data.placement.btech.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+            <Tooltip />
+            <Legend />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
       <div className="bg-white rounded-xl shadow-lg p-6">
         <h3 className="text-xl font-bold text-center text-indigo-700 mb-4">M.Tech. Placement Types</h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -226,7 +279,7 @@ export default function Alumni() {
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className="bg-white rounded-xl shadow-lg p-6">
+      <div className="bg-white rounded-xl shadow-lg p-6 lg:col-span-2">
         <h3 className="text-xl font-bold text-center text-indigo-700 mb-4">Ph.D. Placement Types</h3>
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>

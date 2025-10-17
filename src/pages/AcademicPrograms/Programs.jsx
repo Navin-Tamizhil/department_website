@@ -1,5 +1,5 @@
 import { useState } from "react";
-import UGPrograms from "./UG2";   // Create these components accordingly
+import UGPrograms from "./UG2";   
 import PGPrograms from "./PG1";
 import PhDPrograms from "./PhD";
 

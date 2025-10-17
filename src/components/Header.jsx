@@ -108,10 +108,8 @@ const Header = () => {
     >
       <div className="w-full flex items-center justify-between pl-0 pr-0 py-3 sm:py-4">
         {/* Left: Logo + Department Name */}
-        <a 
-          href="https://www.iith.ac.in" 
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/"
           className="flex items-center space-x-2 xl:space-x-3 hover:opacity-90 transition-opacity duration-200 pl-3 sm:pl-4 lg:pl-6"
         >
           <img
@@ -127,7 +125,7 @@ const Header = () => {
               IIT Hyderabad
             </div>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6 2xl:space-x-8 pr-4 sm:pr-6">

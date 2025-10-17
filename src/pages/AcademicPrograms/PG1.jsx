@@ -86,7 +86,6 @@ export default function PG() {
         >
           📅 Time Table
         </a>
-
         <a
           href="/pdf/pg_course_description.pdf"
           target="_blank"
@@ -95,6 +94,15 @@ export default function PG() {
         >
           📄 Course Description
         </a>
+        <a
+          href="/academics/Academic_Handbook_62nd_Senate.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2.5 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition"
+        >
+          📘 Academic Handbook
+        </a>
+        
       </div>
 
       {/* Year-wise syllabus */}

@@ -2,18 +2,19 @@
 [
   {
     "id": 1,
-    "name": "Nawale Ashwini",
-    "designation": "Senior Technician",
-    "email":"nawle.ashwini@bt.iith.ac.in",
-    "image": "/staff/nawale_ashwini.jpg"
-  },
-  {
-    "id": 2,
     "name": "Pulala Raghuveer Yadav",
     "designation": "Senior Technical Officer",
     "email":"pr.yadav@bt.iith.ac.in",
     "image": "/staff/raghuveer_yadav.jpg"
   },
+  {
+    "id": 2,
+    "name": "Nawale Ashwini",
+    "designation": "Senior Technician",
+    "email":"nawle.ashwini@bt.iith.ac.in",
+    "image": "/staff/nawale_ashwini.jpg"
+  },
+  
   {
     "id": 3,
     "name": "M Jayavardhana Reddy",

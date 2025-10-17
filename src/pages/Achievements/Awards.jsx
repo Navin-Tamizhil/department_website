@@ -52,7 +52,7 @@ export default function Awards() {
           ))}
         </div>
       ) : (
-        <p className="text-gray-500 mb-10">Avilable awadrs.......</p>
+        <p className="text-gray-500 mb-10">Avilable awards.......</p>
       )}
     </div>
   );

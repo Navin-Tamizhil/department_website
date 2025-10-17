@@ -94,6 +94,14 @@ export default function UG() {
         >
           📄 Course Description
         </button>
+        <a
+          href="/academics/Academic_Handbook_62nd_Senate.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2.5 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-700 transition"
+        >
+          📘 Academic Handbook
+        </a>
       </div>
 
       {/* Year-wise syllabus */}

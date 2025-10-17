@@ -242,7 +242,7 @@ export default function Students() {
   const allBtechYears = [...new Set([
     ...data.btech.map(d => d.year),
     ...data.alumni.btech.map(d => d.year)
-  ])].sort((a, b) => b - a);
+  ])].sort((a, b) => a - b);
 
   const btechBarData = allBtechYears.map(year => ({
     year: year.toString(),
@@ -254,7 +254,7 @@ export default function Students() {
   const allMtechYears = [...new Set([
     ...data.mtech.map(d => d.year),
     ...data.alumni.mtech.map(d => d.year)
-  ])].sort((a, b) => b - a);
+  ])].sort((a, b) => a - b);
 
   const mtechBarData = allMtechYears.map(year => ({
     year: year.toString(),
@@ -266,7 +266,7 @@ export default function Students() {
   const allPhdYears = [...new Set([
     ...data.phd.map(d => d.year),
     ...data.alumni.phd.map(d => d.Year)
-  ])].sort((a, b) => b - a);
+  ])].sort((a, b) => a - b);
 
   const phdBarData = allPhdYears.map(year => ({
     year: year.toString(),
@@ -277,7 +277,7 @@ export default function Students() {
 
   return (
     <section className="container mx-auto px-4 sm:px-6 py-12">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-500">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-500">
         Our Students on Roll
       </h1>
 
@@ -302,30 +302,40 @@ export default function Students() {
 
       {/* Year/Batch selector */}
       {activeTab !== "stats" && (
-        <div className="mb-6">
-          <select // A styled dropdown might be better, but for simplicity:
-            className="border border-gray-300 rounded-lg px-4 py-2 shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-            value={selectedYear || ""}
-            onChange={(e) => setSelectedYear(e.target.value)}
-          >
-            {getYears(activeTab).map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {getYears(activeTab).map((year) => (
+            <button
+              key={year}
+              onClick={() => setSelectedYear(year)}
+              className={`px-4 py-2 rounded-lg border font-medium transition-all duration-200 shadow-sm ${
+                selectedYear === year
+                  ? "bg-indigo-100 border-indigo-500 text-indigo-700 scale-105"
+                  : "bg-white hover:bg-gray-100 border-gray-300"
+              }`}
+            >
+              {year}
+            </button>
+          ))}
         </div>
       )}
 
       {/* Content for B.Tech, M.Tech */}
       {(activeTab === "btech" || activeTab === "mtech") && selectedYear && (
-        <ul className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-white/30 columns-1 md:columns-2 lg:columns-3 gap-x-8 space-y-2">
-          {getStudents(activeTab, selectedYear).map((student, i) => (
-            <li key={i} className="mb-1">
-              {student}
-            </li>
-          ))}
-        </ul>
+        <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 border border-white/30 overflow-hidden">
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-full opacity-50"></div>
+          <h3 className="relative text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">
+            Class of {selectedYear.split('-')[1]}
+          </h3>
+          <p className="relative text-gray-500 font-medium mb-8">{tabs.find(t => t.key === activeTab)?.label}</p>
+          <ul className="relative columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-8 space-y-2">
+            {getStudents(activeTab, selectedYear).map((student, i) => (
+              <li key={i} className="flex items-center gap-3 mb-1 text-gray-700 break-inside-avoid">
+                <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full flex-shrink-0"></span>
+                <span>{student}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       {/* PhD batches */}
@@ -334,11 +344,17 @@ export default function Students() {
           {data.phd
             .filter((d) => d.year === parseInt(selectedYear, 10))
             .map(({ batch, students }) => (
-              <div key={batch} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-white/30">
-                <ul className="columns-1 md:columns-2 lg:columns-3 gap-x-8 space-y-2">
+              <div key={batch} className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 border border-white/30 overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-full opacity-50"></div>
+                <h3 className="relative text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">
+                  Ph.D. Scholars
+                </h3>
+                <p className="relative text-gray-500 font-medium mb-8">Batch of {selectedYear}</p>
+                <ul className="relative columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-8 space-y-2">
                   {students.map((student, i) => (
-                    <li key={i} className="mb-1">
-                      {student}
+                    <li key={i} className="flex items-center gap-3 mb-1 text-gray-700 break-inside-avoid">
+                      <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full flex-shrink-0"></span>
+                      <span>{student}</span>
                     </li>
                   ))}
                 </ul>
@@ -349,9 +365,9 @@ export default function Students() {
 
       {/* Statistics Tab */}
       {activeTab === "stats" && (
-        <div className="space-y-8">
+        <div className="space-y-12">
           {/* BTech Statistics */}
-          <div className="bg-white shadow-lg rounded-lg p-6">
+          <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-indigo-700 text-center">
               B.Tech Statistics
             </h3>
@@ -369,7 +385,7 @@ export default function Students() {
           </div>
 
           {/* MTech Statistics */}
-          <div className="bg-white shadow-lg rounded-lg p-6">
+          <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-green-700 text-center">
               M.Tech Statistics
             </h3>
@@ -387,7 +403,7 @@ export default function Students() {
           </div>
 
           {/* PhD Statistics */}
-          <div className="bg-white shadow-lg rounded-lg p-6">
+          <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-yellow-700 text-center">
               Ph.D Statistics
             </h3>
@@ -405,10 +421,10 @@ export default function Students() {
           </div>
 
           {/* Pie Charts */}
-          <div className="flex justify-center">
+          <div className="flex justify-center pt-8">
             {/* Program Ratio Pie Chart */}
-            <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
-              <h3 className="text-xl font-bold mb-4 text-indigo-700 text-center">
+            <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-3xl border border-gray-200/80">
+              <h3 className="text-2xl font-bold mb-4 text-indigo-700 text-center">
                 Current Students Ratio
               </h3>
               <ResponsiveContainer width="100%" height={350}>
@@ -418,7 +434,7 @@ export default function Students() {
                     dataKey="value"
                     nameKey="name"
                     outerRadius={120}
-                    label={({ name, value }) => `${name}: ${value}`}
+                    label={({ name, value }) => `${name}: ${value} (${((value / totalOnRoll) * 100).toFixed(0)}%)`}
                   >
                     {programRatioPieData.map((entry, index) => (
                       <Cell key={index} fill={entry.color} />

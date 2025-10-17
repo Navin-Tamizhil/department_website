@@ -15,15 +15,15 @@ const FacultyCard = ({ person, isOpen, onToggle, isHighlighted, cardRef, showGro
             <img
               src={person.image}
               alt={person.name}
-              className="w-32 h-36 rounded-xl object-cover mx-auto border-4 border-white shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-2"
+              className="w-48 h-56 rounded-xl object-cover mx-auto border-4 border-white shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:rotate-2"
             />
           ) : (
-            <div className="w-32 h-36 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-xl mx-auto flex items-center justify-center shadow-md transition-transform duration-500 group-hover:scale-110">
-              <GraduationCap className="w-16 h-16 text-indigo-400 transition-transform duration-500 group-hover:rotate-12" />
+            <div className="w-48 h-56 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-xl mx-auto flex items-center justify-center shadow-md transition-transform duration-500 group-hover:scale-110">
+              <GraduationCap className="w-24 h-24 text-indigo-400 transition-transform duration-500 group-hover:rotate-12" />
             </div>
           )}
           {/* Floating ring decoration */}
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-36 h-2 bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent rounded-full blur-sm"></div>
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-52 h-2 bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent rounded-full blur-sm"></div>
         </div>
         
         <h3 className="text-xl font-bold text-gray-900 mb-1 transition-colors group-hover:text-indigo-700">{person.name}</h3>
