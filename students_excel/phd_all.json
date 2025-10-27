@@ -1,0 +1,682 @@
+[
+  {
+    "Year": 2011,
+    "Name": "Gururaj N Shivange",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2011,
+    "Name": "K Naveena",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2011,
+    "Name": "S Vishwanath",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2011,
+    "Name": "Archana",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2011,
+    "Name": "Neetu Sharma",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2012,
+    "Name": "Anu George",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2013,
+    "Name": "K.Narendar",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2014,
+    "Name": "Amandeep Gridhar",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2014,
+    "Name": "Mukul Sharma",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2014,
+    "Name": "Richa Nigam",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2014,
+    "Name": "ANGELNIVYA M",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2014,
+    "Name": "Nakarakanti Naveen Kumar",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2014,
+    "Name": "Yogeeshwar Ajjugal",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2015,
+    "Name": "Kuruba Manohar",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2015,
+    "Name": "Deepa Akula",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2015,
+    "Name": "Himanshu",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2015,
+    "Name": "Monisha",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2015,
+    "Name": "Neema Kumari",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2016,
+    "Name": "Satish Mutyala",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2016,
+    "Name": "Abhishek Suman",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2016,
+    "Name": "L Ponoop Prasad Patro",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2016,
+    "Name": "Vidhya Bharathi MJ",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "Neeraja Revi",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "P Narasimha",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "Deeksha Waghela",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "Sadhana Nirwal",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "Raut Rajnikant Dilip ",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "Taruna Saini",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "Uzma Hasan",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2017,
+    "Name": "Sathyaseelan C",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2018,
+    "Name": "Akarsh Bajpai",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2018,
+    "Name": "Yashashwini S D",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2019,
+    "Name": "Patil Pranita Uttamrao",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2019,
+    "Name": "Arepalli Anjali",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2021,
+    "Name": "Anuradha",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2021,
+    "Name": "Apoorva Bhatnagar",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2021,
+    "Name": "Nitesh Kumar Podh",
+    "Status": "Graduated"
+  },
+  {
+    "Year": 2018,
+    "Name": "Parth Gupta",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2018,
+    "Name": "Nitin Kulhar",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2019,
+    "Name": "Preethi S",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Pedada Raj Kumar",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Nikhil Kumar Tuti",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Sruthi Sundaresan",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Susmita Das",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Saniya Sunil Dubey",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Ramkumar Balaji",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Akriti Kumari",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Unnikrishnan P S",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2020,
+    "Name": "Vini Dhiraj Meshram",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Sourbh Rankawat",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Anurag Gupta",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Devesh Srivastava",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Partha Dey",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Ankush Sharma",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Nabanita Chakraborty",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Srishti Banerjee",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Milee Jagdish Makwana",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Sandip Das",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Sheetal Paliwal",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Shivani Arvind Parate",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2021,
+    "Name": "Hanuman Singh Dagur",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Greeshma Shanavas P",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Kavita Kundal",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Avik Sengupta",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Ghazala Rahman",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Shreya Shree",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Shweta Jitendra Rajput",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Shreyayukta Chakraborty",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Uttam Das",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Priyanka Yadav",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2022,
+    "Name": "Sumona Garg",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Atanu Pramanik",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Pabbithi Bharathnaveen",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Sushree Sangita Kar",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Shashank Shekhar",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Richa Ashok Kakkar",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Mariam Azeezuddin Haneen",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Utkarsha Mahanta",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Bhavya Surendran V S",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Mohit Kumar Mehra",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Bhanu Teja Koora",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Chodvadiya Jaimin Arvindbhai",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Jitender",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Kirti Garg",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Nafeesa",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Neeharika Singh",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Niharika Saraf",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Pratibha Singh",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Rahul Kumar Jha",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Saanya Yadav",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Rawool Shravani Rajan",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Subashani",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Vinayak Nayak",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Ranade Harshal Sanjeev",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Prashant Singh",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Manjunatha B. K.",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2023,
+    "Name": "Nimisha Tripathi",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "Sofia Tanveer",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "Sruthi B",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "Suman Kalyan Das",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "K B Yashwanth",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "Satabdi Deka",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "VARADA  M P",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "ANANYA",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "SIDDHI BANGALE",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "NIKHITHA THOMAS",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "RAJASHREE SHUBHADARSHINEE GHANA",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "PRADNYA SHAHIR",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "KRUTIDEEPA ROUT",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "RASHMI SINGH YADAV",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "CHALSI B P",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "SUBHASHREE MAHALIK",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "SAIBAL SAHA",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "VISHNU KUMAR PANDEY",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "SHANU  BHARDWAJ BHARDWAJ",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "ASHMITA SINGH",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "MILIND BOSE",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "SURABHI SRIVASTAVA",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "VINITH KUMAR K",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "SANSKRITI SINGH",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "ABHIJITH PAUL T",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "GOPU SANDEEP",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "ATHIRA RAVI KUNNELPARAMPIL",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2024,
+    "Name": "SRIJONI PAHARI",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "ROHITH R KUMAR",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "ALA DEVI MANOGNA",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "VINODINI D",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "RENJITH V S",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "JESSICA BAA",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "AMAN PARASHAR",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "SAURABH SINGH YADAV",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "Diksha Panwar",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "SHERIN BRIGHTY A",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "Jyothiraditya Sai Ram Akula",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "S Gyanendra Kumar",
+    "Status": "Onroll"
+  },
+  {
+    "Year": 2025,
+    "Name": "Vijaivasudev M J",
+    "Status": "Onroll"
+  }
+]

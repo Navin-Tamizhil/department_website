@@ -1,0 +1,65 @@
+[
+    {
+        "Sl.No": "1",
+        "Name of the Student": "Priyadarshini V",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "PMRF at IISc Bangalore",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "2",
+        "Name of the Student": "Pai Shruta Sandesh",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "Helmholtz Zentrum München,  Germany",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "3",
+        "Name of the Student": "B Abirami",
+        "Current Position": "Associate Content Developer",
+        "Company/Institution": "BYJU'S",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "4",
+        "Name of the Student": "Aimee Rachel Mathew",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "University of Rome, Italy",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "5",
+        "Name of the Student": "Andrea Kagoo R",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "Anna University, Chennai",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "6",
+        "Name of the Student": "Janardhanaachari Roshini",
+        "Current Position": "Manager, BD & Alliance Management",
+        "Company/Institution": "Satya Pharma innovations Private limited",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "7",
+        "Name of the Student": "Bhuvana K",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "Sastra university",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "8",
+        "Name of the Student": "Ashwini Anil Umale",
+        "Current Position": "Data scientist",
+        "Company/Institution": "Quadrant IQ Solution, LLC",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "9",
+        "Name of the Student": "Pratibha M",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "PMRF, IIT Madras",
+        "Type": "Academia"
+    }
+]

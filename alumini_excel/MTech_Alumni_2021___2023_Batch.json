@@ -1,0 +1,100 @@
+[
+    {
+        "Sl.No": "1",
+        "Name of the Student": "ADITYA SUBRAMANIAN V",
+        "Current Position": "Graduate Research Assistant",
+        "Company/Institution": "University of Alabama",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "2",
+        "Name of the Student": "MANUSMRITI AGARWAL",
+        "Current Position": null,
+        "Company/Institution": null,
+        "Type": null
+    },
+    {
+        "Sl.No": "3",
+        "Name of the Student": "NEEHARIKA SINGH",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "IIT Hyderabad",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "4",
+        "Name of the Student": "SARAH NAWAZ",
+        "Current Position": "Scientist I",
+        "Company/Institution": "Thermo Fisher, Bangalore",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "5",
+        "Name of the Student": "AMBUJ KUMAR",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "IIT Bombay",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "6",
+        "Name of the Student": "KEERTHANA VINOD KUMAR",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "IIT Bombay",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "7",
+        "Name of the Student": "RAJ VIRENDRA GUPTA",
+        "Current Position": "JRF",
+        "Company/Institution": "IIT Bombay",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "8",
+        "Name of the Student": "CARMEL KEERTHANA L",
+        "Current Position": "Senior Scientist",
+        "Company/Institution": "Biocon, Bangalore",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "9",
+        "Name of the Student": "ANOOPA NAIR",
+        "Current Position": "Business Analyst",
+        "Company/Institution": "Evalueserve, Gurugram, Haryana",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "10",
+        "Name of the Student": "AYUSHI GOEL",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "Deakin University, Australia",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "11",
+        "Name of the Student": "ARPITA KANNIHALLI",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "LMV Munich",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "12",
+        "Name of the Student": "THARUNIKA SUBRAMANIAN",
+        "Current Position": "Scientist I",
+        "Company/Institution": "Thermo Fisher Scientific",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "13",
+        "Name of the Student": "DEEPA R",
+        "Current Position": "Data Analyst",
+        "Company/Institution": "EY, India",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "14",
+        "Name of the Student": "JAS RAMACHAL CHAUDHARY",
+        "Current Position": "Research internship",
+        "Company/Institution": "IIT Bombay",
+        "Type": "Academia"
+    }
+]
