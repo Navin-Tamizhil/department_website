@@ -13,18 +13,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 space-y-10">
         
         {/* Row 1 -  Facebook, Brochure */}
-        <div className="text-center border-b border-gray-700 pb-10">
-          <div className="flex justify-center">
-            <a
-              href="/footer/Dept_brouchere.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 hover:text-indigo-400 transition"
-            >
-              <FileText className="w-5 h-5" /> <span>Department Brochure</span>
-            </a>
-          </div>
-        </div>
+ 
 
         {/* Row 2 - Quick Links */}
         <div>
@@ -90,6 +79,17 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
           <p>© {new Date().getFullYear()} Department of Biotechnology, IIT Hyderabad. All Rights Reserved.</p>
           <p className="mt-1">Last Updated: {new Date().toLocaleDateString("en-IN")}</p>
+          <p className="mt-4">
+    Designed, Developed & Maintained by the BT Web Team</p>
+  <p className="mt-1">
+    For feedback or technical issues, please contact{" "}
+    <a
+      href="mailto:naveenprasath.t.bt@iith.ac.in"
+      className="text-indigo-400 hover:underline"
+    >
+      naveenprasath.t.bt@iith.ac.in
+    </a>
+  </p>
         </div>
       </div>
     </footer>

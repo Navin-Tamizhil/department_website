@@ -52,26 +52,20 @@ export default function Alumni() {
         const sanitizedText = text.replace(/:\s*NaN/g, ":null");
         const rawRows = JSON.parse(sanitizedText);
         const rows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
-        
-        // Helper to remove 'Type' property from each row
-        const removeType = (row) => {
-          const { Type, ...rest } = row;
-          return rest;
-        };
 
       if (file.startsWith("BTech")) {
         // Group B.Tech alumni by graduation year
         const btechByYear = rows.reduce((acc, row) => {
           const year = row["Year Of Graduation"];
           if (!acc[year]) acc[year] = [];
-          acc[year].push(removeType(row));
+          acc[year].push(row);
           return acc;
         }, {});
         newData.btech = Object.entries(btechByYear).map(([year, yearRows]) => ({ year: parseInt(year), rows: yearRows }));
       } else if (file.startsWith("MTech")) {
         const yearMatch = file.match(/(\d{4})/);
         const year = yearMatch ? parseInt(yearMatch[1], 10) : null;
-        newData.mtech.push({ year, rows: rows.map(removeType) });
+        newData.mtech.push({ year, rows: rows });
       }
       } catch (error) {
         console.error(`Failed to load or parse ${file}:`, error);
@@ -85,11 +79,8 @@ export default function Alumni() {
         const text = await res.text();
         const sanitizedText = text.replace(/:\s*NaN/g, ":null");
         const rawRows = JSON.parse(sanitizedText);
-        const cleanedRows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
-        newData.phd.push({ rows: cleanedRows.map(row => {
-          const { Type, ...rest } = row;
-          return rest;
-        }) });
+        const rows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
+        newData.phd.push({ rows: rows });
       }
     } catch (error) {
       console.error("Error loading PhD_Alumini.json", error);
@@ -160,13 +151,15 @@ export default function Alumni() {
   const getRows = (tab, year) => {
     if (tab === "btech" || tab === "mtech") {
       const batch = data[tab].find((b) => b.year === year);
-      return batch ? batch.rows : [];
+      // Remove 'Type' before rendering the table
+      return batch ? batch.rows.map(row => { const { Type, ...rest } = row; return rest; }) : [];
     }
     if (tab === "phd") {
-      return data.phd.length > 0 ? data.phd[0].rows : [];
+      // Remove 'Type' before rendering the table
+      return data.phd.length > 0 ? data.phd[0].rows.map(row => { const { Type, ...rest } = row; return rest; }) : [];
     }
     return [];
-  };;
+  };
 
   const renderTabs = () => (
     <div className="flex gap-6 mb-10 border-b border-gray-200">

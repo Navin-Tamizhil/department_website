@@ -1,5 +1,16 @@
 export const eventsData = [
   {
+    id: 13,
+    title: "Industry Talk by Ms. Sarah Nawaz",
+    type: "seminar",
+    displayDate: "October 21, 2025",
+    date: "2025-10-21",
+    description: "Title: From Academia to Industry: Bridging Research and Real-World Impact.",
+    affiliation: "Scientist I, Thermo Fisher Scientific, Bangalore, India.",
+    eventlink: "https://meet.google.com/nji-cadc-mxn",
+    isLatest: true,
+  },
+  {
     id: 12,
     title: "International Conference and Workshop on Single-Molecule Biophysics 2026",
     type: "conference",

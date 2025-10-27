@@ -14,7 +14,7 @@ export default function Contact() {
               Address
             </h2>
             <address className="not-italic text-gray-700 leading-relaxed space-y-1 text-lg">
-              <p>BT113,</p>
+              <p>BT113, 1st Floor, </p>
               <p>Department of Biotechnology,</p>
               <p>BTBM Building,</p>
               <p>Indian Institute of Technology Hyderabad,</p>
@@ -56,7 +56,7 @@ export default function Contact() {
           </h2>
               <iframe
   title="IIT Hyderabad Location"
-  src={`https://maps.google.com/maps?q=17.59370142025943,78.12266387664798&z=15&output=embed`}
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.5218500623776!2d78.12352169662394!3d17.593791507251414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbf748fc9a57bd%3A0x3e768972fc2b6e10!2sBME-BT%20Academic%20Block!5e0!3m2!1sen!2sin!4v1761541980647!5m2!1sen!2sin"
   width="100%"
   height="350"
   style={{ border: 0 }}

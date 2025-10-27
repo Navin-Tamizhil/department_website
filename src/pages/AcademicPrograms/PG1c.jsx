@@ -19,13 +19,13 @@ export default function PG() {
 
   const buttons = [
     { key: "syllabus", label: "Syllabus", icon: BookOpen },
-    { key: "timetable", label: "Time Table", icon: Calendar },
     { key: "courses", label: "Course Descriptions", icon: FileText },
-  ];
+    { key: "timetable", label: "Time Table", icon: Calendar }
+    ];
 
   const handleButtonClick = (key) => {
     if (key === "timetable") {
-      window.open("/academics/BT_PG_TT.pdf", "_blank");
+      window.open("https://www.iith.ac.in/academics/assets/files/timetables/jul-nov-25/BT-PG-Time-Table-July-Nov%202025.xlsx", "_blank");
       setActiveView(null);
     } else if (key === activeView) {
       setActiveView("overview");

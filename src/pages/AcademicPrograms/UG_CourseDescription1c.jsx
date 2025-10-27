@@ -175,12 +175,13 @@ export default function CourseDescription({ close }) {
                       </div>
                     </div>
                   )}
+           
 
-                  {selectedCourse["Justification:"] && selectedCourse["Justification:"].trim() !== "" && (
+                  {selectedCourse["Justification"] && selectedCourse["Justification"].trim() !== "" && (
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3">Justification</h4>
                       <p className="text-gray-700 leading-relaxed">
-                        {selectedCourse["Justification:"]}
+                        {selectedCourse["Justification"]}
                       </p>
                     </div>
                   )}

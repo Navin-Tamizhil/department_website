@@ -179,9 +179,9 @@ const Biotechsociety = () => {
         <section className="bg-gradient-to-r from-blue-700 to-indigo-800 text-white rounded-2xl p-10 text-center shadow-2xl">
             <Newspaper className="w-16 h-16 mx-auto mb-4 opacity-80" />
             <h2 className="text-3xl font-bold mb-2">Read Our Newsletter!</h2>
-            <p className="mb-6 text-blue-200">Check out the latest issue of BioNiche (Vol 1, Issue 1) for July-August 2025.</p>
+            <p className="mb-6 text-blue-200">Check out the latest issue of BioNiche – Volume 1, Issue 2 (September 2025 Edition).</p>
             <a 
-              href="https://heyzine.com/flip-book/a6f72c3283.html" 
+              href="https://heyzine.com/flip-book/7af5c1e7cb.html" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-white text-indigo-700 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300"

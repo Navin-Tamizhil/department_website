@@ -10,7 +10,8 @@
 "Bioprocess technology, Fermentation, and Downstream processing",
 "Nanobiotechnology and Hydrothermal Liquefaction",
 "Waste valorisation and Circular economy"],
-"labWebsite" : "https://sites.google.com/bt.iith.ac.in/integratedbioprocesstechnology/home"
+"labWebsite" : "https://sites.google.com/bt.iith.ac.in/integratedbioprocesstechnology/home",
+"teamPicture": "/faculty/group/alturi_avanthi.jpg"
   },
   
   {
@@ -40,7 +41,8 @@
 "Characterization of cancer drug targets, Inhibitor/lead compound design",
 "Thermodynamics of phase separation of biological macromolecules and hydrogel design",
 "X-ray crystallography and Structural Biology"],
-"labWebsite" : "https://rajakumarae.wixsite.com/rajlab-bt--iith"
+"labWebsite" : "https://rajakumarae.wixsite.com/rajlab-bt--iith",
+"teamPicture": ""
   },
 
 
@@ -57,7 +59,8 @@
     "Nucleic acid sensors",
     "Innate immune sensors and Cancer"
   ],
-  "labWebsite": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing"
+  "labWebsite": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing",
+  "teamPicture": "/faculty/group/savita_devi_group.jpg"
 },
 
   
@@ -73,7 +76,8 @@
 "Nanopores",
 "Nanoparticles and biological materials",
 "Artificial water channels"],
-"labWebsite" : "https://sites.google.com/view/molecular-simulation-lab"
+"labWebsite" : "https://sites.google.com/view/molecular-simulation-lab",
+"teamPicture": "/faculty/group/himanshu_joshi_group.jpg"
   },
 
 {
@@ -101,7 +105,8 @@
 "Role of RNA binding proteins in neurological diseases",
 "Developing Drosophila models of human neurodegenerative diseases",
 "RNA structure and translational regulation"],
-"labWebsite" : "https://sites.google.com/bt.iith.ac.in/malik-lab/home"
+"labWebsite" : "https://sites.google.com/bt.iith.ac.in/malik-lab/home",
+"teamPicture": "/faculty/group/indranil_malik_group.jpg"
   },
   
   {
@@ -111,6 +116,8 @@
     "image": "/faculty/gunjan_mehta.jpg",
     "email": "gunjanmehta@bt.iith.ac.in",
     "phone": "+91 (40) 2301 6159",
+    "teamPicture": "/faculty/group/gunjan_mehta_lab.png",
+    
     "area": ["Chromosome Dynamics and Cell Division",
 "Gene Regulation",
 "Aneuploidy, Genetic Disorders, Cancers",
@@ -130,7 +137,8 @@
 "Identification and pre-clinical validation of therapeutically targetable oncogenic drivers of castration-resistant prostate cancer",
 "Constructing the Genomic and Transcriptomic landscape of Indian pediatric B-cell Acute Lymphoblastic Leukemia patients to identify novel prognostic and therapeutic targets.",
 "Understanding the role of Long non-coding RNAs and alternative splicing in cancer progression"],
-"labWebsite" : "https://cgrblab.bt.iith.ac.in/"
+"labWebsite" : "https://cgrblab.bt.iith.ac.in/",
+"teamPicture": "/faculty/group/ashish_mishra_group.jpg"
   },
 
         {
@@ -142,7 +150,8 @@
     "phone": "+91 (40) 2301 6196",
     "area": ["Protein misfolding- mechanisms and prevention",
 "Yeast prions genetics and cell biology"],
-"labWebsite" : "https://pmrl.biotech.iith.ac.in/"
+"labWebsite" : "https://pmrl.biotech.iith.ac.in/",
+"teamPicture": ""
   },
   
         {
@@ -182,7 +191,8 @@
   "email": "sandipan.ray@bt.iith.ac.in",
   "phone": "+91 (40) 2301 6157",
   "area": ["Circadian rhythms and sleep Neuropharmacology", "Aging", "Systems biology", "Mental health"],
-  "labWebsite": "https://www.circadianlab-iith.com/"
+  "labWebsite": "https://www.circadianlab-iith.com/",
+  "teamPicture": "/faculty/group/sandeepan_ray_group.avif"
 },
           {
   "id": 14,
@@ -207,14 +217,15 @@
   "email": "gnsastry@bt.iith.ac.in",
   "phone": "+91 (40) 2301 6083",
   "area": ["Computational modelling and artificial intelligence from basic to translational research"],
-  "labWebsite": "https://sites.google.com/iith.ac.in/arlab"
+  "labWebsite": "https://sites.google.com/view/gns-fifthparadigmlab/",
+  "teamPicture": "/faculty/group/g_narahari_sastry_group.jpg"
 }
 ,
             {
   "id": 16,
   "name": "Dr. Gaurav Sharma",
   "designation": "Assistant Professor",
-  "image": "/faculty/gaurav_sharma.jpg",
+  "image": "/faculty/gaurav_sharma.png",
   "email": "sharmag@bt.iith.ac.in",
   "phone": "+91 (40) 2301 6083",
   "area": [
@@ -233,7 +244,7 @@
   "id": 17,
   "name": "Dr. Abhishek Subramanian",
   "designation": "Assistant Professor",
-  "image": "/faculty/abhishek_subramanian.jpeg",
+  "image": "/faculty/abhishek_subramanian.jpg",
   "email": "abhisheks@bt.iith.ac.in",
   "phone": "",
   "area": [
@@ -244,7 +255,8 @@
     "Machine Learning",
     "Parasitology and immunology"
   ],
-  "labWebsite": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home"
+  "labWebsite": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home",
+  "teamPicture": "/faculty/group/abhishek_subramaniam.jpg"
 }
 
 

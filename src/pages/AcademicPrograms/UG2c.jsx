@@ -44,13 +44,13 @@ export default function UG() {
 
   const buttons = [
     { key: "syllabus", label: "Syllabus", icon: BookOpen },
-    { key: "timetable", label: "Time Table", icon: Calendar },
     { key: "courses", label: "Course Descriptions", icon: FileText },
+     { key: "timetable", label: "Time Table", icon: Calendar }
   ];
 
   const handleButtonClick = (key) => {
     if (key === "timetable") {
-      window.open("/academics/TT_UG_July.pdf", "_blank");
+      window.open("https://www.iith.ac.in/academics/assets/files/timetables/jul-nov-25/BT-UG-Timetable_Jul-Nov%202025.xlsx", "_blank");
       setActiveView(null);
     } else if (key === activeView) {
       setActiveView(null);

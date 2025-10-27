@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Lightbulb, Rocket, Gem, Sparkles, Star, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Lightbulb, Rocket, Gem, Sparkles, Star, X, ChevronLeft, ChevronRight, FileText, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnnouncementsModified } from "./Home_announcements.jsx";
 import EventsModified from "./Home_events";
@@ -154,6 +154,26 @@ export default function Home() {
                 <b>Dr. Anamika Bhargava,</b><br />
                 Professor and Head of the Department.
               </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------- Department Brochure Section ---------------- */}
+      <section className="mx-4 md:mx-14 my-10">
+        <div className="relative group bg-gradient-to-r from-indigo-600 to-purple-700 rounded-3xl p-8 md:p-12 text-white overflow-hidden">
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full transition-transform duration-500 group-hover:scale-125"></div>
+          <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-white/10 rounded-full transition-transform duration-500 group-hover:scale-110"></div>
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold mb-2">Discover Our Department</h2>
+              <p className="text-indigo-200 max-w-lg">
+                Download our brochure to explore our programs, research, and facilities in detail.
+              </p>
+            </div>
+            <a href="/footer/Dept_brouchere.pdf" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-indigo-700 font-bold rounded-full shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300">
+              <Download className="w-5 h-5" />
+              <span>Download Brochure</span>
+            </a>
           </div>
         </div>
       </section>

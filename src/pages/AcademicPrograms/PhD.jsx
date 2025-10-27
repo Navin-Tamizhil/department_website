@@ -111,7 +111,7 @@ export default function PhD() {
           Course Description
         </button>
         <a
-          href="/academics/BT_PG_TT.pdf"
+          href="https://www.iith.ac.in/academics/assets/files/timetables/jul-nov-25/BT-PG-Time-Table-July-Nov%202025.xlsx"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-6 py-3 rounded-lg shadow-md transition-colors bg-purple-600 text-white hover:bg-purple-700"

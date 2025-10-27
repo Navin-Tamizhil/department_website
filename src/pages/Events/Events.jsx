@@ -14,7 +14,6 @@ const EventCard = ({ event, isUpcoming }) => {
         <Icon className={`w-5 h-5 mr-2 ${iconColor}`} />
         <h3 className="text-lg font-bold text-gray-800">{event.title}</h3>
       </div>
-      <p className={`text-sm font-semibold mb-2 ${color}`}>{event.date}</p>
       <p className={`text-sm font-semibold mb-2 ${color}`}>{event.displayDate || event.date}</p>
       {event.venue && (
         <p className="text-sm text-gray-600 mb-1">
