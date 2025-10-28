@@ -82,7 +82,7 @@ export default function Stats({ data }) {
       {/* B.Tech Bar Chart */}
       <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
         <h3 className="text-2xl font-bold mb-4 text-indigo-700 text-center">B.Tech Statistics</h3>
-        <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students vs Alumni by Batch</h4>
+        
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={btechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -99,7 +99,7 @@ export default function Stats({ data }) {
       {/* M.Tech Bar Chart */}
       <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
         <h3 className="text-2xl font-bold mb-4 text-green-700 text-center">M.Tech Statistics</h3>
-        <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students vs Alumni by Batch</h4>
+       
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={mtechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
