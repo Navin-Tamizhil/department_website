@@ -43,7 +43,6 @@ export default function Students() {
 
   // Load data for students and alumni
   const loadData = async () => {
-    // Use .json files for faster loading
     const files = [
       "btech_2022.json",
       "btech_2023.json",
@@ -53,10 +52,8 @@ export default function Students() {
       "mtech_2025.json",
     ];
 
-
-    // Alumni files based on your folder structure
     const alumniFiles = [
-      "btech_2021.json", // Assuming this file exists and is correct
+      "btech_2021.json",
       "MTech_Alumni_2012___2014_Batch.json",
       "MTech_Alumni_2013___2015_Batch.json",
       "MTech_Alumni_2014___2016_Batch.json",
@@ -74,14 +71,14 @@ export default function Students() {
     const newData = { btech: [], mtech: [], phd: [], alumni: { btech: [], mtech: [], phd: [] } };
 
     // Load student files
-    const studentPromises = files.map(async (file) => { // e.g., btech_2022.json
+    const studentPromises = files.map(async (file) => {
       try {
         const res = await fetch(`/department_website/students_excel/${file}`);
         if (!res.ok) {
           console.warn(`Failed to fetch student file: ${file}`);
           return;
         }
-        const rows = await res.json(); // JSON is likely an array of strings
+        const rows = await res.json();
         const students = rows.map(capitalizeName);
 
         if (file.startsWith("btech")) {
@@ -97,16 +94,14 @@ export default function Students() {
     });
 
     // Load alumni files
-    const alumniPromises = alumniFiles.map(async (file) => { // e.g., mtech_2012.json
+    const alumniPromises = alumniFiles.map(async (file) => {
       try {
         const res = await fetch(`/department_website/alumini_excel/${file}`);
         if (!res.ok) {
           console.warn(`Failed to fetch alumni file: ${file}`);
           return;
         }
-        // Fetch as text first to handle invalid JSON with NaN values
         const text = await res.text();
-        // Replace standalone NaN with null to make it valid JSON
         const sanitizedText = text.replace(/:\s*NaN/g, ":null");
         const rows = JSON.parse(sanitizedText);
 
@@ -117,14 +112,13 @@ export default function Students() {
           const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
           newData.alumni.btech.push({ year, students: studentNames });
         } else if (file.startsWith("MTech")) {
-          // Correctly handle M.Tech alumni files which are arrays of objects
           const yearMatch = file.match(/(\d{4})/);
           if (yearMatch) {
             const year = parseInt(yearMatch[1], 10);
             const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
             newData.alumni.mtech.push({ year, students: studentNames });
           }
-        } else { // Fallback for simple btech/mtech_year.json format
+        } else {
           const match = file.match(/(btech|mtech)_(\d{4})\.json$/i);
           if (!match) return;
           const [, program, yearStr] = match;
@@ -158,11 +152,12 @@ export default function Students() {
         }, {});
 
         newData.phd = Object.entries(phdByYear).map(([year, students]) => ({ year: parseInt(year, 10), batch: 'Annual', students }));
-        newData.alumni.phd = graduatedStudents; // Keep full object for stats
+        newData.alumni.phd = graduatedStudents;
       } catch (err) {
         console.error("Error loading phd_all.json", err);
       }
     };
+    
     await Promise.all([...studentPromises, ...alumniPromises, loadPhdData()]);
 
     // Sort by year
@@ -173,7 +168,6 @@ export default function Students() {
     );
     newData.alumni.btech.sort((a, b) => b.year - a.year);
     newData.alumni.mtech.sort((a, b) => b.year - a.year);
-    // No need to sort PhD alumni as it's a single group
 
     setData(newData);
   };
@@ -192,27 +186,14 @@ export default function Students() {
 
   useEffect(() => {
     const years = getYears(activeTab);
-    setSelectedYear(years.length > 0 ? years[0] : null);
-  }, [activeTab, data]);
+    if (years.length > 0) {
+      setSelectedYear(years[0]);
+    } else {
+      setSelectedYear(null);
+    }
+  }, [activeTab, data.btech.length, data.mtech.length, data.phd.length]);
 
-  // Get students by tab and year selection
-  const getStudents = (tab, year) => {
-    if (tab === "btech") {
-      const startYear = parseInt(year.split("-")[0], 10);
-      return data.btech.find((b) => b.year === startYear)?.students || [];
-    }
-    if (tab === "mtech") {
-      const startYear = parseInt(year.split("-")[0], 10);
-      return data.mtech.find((m) => m.year === startYear)?.students || [];
-    }
-    if (tab === "phd") {
-      return data.phd.filter((b) => b.year === parseInt(year, 10));
-    }
-    return [];
-  };
-
-  // Derive the students to display directly in the render logic
-  // This avoids state synchronization issues when switching tabs.
+  // Derive the students to display
   const studentsToDisplay = (() => {
     if (!selectedYear || activeTab === 'stats') {
       return [];
@@ -236,17 +217,6 @@ export default function Students() {
   const totalPhdAlumni = data.alumni.phd.length;
   const totalOnRoll = totalBtech + totalMtech + totalPhd;
 
-
-  // Overall ratio pie chart
-  const overallPieData = [
-    { name: "B.Tech Current", value: totalBtech, color: "#0f78be" },
-    { name: "M.Tech Current", value: totalMtech, color: "#10B981" },
-    { name: "Ph.D Current", value: totalPhd, color: "#ffc658" },
-    { name: "B.Tech Alumni", value: totalBtechAlumni, color: "#8884d8" },
-    { name: "M.Tech Alumni", value: totalMtechAlumni, color: "#82ca9d" },
-    { name: "Ph.D. Alumni", value: totalPhdAlumni, color: "#ff8042" },
-  ];
-
   // Program ratio pie chart
   const programRatioPieData = [
     { name: "B.Tech", value: totalBtech, color: "#0f78be" },
@@ -254,7 +224,7 @@ export default function Students() {
     { name: "Ph.D", value: totalPhd, color: "#e99a11" },
   ];
 
-  // BTech bar chart data (year-wise current + alumni)
+  // BTech bar chart data (grouped bars)
   const allBtechYears = [...new Set([
     ...data.btech.map(d => d.year),
     ...data.alumni.btech.map(d => d.year)
@@ -266,7 +236,7 @@ export default function Students() {
     Alumni: data.alumni.btech.find(d => d.year === year)?.students.length || 0,
   }));
 
-  // MTech bar chart data
+  // MTech bar chart data (grouped bars)
   const allMtechYears = [...new Set([
     ...data.mtech.map(d => d.year),
     ...data.alumni.mtech.map(d => d.year)
@@ -278,7 +248,7 @@ export default function Students() {
     Alumni: data.alumni.mtech.find(d => d.year === year)?.students.length || 0,
   }));
 
-  // PhD bar chart data
+  // PhD bar chart data (stacked bars)
   const allPhdYears = [...new Set([
     ...data.phd.map(d => d.year),
     ...data.alumni.phd.map(d => d.Year)
@@ -286,10 +256,9 @@ export default function Students() {
 
   const phdBarData = allPhdYears.map(year => ({
     year: year.toString(),
-    Current: data.phd.find(d => d.year === year)?.students.length || 0,
-    Graduated: data.alumni.phd.filter(d => d.Year === year).length || 0,
+    Current: data.phd.filter(d => d.year === year).reduce((sum, d) => sum + d.students.length, 0),
+    Graduated: data.alumni.phd.filter(d => d.Year === year).length,
   }));
-
 
   return (
     <section className="container mx-auto px-4 sm:px-6 py-12">
@@ -357,117 +326,94 @@ export default function Students() {
       {/* PhD batches */}
       {activeTab === "phd" && selectedYear && (
         <>
-          {studentsToDisplay
-            .map(({ batch, students }) => (
-              <div key={batch} className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 border border-white/30 overflow-hidden">
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-full opacity-50"></div>
-                <h3 className="relative text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">
-                  Ph.D. Scholars
-                </h3>
-                <p className="relative text-gray-500 font-medium mb-8">Batch of {selectedYear}</p>
-                <ul className="relative columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-8 space-y-2">
-                  {students.map((student, i) => (
-                    <li key={i} className="flex items-center gap-3 mb-1 text-gray-700 break-inside-avoid">
-                      <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full flex-shrink-0"></span>
-                      <span>{student}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          {studentsToDisplay.map(({ batch, students }) => (
+            <div key={batch} className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 border border-white/30 overflow-hidden">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-full opacity-50"></div>
+              <h3 className="relative text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">
+                Ph.D. Scholars
+              </h3>
+              <p className="relative text-gray-500 font-medium mb-8">Batch of {selectedYear}</p>
+              <ul className="relative columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-8 space-y-2">
+                {students.map((student, i) => (
+                  <li key={i} className="flex items-center gap-3 mb-1 text-gray-700 break-inside-avoid">
+                    <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full flex-shrink-0"></span>
+                    <span>{student}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </>
       )}
 
       {/* Statistics Tab */}
       {activeTab === "stats" && (
         <div className="space-y-12">
-          {/* B.Tech Statistics Section */}
+          {/* B.Tech Statistics Section - Grouped Bars */}
           <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-indigo-700 text-center">
               B.Tech Statistics
             </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
-              <div>
-                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students by Batch</h4>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={btechBarData.filter(d => d.Current > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="year" />
-                    <YAxis allowDecimals={false} />
-                    <Tooltip />
-                    <Bar dataKey="Current" fill="#0f78be" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Alumni by Batch</h4>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={btechBarData.filter(d => d.Alumni > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="year" />
-                    <YAxis allowDecimals={false} />
-                    <Tooltip />
-                    <Bar dataKey="Alumni" fill="#82ca9d" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
+            <div className="mt-6">
+              <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students vs Alumni by Batch</h4>
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={btechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="year" />
+                  <YAxis allowDecimals={false} />
+                  <Tooltip />
+                  <Legend />
+                  <Bar dataKey="Current" fill="#0f78be" name="Current Students" />
+                  <Bar dataKey="Alumni" fill="#82ca9d" name="Alumni" />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
 
-          {/* M.Tech Statistics Section */}
+          {/* M.Tech Statistics Section - Grouped Bars */}
           <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-green-700 text-center">
               M.Tech Statistics
             </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
-              <div>
-                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students by Batch</h4>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={mtechBarData.filter(d => d.Current > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="year" />
-                    <YAxis allowDecimals={false} />
-                    <Tooltip />
-                    <Bar dataKey="Current" fill="#10B981" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Alumni by Batch</h4>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={mtechBarData.filter(d => d.Alumni > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="year" />
-                    <YAxis allowDecimals={false} />
-                    <Tooltip />
-                    <Bar dataKey="Alumni" fill="#8884d8" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
+            <div className="mt-6">
+              <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students vs Alumni by Batch</h4>
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={mtechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="year" />
+                  <YAxis allowDecimals={false} />
+                  <Tooltip />
+                  <Legend />
+                  <Bar dataKey="Current" fill="#10B981" name="Current Students" />
+                  <Bar dataKey="Alumni" fill="#8884d8" name="Alumni" />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
 
-          {/* PhD Statistics */}
+          {/* PhD Statistics - Stacked Bars */}
           <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-yellow-700 text-center">
               Ph.D Statistics
             </h3>
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={phdBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="year" />
-                <YAxis allowDecimals={false} />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="Current" stackId="a" fill="#ffc658" />
-                <Bar dataKey="Graduated" stackId="a" fill="#ff8042" />
-              </BarChart>
-            </ResponsiveContainer>
+            <div className="mt-6">
+              <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current vs Graduated Scholars by Year (Stacked)</h4>
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={phdBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="year" />
+                  <YAxis allowDecimals={false} />
+                  <Tooltip />
+                  <Legend />
+                  <Bar dataKey="Current" stackId="a" fill="#ffc658" name="Current Scholars" />
+                  <Bar dataKey="Graduated" stackId="a" fill="#ff8042" name="Graduated" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
           </div>
 
-          {/* Pie Charts */}
+          {/* Pie Chart */}
           <div className="flex justify-center pt-8">
-            {/* Program Ratio Pie Chart */}
             <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-3xl border border-gray-200/80">
               <h3 className="text-2xl font-bold mb-4 text-indigo-700 text-center">
                 Current Students Ratio
