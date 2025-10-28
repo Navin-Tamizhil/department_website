@@ -24,7 +24,7 @@ import PeopleLayout from "./pages/People/PeopleLayout";
 import Faculty from "./pages/People/Faculty2";
 import DACMembers from "./pages/People/DACMembers";
 import Staff from "./pages/People/Staff";
-import Students from "./pages/People/Students";
+import Students from "./pages/People/Students/Students";
 import Alumni from "./pages/People/Alumni";
 
 // Other Pages
