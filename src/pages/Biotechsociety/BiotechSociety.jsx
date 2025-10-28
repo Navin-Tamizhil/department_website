@@ -12,7 +12,7 @@ const Biotechsociety = () => {
       year: "",
       course: " M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
-      img: "/society/AshwathKumarB.webp",
+      img: "/department_website/society/AshwathKumarB.webp",
     },                                                      
      {
       name: "Tholkappian R",
@@ -20,8 +20,7 @@ const Biotechsociety = () => {
       year: "",
       course: "M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
-   
-      img: "/society/TholkappianR.webp",
+      img: "/department_website/society/TholkappianR.webp",
     },
      {
       name: "Amritha Varshini S",
@@ -29,7 +28,7 @@ const Biotechsociety = () => {
       year: "",
       course: "M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
-      img: "/society/AmrithaVarshiniS.webp",
+      img: "/department_website/society/AmrithaVarshiniS.webp",
     },
      {
       name: "Keerthana K",
@@ -37,7 +36,7 @@ const Biotechsociety = () => {
       year: "",
       course: "M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
-      img: "/society/KeerthanaK.webp",
+      img: "/department_website/society/KeerthanaK.webp",
     },
      {
       name: " Yashika Shadija",
@@ -45,7 +44,7 @@ const Biotechsociety = () => {
       year: "",
       course: "M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
-      img: "/society/YashikaShadija.jpeg",
+      img: "/department_website/society/YashikaShadija.jpeg",
     },
      {
       name: "Harshita Bansal",
@@ -53,7 +52,7 @@ const Biotechsociety = () => {
       year: "",
       course: "M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
-      img: "/society/HarshitaBansal.jpg",
+      img: "/department_website/society/HarshitaBansal.jpg",
     },
       {
       name: "Vasistha Krishna C",
@@ -61,7 +60,7 @@ const Biotechsociety = () => {
       year: "",
       course: "B.Tech. Biotechnology and Bioinformaticsy",
       dept: "Deptartment of Biotechnology",
-      img: "/society/VasisthaKrishnaC.jpeg",
+      img: "/department_website/society/VasisthaKrishnaC.jpeg",
     },
        {
       name: "Prachi Tailor",
@@ -69,7 +68,7 @@ const Biotechsociety = () => {
       year: "",
       course: "M.Tech. Medical Biotechnology",
       dept: "Deptartment of Biotechnology",
-      img: "/society/prachitailor.jpg",
+      img: "/department_website/society/prachitailor.jpg",
     },
     //  {
     //   name: "aaa",
@@ -140,7 +139,7 @@ const Biotechsociety = () => {
               className="bg-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl flex flex-col items-center w-full max-w-sm"
             >
               <img
-                src="/faculty/himanshu_joshi.jpeg"
+                src="/department_website/faculty/himanshu_joshi.jpeg"
                 alt="Dr. Himanshu Joshi"
                 className="w-40 h-48 rounded-lg object-cover border-4 border-indigo-200 shadow-md"
               />
