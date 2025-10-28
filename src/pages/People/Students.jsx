@@ -117,12 +117,12 @@ export default function Students() {
           const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
           newData.alumni.btech.push({ year, students: studentNames });
         } else if (file.startsWith("MTech")) {
-          // Correctly parse start year from M.Tech alumni filenames like "MTech_Alumni_2012___2014_Batch.json"
-          const yearMatch = file.match(/_(\d{4})___/);
+          // Correctly handle M.Tech alumni files which are arrays of objects
+          const yearMatch = file.match(/(\d{4})/);
           if (yearMatch) {
             const year = parseInt(yearMatch[1], 10);
             const studentNames = Array.isArray(rows) ? rows.map(row => capitalizeName(row.Name || Object.values(row)[0])) : [];
-            newData.alumni.mtech.push({ year, students: studentNames }); 
+            newData.alumni.mtech.push({ year, students: studentNames });
           }
         } else { // Fallback for simple btech/mtech_year.json format
           const match = file.match(/(btech|mtech)_(\d{4})\.json$/i);
@@ -210,6 +210,22 @@ export default function Students() {
     }
     return [];
   };
+
+  // Derive the students to display directly in the render logic
+  // This avoids state synchronization issues when switching tabs.
+  const studentsToDisplay = (() => {
+    if (!selectedYear || activeTab === 'stats') {
+      return [];
+    }
+    if (activeTab === 'phd') {
+      return data.phd.filter((d) => d.year === parseInt(selectedYear, 10));
+    }
+    if (activeTab === 'btech' || activeTab === 'mtech') {
+      const startYear = parseInt(String(selectedYear).split('-')[0], 10);
+      return data[activeTab].find((b) => b.year === startYear)?.students || [];
+    }
+    return [];
+  })();
 
   // Calculate statistics
   const totalBtech = data.btech.reduce((acc, d) => acc + d.students.length, 0);
@@ -328,7 +344,7 @@ export default function Students() {
           </h3>
           <p className="relative text-gray-500 font-medium mb-8">{tabs.find(t => t.key === activeTab)?.label}</p>
           <ul className="relative columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-x-8 space-y-2">
-            {Array.isArray(getStudents(activeTab, selectedYear)) && getStudents(activeTab, selectedYear).map((student, i) => (
+            {Array.isArray(studentsToDisplay) && studentsToDisplay.map((student, i) => (
               <li key={i} className="flex items-center gap-3 mb-1 text-gray-700 break-inside-avoid">
                 <span className="w-1.5 h-1.5 bg-indigo-400 rounded-full flex-shrink-0"></span>
                 <span>{student}</span>
@@ -341,8 +357,7 @@ export default function Students() {
       {/* PhD batches */}
       {activeTab === "phd" && selectedYear && (
         <>
-          {data.phd
-            .filter((d) => d.year === parseInt(selectedYear, 10))
+          {studentsToDisplay
             .map(({ batch, students }) => (
               <div key={batch} className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8 border border-white/30 overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-full opacity-50"></div>
