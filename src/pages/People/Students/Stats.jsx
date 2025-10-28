@@ -1,4 +1,5 @@
 // src/pages/People/Stats.jsx
+import { useOutletContext } from "react-router-dom";
 import {
   useOutletContext,
   ResponsiveContainer,
