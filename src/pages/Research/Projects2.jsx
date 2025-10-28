@@ -21,7 +21,7 @@ export default function Projects() {
 
   const loadProjects = async () => {
     try {
-      const res = await fetch("/research_excel/ongoing_projects.xlsx"); // ✅ Use correct file path
+      const res = await fetch("/department_website/research_excel/ongoing_projects.xlsx"); // ✅ Use correct file path
       if (res.ok) {
         const buf = await res.arrayBuffer();
         const wb = XLSX.read(buf, { type: "array" });

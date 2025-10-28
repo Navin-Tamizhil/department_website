@@ -22,7 +22,7 @@ export default function Projects() {
 
   const loadProjects = async () => {
     try {
-      const res = await fetch("//department_website/research_excel/projects_all.xlsx");
+      const res = await fetch("/department_website/research_excel/projects_all.xlsx");
       if (!res.ok) throw new Error("HTTP error " + res.status);
 
       const buf = await res.arrayBuffer();

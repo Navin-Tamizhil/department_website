@@ -63,7 +63,7 @@ export default function Collaborations() {
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           <div className="flex-shrink-0 w-full lg:w-[720px] h-[400px] rounded-lg overflow-hidden shadow-md bg-white">
             <img
-              src="/collabrations_images/international_collabrations.jpg"
+              src="/department_website/collabrations_images/international_collabrations.jpg"
               alt="International Collaborations"
               className="w-full h-full object-cover"
             />
@@ -100,7 +100,7 @@ export default function Collaborations() {
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           <div className="flex-shrink-0 w-full lg:w-[400px] h-[400px] rounded-lg overflow-hidden shadow-md bg-white">
             <img
-              src="/collabrations_images/national_collabration.jpg"
+              src="/department_website/collabrations_images/national_collabration.jpg"
               alt="National Collaborations"
               className="w-full h-full object-cover"
             />
