@@ -112,7 +112,7 @@ const Header = () => {
           className="flex items-center space-x-2 xl:space-x-3 hover:opacity-90 transition-opacity duration-200 pl-3 sm:pl-4 lg:pl-6"
         >
           <img
-            src={`${import.meta.env.BASE_URL}iithlogo.png`} 
+            src={`${import.meta.env.BASE_URL}iithlogo.png`}
             alt="IIT Hyderabad Logo"
             className="h-12 w-12 sm:h-14 sm:w-14 object-contain flex-shrink-0"
           />

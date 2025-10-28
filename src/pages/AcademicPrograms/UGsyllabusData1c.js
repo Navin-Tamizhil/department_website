@@ -1,15 +1,15 @@
 // src/pages/AcademicPrograms/UGsyllabusData.js
 import * as XLSX from "xlsx";
 
-const syllabusFiles = [
-  "/academics_excel/ug_semester1.xlsx",
-  "/academics_excel/ug_semester2.xlsx",
-  "/academics_excel/ug_semester3.xlsx",
-  "/academics_excel/ug_semester4.xlsx",
-  "/academics_excel/ug_semester5.xlsx",
-  "/academics_excel/ug_semester6.xlsx",
-  "/academics_excel/ug_semester7.xlsx",
-  "/academics_excel/ug_semester8.xlsx",
+const syllabusFiles = [ 
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester1.xlsx`,
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester2.xlsx`,
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester3.xlsx`,
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester4.xlsx`,
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester5.xlsx`,
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester6.xlsx`,
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester7.xlsx`,
+  `${import.meta.env.BASE_URL}academics_excel/ug_semester8.xlsx`,
 ];
 
 export async function ugloadSyllabus() {
@@ -28,7 +28,8 @@ export async function ugloadSyllabus() {
               "Course Code": "Loading...",
               "Course Name": "Loading course data...",
               "Credits": "-",
-              "Type": "-"
+              "Type": "-",
+              "Justification:": "Loading justification...", // Added Justification
             }
           ],
         });
@@ -48,7 +49,8 @@ export async function ugloadSyllabus() {
             "Course Code": "No data",
             "Course Name": "No courses available",
             "Credits": "-",
-            "Type": "-"
+            "Type": "-",
+            "Justification:": "No justification available.", // Added Justification
           }
         ],
       });
@@ -62,7 +64,8 @@ export async function ugloadSyllabus() {
             "Course Code": "Error",
             "Course Name": "Failed to load data",
             "Credits": "-",
-            "Type": "-"
+            "Type": "-",
+            "Justification:": "Error loading justification.", // Added Justification
           }
         ],
       });

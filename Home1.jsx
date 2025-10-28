@@ -8,13 +8,13 @@ import { eventsData } from "../Events/eventsData";
 import { lifeAtDeptImages } from "./lifeAtDeptImages";
 
 export default function Home() {
-  const images = [ 
-    `${import.meta.env.BASE_URL}images/home_background.jpg`,
-    `${import.meta.env.BASE_URL}images/image2.jpg`,
-    `${import.meta.env.BASE_URL}images/image3.jpg`,
-    `${import.meta.env.BASE_URL}images/image4.jpg`,
-    `${import.meta.env.BASE_URL}images/image5.jpg`,
-  ];
+const images = [
+  `${import.meta.env.BASE_URL}images/home_background.jpg`,
+  `${import.meta.env.BASE_URL}images/image2.jpg`,
+  `${import.meta.env.BASE_URL}images/image3.jpg`,
+  `${import.meta.env.BASE_URL}images/image4.jpg`,
+  `${import.meta.env.BASE_URL}images/image5.jpg`,
+];
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef(null);
 
@@ -110,8 +110,7 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           {/* Left - Image */}
           <div className="flex justify-center">
-            <div className="relative group"> 
-              <div className="absolute -inset-3 bg-gradient-to-tr from-pink-400 via-indigo-400 to-purple-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition"></div>
+            <div className="relative group">
               <img
                 src={`${import.meta.env.BASE_URL}images/AB1_medium.jpg`}
                 alt="Head of Department"
@@ -169,7 +168,7 @@ export default function Home() {
                 Download our brochure to explore our programs, research, and facilities in detail.
               </p>
             </div>
-            <a href={`${import.meta.env.BASE_URL}footer/Dept_brouchere.pdf`} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-indigo-700 font-bold rounded-full shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300"> 
+            <a href={`${import.meta.env.BASE_URL}footer/Dept_brouchere.pdf`} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-indigo-700 font-bold rounded-full shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300">
               <Download className="w-5 h-5" />
               <span>Download Brochure</span>
             </a>
@@ -377,8 +376,8 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
       <div className="columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">
         {lifeAtDeptImages.map((image, index) => (
           <div key={index} className="group relative break-inside-avoid cursor-pointer" onClick={() => setSelectedImageIndex(index)}>
-            <img 
-              src={`${import.meta.env.BASE_URL}${image.src}`}
+            <img
+              src={`${import.meta.env.BASE_URL}${image.src.substring(1)}`}
               alt={`Life at Department - Image ${index + 1}`}
               className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
               loading="lazy"
@@ -427,7 +426,7 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
 
           <div className="relative max-w-4xl max-h-[90vh] p-4">
             <img
-              src={`${import.meta.env.BASE_URL}${lifeAtDeptImages[selectedImageIndex].src}`} 
+              src={`${import.meta.env.BASE_URL}${lifeAtDeptImages[selectedImageIndex].src.substring(1)}`}
               alt={`Life at Department - Image ${selectedImageIndex + 1}`}
               className="w-full h-full object-contain rounded-lg"
             />
