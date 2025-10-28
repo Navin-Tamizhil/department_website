@@ -25,6 +25,10 @@ import Faculty from "./pages/People/Faculty2";
 import DACMembers from "./pages/People/DACMembers";
 import Staff from "./pages/People/Staff";
 import Students from "./pages/People/Students/Students";
+import BTechStudents from "./pages/People/Students/BTechStudents";
+import MTechStudents from "./pages/People/Students/MTechStudents";
+import PhDStudents from "./pages/People/Students/PhDStudents";
+import Stats from "./pages/People/Students/Stats";
 import Alumni from "./pages/People/Alumni";
 
 // Other Pages
@@ -66,7 +70,13 @@ function App() {
             <Route path="faculty" element={<Faculty />} />
             <Route path="dacmembers" element={<DACMembers />} />
             <Route path="staff" element={<Staff />} />
-            <Route path="students" element={<Students />} />
+               <Route path="students" element={<Students />}>
+                        <Route index element={<BTechStudents />} />
+                        <Route path="btech" element={<BTechStudents />} />
+                        <Route path="mtech" element={<MTechStudents />} />
+                        <Route path="phd" element={<PhDStudents />} />
+                        <Route path="stats" element={<Stats />} />
+                      </Route>
             <Route path="alumni" element={<Alumni />} />
           </Route>
 

@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom"; 
 
 export default function PhDStudents() {
   const { data } = useOutletContext();
   const [selectedYear, setSelectedYear] = useState(null);
 
   useEffect(() => {
-    if (data.phd.length > 0) {
+    if (data && data.phd.length > 0) {
       setSelectedYear(data.phd[0].year);
     }
   }, [data.phd]);
 
-  if (!data.phd.length) return <p className="text-center py-8">No Ph.D data available.</p>;
+  if (!data || !data.phd.length) return <p className="text-center py-8">No Ph.D data available.</p>;
 
   const selected = data.phd.filter((p) => p.year === selectedYear);
 

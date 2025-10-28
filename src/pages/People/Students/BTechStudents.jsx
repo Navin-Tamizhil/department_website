@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom"; 
 
 export default function BTechStudents() {
   const { data } = useOutletContext();
   const [selectedYear, setSelectedYear] = useState(null);
 
   useEffect(() => {
-    if (data.btech.length > 0) {
+    if (data && data.btech.length > 0) {
       setSelectedYear(data.btech[0].year);
     }
   }, [data.btech]);
 
-  if (!data.btech.length) return <p className="text-center py-8">No B.Tech data available.</p>;
+  if (!data || !data.btech.length) return <p className="text-center py-8">No B.Tech data available.</p>;
 
   const selected = data.btech.find((b) => b.year === selectedYear);
 
