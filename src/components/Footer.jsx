@@ -79,17 +79,16 @@ export default function Footer() {
         <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
           <p>© {new Date().getFullYear()} Department of Biotechnology, IIT Hyderabad. All Rights Reserved.</p>
           <p className="mt-1">Last Updated: {new Date().toLocaleDateString("en-IN")}</p>
-          <p className="mt-4">
-    Designed, Developed & Maintained by the BT Web Team</p>
-  <p className="mt-1">
-    For feedback or technical issues, please contact{" "}
-    <a
-      href="mailto:naveenprasath.t.bt@iith.ac.in"
-      className="text-indigo-400 hover:underline"
-    >
-      naveenprasath.t.bt@iith.ac.in
-    </a>
-  </p>
+          <p className="mt-4">Designed, Developed & Maintained by the BT Web Team</p>
+          <p className="mt-1">
+            For feedback or technical issues, please contact{" "}
+            <a
+              href="mailto:web.bt@iith.ac.in"
+              className="text-indigo-400 hover:underline"
+            >
+              web.bt@iith.ac.in
+            </a>
+          </p>
         </div>
       </div>
     </footer>

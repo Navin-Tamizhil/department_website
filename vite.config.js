@@ -4,11 +4,11 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+   base: '/department_website/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/department_website/',
+ 
 })
-
