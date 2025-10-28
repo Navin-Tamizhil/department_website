@@ -14,7 +14,7 @@ export default function Awards() {
 
     for (const type of ["faculty", "students"]) {
       try {
-        const res = await fetch(`/awards_excel/${type}_awards.xlsx`);
+        const res = await fetch(`/department_website/awards_excel/${type}_awards.xlsx`);
         if (res.ok) {
           const buf = await res.arrayBuffer();
           const wb = XLSX.read(buf, { type: "array" });

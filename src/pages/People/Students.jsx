@@ -76,7 +76,7 @@ export default function Students() {
     // Load student files
     const studentPromises = files.map(async (file) => { // e.g., btech_2022.json
       try {
-        const res = await fetch(`/students_excel/${file}`);
+        const res = await fetch(`/department_website/students_excel/${file}`);
         if (!res.ok) {
           console.warn(`Failed to fetch student file: ${file}`);
           return;
@@ -140,7 +140,7 @@ export default function Students() {
     // Load and process the single PhD data file
     const loadPhdData = async () => {
       try {
-        const res = await fetch(`/students_excel/phd_all.json`);
+        const res = await fetch(`/department_website/students_excel/phd_all.json`);
         if (!res.ok) {
           console.warn(`Failed to fetch phd_all.json`);
           return;

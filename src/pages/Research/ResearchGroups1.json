@@ -12,7 +12,7 @@
       { "name": "Dr. Indranil Malik", "website": "https://sites.google.com/bt.iith.ac.in/malik-lab/home" }
     ],
 
-    "images": "/research_areas/structural_biology.jpeg"
+    "images": "/department_website/research_areas/structural_biology.jpeg"
   },
   {
     "id": "group2",
@@ -28,7 +28,7 @@
 
     ],
 
-    "images": "/research_areas/cancer_biology.jpeg "
+    "images": "/department_website/research_areas/cancer_biology.jpeg "
   },
   {
     "id": "group3",
@@ -46,7 +46,7 @@
        { "name": "Dr. Savita Devi", "website": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/" }
     ],
 
-    "images": "/research_areas/biology_disease.jpeg"
+    "images": "/department_website/research_areas/biology_disease.jpeg"
   },
   {
     "id": "group4",
@@ -60,7 +60,7 @@
      { "name": "Dr. Ashish Misra", "website": "https://cgrblab.bt.iith.ac.in/" }
     ],
 
-    "images": "/research_areas/bigdata.jpeg"
+    "images": "/department_website/research_areas/bigdata.jpeg"
   },
   {
     "id": "group5",
@@ -74,7 +74,7 @@
     { "name": "Dr. Savita Devi", "website": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing/" }
     ],
 
-    "images": "/research_areas/bioprocess.jpeg"
+    "images": "/department_website/research_areas/bioprocess.jpeg"
   }
 
 

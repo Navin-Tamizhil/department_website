@@ -21,7 +21,7 @@ export default function Projects() {
 
   const loadProjects = async () => {
     try {
-      const res = await fetch(`/achivements_excel/publications_data.xlsx`);
+      const res = await fetch(`/department_website/achivements_excel/publications_data.xlsx`);
       if (res.ok) {
         const buf = await res.arrayBuffer();
         const wb = XLSX.read(buf, { type: "array" });

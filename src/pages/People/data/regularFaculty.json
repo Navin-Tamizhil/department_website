@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Dr. Althuri Avanthi",
     "designation": "Assistant Professor",
-    "image": "/faculty/althuri_avanthi.jpg",
+    "image": "/department_website/faculty/althuri_avanthi.jpg",
     "email": "a.avanthi@bt.iith.ac.in",
     "phone": "",
     "area": ["Biofuels", "Biochemicals, and Biomaterials",
@@ -11,14 +11,14 @@
 "Nanobiotechnology and Hydrothermal Liquefaction",
 "Waste valorisation and Circular economy"],
 "labWebsite" : "https://sites.google.com/bt.iith.ac.in/integratedbioprocesstechnology/home",
-"teamPicture": "/faculty/group/alturi_avanthi.jpg"
+"teamPicture": "/department_website/faculty/group/alturi_avanthi.jpg"
   },
   
   {
    "id": 2,
     "name": "Dr. Anamika Bhargava",
     "designation": "Professor and Head Of the Department",
-    "image": "/faculty/anamika_bhargava.jpg",
+    "image": "/department_website/faculty/anamika_bhargava.jpg",
     "email": "abhargava@bt.iith.ac.in",
     "phone": "+91 (40) 2301 8453",
     "area": ["Voltage-gated calcium channels in health and disease",
@@ -34,7 +34,7 @@
       "id": 3,
     "name": "Dr. Rajakumara Eerappa",
     "designation": "Professor",
-    "image": "/faculty/rajakumara_eerappa.jpg",
+    "image": "/department_website/faculty/rajakumara_eerappa.jpg",
     "email": "eraj@bt.iith.ac.in",
     "phone": "+91 (40) 2301 7002",
     "area": ["Epigenetics, DNA repair and allosteric regulation of receptors and enzymes",
@@ -49,7 +49,7 @@
   "id": 4,
   "name": "Dr. Savita Devi",
   "designation": "Assistant Professor",
-  "image": "/faculty/savita_devi.jpg",
+  "image": "/department_website/faculty/savita_devi.jpg",
   "email": "savitadevi@bt.iith.ac.in",
   "phone": "",
   "area": [
@@ -59,7 +59,7 @@
     "Innate immune sensors and Cancer"
   ],
   "labWebsite": "https://sites.google.com/bt.iith.ac.in/savitadevi-lab?usp=sharing",
-  "teamPicture": "/faculty/group/savita_devi_group.jpg"
+  "teamPicture": "/department_website/faculty/group/savita_devi_group.jpg"
 },
 
   
@@ -67,7 +67,7 @@
    "id": 5,
     "name": "Dr. Himanshu Joshi",
     "designation": "Assistant Professor",
-    "image": "/faculty/himanshu_joshi.png",
+    "image": "/department_website/faculty/himanshu_joshi.png",
     "email": "hjoshi@bt.iith.ac.in",
     "phone": "",
     "area": ["DNA Nanotechnology",
@@ -76,14 +76,14 @@
 "Nanoparticles and biological materials",
 "Artificial water channels"],
 "labWebsite" : "https://sites.google.com/view/molecular-simulation-lab",
-"teamPicture": "/faculty/group/himanshu_joshi_group.jpg"
+"teamPicture": "/department_website/faculty/group/himanshu_joshi_group.jpg"
   },
 
 {
    "id": 6,
     "name": "Dr. Rahul Kumar",
     "designation": "Assistant Professor",
-    "image": "/faculty/rahul_kumar.jpeg",
+    "image": "/department_website/faculty/rahul_kumar.jpeg",
     "email": "rahulk@bt.iith.ac.in",
     "phone": "+91 (40) 2301 7002",
     "area": ["Radiogenomics based biomarkers for glioblastoma prognosis and diagnosis",
@@ -97,7 +97,7 @@
    "id": 7,
     "name": "Dr. Indranil Malik",
     "designation": "Assistant Professor",
-    "image": "/faculty/indranil_malik.png",
+    "image": "/department_website/faculty/indranil_malik.png",
     "email": "indranil@bt.iith.ac.in",
     "phone": "",
     "area": ["Repeat Expansion Disorders",
@@ -105,17 +105,17 @@
 "Developing Drosophila models of human neurodegenerative diseases",
 "RNA structure and translational regulation"],
 "labWebsite" : "https://sites.google.com/bt.iith.ac.in/malik-lab/home",
-"teamPicture": "/faculty/group/indranil_malik_group.jpg"
+"teamPicture": "/department_website/faculty/group/indranil_malik_group.jpg"
   },
   
   {
    "id": 8,
     "name": "Dr. Gunjan Mehta",
     "designation": "Assistant Professor",
-    "image": "/faculty/gunjan_mehta.jpg",
+    "image": "/department_website/faculty/gunjan_mehta.jpg",
     "email": "gunjanmehta@bt.iith.ac.in",
     "phone": "+91 (40) 2301 6159",
-    "teamPicture": "/faculty/group/gunjan_mehta_lab.png",
+    "teamPicture": "/department_website/faculty/group/gunjan_mehta_lab.png",
     
     "area": ["Chromosome Dynamics and Cell Division",
 "Gene Regulation",
@@ -129,7 +129,7 @@
    "id": 9,
     "name": "Dr. Ashish Misra",
     "designation": "Assistant Professor",
-    "image": "/faculty/ashish_misra.jpg",
+    "image": "/department_website/faculty/ashish_misra.jpg",
     "email": "ashishmisra@bt.iith.ac.in",
     "phone": "+91 (40) 2301 6196",
     "area": ["Pre-clinical validation of tissue-based prognostic and predictive biomarkers in therapy resistant Indian prostate cancer patients",
@@ -137,14 +137,14 @@
 "Constructing the Genomic and Transcriptomic landscape of Indian pediatric B-cell Acute Lymphoblastic Leukemia patients to identify novel prognostic and therapeutic targets.",
 "Understanding the role of Long non-coding RNAs and alternative splicing in cancer progression"],
 "labWebsite" : "https://cgrblab.bt.iith.ac.in/",
-"teamPicture": "/faculty/group/ashish_mishra_group.jpg"
+"teamPicture": "/department_website/faculty/group/ashish_mishra_group.jpg"
   },
 
         {
    "id": 10,
     "name": "Dr. Basant Kumar Patel",
     "designation": "Professor",
-    "image": "/faculty/basant_kumar_patel.jpg",
+    "image": "/department_website/faculty/basant_kumar_patel.jpg",
     "email": "basantkpatel@bt.iith.ac.in",
     "phone": "+91 (40) 2301 6196",
     "area": ["Protein misfolding- mechanisms and prevention",
@@ -156,7 +156,7 @@
   "id": 11,
   "name": "Dr. Raghavendra N.K.",
   "designation": "Associate Professor",
-  "image": "/faculty/nk_raghavendra.jpg",
+  "image": "/department_website/faculty/nk_raghavendra.jpg",
   "email": "raghunk@bt.iith.ac.in",
   "phone": "+91 (40) 2301 7056",
   "area": ["Human–virus: protein-protein and DNA-protein interaction"],
@@ -168,7 +168,7 @@
    "id": 12,
     "name": "Dr. Thenmalarchelvi Rathinavelan",
     "designation": "Professor",
-    "image": "/faculty/thenmalarchelvi_rathinavelan.jpg",
+    "image": "/department_website/faculty/thenmalarchelvi_rathinavelan.jpg",
     "email": "tr@bt.iith.ac.in",
     "phone": "+91 (40) 2301 7067",
     "area": ["Molecular mechanism behind microsatellite repeat expansion disorders",
@@ -185,18 +185,18 @@
   "id": 13,
   "name": "Dr. Sandipan Ray",
   "designation": "Assistant Professor",
-  "image": "/faculty/sandipan_ray.jpg",
+  "image": "/department_website/faculty/sandipan_ray.jpg",
   "email": "sandipan.ray@bt.iith.ac.in",
   "phone": "+91 (40) 2301 6157",
   "area": ["Circadian rhythms and sleep Neuropharmacology", "Aging", "Systems biology", "Mental health"],
   "labWebsite": "https://www.circadianlab-iith.com/",
-  "teamPicture": "/faculty/group/sandeepan_ray_group.avif"
+  "teamPicture": "/department_website/faculty/group/sandeepan_ray_group.avif"
 },
           {
   "id": 14,
   "name": "Dr. Anindya Roy",
   "designation": "Professor",
-  "image": "/faculty/anindya_roy.jpg",
+  "image": "/department_website/faculty/anindya_roy.jpg",
   "email": "anindya@bt.iith.ac.in",
   "phone": "+91 (40) 2301 6083",
   "area": [
@@ -211,19 +211,19 @@
   "id": 15,
   "name": "Dr. Narahari Sastry G., FNA, FNASc, FASc, FRSC",
   "designation": "Professor",
-  "image": "/faculty/g_narahari_sastry.jpg",
+  "image": "/department_website/faculty/g_narahari_sastry.jpg",
   "email": "gnsastry@bt.iith.ac.in",
   "phone": "+91 (40) 2301 6083",
   "area": ["Computational modelling and artificial intelligence from basic to translational research"],
   "labWebsite": "https://sites.google.com/view/gns-fifthparadigmlab/",
-  "teamPicture": "/faculty/group/g_narahari_sastry_group.jpg"
+  "teamPicture": "/department_website/faculty/group/g_narahari_sastry_group.jpg"
 }
 ,
             {
   "id": 16,
   "name": "Dr. Gaurav Sharma",
   "designation": "Assistant Professor",
-  "image": "/faculty/gaurav_sharma.png",
+  "image": "/department_website/faculty/gaurav_sharma.png",
   "email": "sharmag@bt.iith.ac.in",
   "phone": "+91 (40) 2301 6083",
   "area": [
@@ -242,7 +242,7 @@
   "id": 17,
   "name": "Dr. Abhishek Subramanian",
   "designation": "Assistant Professor",
-  "image": "/faculty/abhishek_subramanian.jpg",
+  "image": "/department_website/faculty/abhishek_subramanian.jpg",
   "email": "abhisheks@bt.iith.ac.in",
   "phone": "",
   "area": [
@@ -254,7 +254,7 @@
     "Parasitology and immunology"
   ],
   "labWebsite": "https://sites.google.com/bt.iith.ac.in/comp-bio-abhishek/home",
-  "teamPicture": "/faculty/group/abhishek_subramaniam.jpg"
+  "teamPicture": "/department_website/faculty/group/abhishek_subramaniam.jpg"
 }
 
 

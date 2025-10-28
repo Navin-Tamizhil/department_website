@@ -45,7 +45,7 @@ export default function Alumni() {
 
     for (const file of files) {
       try {
-        const res = await fetch(`/alumini_excel/${file}`);
+        const res = await fetch(`/department_website/alumini_excel/${file}`);
         if (!res.ok) continue;
         
         const text = await res.text();
@@ -74,7 +74,7 @@ export default function Alumni() {
 
     // Load and process the single PhD data file
     try {
-      const res = await fetch(`/alumini_excel/PhD_Alumini.json`);
+      const res = await fetch(`/department_website/alumini_excel/PhD_Alumini.json`);
       if (res.ok) {
         const text = await res.text();
         const sanitizedText = text.replace(/:\s*NaN/g, ":null");
