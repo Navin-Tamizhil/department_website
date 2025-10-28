@@ -99,7 +99,7 @@ export default function Students() {
     // Load alumni files
     const alumniPromises = alumniFiles.map(async (file) => { // e.g., mtech_2012.json
       try {
-        const res = await fetch(`/alumini_excel/${file}`);
+        const res = await fetch(`/department_website/alumini_excel/${file}`);
         if (!res.ok) {
           console.warn(`Failed to fetch alumni file: ${file}`);
           return;
@@ -278,7 +278,7 @@ export default function Students() {
   return (
     <section className="container mx-auto px-4 sm:px-6 py-12">
       <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-500">
-        Our Students on Roll
+        Our Students
       </h1>
 
       {/* Tabs */}
@@ -366,40 +366,70 @@ export default function Students() {
       {/* Statistics Tab */}
       {activeTab === "stats" && (
         <div className="space-y-12">
-          {/* BTech Statistics */}
+          {/* B.Tech Statistics Section */}
           <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-indigo-700 text-center">
               B.Tech Statistics
             </h3>
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={btechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="year" />
-                <YAxis allowDecimals={false} />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="Current" fill="#0f78be" />
-                <Bar dataKey="Alumni" fill="#82ca9d" />
-              </BarChart>
-            </ResponsiveContainer>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students by Batch</h4>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={btechBarData.filter(d => d.Current > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="year" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Bar dataKey="Current" fill="#0f78be" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Alumni by Batch</h4>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={btechBarData.filter(d => d.Alumni > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="year" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Bar dataKey="Alumni" fill="#82ca9d" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
-          {/* MTech Statistics */}
+          {/* M.Tech Statistics Section */}
           <div className="bg-white shadow-xl rounded-2xl p-6 border border-gray-200/80">
             <h3 className="text-2xl font-bold mb-4 text-green-700 text-center">
               M.Tech Statistics
             </h3>
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={mtechBarData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="year" />
-                <YAxis allowDecimals={false} />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="Current" fill="#10B981" />
-                <Bar dataKey="Alumni" fill="#8884d8" />
-              </BarChart>
-            </ResponsiveContainer>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Current Students by Batch</h4>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={mtechBarData.filter(d => d.Current > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="year" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Bar dataKey="Current" fill="#10B981" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold mb-4 text-gray-700 text-center">Alumni by Batch</h4>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={mtechBarData.filter(d => d.Alumni > 0)} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="year" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
+                    <Bar dataKey="Alumni" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           {/* PhD Statistics */}
