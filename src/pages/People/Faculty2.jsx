@@ -99,10 +99,7 @@ const FacultyCard = ({ person, isOpen, onToggle, isHighlighted, cardRef, showGro
             {/* Right side: Group Picture */}
             {showGroupPicture && person.teamPicture && person.teamPicture.trim() !== "" && (
   <div className="space-y-4 md:col-span-1">
-    <h4 className="font-semibold text-indigo-800 mb-2 flex items-center gap-2 text-sm">
-      <Users className="w-4 h-4" />
-      Group Picture
-    </h4>
+    
     <div className="w-full aspect-video bg-gray-100 rounded-xl flex items-center justify-center overflow-hidden shadow-inner">
       <img src={person.teamPicture} alt={`${person.name}'s Group`} className="w-full h-full object-cover" />
     </div>
