@@ -3,14 +3,14 @@
     "id": 1,
     "name": "Dr. Shekhar C. Mande",
     "designation": "Distinguished Professor",
-    "image": "/associate_faculty/shekhar_c_mande.jpg",
+    "image": "/department_website/associate_faculty/shekhar_c_mande.jpg",
     "area" : ["Structural and computational biology", "Genomics and bioinformatics"]
   }]
  export const  AffiliatedFaculty = [{
     "id": 2,
     "name": "Dr. Neeraj Kumar",
     "designation": "Assistant Professor, Liberal Arts",
-    "image": "/associate_faculty/neeraj_kumar.jpeg",
+    "image": "/department_website/associate_faculty/neeraj_kumar.jpeg",
     "area": [
       "Sensorimotor Learning",
       "Motor Memory",
