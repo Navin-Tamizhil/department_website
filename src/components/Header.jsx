@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "/department_website/iithlogo.png"; // ✅ fixed path for GitHub Pages
+import Logo from "./iithlogo.png"; 
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
