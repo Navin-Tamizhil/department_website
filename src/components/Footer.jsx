@@ -83,10 +83,10 @@ export default function Footer() {
           <p className="mt-1">
             For feedback or technical issues, please contact{" "}
             <a
-              href="mailto:web.bt@iith.ac.in"
+              href="mailto:naveenprasath.t@bt.iith.ac.in"
               className="text-indigo-400 hover:underline"
             >
-              web.bt@iith.ac.in
+              naveenprasath.t@bt.iith.ac.in
             </a>
           </p>
         </div>
