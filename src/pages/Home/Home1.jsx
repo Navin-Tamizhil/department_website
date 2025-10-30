@@ -6,6 +6,7 @@ import EventsModified from "./Home_events";
 import { admissions } from "../AcademicPrograms/admissionData";
 import { eventsData } from "../Events/eventsData";
 import { lifeAtDeptImages } from "./lifeAtDeptImages";
+import SafeImage from "./SafeImage";
 
 export default function Home() {
   const images = [
@@ -376,18 +377,13 @@ function AnnouncementsEventsTabs({ scrollingPaused, handleItemClick, announcemen
     <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4 sm:p-6 border border-white/30">
       <div className="columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">
         {lifeAtDeptImages.map((image, index) => (
-          <div key={index} className="group relative break-inside-avoid cursor-pointer" onClick={() => setSelectedImageIndex(index)}>
-            <img 
-              src={`/department_website${image.src}`}
-              alt={`Life at Department - Image ${index + 1}`}
-              className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
-              <p className="text-white text-sm font-bold">View Image</p>
-             
-            </div>
-          </div>
+          <SafeImage
+            key={index}
+            src={`/department_website${image.src}`}
+            alt={`Life at Department - Image ${index + 1}`}
+            className="w-full h-auto object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+            onClick={() => setSelectedImageIndex(index)}
+          />
         ))}
       </div>
     </div>
