@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="mb-8">
           <h5 className="text-lg font-semibold text-white text-center">Quick Links</h5>
           <div className="mt-2 mb-6 h-px w-20 bg-indigo-400 mx-auto"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
             {columns.map((column, colIndex) => (
               <ul key={colIndex} className="space-y-2 text-sm">
                 {column.map((link, linkIndex) => (
