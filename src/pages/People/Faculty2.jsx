@@ -307,7 +307,7 @@ const Faculty = () => {
             {/* Associate Professors */}
             {associateProfessors.length > 0 && (
               <div className="mb-20">
-                <h3 className="text-2xl font-semibold mb-6 text-center text-indigo-800">Associate Professors</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-center text-indigo-800">Associate Professor</h3>
                 <FacultySection
                   title=""
                   data={associateProfessors}
