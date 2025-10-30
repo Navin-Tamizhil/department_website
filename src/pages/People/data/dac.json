@@ -4,7 +4,8 @@
     "id": 1,
     "name": "Prof. Dulal Panda",
     "designation": "Director, NIPER Mohali",
-    "image": "/department_website/DAC/dulal_panda.png"
+    "image": "/department_website/DAC/dulal_panda.png",
+    "link" : "https://www.bio.iitb.ac.in/people/faculty/panda-d/"
   },
   {
     "id": 2,
@@ -16,6 +17,7 @@
     "id": 3,
     "name": "Prof. Seeram Ramakrishna",
     "designation": "Director, Center for Nanofibers and Nanotechnology, Dept. of Mechanical Engineering, NUS Singapore",
-    "image": "/department_website/DAC/s_ramakrishna.png"
+    "image": "/department_website/DAC/s_ramakrishna.png",
+    "link" : "https://cde.nus.edu.sg/me/staff/ramakrishna-seeram-2/"
   }
 ]

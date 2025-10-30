@@ -13,7 +13,7 @@ export default function Contact() {
             <h2 className="text-2xl font-semibold text-gray-800 mb-3 border-b border-indigo-300 pb-2">
               Address
             </h2>
-            <address className="not-italic text-gray-700 leading-relaxed space-y-1 text-lg">
+            <address className="not-italic text-gray-700 leading-snug text-lg">
               <p>BT113, 1st Floor, </p>
               <p>Department of Biotechnology,</p>
               <p>BTBM Building,</p>

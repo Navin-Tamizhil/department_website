@@ -34,6 +34,19 @@ const DACCard = ({ person }) => {
             </p>
           )}
           {person.phone && <p>📞 {person.phone}</p>}
+          {person.link && (
+            <p className="flex items-center justify-center gap-2">
+              🔗{" "}
+              <a
+                href={person.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline text-indigo-700"
+              >
+                Website
+              </a>
+            </p>
+          )} 
         </div>
       </div>
 

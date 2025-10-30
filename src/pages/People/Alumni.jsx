@@ -80,6 +80,8 @@ export default function Alumni() {
         const sanitizedText = text.replace(/:\s*NaN/g, ":null");
         const rawRows = JSON.parse(sanitizedText);
         const rows = Array.isArray(rawRows) ? rawRows.map(cleanRow) : [];
+        // Sort PhD alumni by "Year Of Graduation" ascending (oldest first)
+        rows.sort((a, b) => a["Year Of Graduation"] - b["Year Of Graduation"]);
         newData.phd.push({ rows: rows });
       }
     } catch (error) {

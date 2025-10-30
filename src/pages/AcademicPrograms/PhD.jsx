@@ -123,7 +123,7 @@ export default function PhD() {
           href="/academics/Academic_Handbook_62nd_Senate.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 rounded-lg shadow-md transition-colors bg-gray-600 text-white hover:bg-gray-700"
+          className="flex items-center gap-2 px-6 py-3 rounded-lg shadow-md transition-colors bg-purple-600 text-white hover:bg-purple-700"
         >
           <BookOpen className="w-5 h-5" />
           Academic Handbook
