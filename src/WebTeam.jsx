@@ -1,11 +1,13 @@
 // src/pages/WebTeam.jsx
-import { Users } from "lucide-react";
+import { Users, Mail } from "lucide-react";
 
 const WebTeam = () => {
   const teamMembers = [
-    { name: "Naveen Prasath T", role: "Design & Development" },
-    // Add more team members here if needed
+    { name: "Dr. Anamika Bhargava", role: "Professor and Head Of the Department" },
+    { name: "Dr. Abhishek Subramanian", role: "Assistant Professor" },
+    { name: "Naveenprasath T", role: "Junior Technician", email: "naveenprasath.t@bt.iith.ac.in" },
   ];
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -27,8 +29,16 @@ const WebTeam = () => {
           <ul className="space-y-4">
             {teamMembers.map((member, index) => (
               <li key={index} className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-800">{member.name}</p>
-                <p className="text-sm text-gray-600">{member.role}</p>
+                <p className="font-semibold text-gray-800 text-lg">{member.name}</p>
+                <p className="text-sm text-gray-600 mt-1">{member.role}</p>
+                {member.email && (
+                  <div className="mt-2 flex items-center gap-2 text-sm text-indigo-600">
+                    <Mail className="w-4 h-4" />
+                    <a href={`mailto:${member.email}`} className="hover:underline">
+                      {member.email}
+                    </a>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

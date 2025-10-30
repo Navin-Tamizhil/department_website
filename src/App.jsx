@@ -38,7 +38,7 @@ import Events from "./pages/Events/Events.jsx";
 import BiotechSociety from "./pages/Biotechsociety/BiotechSociety.jsx";
 
 import Contact from "./pages/Contact";
-
+import WebTeam from './WebTeam';
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -86,6 +86,7 @@ function App() {
           <Route path="/events" element={<Events />} />
            <Route path="/biotechsociety" element={<BiotechSociety />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/web-team" element={<WebTeam />} />
         </Routes>
       </main>
       <Footer />

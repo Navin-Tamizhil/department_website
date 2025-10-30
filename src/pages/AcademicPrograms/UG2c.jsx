@@ -45,14 +45,10 @@ export default function UG() {
   const buttons = [
     { key: "syllabus", label: "Syllabus", icon: BookOpen },
     { key: "courses", label: "Course Descriptions", icon: FileText },
-     { key: "timetable", label: "Time Table", icon: Calendar }
   ];
 
   const handleButtonClick = (key) => {
-    if (key === "timetable") {
-      window.open("https://www.iith.ac.in/academics/assets/files/timetables/jul-nov-25/BT-UG-Timetable_Jul-Nov%202025.xlsx", "_blank");
-      setActiveView(null);
-    } else if (key === activeView) {
+    if (key === activeView) {
       setActiveView(null);
     } else {
       setActiveView(key);
@@ -127,6 +123,24 @@ export default function UG() {
             </button>
           );
         })}
+        <a
+          href="https://www.iith.ac.in/academics/assets/files/timetables/jul-nov-25/BT-UG-Timetable_Jul-Nov%202025.xlsx"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-6 py-3 rounded-lg shadow-md transition-colors bg-indigo-600 text-white hover:bg-indigo-700"
+        >
+          <Calendar className="w-5 h-5" />
+          Time Table
+        </a>
+        <a
+          href="/academics/Academic_Handbook_62nd_Senate.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-6 py-3 rounded-lg shadow-md transition-colors bg-indigo-600 text-white hover:bg-indigo-700"
+        >
+          <BookOpen className="w-5 h-5" />
+          Academic Handbook
+        </a>
       </div>
 
       {/* Syllabus Section */}
