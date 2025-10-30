@@ -1,0 +1,58 @@
+[
+    {
+        "Sl.No": "1",
+        "Name of the Student": "Vikas Gupta",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "IIIT Allahabad",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "2",
+        "Name of the Student": "Mahesh Mahadeo Mathe",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "IIT Delhi",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "3",
+        "Name of the Student": "Chittaranjan Sahu",
+        "Current Position": "Lead Consultant",
+        "Company/Institution": "Mindsprint, Bangalore",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "4",
+        "Name of the Student": "Mansi Sharma",
+        "Current Position": "Principal Scientist",
+        "Company/Institution": "Biocon",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "5",
+        "Name of the Student": "P V S Prathyusha",
+        "Current Position": "Co-founder",
+        "Company/Institution": "Grailmakers, Research & Product Lead, Innovating for Children with Special Needs, Forbes 30u30 Asia 2025",
+        "Type": "Start-up"
+    },
+    {
+        "Sl.No": "6",
+        "Name of the Student": "Madhusree Gangopadhyay",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "Texas, A and M University",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "7",
+        "Name of the Student": "Poonam",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "Kyoto University, Japan",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "8",
+        "Name of the Student": "Ilamathy P",
+        "Current Position": "PhD  Scholar",
+        "Company/Institution": "Structural Biology, Biosciences and Bioengineering Department, IIT Bombay",
+        "Type": "Academia"
+    }
+]

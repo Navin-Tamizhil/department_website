@@ -1,0 +1,58 @@
+[
+    {
+        "Sl.No": "1",
+        "Name of the Student": "Srishti Agarwal",
+        "Current Position": "Completed PhD",
+        "Company/Institution": "Tokyo University, Japan",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "2",
+        "Name of the Student": "Sree Hari S",
+        "Current Position": "Research Associate (Senior Level)",
+        "Company/Institution": "Dr. Reddy's Laboratories",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "3",
+        "Name of the Student": "Sonalika Maurya",
+        "Current Position": "Pursing PhD",
+        "Company/Institution": "RCB, Delhi",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "4",
+        "Name of the Student": "Shazia Siddiqui",
+        "Current Position": "Research Scholar",
+        "Company/Institution": "Shiv Nadar University",
+        "Type": "Academia"
+    },
+    {
+        "Sl.No": "5",
+        "Name of the Student": "Sanjana Anilkumar Nair",
+        "Current Position": "Working as Consulting Lead - Analytics",
+        "Company/Institution": "Applexus Technologies, Calgary, Alberta, Canada",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "7",
+        "Name of the Student": "Priyanka Mishra",
+        "Current Position": null,
+        "Company/Institution": null,
+        "Type": null
+    },
+    {
+        "Sl.No": "8",
+        "Name of the Student": "Ch Nimilitha",
+        "Current Position": "SME",
+        "Company/Institution": "Amazon",
+        "Type": "Industry"
+    },
+    {
+        "Sl.No": "9",
+        "Name of the Student": "Nalla Lakshmi Prasanna",
+        "Current Position": "Faculty",
+        "Company/Institution": "Akash Inst. Of Learning, Bangalore",
+        "Type": "Industry"
+    }
+]
