@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
   const location = useLocation();
@@ -37,10 +38,11 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-10">
-        <div>
+      <div className="container mx-auto px-4">
+        <div className="mb-8">
           <h5 className="text-lg font-semibold text-white text-center">Quick Links</h5>
           <div className="mt-2 mb-6 h-px w-20 bg-indigo-400 mx-auto"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center md:text-left">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center">
             {columns.map((column, colIndex) => (
               <ul key={colIndex} className="space-y-2 text-sm">
                 {column.map((link, linkIndex) => (
@@ -51,17 +53,33 @@ export default function Footer() {
           </div>
         </div>
 
-  
-
-
+        {/* Social Media Section */}
+        <div className="text-center mb-8">
+          <div className="flex justify-center items-center gap-6">
+            <a
+              href="https://x.com/BTIITH"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Twitter size={24} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/deparment-of-biotechnology-iit-hyderabad-308216395/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <Linkedin size={24} />
+            </a>
+          </div>
+        </div>
 
         {/* Row 3 - Bottom Bar */}
-        <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+        <div className="border-t border-gray-700 pt-8 mt-8 text-center text-sm text-gray-500">
           <p>© {new Date().getFullYear()} Department of Biotechnology, IIT Hyderabad. All Rights Reserved.</p>
           <p className="mt-1">Last Updated: {new Date().toLocaleDateString("en-IN")}</p>
-        
-        
-     
+        </div>
       </div>
     </footer>
   );

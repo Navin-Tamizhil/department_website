@@ -2,13 +2,12 @@ export const lifeAtDeptImages = [
   { src: "/gallery/1.jpeg" },
   { src: "/gallery/23.jpeg" }, 
   { src: "/gallery/2.jpeg" },
-  { src: "/gallery/24.jpeg" }, // Portrait
   { src: "/gallery/3.jpeg" },
-  { src: "/gallery/36.jpeg" }, // Portrait
+  { src: "/gallery/36.jpeg" }, 
   { src: "/gallery/4.jpeg" },
-  { src: "/gallery/37.jpeg" }, // Portrait
+  { src: "/gallery/37.jpeg" }, 
   { src: "/gallery/5.jpeg" },
-  { src: "/gallery/38.jpg" }, // Portrait
+  { src: "/gallery/38.jpg" }, 
   { src: "/gallery/6.jpg" },
   { src: "/gallery/7.jpg" },
   { src: "/gallery/8.jpeg" },
@@ -25,7 +24,6 @@ export const lifeAtDeptImages = [
   { src: "/gallery/19.jpeg" },
   { src: "/gallery/20.jpeg" },
   { src: "/gallery/21.jpeg" },
-  { src: "/gallery/22.jpeg" },
   { src: "/gallery/25.jpeg" },
   { src: "/gallery/26.jpeg" },
   { src: "/gallery/27.jpeg" },
