@@ -1,11 +1,11 @@
 const StaffCard = ({ person }) => (
-  <div className="bg-white rounded-xl shadow-md p-4 w-64 hover:shadow-lg transition">
+  <div className="bg-white rounded-xl shadow-md p-6 w-full max-w-sm mx-auto hover:shadow-lg transition flex flex-col items-center">
     {/* Image */}
        {person.image && (
       <img
         src={person.image}
         alt={person.name}
-        className="w-32 h-32 mx-auto rounded-lg object-cover"
+        className="w-40 h-40 mx-auto rounded-lg object-cover"
       />
     )}
 

@@ -157,8 +157,8 @@ export default function Alumni() {
       return batch ? batch.rows.map(row => { const { Type, ...rest } = row; return rest; }) : [];
     }
     if (tab === "phd") {
-      // Remove 'Type' before rendering the table
-      return data.phd.length > 0 ? data.phd[0].rows.map(row => { const { Type, ...rest } = row; return rest; }) : [];
+      // Remove 'Type' and 'Sl.No' before rendering the table
+      return data.phd.length > 0 ? data.phd[0].rows.map(row => { const { Type, "Sl.No": slNo, ...rest } = row; return rest; }) : [];
     }
     return [];
   };
