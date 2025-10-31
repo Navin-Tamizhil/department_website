@@ -1,28 +1,28 @@
 import * as XLSX from "xlsx";
 
 const syllabusFiles = [
-  "/academics_excel/pg_semester1.xlsx",
-  "/academics_excel/pg_semester2.xlsx",
-  "/academics_excel/pg_semester3.xlsx",
-  "/academics_excel/pg_semester4.xlsx",
+  "/department_website/academics_excel/pg_semester1.xlsx",
+  "/department_website/academics_excel/pg_semester2.xlsx",
+  "/department_website/academics_excel/pg_semester3.xlsx",
+  "/department_website/academics_excel/pg_semester4.xlsx",
 ];
 
 // Elective files with custom semester labels
 const electiveFiles = [
   {
-    path: "/academics_excel/pg_semester1_elective.xlsx",
+    path: "/department_website/academics_excel/pg_semester1_elective.xlsx",
     semester: "Semester 1 Department Elective",
   },
   {
-    path: "/academics_excel/pg_semester2_elective.xlsx",
+    path: "/department_website/academics_excel/pg_semester2_elective.xlsx",
     semester: "Semester 2 Department Elective",
   },
   {
-    path: "/academics_excel/pg_semest1_other_elective.xlsx",
+    path: "/department_website/academics_excel/pg_semest1_other_elective.xlsx",
     semester: "Semester 1 Other Department Elective",
   },
   {
-    path: "/academics_excel/pg_semester2_other_elective.xlsx",
+    path: "/department_website/academics_excel/pg_semester2_other_elective.xlsx",
     semester: "Semester 2 Other Department Elective",
   },
 ];
