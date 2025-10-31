@@ -26,7 +26,7 @@ export const eventsData = [
   },
     {
     id: 15,
-    title: "Talk by Dr. Sanita Mukhopadhyay, FNA, FASc, FNASc, FTASc, JC Bose Fellow, Tata Innovation Fellow",
+    title: "Talk by Dr. Sangita Mukhopadhyay, FNA, FASc, FNASc, FTASc, JC Bose Fellow, Tata Innovation Fellow",
     type: "seminar",
     displayDate: "October 27, 2025",
     date: "2025-10-27",

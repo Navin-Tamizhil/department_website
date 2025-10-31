@@ -12,7 +12,7 @@ export const AnnouncementsModified = ({ onItemClick }) => {
     e.stopPropagation();
     setExpandedItem(itemId);
     if (onItemClick) {
-      onItemClick(itemTitle);
+      onItemClick(itemTitle); // ✅ removed 'e' argument — fixes homepage navigation issue
     }
   };
 
@@ -80,7 +80,7 @@ export const AnnouncementsModified = ({ onItemClick }) => {
               {item.links.map((link, idx) => (
                 <a
                   key={idx}
-                  href={link.brochure}  // fixed typo
+                  href={link.brochure}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}

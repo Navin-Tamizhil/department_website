@@ -1,6 +1,6 @@
 import { useState } from "react";
 import researchGroups from "./ResearchGroups1.json";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, ExternalLink } from "lucide-react";
 
 export default function Research() {
   const [activeGroupId, setActiveGroupId] = useState(null);
@@ -81,10 +81,12 @@ export default function Research() {
                       href={prof.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()} // don't close view on link click
-                      className="text-blue-600 hover:text-indigo-700 transition font-medium text-lg hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full font-semibold shadow-sm
+                                 transition-all duration-300 transform hover:bg-indigo-200 hover:shadow-md hover:scale-105"
                     >
                       {prof.name}
+                      <ExternalLink className="w-4 h-4" />
                     </a>
                   </li>
                 ))}

@@ -41,16 +41,23 @@ export default function Home() {
   const [scrollingPaused, setScrollingPaused] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
-const handleItemClick = (title) => {
-  setScrollingPaused(true);
-  setSelectedItem(title);
+  const handleItemClick = (title, event) => {
+    // Don't pause if a link or an element inside a link was clicked
+    let targetElement = event.target;
+    while (targetElement && targetElement !== event.currentTarget) {
+      if (targetElement.tagName === 'A') return;
+      targetElement = targetElement.parentElement;
+    }
 
-  // auto-resume after 5s
-  setTimeout(() => {
-    setScrollingPaused(false);
-    setSelectedItem(null);
-  }, 5000);
-};
+    setScrollingPaused(true);
+    setSelectedItem(title);
+
+    // auto-resume after 5s
+    setTimeout(() => {
+      setScrollingPaused(false);
+      setSelectedItem(null);
+    }, 5000);
+  };
 
   const resumeScrolling = () => {
     setScrollingPaused(false);
