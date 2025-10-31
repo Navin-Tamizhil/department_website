@@ -8,7 +8,7 @@
   "build": "vite build",
   "lint": "eslint .",
   "preview": "vite preview",
- "deploy": "npm run build && npx gh-pages -d dist -b gh-pages"
+ "deploy": "npm run build && npx gh-pages -d dist -b gh-pages -r git@github.com:Navin-Tamizhil/department_website.git"
 },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
