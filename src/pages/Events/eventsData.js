@@ -97,7 +97,7 @@ export const eventsData = [
     displayDate: "September 1st, 2025",
     date: "2025-09-01",
     description: "We are pleased to announce a Biotech Industry Meet 2025.",
-    link: "/events/BIM_2025.pdf",
+    link: "/department_website/events/BIM_2025.pdf",
   },
   {
     id: 8,

@@ -103,28 +103,28 @@ export default function Home() {
       </section>
 
       {/* ---------------- Message from HOD ---------------- */}
-      <section className="w-full bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-3xl p-4 md:p-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-10 text-center text-gray-800">
+    <section className="mx-4 md:mx-14 bg-gradient-to-r from-indigo-50 via-white to-purple-50 rounded-3xl p-6 md:p-10">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-12 text-center text-gray-800">
           Message from HOD
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center">
           {/* Left - Image */}
-          <div className="flex justify-center">
+          <div className="flex-shrink-0 w-full lg:w-auto flex justify-center lg:justify-start">
             <div className="relative group">
               <div className="absolute -inset-3 bg-gradient-to-tr from-pink-400 via-indigo-400 to-purple-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition"></div>
               <img
                 src="/department_website/images/AB1_medium.jpg"
                 alt="Head of Department"
-                 width="4359"
-                 height="3400"
-               className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
-                  />
+                width="4359"
+                height="3400"
+                className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover rounded-3xl border-4 border-white shadow-2xl transform group-hover:scale-105 group-hover:rotate-1 transition duration-500"
+              />
             </div>
           </div>
 
           {/* Right - Message */}
-          <div className="lg:col-span-2 text-gray-700 leading-relaxed text-justify space-y-6 px-4 sm:px-2">
+          <div className="flex-1 text-gray-700 leading-relaxed text-justify space-y-6">
             <p>
               Since the biotechnology department started its journey in 2010, the
               department has been striving for excellence in teaching and research.
@@ -150,10 +150,11 @@ export default function Home() {
               institutes, and industrial professionals who want to enhance their
               wet-lab or computational biology research skills.
             </p>
-            <p className="text-gray-900 text-right p-4">
-                <b>Dr. Anamika Bhargava,</b><br />
-                Professor and Head of the Department.
-              </p>
+            <p className="text-gray-900 text-right pt-4 border-t border-gray-300">
+              <b>Dr. Anamika Bhargava,</b>
+              <br />
+              <span className="text-sm">Professor and Head of the Department</span>
+            </p>
           </div>
         </div>
       </section>

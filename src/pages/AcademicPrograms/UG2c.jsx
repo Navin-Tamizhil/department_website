@@ -133,7 +133,7 @@ export default function UG() {
           Time Table
         </a>
         <a
-          href="/academics/Academic_Handbook_62nd_Senate.pdf"
+          href="/department_website/academics/Academic_Handbook_62nd_Senate.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-6 py-3 rounded-lg shadow-md transition-colors bg-indigo-600 text-white hover:bg-indigo-700"
